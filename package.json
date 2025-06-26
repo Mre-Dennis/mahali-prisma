@@ -1,10 +1,6 @@
 {
   "name": "mahali-prisma",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mre-Dennis/mahali-prisma.git"
@@ -19,5 +15,18 @@
   "dependencies": {
     "@prisma/client": "^6.10.1",
     "prisma": "^6.10.1"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "prisma/schema.prisma",
+    "prisma/generated/"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
   }
 }

@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "outDir": "dist",
+      "target": "ES2020",            // or later like ES2021
+      "lib": ["ES2020"],             // or ["DOM", "ES2020"] if you're using in browser context
+      "module": "commonjs",
+      "declaration": true,
+      "esModuleInterop": true,
+      "strict": true
+    },
+    "include": ["src"]
+  }
+  
