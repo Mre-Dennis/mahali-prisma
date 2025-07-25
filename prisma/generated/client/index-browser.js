@@ -128,7 +128,148 @@ exports.Prisma.UserScalarFieldEnum = {
   name: 'name',
   role: 'role',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  isRestaurantHost: 'isRestaurantHost',
+  restaurantId: 'restaurantId',
+  profileImage: 'profileImage',
+  bio: 'bio',
+  address: 'address',
+  city: 'city',
+  state: 'state',
+  country: 'country',
+  zipCode: 'zipCode'
+};
+
+exports.Prisma.RestaurantScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  description: 'description',
+  address: 'address',
+  city: 'city',
+  state: 'state',
+  country: 'country',
+  zipCode: 'zipCode',
+  phone: 'phone',
+  email: 'email',
+  website: 'website',
+  cuisine: 'cuisine',
+  priceRange: 'priceRange',
+  rating: 'rating',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  hostId: 'hostId'
+};
+
+exports.Prisma.ListingScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  type: 'type',
+  capacity: 'capacity',
+  pricePerHour: 'pricePerHour',
+  pricePerDay: 'pricePerDay',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  restaurantId: 'restaurantId',
+  hostId: 'hostId'
+};
+
+exports.Prisma.ListingImageScalarFieldEnum = {
+  id: 'id',
+  url: 'url',
+  caption: 'caption',
+  isPrimary: 'isPrimary',
+  createdAt: 'createdAt',
+  listingId: 'listingId'
+};
+
+exports.Prisma.AmenityScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  icon: 'icon',
+  category: 'category',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.ListingAmenityScalarFieldEnum = {
+  id: 'id',
+  listingId: 'listingId',
+  amenityId: 'amenityId'
+};
+
+exports.Prisma.AvailabilityScalarFieldEnum = {
+  id: 'id',
+  date: 'date',
+  startTime: 'startTime',
+  endTime: 'endTime',
+  isAvailable: 'isAvailable',
+  createdAt: 'createdAt',
+  listingId: 'listingId'
+};
+
+exports.Prisma.BookingScalarFieldEnum = {
+  id: 'id',
+  startTime: 'startTime',
+  endTime: 'endTime',
+  totalPrice: 'totalPrice',
+  status: 'status',
+  guestCount: 'guestCount',
+  specialRequests: 'specialRequests',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  listingId: 'listingId',
+  guestId: 'guestId'
+};
+
+exports.Prisma.ReviewScalarFieldEnum = {
+  id: 'id',
+  rating: 'rating',
+  comment: 'comment',
+  createdAt: 'createdAt',
+  listingId: 'listingId',
+  authorId: 'authorId',
+  bookingId: 'bookingId'
+};
+
+exports.Prisma.EarningScalarFieldEnum = {
+  id: 'id',
+  amount: 'amount',
+  type: 'type',
+  status: 'status',
+  description: 'description',
+  createdAt: 'createdAt',
+  hostId: 'hostId',
+  bookingId: 'bookingId'
+};
+
+exports.Prisma.NotificationScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  message: 'message',
+  type: 'type',
+  isRead: 'isRead',
+  createdAt: 'createdAt',
+  userId: 'userId'
+};
+
+exports.Prisma.RestaurantImageScalarFieldEnum = {
+  id: 'id',
+  url: 'url',
+  caption: 'caption',
+  isPrimary: 'isPrimary',
+  createdAt: 'createdAt',
+  restaurantId: 'restaurantId'
+};
+
+exports.Prisma.OperatingHoursScalarFieldEnum = {
+  id: 'id',
+  dayOfWeek: 'dayOfWeek',
+  openTime: 'openTime',
+  closeTime: 'closeTime',
+  isClosed: 'isClosed',
+  restaurantId: 'restaurantId'
 };
 
 exports.Prisma.SortOrder = {
@@ -148,7 +289,19 @@ exports.Prisma.NullsOrder = {
 
 
 exports.Prisma.ModelName = {
-  User: 'User'
+  User: 'User',
+  Restaurant: 'Restaurant',
+  Listing: 'Listing',
+  ListingImage: 'ListingImage',
+  Amenity: 'Amenity',
+  ListingAmenity: 'ListingAmenity',
+  Availability: 'Availability',
+  Booking: 'Booking',
+  Review: 'Review',
+  Earning: 'Earning',
+  Notification: 'Notification',
+  RestaurantImage: 'RestaurantImage',
+  OperatingHours: 'OperatingHours'
 };
 
 /**
