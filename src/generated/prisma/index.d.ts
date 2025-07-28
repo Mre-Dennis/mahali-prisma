@@ -19,10 +19,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
  */
 export type User = $Result.DefaultSelection<Prisma.$UserPayload>
 /**
- * Model Restaurant
+ * Model Workspace
  * 
  */
-export type Restaurant = $Result.DefaultSelection<Prisma.$RestaurantPayload>
+export type Workspace = $Result.DefaultSelection<Prisma.$WorkspacePayload>
 /**
  * Model Listing
  * 
@@ -69,10 +69,10 @@ export type Earning = $Result.DefaultSelection<Prisma.$EarningPayload>
  */
 export type Notification = $Result.DefaultSelection<Prisma.$NotificationPayload>
 /**
- * Model RestaurantImage
+ * Model WorkspaceImage
  * 
  */
-export type RestaurantImage = $Result.DefaultSelection<Prisma.$RestaurantImagePayload>
+export type WorkspaceImage = $Result.DefaultSelection<Prisma.$WorkspaceImagePayload>
 /**
  * Model OperatingHours
  * 
@@ -235,14 +235,14 @@ export class PrismaClient<
   get user(): Prisma.UserDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.restaurant`: Exposes CRUD operations for the **Restaurant** model.
+   * `prisma.workspace`: Exposes CRUD operations for the **Workspace** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Restaurants
-    * const restaurants = await prisma.restaurant.findMany()
+    * // Fetch zero or more Workspaces
+    * const workspaces = await prisma.workspace.findMany()
     * ```
     */
-  get restaurant(): Prisma.RestaurantDelegate<ExtArgs, ClientOptions>;
+  get workspace(): Prisma.WorkspaceDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.listing`: Exposes CRUD operations for the **Listing** model.
@@ -335,14 +335,14 @@ export class PrismaClient<
   get notification(): Prisma.NotificationDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.restaurantImage`: Exposes CRUD operations for the **RestaurantImage** model.
+   * `prisma.workspaceImage`: Exposes CRUD operations for the **WorkspaceImage** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more RestaurantImages
-    * const restaurantImages = await prisma.restaurantImage.findMany()
+    * // Fetch zero or more WorkspaceImages
+    * const workspaceImages = await prisma.workspaceImage.findMany()
     * ```
     */
-  get restaurantImage(): Prisma.RestaurantImageDelegate<ExtArgs, ClientOptions>;
+  get workspaceImage(): Prisma.WorkspaceImageDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.operatingHours`: Exposes CRUD operations for the **OperatingHours** model.
@@ -451,8 +451,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 6.10.1
-   * Query Engine version: 9b628578b3b7cae625e8c927178f15a170e74a9c
+   * Prisma Client JS version: 6.11.0
+   * Query Engine version: 9c30299f5a0ea26a96790e13f796dc6094db3173
    */
   export type PrismaVersion = {
     client: string
@@ -834,7 +834,7 @@ export namespace Prisma {
 
   export const ModelName: {
     User: 'User',
-    Restaurant: 'Restaurant',
+    Workspace: 'Workspace',
     Listing: 'Listing',
     ListingImage: 'ListingImage',
     Amenity: 'Amenity',
@@ -844,7 +844,7 @@ export namespace Prisma {
     Review: 'Review',
     Earning: 'Earning',
     Notification: 'Notification',
-    RestaurantImage: 'RestaurantImage',
+    WorkspaceImage: 'WorkspaceImage',
     OperatingHours: 'OperatingHours',
     HostSettings: 'HostSettings',
     PaymentMethod: 'PaymentMethod',
@@ -868,7 +868,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "restaurant" | "listing" | "listingImage" | "amenity" | "listingAmenity" | "availability" | "booking" | "review" | "earning" | "notification" | "restaurantImage" | "operatingHours" | "hostSettings" | "paymentMethod" | "conversation" | "message"
+      modelProps: "user" | "workspace" | "listing" | "listingImage" | "amenity" | "listingAmenity" | "availability" | "booking" | "review" | "earning" | "notification" | "workspaceImage" | "operatingHours" | "hostSettings" | "paymentMethod" | "conversation" | "message"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -946,77 +946,77 @@ export namespace Prisma {
           }
         }
       }
-      Restaurant: {
-        payload: Prisma.$RestaurantPayload<ExtArgs>
-        fields: Prisma.RestaurantFieldRefs
+      Workspace: {
+        payload: Prisma.$WorkspacePayload<ExtArgs>
+        fields: Prisma.WorkspaceFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.RestaurantFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantPayload> | null
+            args: Prisma.WorkspaceFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspacePayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.RestaurantFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantPayload>
+            args: Prisma.WorkspaceFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspacePayload>
           }
           findFirst: {
-            args: Prisma.RestaurantFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantPayload> | null
+            args: Prisma.WorkspaceFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspacePayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.RestaurantFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantPayload>
+            args: Prisma.WorkspaceFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspacePayload>
           }
           findMany: {
-            args: Prisma.RestaurantFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantPayload>[]
+            args: Prisma.WorkspaceFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspacePayload>[]
           }
           create: {
-            args: Prisma.RestaurantCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantPayload>
+            args: Prisma.WorkspaceCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspacePayload>
           }
           createMany: {
-            args: Prisma.RestaurantCreateManyArgs<ExtArgs>
+            args: Prisma.WorkspaceCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.RestaurantCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantPayload>[]
+            args: Prisma.WorkspaceCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspacePayload>[]
           }
           delete: {
-            args: Prisma.RestaurantDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantPayload>
+            args: Prisma.WorkspaceDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspacePayload>
           }
           update: {
-            args: Prisma.RestaurantUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantPayload>
+            args: Prisma.WorkspaceUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspacePayload>
           }
           deleteMany: {
-            args: Prisma.RestaurantDeleteManyArgs<ExtArgs>
+            args: Prisma.WorkspaceDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.RestaurantUpdateManyArgs<ExtArgs>
+            args: Prisma.WorkspaceUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.RestaurantUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantPayload>[]
+            args: Prisma.WorkspaceUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspacePayload>[]
           }
           upsert: {
-            args: Prisma.RestaurantUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantPayload>
+            args: Prisma.WorkspaceUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspacePayload>
           }
           aggregate: {
-            args: Prisma.RestaurantAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateRestaurant>
+            args: Prisma.WorkspaceAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateWorkspace>
           }
           groupBy: {
-            args: Prisma.RestaurantGroupByArgs<ExtArgs>
-            result: $Utils.Optional<RestaurantGroupByOutputType>[]
+            args: Prisma.WorkspaceGroupByArgs<ExtArgs>
+            result: $Utils.Optional<WorkspaceGroupByOutputType>[]
           }
           count: {
-            args: Prisma.RestaurantCountArgs<ExtArgs>
-            result: $Utils.Optional<RestaurantCountAggregateOutputType> | number
+            args: Prisma.WorkspaceCountArgs<ExtArgs>
+            result: $Utils.Optional<WorkspaceCountAggregateOutputType> | number
           }
         }
       }
@@ -1686,77 +1686,77 @@ export namespace Prisma {
           }
         }
       }
-      RestaurantImage: {
-        payload: Prisma.$RestaurantImagePayload<ExtArgs>
-        fields: Prisma.RestaurantImageFieldRefs
+      WorkspaceImage: {
+        payload: Prisma.$WorkspaceImagePayload<ExtArgs>
+        fields: Prisma.WorkspaceImageFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.RestaurantImageFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantImagePayload> | null
+            args: Prisma.WorkspaceImageFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspaceImagePayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.RestaurantImageFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantImagePayload>
+            args: Prisma.WorkspaceImageFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspaceImagePayload>
           }
           findFirst: {
-            args: Prisma.RestaurantImageFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantImagePayload> | null
+            args: Prisma.WorkspaceImageFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspaceImagePayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.RestaurantImageFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantImagePayload>
+            args: Prisma.WorkspaceImageFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspaceImagePayload>
           }
           findMany: {
-            args: Prisma.RestaurantImageFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantImagePayload>[]
+            args: Prisma.WorkspaceImageFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspaceImagePayload>[]
           }
           create: {
-            args: Prisma.RestaurantImageCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantImagePayload>
+            args: Prisma.WorkspaceImageCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspaceImagePayload>
           }
           createMany: {
-            args: Prisma.RestaurantImageCreateManyArgs<ExtArgs>
+            args: Prisma.WorkspaceImageCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.RestaurantImageCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantImagePayload>[]
+            args: Prisma.WorkspaceImageCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspaceImagePayload>[]
           }
           delete: {
-            args: Prisma.RestaurantImageDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantImagePayload>
+            args: Prisma.WorkspaceImageDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspaceImagePayload>
           }
           update: {
-            args: Prisma.RestaurantImageUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantImagePayload>
+            args: Prisma.WorkspaceImageUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspaceImagePayload>
           }
           deleteMany: {
-            args: Prisma.RestaurantImageDeleteManyArgs<ExtArgs>
+            args: Prisma.WorkspaceImageDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.RestaurantImageUpdateManyArgs<ExtArgs>
+            args: Prisma.WorkspaceImageUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.RestaurantImageUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantImagePayload>[]
+            args: Prisma.WorkspaceImageUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspaceImagePayload>[]
           }
           upsert: {
-            args: Prisma.RestaurantImageUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$RestaurantImagePayload>
+            args: Prisma.WorkspaceImageUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WorkspaceImagePayload>
           }
           aggregate: {
-            args: Prisma.RestaurantImageAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateRestaurantImage>
+            args: Prisma.WorkspaceImageAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateWorkspaceImage>
           }
           groupBy: {
-            args: Prisma.RestaurantImageGroupByArgs<ExtArgs>
-            result: $Utils.Optional<RestaurantImageGroupByOutputType>[]
+            args: Prisma.WorkspaceImageGroupByArgs<ExtArgs>
+            result: $Utils.Optional<WorkspaceImageGroupByOutputType>[]
           }
           count: {
-            args: Prisma.RestaurantImageCountArgs<ExtArgs>
-            result: $Utils.Optional<RestaurantImageCountAggregateOutputType> | number
+            args: Prisma.WorkspaceImageCountArgs<ExtArgs>
+            result: $Utils.Optional<WorkspaceImageCountAggregateOutputType> | number
           }
         }
       }
@@ -2215,7 +2215,7 @@ export namespace Prisma {
   }
   export type GlobalOmitConfig = {
     user?: UserOmit
-    restaurant?: RestaurantOmit
+    workspace?: WorkspaceOmit
     listing?: ListingOmit
     listingImage?: ListingImageOmit
     amenity?: AmenityOmit
@@ -2225,7 +2225,7 @@ export namespace Prisma {
     review?: ReviewOmit
     earning?: EarningOmit
     notification?: NotificationOmit
-    restaurantImage?: RestaurantImageOmit
+    workspaceImage?: WorkspaceImageOmit
     operatingHours?: OperatingHoursOmit
     hostSettings?: HostSettingsOmit
     paymentMethod?: PaymentMethodOmit
@@ -2415,59 +2415,59 @@ export namespace Prisma {
 
 
   /**
-   * Count Type RestaurantCountOutputType
+   * Count Type WorkspaceCountOutputType
    */
 
-  export type RestaurantCountOutputType = {
+  export type WorkspaceCountOutputType = {
     users: number
     listings: number
     images: number
     operatingHours: number
   }
 
-  export type RestaurantCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    users?: boolean | RestaurantCountOutputTypeCountUsersArgs
-    listings?: boolean | RestaurantCountOutputTypeCountListingsArgs
-    images?: boolean | RestaurantCountOutputTypeCountImagesArgs
-    operatingHours?: boolean | RestaurantCountOutputTypeCountOperatingHoursArgs
+  export type WorkspaceCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    users?: boolean | WorkspaceCountOutputTypeCountUsersArgs
+    listings?: boolean | WorkspaceCountOutputTypeCountListingsArgs
+    images?: boolean | WorkspaceCountOutputTypeCountImagesArgs
+    operatingHours?: boolean | WorkspaceCountOutputTypeCountOperatingHoursArgs
   }
 
   // Custom InputTypes
   /**
-   * RestaurantCountOutputType without action
+   * WorkspaceCountOutputType without action
    */
-  export type RestaurantCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the RestaurantCountOutputType
+     * Select specific fields to fetch from the WorkspaceCountOutputType
      */
-    select?: RestaurantCountOutputTypeSelect<ExtArgs> | null
+    select?: WorkspaceCountOutputTypeSelect<ExtArgs> | null
   }
 
   /**
-   * RestaurantCountOutputType without action
+   * WorkspaceCountOutputType without action
    */
-  export type RestaurantCountOutputTypeCountUsersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceCountOutputTypeCountUsersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: UserWhereInput
   }
 
   /**
-   * RestaurantCountOutputType without action
+   * WorkspaceCountOutputType without action
    */
-  export type RestaurantCountOutputTypeCountListingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceCountOutputTypeCountListingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ListingWhereInput
   }
 
   /**
-   * RestaurantCountOutputType without action
+   * WorkspaceCountOutputType without action
    */
-  export type RestaurantCountOutputTypeCountImagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: RestaurantImageWhereInput
+  export type WorkspaceCountOutputTypeCountImagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: WorkspaceImageWhereInput
   }
 
   /**
-   * RestaurantCountOutputType without action
+   * WorkspaceCountOutputType without action
    */
-  export type RestaurantCountOutputTypeCountOperatingHoursArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceCountOutputTypeCountOperatingHoursArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: OperatingHoursWhereInput
   }
 
@@ -2619,12 +2619,12 @@ export namespace Prisma {
 
   export type UserAvgAggregateOutputType = {
     id: number | null
-    restaurantId: number | null
+    workspaceId: number | null
   }
 
   export type UserSumAggregateOutputType = {
     id: number | null
-    restaurantId: number | null
+    workspaceId: number | null
   }
 
   export type UserMinAggregateOutputType = {
@@ -2636,8 +2636,8 @@ export namespace Prisma {
     role: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    isRestaurantHost: boolean | null
-    restaurantId: number | null
+    isWorkspaceHost: boolean | null
+    workspaceId: number | null
     profileImage: string | null
     bio: string | null
     address: string | null
@@ -2656,8 +2656,8 @@ export namespace Prisma {
     role: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    isRestaurantHost: boolean | null
-    restaurantId: number | null
+    isWorkspaceHost: boolean | null
+    workspaceId: number | null
     profileImage: string | null
     bio: string | null
     address: string | null
@@ -2676,8 +2676,8 @@ export namespace Prisma {
     role: number
     createdAt: number
     updatedAt: number
-    isRestaurantHost: number
-    restaurantId: number
+    isWorkspaceHost: number
+    workspaceId: number
     profileImage: number
     bio: number
     address: number
@@ -2691,12 +2691,12 @@ export namespace Prisma {
 
   export type UserAvgAggregateInputType = {
     id?: true
-    restaurantId?: true
+    workspaceId?: true
   }
 
   export type UserSumAggregateInputType = {
     id?: true
-    restaurantId?: true
+    workspaceId?: true
   }
 
   export type UserMinAggregateInputType = {
@@ -2708,8 +2708,8 @@ export namespace Prisma {
     role?: true
     createdAt?: true
     updatedAt?: true
-    isRestaurantHost?: true
-    restaurantId?: true
+    isWorkspaceHost?: true
+    workspaceId?: true
     profileImage?: true
     bio?: true
     address?: true
@@ -2728,8 +2728,8 @@ export namespace Prisma {
     role?: true
     createdAt?: true
     updatedAt?: true
-    isRestaurantHost?: true
-    restaurantId?: true
+    isWorkspaceHost?: true
+    workspaceId?: true
     profileImage?: true
     bio?: true
     address?: true
@@ -2748,8 +2748,8 @@ export namespace Prisma {
     role?: true
     createdAt?: true
     updatedAt?: true
-    isRestaurantHost?: true
-    restaurantId?: true
+    isWorkspaceHost?: true
+    workspaceId?: true
     profileImage?: true
     bio?: true
     address?: true
@@ -2855,8 +2855,8 @@ export namespace Prisma {
     role: string
     createdAt: Date
     updatedAt: Date
-    isRestaurantHost: boolean
-    restaurantId: number | null
+    isWorkspaceHost: boolean
+    workspaceId: number | null
     profileImage: string | null
     bio: string | null
     address: string | null
@@ -2894,8 +2894,8 @@ export namespace Prisma {
     role?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    isRestaurantHost?: boolean
-    restaurantId?: boolean
+    isWorkspaceHost?: boolean
+    workspaceId?: boolean
     profileImage?: boolean
     bio?: boolean
     address?: boolean
@@ -2903,8 +2903,8 @@ export namespace Prisma {
     state?: boolean
     country?: boolean
     zipCode?: boolean
-    restaurant?: boolean | User$restaurantArgs<ExtArgs>
-    hostedRestaurant?: boolean | User$hostedRestaurantArgs<ExtArgs>
+    workspace?: boolean | User$workspaceArgs<ExtArgs>
+    hostedWorkspace?: boolean | User$hostedWorkspaceArgs<ExtArgs>
     listings?: boolean | User$listingsArgs<ExtArgs>
     bookings?: boolean | User$bookingsArgs<ExtArgs>
     reviews?: boolean | User$reviewsArgs<ExtArgs>
@@ -2926,8 +2926,8 @@ export namespace Prisma {
     role?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    isRestaurantHost?: boolean
-    restaurantId?: boolean
+    isWorkspaceHost?: boolean
+    workspaceId?: boolean
     profileImage?: boolean
     bio?: boolean
     address?: boolean
@@ -2935,7 +2935,7 @@ export namespace Prisma {
     state?: boolean
     country?: boolean
     zipCode?: boolean
-    restaurant?: boolean | User$restaurantArgs<ExtArgs>
+    workspace?: boolean | User$workspaceArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2947,8 +2947,8 @@ export namespace Prisma {
     role?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    isRestaurantHost?: boolean
-    restaurantId?: boolean
+    isWorkspaceHost?: boolean
+    workspaceId?: boolean
     profileImage?: boolean
     bio?: boolean
     address?: boolean
@@ -2956,7 +2956,7 @@ export namespace Prisma {
     state?: boolean
     country?: boolean
     zipCode?: boolean
-    restaurant?: boolean | User$restaurantArgs<ExtArgs>
+    workspace?: boolean | User$workspaceArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
@@ -2968,8 +2968,8 @@ export namespace Prisma {
     role?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    isRestaurantHost?: boolean
-    restaurantId?: boolean
+    isWorkspaceHost?: boolean
+    workspaceId?: boolean
     profileImage?: boolean
     bio?: boolean
     address?: boolean
@@ -2979,10 +2979,10 @@ export namespace Prisma {
     zipCode?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "phone" | "password" | "name" | "role" | "createdAt" | "updatedAt" | "isRestaurantHost" | "restaurantId" | "profileImage" | "bio" | "address" | "city" | "state" | "country" | "zipCode", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "phone" | "password" | "name" | "role" | "createdAt" | "updatedAt" | "isWorkspaceHost" | "workspaceId" | "profileImage" | "bio" | "address" | "city" | "state" | "country" | "zipCode", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | User$restaurantArgs<ExtArgs>
-    hostedRestaurant?: boolean | User$hostedRestaurantArgs<ExtArgs>
+    workspace?: boolean | User$workspaceArgs<ExtArgs>
+    hostedWorkspace?: boolean | User$hostedWorkspaceArgs<ExtArgs>
     listings?: boolean | User$listingsArgs<ExtArgs>
     bookings?: boolean | User$bookingsArgs<ExtArgs>
     reviews?: boolean | User$reviewsArgs<ExtArgs>
@@ -2995,17 +2995,17 @@ export namespace Prisma {
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | User$restaurantArgs<ExtArgs>
+    workspace?: boolean | User$workspaceArgs<ExtArgs>
   }
   export type UserIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | User$restaurantArgs<ExtArgs>
+    workspace?: boolean | User$workspaceArgs<ExtArgs>
   }
 
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
     objects: {
-      restaurant: Prisma.$RestaurantPayload<ExtArgs> | null
-      hostedRestaurant: Prisma.$RestaurantPayload<ExtArgs> | null
+      workspace: Prisma.$WorkspacePayload<ExtArgs> | null
+      hostedWorkspace: Prisma.$WorkspacePayload<ExtArgs> | null
       listings: Prisma.$ListingPayload<ExtArgs>[]
       bookings: Prisma.$BookingPayload<ExtArgs>[]
       reviews: Prisma.$ReviewPayload<ExtArgs>[]
@@ -3025,8 +3025,8 @@ export namespace Prisma {
       role: string
       createdAt: Date
       updatedAt: Date
-      isRestaurantHost: boolean
-      restaurantId: number | null
+      isWorkspaceHost: boolean
+      workspaceId: number | null
       profileImage: string | null
       bio: string | null
       address: string | null
@@ -3428,8 +3428,8 @@ export namespace Prisma {
    */
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    restaurant<T extends User$restaurantArgs<ExtArgs> = {}>(args?: Subset<T, User$restaurantArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    hostedRestaurant<T extends User$hostedRestaurantArgs<ExtArgs> = {}>(args?: Subset<T, User$hostedRestaurantArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    workspace<T extends User$workspaceArgs<ExtArgs> = {}>(args?: Subset<T, User$workspaceArgs<ExtArgs>>): Prisma__WorkspaceClient<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    hostedWorkspace<T extends User$hostedWorkspaceArgs<ExtArgs> = {}>(args?: Subset<T, User$hostedWorkspaceArgs<ExtArgs>>): Prisma__WorkspaceClient<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     listings<T extends User$listingsArgs<ExtArgs> = {}>(args?: Subset<T, User$listingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     bookings<T extends User$bookingsArgs<ExtArgs> = {}>(args?: Subset<T, User$bookingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BookingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     reviews<T extends User$reviewsArgs<ExtArgs> = {}>(args?: Subset<T, User$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -3476,8 +3476,8 @@ export namespace Prisma {
     readonly role: FieldRef<"User", 'String'>
     readonly createdAt: FieldRef<"User", 'DateTime'>
     readonly updatedAt: FieldRef<"User", 'DateTime'>
-    readonly isRestaurantHost: FieldRef<"User", 'Boolean'>
-    readonly restaurantId: FieldRef<"User", 'Int'>
+    readonly isWorkspaceHost: FieldRef<"User", 'Boolean'>
+    readonly workspaceId: FieldRef<"User", 'Int'>
     readonly profileImage: FieldRef<"User", 'String'>
     readonly bio: FieldRef<"User", 'String'>
     readonly address: FieldRef<"User", 'String'>
@@ -3881,41 +3881,41 @@ export namespace Prisma {
   }
 
   /**
-   * User.restaurant
+   * User.workspace
    */
-  export type User$restaurantArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$workspaceArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Workspace
      */
-    select?: RestaurantSelect<ExtArgs> | null
+    select?: WorkspaceSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Workspace
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: WorkspaceOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantInclude<ExtArgs> | null
-    where?: RestaurantWhereInput
+    include?: WorkspaceInclude<ExtArgs> | null
+    where?: WorkspaceWhereInput
   }
 
   /**
-   * User.hostedRestaurant
+   * User.hostedWorkspace
    */
-  export type User$hostedRestaurantArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$hostedWorkspaceArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Workspace
      */
-    select?: RestaurantSelect<ExtArgs> | null
+    select?: WorkspaceSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Workspace
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: WorkspaceOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantInclude<ExtArgs> | null
-    where?: RestaurantWhereInput
+    include?: WorkspaceInclude<ExtArgs> | null
+    where?: WorkspaceWhereInput
   }
 
   /**
@@ -4149,51 +4149,30 @@ export namespace Prisma {
 
 
   /**
-   * Model Restaurant
+   * Model Workspace
    */
 
-  export type AggregateRestaurant = {
-    _count: RestaurantCountAggregateOutputType | null
-    _avg: RestaurantAvgAggregateOutputType | null
-    _sum: RestaurantSumAggregateOutputType | null
-    _min: RestaurantMinAggregateOutputType | null
-    _max: RestaurantMaxAggregateOutputType | null
+  export type AggregateWorkspace = {
+    _count: WorkspaceCountAggregateOutputType | null
+    _avg: WorkspaceAvgAggregateOutputType | null
+    _sum: WorkspaceSumAggregateOutputType | null
+    _min: WorkspaceMinAggregateOutputType | null
+    _max: WorkspaceMaxAggregateOutputType | null
   }
 
-  export type RestaurantAvgAggregateOutputType = {
+  export type WorkspaceAvgAggregateOutputType = {
     id: number | null
     rating: number | null
     hostId: number | null
   }
 
-  export type RestaurantSumAggregateOutputType = {
+  export type WorkspaceSumAggregateOutputType = {
     id: number | null
     rating: number | null
     hostId: number | null
   }
 
-  export type RestaurantMinAggregateOutputType = {
-    id: number | null
-    name: string | null
-    description: string | null
-    address: string | null
-    city: string | null
-    state: string | null
-    country: string | null
-    zipCode: string | null
-    phone: string | null
-    email: string | null
-    website: string | null
-    cuisine: string | null
-    priceRange: string | null
-    rating: number | null
-    isActive: boolean | null
-    createdAt: Date | null
-    updatedAt: Date | null
-    hostId: number | null
-  }
-
-  export type RestaurantMaxAggregateOutputType = {
+  export type WorkspaceMinAggregateOutputType = {
     id: number | null
     name: string | null
     description: string | null
@@ -4205,7 +4184,7 @@ export namespace Prisma {
     phone: string | null
     email: string | null
     website: string | null
-    cuisine: string | null
+    workspaceType: string | null
     priceRange: string | null
     rating: number | null
     isActive: boolean | null
@@ -4214,7 +4193,28 @@ export namespace Prisma {
     hostId: number | null
   }
 
-  export type RestaurantCountAggregateOutputType = {
+  export type WorkspaceMaxAggregateOutputType = {
+    id: number | null
+    name: string | null
+    description: string | null
+    address: string | null
+    city: string | null
+    state: string | null
+    country: string | null
+    zipCode: string | null
+    phone: string | null
+    email: string | null
+    website: string | null
+    workspaceType: string | null
+    priceRange: string | null
+    rating: number | null
+    isActive: boolean | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    hostId: number | null
+  }
+
+  export type WorkspaceCountAggregateOutputType = {
     id: number
     name: number
     description: number
@@ -4226,7 +4226,7 @@ export namespace Prisma {
     phone: number
     email: number
     website: number
-    cuisine: number
+    workspaceType: number
     priceRange: number
     rating: number
     isActive: number
@@ -4237,19 +4237,19 @@ export namespace Prisma {
   }
 
 
-  export type RestaurantAvgAggregateInputType = {
+  export type WorkspaceAvgAggregateInputType = {
     id?: true
     rating?: true
     hostId?: true
   }
 
-  export type RestaurantSumAggregateInputType = {
+  export type WorkspaceSumAggregateInputType = {
     id?: true
     rating?: true
     hostId?: true
   }
 
-  export type RestaurantMinAggregateInputType = {
+  export type WorkspaceMinAggregateInputType = {
     id?: true
     name?: true
     description?: true
@@ -4261,7 +4261,7 @@ export namespace Prisma {
     phone?: true
     email?: true
     website?: true
-    cuisine?: true
+    workspaceType?: true
     priceRange?: true
     rating?: true
     isActive?: true
@@ -4270,7 +4270,7 @@ export namespace Prisma {
     hostId?: true
   }
 
-  export type RestaurantMaxAggregateInputType = {
+  export type WorkspaceMaxAggregateInputType = {
     id?: true
     name?: true
     description?: true
@@ -4282,7 +4282,7 @@ export namespace Prisma {
     phone?: true
     email?: true
     website?: true
-    cuisine?: true
+    workspaceType?: true
     priceRange?: true
     rating?: true
     isActive?: true
@@ -4291,7 +4291,7 @@ export namespace Prisma {
     hostId?: true
   }
 
-  export type RestaurantCountAggregateInputType = {
+  export type WorkspaceCountAggregateInputType = {
     id?: true
     name?: true
     description?: true
@@ -4303,7 +4303,7 @@ export namespace Prisma {
     phone?: true
     email?: true
     website?: true
-    cuisine?: true
+    workspaceType?: true
     priceRange?: true
     rating?: true
     isActive?: true
@@ -4313,93 +4313,93 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type RestaurantAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Restaurant to aggregate.
+     * Filter which Workspace to aggregate.
      */
-    where?: RestaurantWhereInput
+    where?: WorkspaceWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Restaurants to fetch.
+     * Determine the order of Workspaces to fetch.
      */
-    orderBy?: RestaurantOrderByWithRelationInput | RestaurantOrderByWithRelationInput[]
+    orderBy?: WorkspaceOrderByWithRelationInput | WorkspaceOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: RestaurantWhereUniqueInput
+    cursor?: WorkspaceWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Restaurants from the position of the cursor.
+     * Take `±n` Workspaces from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Restaurants.
+     * Skip the first `n` Workspaces.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Restaurants
+     * Count returned Workspaces
     **/
-    _count?: true | RestaurantCountAggregateInputType
+    _count?: true | WorkspaceCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: RestaurantAvgAggregateInputType
+    _avg?: WorkspaceAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: RestaurantSumAggregateInputType
+    _sum?: WorkspaceSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: RestaurantMinAggregateInputType
+    _min?: WorkspaceMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: RestaurantMaxAggregateInputType
+    _max?: WorkspaceMaxAggregateInputType
   }
 
-  export type GetRestaurantAggregateType<T extends RestaurantAggregateArgs> = {
-        [P in keyof T & keyof AggregateRestaurant]: P extends '_count' | 'count'
+  export type GetWorkspaceAggregateType<T extends WorkspaceAggregateArgs> = {
+        [P in keyof T & keyof AggregateWorkspace]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateRestaurant[P]>
-      : GetScalarType<T[P], AggregateRestaurant[P]>
+        : GetScalarType<T[P], AggregateWorkspace[P]>
+      : GetScalarType<T[P], AggregateWorkspace[P]>
   }
 
 
 
 
-  export type RestaurantGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: RestaurantWhereInput
-    orderBy?: RestaurantOrderByWithAggregationInput | RestaurantOrderByWithAggregationInput[]
-    by: RestaurantScalarFieldEnum[] | RestaurantScalarFieldEnum
-    having?: RestaurantScalarWhereWithAggregatesInput
+  export type WorkspaceGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: WorkspaceWhereInput
+    orderBy?: WorkspaceOrderByWithAggregationInput | WorkspaceOrderByWithAggregationInput[]
+    by: WorkspaceScalarFieldEnum[] | WorkspaceScalarFieldEnum
+    having?: WorkspaceScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: RestaurantCountAggregateInputType | true
-    _avg?: RestaurantAvgAggregateInputType
-    _sum?: RestaurantSumAggregateInputType
-    _min?: RestaurantMinAggregateInputType
-    _max?: RestaurantMaxAggregateInputType
+    _count?: WorkspaceCountAggregateInputType | true
+    _avg?: WorkspaceAvgAggregateInputType
+    _sum?: WorkspaceSumAggregateInputType
+    _min?: WorkspaceMinAggregateInputType
+    _max?: WorkspaceMaxAggregateInputType
   }
 
-  export type RestaurantGroupByOutputType = {
+  export type WorkspaceGroupByOutputType = {
     id: number
     name: string
     description: string | null
@@ -4411,35 +4411,35 @@ export namespace Prisma {
     phone: string | null
     email: string | null
     website: string | null
-    cuisine: string | null
+    workspaceType: string | null
     priceRange: string | null
     rating: number | null
     isActive: boolean
     createdAt: Date
     updatedAt: Date
     hostId: number
-    _count: RestaurantCountAggregateOutputType | null
-    _avg: RestaurantAvgAggregateOutputType | null
-    _sum: RestaurantSumAggregateOutputType | null
-    _min: RestaurantMinAggregateOutputType | null
-    _max: RestaurantMaxAggregateOutputType | null
+    _count: WorkspaceCountAggregateOutputType | null
+    _avg: WorkspaceAvgAggregateOutputType | null
+    _sum: WorkspaceSumAggregateOutputType | null
+    _min: WorkspaceMinAggregateOutputType | null
+    _max: WorkspaceMaxAggregateOutputType | null
   }
 
-  type GetRestaurantGroupByPayload<T extends RestaurantGroupByArgs> = Prisma.PrismaPromise<
+  type GetWorkspaceGroupByPayload<T extends WorkspaceGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<RestaurantGroupByOutputType, T['by']> &
+      PickEnumerable<WorkspaceGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof RestaurantGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof WorkspaceGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], RestaurantGroupByOutputType[P]>
-            : GetScalarType<T[P], RestaurantGroupByOutputType[P]>
+              : GetScalarType<T[P], WorkspaceGroupByOutputType[P]>
+            : GetScalarType<T[P], WorkspaceGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type RestaurantSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type WorkspaceSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     description?: boolean
@@ -4451,7 +4451,7 @@ export namespace Prisma {
     phone?: boolean
     email?: boolean
     website?: boolean
-    cuisine?: boolean
+    workspaceType?: boolean
     priceRange?: boolean
     rating?: boolean
     isActive?: boolean
@@ -4459,14 +4459,14 @@ export namespace Prisma {
     updatedAt?: boolean
     hostId?: boolean
     host?: boolean | UserDefaultArgs<ExtArgs>
-    users?: boolean | Restaurant$usersArgs<ExtArgs>
-    listings?: boolean | Restaurant$listingsArgs<ExtArgs>
-    images?: boolean | Restaurant$imagesArgs<ExtArgs>
-    operatingHours?: boolean | Restaurant$operatingHoursArgs<ExtArgs>
-    _count?: boolean | RestaurantCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["restaurant"]>
+    users?: boolean | Workspace$usersArgs<ExtArgs>
+    listings?: boolean | Workspace$listingsArgs<ExtArgs>
+    images?: boolean | Workspace$imagesArgs<ExtArgs>
+    operatingHours?: boolean | Workspace$operatingHoursArgs<ExtArgs>
+    _count?: boolean | WorkspaceCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["workspace"]>
 
-  export type RestaurantSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type WorkspaceSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     description?: boolean
@@ -4478,7 +4478,7 @@ export namespace Prisma {
     phone?: boolean
     email?: boolean
     website?: boolean
-    cuisine?: boolean
+    workspaceType?: boolean
     priceRange?: boolean
     rating?: boolean
     isActive?: boolean
@@ -4486,9 +4486,9 @@ export namespace Prisma {
     updatedAt?: boolean
     hostId?: boolean
     host?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["restaurant"]>
+  }, ExtArgs["result"]["workspace"]>
 
-  export type RestaurantSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type WorkspaceSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     description?: boolean
@@ -4500,7 +4500,7 @@ export namespace Prisma {
     phone?: boolean
     email?: boolean
     website?: boolean
-    cuisine?: boolean
+    workspaceType?: boolean
     priceRange?: boolean
     rating?: boolean
     isActive?: boolean
@@ -4508,9 +4508,9 @@ export namespace Prisma {
     updatedAt?: boolean
     hostId?: boolean
     host?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["restaurant"]>
+  }, ExtArgs["result"]["workspace"]>
 
-  export type RestaurantSelectScalar = {
+  export type WorkspaceSelectScalar = {
     id?: boolean
     name?: boolean
     description?: boolean
@@ -4522,7 +4522,7 @@ export namespace Prisma {
     phone?: boolean
     email?: boolean
     website?: boolean
-    cuisine?: boolean
+    workspaceType?: boolean
     priceRange?: boolean
     rating?: boolean
     isActive?: boolean
@@ -4531,29 +4531,29 @@ export namespace Prisma {
     hostId?: boolean
   }
 
-  export type RestaurantOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "address" | "city" | "state" | "country" | "zipCode" | "phone" | "email" | "website" | "cuisine" | "priceRange" | "rating" | "isActive" | "createdAt" | "updatedAt" | "hostId", ExtArgs["result"]["restaurant"]>
-  export type RestaurantInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "address" | "city" | "state" | "country" | "zipCode" | "phone" | "email" | "website" | "workspaceType" | "priceRange" | "rating" | "isActive" | "createdAt" | "updatedAt" | "hostId", ExtArgs["result"]["workspace"]>
+  export type WorkspaceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     host?: boolean | UserDefaultArgs<ExtArgs>
-    users?: boolean | Restaurant$usersArgs<ExtArgs>
-    listings?: boolean | Restaurant$listingsArgs<ExtArgs>
-    images?: boolean | Restaurant$imagesArgs<ExtArgs>
-    operatingHours?: boolean | Restaurant$operatingHoursArgs<ExtArgs>
-    _count?: boolean | RestaurantCountOutputTypeDefaultArgs<ExtArgs>
+    users?: boolean | Workspace$usersArgs<ExtArgs>
+    listings?: boolean | Workspace$listingsArgs<ExtArgs>
+    images?: boolean | Workspace$imagesArgs<ExtArgs>
+    operatingHours?: boolean | Workspace$operatingHoursArgs<ExtArgs>
+    _count?: boolean | WorkspaceCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type RestaurantIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     host?: boolean | UserDefaultArgs<ExtArgs>
   }
-  export type RestaurantIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     host?: boolean | UserDefaultArgs<ExtArgs>
   }
 
-  export type $RestaurantPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Restaurant"
+  export type $WorkspacePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Workspace"
     objects: {
       host: Prisma.$UserPayload<ExtArgs>
       users: Prisma.$UserPayload<ExtArgs>[]
       listings: Prisma.$ListingPayload<ExtArgs>[]
-      images: Prisma.$RestaurantImagePayload<ExtArgs>[]
+      images: Prisma.$WorkspaceImagePayload<ExtArgs>[]
       operatingHours: Prisma.$OperatingHoursPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -4568,143 +4568,143 @@ export namespace Prisma {
       phone: string | null
       email: string | null
       website: string | null
-      cuisine: string | null
+      workspaceType: string | null
       priceRange: string | null
       rating: number | null
       isActive: boolean
       createdAt: Date
       updatedAt: Date
       hostId: number
-    }, ExtArgs["result"]["restaurant"]>
+    }, ExtArgs["result"]["workspace"]>
     composites: {}
   }
 
-  type RestaurantGetPayload<S extends boolean | null | undefined | RestaurantDefaultArgs> = $Result.GetResult<Prisma.$RestaurantPayload, S>
+  type WorkspaceGetPayload<S extends boolean | null | undefined | WorkspaceDefaultArgs> = $Result.GetResult<Prisma.$WorkspacePayload, S>
 
-  type RestaurantCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<RestaurantFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: RestaurantCountAggregateInputType | true
+  type WorkspaceCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<WorkspaceFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: WorkspaceCountAggregateInputType | true
     }
 
-  export interface RestaurantDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Restaurant'], meta: { name: 'Restaurant' } }
+  export interface WorkspaceDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Workspace'], meta: { name: 'Workspace' } }
     /**
-     * Find zero or one Restaurant that matches the filter.
-     * @param {RestaurantFindUniqueArgs} args - Arguments to find a Restaurant
+     * Find zero or one Workspace that matches the filter.
+     * @param {WorkspaceFindUniqueArgs} args - Arguments to find a Workspace
      * @example
-     * // Get one Restaurant
-     * const restaurant = await prisma.restaurant.findUnique({
+     * // Get one Workspace
+     * const workspace = await prisma.workspace.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends RestaurantFindUniqueArgs>(args: SelectSubset<T, RestaurantFindUniqueArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends WorkspaceFindUniqueArgs>(args: SelectSubset<T, WorkspaceFindUniqueArgs<ExtArgs>>): Prisma__WorkspaceClient<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Restaurant that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Workspace that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {RestaurantFindUniqueOrThrowArgs} args - Arguments to find a Restaurant
+     * @param {WorkspaceFindUniqueOrThrowArgs} args - Arguments to find a Workspace
      * @example
-     * // Get one Restaurant
-     * const restaurant = await prisma.restaurant.findUniqueOrThrow({
+     * // Get one Workspace
+     * const workspace = await prisma.workspace.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends RestaurantFindUniqueOrThrowArgs>(args: SelectSubset<T, RestaurantFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends WorkspaceFindUniqueOrThrowArgs>(args: SelectSubset<T, WorkspaceFindUniqueOrThrowArgs<ExtArgs>>): Prisma__WorkspaceClient<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Restaurant that matches the filter.
+     * Find the first Workspace that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RestaurantFindFirstArgs} args - Arguments to find a Restaurant
+     * @param {WorkspaceFindFirstArgs} args - Arguments to find a Workspace
      * @example
-     * // Get one Restaurant
-     * const restaurant = await prisma.restaurant.findFirst({
+     * // Get one Workspace
+     * const workspace = await prisma.workspace.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends RestaurantFindFirstArgs>(args?: SelectSubset<T, RestaurantFindFirstArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends WorkspaceFindFirstArgs>(args?: SelectSubset<T, WorkspaceFindFirstArgs<ExtArgs>>): Prisma__WorkspaceClient<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Restaurant that matches the filter or
+     * Find the first Workspace that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RestaurantFindFirstOrThrowArgs} args - Arguments to find a Restaurant
+     * @param {WorkspaceFindFirstOrThrowArgs} args - Arguments to find a Workspace
      * @example
-     * // Get one Restaurant
-     * const restaurant = await prisma.restaurant.findFirstOrThrow({
+     * // Get one Workspace
+     * const workspace = await prisma.workspace.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends RestaurantFindFirstOrThrowArgs>(args?: SelectSubset<T, RestaurantFindFirstOrThrowArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends WorkspaceFindFirstOrThrowArgs>(args?: SelectSubset<T, WorkspaceFindFirstOrThrowArgs<ExtArgs>>): Prisma__WorkspaceClient<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Restaurants that matches the filter.
+     * Find zero or more Workspaces that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RestaurantFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {WorkspaceFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Restaurants
-     * const restaurants = await prisma.restaurant.findMany()
+     * // Get all Workspaces
+     * const workspaces = await prisma.workspace.findMany()
      * 
-     * // Get first 10 Restaurants
-     * const restaurants = await prisma.restaurant.findMany({ take: 10 })
+     * // Get first 10 Workspaces
+     * const workspaces = await prisma.workspace.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const restaurantWithIdOnly = await prisma.restaurant.findMany({ select: { id: true } })
+     * const workspaceWithIdOnly = await prisma.workspace.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends RestaurantFindManyArgs>(args?: SelectSubset<T, RestaurantFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends WorkspaceFindManyArgs>(args?: SelectSubset<T, WorkspaceFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Restaurant.
-     * @param {RestaurantCreateArgs} args - Arguments to create a Restaurant.
+     * Create a Workspace.
+     * @param {WorkspaceCreateArgs} args - Arguments to create a Workspace.
      * @example
-     * // Create one Restaurant
-     * const Restaurant = await prisma.restaurant.create({
+     * // Create one Workspace
+     * const Workspace = await prisma.workspace.create({
      *   data: {
-     *     // ... data to create a Restaurant
+     *     // ... data to create a Workspace
      *   }
      * })
      * 
      */
-    create<T extends RestaurantCreateArgs>(args: SelectSubset<T, RestaurantCreateArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends WorkspaceCreateArgs>(args: SelectSubset<T, WorkspaceCreateArgs<ExtArgs>>): Prisma__WorkspaceClient<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Restaurants.
-     * @param {RestaurantCreateManyArgs} args - Arguments to create many Restaurants.
+     * Create many Workspaces.
+     * @param {WorkspaceCreateManyArgs} args - Arguments to create many Workspaces.
      * @example
-     * // Create many Restaurants
-     * const restaurant = await prisma.restaurant.createMany({
+     * // Create many Workspaces
+     * const workspace = await prisma.workspace.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends RestaurantCreateManyArgs>(args?: SelectSubset<T, RestaurantCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends WorkspaceCreateManyArgs>(args?: SelectSubset<T, WorkspaceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Restaurants and returns the data saved in the database.
-     * @param {RestaurantCreateManyAndReturnArgs} args - Arguments to create many Restaurants.
+     * Create many Workspaces and returns the data saved in the database.
+     * @param {WorkspaceCreateManyAndReturnArgs} args - Arguments to create many Workspaces.
      * @example
-     * // Create many Restaurants
-     * const restaurant = await prisma.restaurant.createManyAndReturn({
+     * // Create many Workspaces
+     * const workspace = await prisma.workspace.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Restaurants and only return the `id`
-     * const restaurantWithIdOnly = await prisma.restaurant.createManyAndReturn({
+     * // Create many Workspaces and only return the `id`
+     * const workspaceWithIdOnly = await prisma.workspace.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -4714,28 +4714,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends RestaurantCreateManyAndReturnArgs>(args?: SelectSubset<T, RestaurantCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends WorkspaceCreateManyAndReturnArgs>(args?: SelectSubset<T, WorkspaceCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Restaurant.
-     * @param {RestaurantDeleteArgs} args - Arguments to delete one Restaurant.
+     * Delete a Workspace.
+     * @param {WorkspaceDeleteArgs} args - Arguments to delete one Workspace.
      * @example
-     * // Delete one Restaurant
-     * const Restaurant = await prisma.restaurant.delete({
+     * // Delete one Workspace
+     * const Workspace = await prisma.workspace.delete({
      *   where: {
-     *     // ... filter to delete one Restaurant
+     *     // ... filter to delete one Workspace
      *   }
      * })
      * 
      */
-    delete<T extends RestaurantDeleteArgs>(args: SelectSubset<T, RestaurantDeleteArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends WorkspaceDeleteArgs>(args: SelectSubset<T, WorkspaceDeleteArgs<ExtArgs>>): Prisma__WorkspaceClient<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Restaurant.
-     * @param {RestaurantUpdateArgs} args - Arguments to update one Restaurant.
+     * Update one Workspace.
+     * @param {WorkspaceUpdateArgs} args - Arguments to update one Workspace.
      * @example
-     * // Update one Restaurant
-     * const restaurant = await prisma.restaurant.update({
+     * // Update one Workspace
+     * const workspace = await prisma.workspace.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -4745,30 +4745,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends RestaurantUpdateArgs>(args: SelectSubset<T, RestaurantUpdateArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends WorkspaceUpdateArgs>(args: SelectSubset<T, WorkspaceUpdateArgs<ExtArgs>>): Prisma__WorkspaceClient<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Restaurants.
-     * @param {RestaurantDeleteManyArgs} args - Arguments to filter Restaurants to delete.
+     * Delete zero or more Workspaces.
+     * @param {WorkspaceDeleteManyArgs} args - Arguments to filter Workspaces to delete.
      * @example
-     * // Delete a few Restaurants
-     * const { count } = await prisma.restaurant.deleteMany({
+     * // Delete a few Workspaces
+     * const { count } = await prisma.workspace.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends RestaurantDeleteManyArgs>(args?: SelectSubset<T, RestaurantDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends WorkspaceDeleteManyArgs>(args?: SelectSubset<T, WorkspaceDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Restaurants.
+     * Update zero or more Workspaces.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RestaurantUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {WorkspaceUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Restaurants
-     * const restaurant = await prisma.restaurant.updateMany({
+     * // Update many Workspaces
+     * const workspace = await prisma.workspace.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -4778,14 +4778,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends RestaurantUpdateManyArgs>(args: SelectSubset<T, RestaurantUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends WorkspaceUpdateManyArgs>(args: SelectSubset<T, WorkspaceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Restaurants and returns the data updated in the database.
-     * @param {RestaurantUpdateManyAndReturnArgs} args - Arguments to update many Restaurants.
+     * Update zero or more Workspaces and returns the data updated in the database.
+     * @param {WorkspaceUpdateManyAndReturnArgs} args - Arguments to update many Workspaces.
      * @example
-     * // Update many Restaurants
-     * const restaurant = await prisma.restaurant.updateManyAndReturn({
+     * // Update many Workspaces
+     * const workspace = await prisma.workspace.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -4794,8 +4794,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Restaurants and only return the `id`
-     * const restaurantWithIdOnly = await prisma.restaurant.updateManyAndReturn({
+     * // Update zero or more Workspaces and only return the `id`
+     * const workspaceWithIdOnly = await prisma.workspace.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -4808,56 +4808,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends RestaurantUpdateManyAndReturnArgs>(args: SelectSubset<T, RestaurantUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends WorkspaceUpdateManyAndReturnArgs>(args: SelectSubset<T, WorkspaceUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Restaurant.
-     * @param {RestaurantUpsertArgs} args - Arguments to update or create a Restaurant.
+     * Create or update one Workspace.
+     * @param {WorkspaceUpsertArgs} args - Arguments to update or create a Workspace.
      * @example
-     * // Update or create a Restaurant
-     * const restaurant = await prisma.restaurant.upsert({
+     * // Update or create a Workspace
+     * const workspace = await prisma.workspace.upsert({
      *   create: {
-     *     // ... data to create a Restaurant
+     *     // ... data to create a Workspace
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Restaurant we want to update
+     *     // ... the filter for the Workspace we want to update
      *   }
      * })
      */
-    upsert<T extends RestaurantUpsertArgs>(args: SelectSubset<T, RestaurantUpsertArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends WorkspaceUpsertArgs>(args: SelectSubset<T, WorkspaceUpsertArgs<ExtArgs>>): Prisma__WorkspaceClient<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Restaurants.
+     * Count the number of Workspaces.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RestaurantCountArgs} args - Arguments to filter Restaurants to count.
+     * @param {WorkspaceCountArgs} args - Arguments to filter Workspaces to count.
      * @example
-     * // Count the number of Restaurants
-     * const count = await prisma.restaurant.count({
+     * // Count the number of Workspaces
+     * const count = await prisma.workspace.count({
      *   where: {
-     *     // ... the filter for the Restaurants we want to count
+     *     // ... the filter for the Workspaces we want to count
      *   }
      * })
     **/
-    count<T extends RestaurantCountArgs>(
-      args?: Subset<T, RestaurantCountArgs>,
+    count<T extends WorkspaceCountArgs>(
+      args?: Subset<T, WorkspaceCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], RestaurantCountAggregateOutputType>
+          : GetScalarType<T['select'], WorkspaceCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Restaurant.
+     * Allows you to perform aggregations operations on a Workspace.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RestaurantAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {WorkspaceAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -4877,13 +4877,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends RestaurantAggregateArgs>(args: Subset<T, RestaurantAggregateArgs>): Prisma.PrismaPromise<GetRestaurantAggregateType<T>>
+    aggregate<T extends WorkspaceAggregateArgs>(args: Subset<T, WorkspaceAggregateArgs>): Prisma.PrismaPromise<GetWorkspaceAggregateType<T>>
 
     /**
-     * Group by Restaurant.
+     * Group by Workspace.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RestaurantGroupByArgs} args - Group by arguments.
+     * @param {WorkspaceGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -4898,14 +4898,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends RestaurantGroupByArgs,
+      T extends WorkspaceGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: RestaurantGroupByArgs['orderBy'] }
-        : { orderBy?: RestaurantGroupByArgs['orderBy'] },
+        ? { orderBy: WorkspaceGroupByArgs['orderBy'] }
+        : { orderBy?: WorkspaceGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -4954,26 +4954,26 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, RestaurantGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRestaurantGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, WorkspaceGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWorkspaceGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Restaurant model
+   * Fields of the Workspace model
    */
-  readonly fields: RestaurantFieldRefs;
+  readonly fields: WorkspaceFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Restaurant.
+   * The delegate class that acts as a "Promise-like" for Workspace.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__RestaurantClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__WorkspaceClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     host<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    users<T extends Restaurant$usersArgs<ExtArgs> = {}>(args?: Subset<T, Restaurant$usersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    listings<T extends Restaurant$listingsArgs<ExtArgs> = {}>(args?: Subset<T, Restaurant$listingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    images<T extends Restaurant$imagesArgs<ExtArgs> = {}>(args?: Subset<T, Restaurant$imagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RestaurantImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    operatingHours<T extends Restaurant$operatingHoursArgs<ExtArgs> = {}>(args?: Subset<T, Restaurant$operatingHoursArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OperatingHoursPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    users<T extends Workspace$usersArgs<ExtArgs> = {}>(args?: Subset<T, Workspace$usersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    listings<T extends Workspace$listingsArgs<ExtArgs> = {}>(args?: Subset<T, Workspace$listingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    images<T extends Workspace$imagesArgs<ExtArgs> = {}>(args?: Subset<T, Workspace$imagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WorkspaceImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    operatingHours<T extends Workspace$operatingHoursArgs<ExtArgs> = {}>(args?: Subset<T, Workspace$operatingHoursArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OperatingHoursPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5000,426 +5000,426 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Restaurant model
+   * Fields of the Workspace model
    */
-  interface RestaurantFieldRefs {
-    readonly id: FieldRef<"Restaurant", 'Int'>
-    readonly name: FieldRef<"Restaurant", 'String'>
-    readonly description: FieldRef<"Restaurant", 'String'>
-    readonly address: FieldRef<"Restaurant", 'String'>
-    readonly city: FieldRef<"Restaurant", 'String'>
-    readonly state: FieldRef<"Restaurant", 'String'>
-    readonly country: FieldRef<"Restaurant", 'String'>
-    readonly zipCode: FieldRef<"Restaurant", 'String'>
-    readonly phone: FieldRef<"Restaurant", 'String'>
-    readonly email: FieldRef<"Restaurant", 'String'>
-    readonly website: FieldRef<"Restaurant", 'String'>
-    readonly cuisine: FieldRef<"Restaurant", 'String'>
-    readonly priceRange: FieldRef<"Restaurant", 'String'>
-    readonly rating: FieldRef<"Restaurant", 'Float'>
-    readonly isActive: FieldRef<"Restaurant", 'Boolean'>
-    readonly createdAt: FieldRef<"Restaurant", 'DateTime'>
-    readonly updatedAt: FieldRef<"Restaurant", 'DateTime'>
-    readonly hostId: FieldRef<"Restaurant", 'Int'>
+  interface WorkspaceFieldRefs {
+    readonly id: FieldRef<"Workspace", 'Int'>
+    readonly name: FieldRef<"Workspace", 'String'>
+    readonly description: FieldRef<"Workspace", 'String'>
+    readonly address: FieldRef<"Workspace", 'String'>
+    readonly city: FieldRef<"Workspace", 'String'>
+    readonly state: FieldRef<"Workspace", 'String'>
+    readonly country: FieldRef<"Workspace", 'String'>
+    readonly zipCode: FieldRef<"Workspace", 'String'>
+    readonly phone: FieldRef<"Workspace", 'String'>
+    readonly email: FieldRef<"Workspace", 'String'>
+    readonly website: FieldRef<"Workspace", 'String'>
+    readonly workspaceType: FieldRef<"Workspace", 'String'>
+    readonly priceRange: FieldRef<"Workspace", 'String'>
+    readonly rating: FieldRef<"Workspace", 'Float'>
+    readonly isActive: FieldRef<"Workspace", 'Boolean'>
+    readonly createdAt: FieldRef<"Workspace", 'DateTime'>
+    readonly updatedAt: FieldRef<"Workspace", 'DateTime'>
+    readonly hostId: FieldRef<"Workspace", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * Restaurant findUnique
+   * Workspace findUnique
    */
-  export type RestaurantFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Workspace
      */
-    select?: RestaurantSelect<ExtArgs> | null
+    select?: WorkspaceSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Workspace
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: WorkspaceOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantInclude<ExtArgs> | null
+    include?: WorkspaceInclude<ExtArgs> | null
     /**
-     * Filter, which Restaurant to fetch.
+     * Filter, which Workspace to fetch.
      */
-    where: RestaurantWhereUniqueInput
+    where: WorkspaceWhereUniqueInput
   }
 
   /**
-   * Restaurant findUniqueOrThrow
+   * Workspace findUniqueOrThrow
    */
-  export type RestaurantFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Workspace
      */
-    select?: RestaurantSelect<ExtArgs> | null
+    select?: WorkspaceSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Workspace
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: WorkspaceOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantInclude<ExtArgs> | null
+    include?: WorkspaceInclude<ExtArgs> | null
     /**
-     * Filter, which Restaurant to fetch.
+     * Filter, which Workspace to fetch.
      */
-    where: RestaurantWhereUniqueInput
+    where: WorkspaceWhereUniqueInput
   }
 
   /**
-   * Restaurant findFirst
+   * Workspace findFirst
    */
-  export type RestaurantFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Workspace
      */
-    select?: RestaurantSelect<ExtArgs> | null
+    select?: WorkspaceSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Workspace
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: WorkspaceOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantInclude<ExtArgs> | null
+    include?: WorkspaceInclude<ExtArgs> | null
     /**
-     * Filter, which Restaurant to fetch.
+     * Filter, which Workspace to fetch.
      */
-    where?: RestaurantWhereInput
+    where?: WorkspaceWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Restaurants to fetch.
+     * Determine the order of Workspaces to fetch.
      */
-    orderBy?: RestaurantOrderByWithRelationInput | RestaurantOrderByWithRelationInput[]
+    orderBy?: WorkspaceOrderByWithRelationInput | WorkspaceOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Restaurants.
+     * Sets the position for searching for Workspaces.
      */
-    cursor?: RestaurantWhereUniqueInput
+    cursor?: WorkspaceWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Restaurants from the position of the cursor.
+     * Take `±n` Workspaces from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Restaurants.
+     * Skip the first `n` Workspaces.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Restaurants.
+     * Filter by unique combinations of Workspaces.
      */
-    distinct?: RestaurantScalarFieldEnum | RestaurantScalarFieldEnum[]
+    distinct?: WorkspaceScalarFieldEnum | WorkspaceScalarFieldEnum[]
   }
 
   /**
-   * Restaurant findFirstOrThrow
+   * Workspace findFirstOrThrow
    */
-  export type RestaurantFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Workspace
      */
-    select?: RestaurantSelect<ExtArgs> | null
+    select?: WorkspaceSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Workspace
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: WorkspaceOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantInclude<ExtArgs> | null
+    include?: WorkspaceInclude<ExtArgs> | null
     /**
-     * Filter, which Restaurant to fetch.
+     * Filter, which Workspace to fetch.
      */
-    where?: RestaurantWhereInput
+    where?: WorkspaceWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Restaurants to fetch.
+     * Determine the order of Workspaces to fetch.
      */
-    orderBy?: RestaurantOrderByWithRelationInput | RestaurantOrderByWithRelationInput[]
+    orderBy?: WorkspaceOrderByWithRelationInput | WorkspaceOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Restaurants.
+     * Sets the position for searching for Workspaces.
      */
-    cursor?: RestaurantWhereUniqueInput
+    cursor?: WorkspaceWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Restaurants from the position of the cursor.
+     * Take `±n` Workspaces from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Restaurants.
+     * Skip the first `n` Workspaces.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Restaurants.
+     * Filter by unique combinations of Workspaces.
      */
-    distinct?: RestaurantScalarFieldEnum | RestaurantScalarFieldEnum[]
+    distinct?: WorkspaceScalarFieldEnum | WorkspaceScalarFieldEnum[]
   }
 
   /**
-   * Restaurant findMany
+   * Workspace findMany
    */
-  export type RestaurantFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Workspace
      */
-    select?: RestaurantSelect<ExtArgs> | null
+    select?: WorkspaceSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Workspace
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: WorkspaceOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantInclude<ExtArgs> | null
+    include?: WorkspaceInclude<ExtArgs> | null
     /**
-     * Filter, which Restaurants to fetch.
+     * Filter, which Workspaces to fetch.
      */
-    where?: RestaurantWhereInput
+    where?: WorkspaceWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Restaurants to fetch.
+     * Determine the order of Workspaces to fetch.
      */
-    orderBy?: RestaurantOrderByWithRelationInput | RestaurantOrderByWithRelationInput[]
+    orderBy?: WorkspaceOrderByWithRelationInput | WorkspaceOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Restaurants.
+     * Sets the position for listing Workspaces.
      */
-    cursor?: RestaurantWhereUniqueInput
+    cursor?: WorkspaceWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Restaurants from the position of the cursor.
+     * Take `±n` Workspaces from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Restaurants.
+     * Skip the first `n` Workspaces.
      */
     skip?: number
-    distinct?: RestaurantScalarFieldEnum | RestaurantScalarFieldEnum[]
+    distinct?: WorkspaceScalarFieldEnum | WorkspaceScalarFieldEnum[]
   }
 
   /**
-   * Restaurant create
+   * Workspace create
    */
-  export type RestaurantCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Workspace
      */
-    select?: RestaurantSelect<ExtArgs> | null
+    select?: WorkspaceSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Workspace
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: WorkspaceOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantInclude<ExtArgs> | null
+    include?: WorkspaceInclude<ExtArgs> | null
     /**
-     * The data needed to create a Restaurant.
+     * The data needed to create a Workspace.
      */
-    data: XOR<RestaurantCreateInput, RestaurantUncheckedCreateInput>
+    data: XOR<WorkspaceCreateInput, WorkspaceUncheckedCreateInput>
   }
 
   /**
-   * Restaurant createMany
+   * Workspace createMany
    */
-  export type RestaurantCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Restaurants.
+     * The data used to create many Workspaces.
      */
-    data: RestaurantCreateManyInput | RestaurantCreateManyInput[]
+    data: WorkspaceCreateManyInput | WorkspaceCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Restaurant createManyAndReturn
+   * Workspace createManyAndReturn
    */
-  export type RestaurantCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Workspace
      */
-    select?: RestaurantSelectCreateManyAndReturn<ExtArgs> | null
+    select?: WorkspaceSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Workspace
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: WorkspaceOmit<ExtArgs> | null
     /**
-     * The data used to create many Restaurants.
+     * The data used to create many Workspaces.
      */
-    data: RestaurantCreateManyInput | RestaurantCreateManyInput[]
+    data: WorkspaceCreateManyInput | WorkspaceCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: WorkspaceIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Restaurant update
+   * Workspace update
    */
-  export type RestaurantUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Workspace
      */
-    select?: RestaurantSelect<ExtArgs> | null
+    select?: WorkspaceSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Workspace
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: WorkspaceOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantInclude<ExtArgs> | null
+    include?: WorkspaceInclude<ExtArgs> | null
     /**
-     * The data needed to update a Restaurant.
+     * The data needed to update a Workspace.
      */
-    data: XOR<RestaurantUpdateInput, RestaurantUncheckedUpdateInput>
+    data: XOR<WorkspaceUpdateInput, WorkspaceUncheckedUpdateInput>
     /**
-     * Choose, which Restaurant to update.
+     * Choose, which Workspace to update.
      */
-    where: RestaurantWhereUniqueInput
+    where: WorkspaceWhereUniqueInput
   }
 
   /**
-   * Restaurant updateMany
+   * Workspace updateMany
    */
-  export type RestaurantUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Restaurants.
+     * The data used to update Workspaces.
      */
-    data: XOR<RestaurantUpdateManyMutationInput, RestaurantUncheckedUpdateManyInput>
+    data: XOR<WorkspaceUpdateManyMutationInput, WorkspaceUncheckedUpdateManyInput>
     /**
-     * Filter which Restaurants to update
+     * Filter which Workspaces to update
      */
-    where?: RestaurantWhereInput
+    where?: WorkspaceWhereInput
     /**
-     * Limit how many Restaurants to update.
+     * Limit how many Workspaces to update.
      */
     limit?: number
   }
 
   /**
-   * Restaurant updateManyAndReturn
+   * Workspace updateManyAndReturn
    */
-  export type RestaurantUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Workspace
      */
-    select?: RestaurantSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: WorkspaceSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Workspace
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: WorkspaceOmit<ExtArgs> | null
     /**
-     * The data used to update Restaurants.
+     * The data used to update Workspaces.
      */
-    data: XOR<RestaurantUpdateManyMutationInput, RestaurantUncheckedUpdateManyInput>
+    data: XOR<WorkspaceUpdateManyMutationInput, WorkspaceUncheckedUpdateManyInput>
     /**
-     * Filter which Restaurants to update
+     * Filter which Workspaces to update
      */
-    where?: RestaurantWhereInput
+    where?: WorkspaceWhereInput
     /**
-     * Limit how many Restaurants to update.
+     * Limit how many Workspaces to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: WorkspaceIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Restaurant upsert
+   * Workspace upsert
    */
-  export type RestaurantUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Workspace
      */
-    select?: RestaurantSelect<ExtArgs> | null
+    select?: WorkspaceSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Workspace
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: WorkspaceOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantInclude<ExtArgs> | null
+    include?: WorkspaceInclude<ExtArgs> | null
     /**
-     * The filter to search for the Restaurant to update in case it exists.
+     * The filter to search for the Workspace to update in case it exists.
      */
-    where: RestaurantWhereUniqueInput
+    where: WorkspaceWhereUniqueInput
     /**
-     * In case the Restaurant found by the `where` argument doesn't exist, create a new Restaurant with this data.
+     * In case the Workspace found by the `where` argument doesn't exist, create a new Workspace with this data.
      */
-    create: XOR<RestaurantCreateInput, RestaurantUncheckedCreateInput>
+    create: XOR<WorkspaceCreateInput, WorkspaceUncheckedCreateInput>
     /**
-     * In case the Restaurant was found with the provided `where` argument, update it with this data.
+     * In case the Workspace was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<RestaurantUpdateInput, RestaurantUncheckedUpdateInput>
+    update: XOR<WorkspaceUpdateInput, WorkspaceUncheckedUpdateInput>
   }
 
   /**
-   * Restaurant delete
+   * Workspace delete
    */
-  export type RestaurantDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Workspace
      */
-    select?: RestaurantSelect<ExtArgs> | null
+    select?: WorkspaceSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Workspace
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: WorkspaceOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantInclude<ExtArgs> | null
+    include?: WorkspaceInclude<ExtArgs> | null
     /**
-     * Filter which Restaurant to delete.
+     * Filter which Workspace to delete.
      */
-    where: RestaurantWhereUniqueInput
+    where: WorkspaceWhereUniqueInput
   }
 
   /**
-   * Restaurant deleteMany
+   * Workspace deleteMany
    */
-  export type RestaurantDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Restaurants to delete
+     * Filter which Workspaces to delete
      */
-    where?: RestaurantWhereInput
+    where?: WorkspaceWhereInput
     /**
-     * Limit how many Restaurants to delete.
+     * Limit how many Workspaces to delete.
      */
     limit?: number
   }
 
   /**
-   * Restaurant.users
+   * Workspace.users
    */
-  export type Restaurant$usersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Workspace$usersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the User
      */
@@ -5441,9 +5441,9 @@ export namespace Prisma {
   }
 
   /**
-   * Restaurant.listings
+   * Workspace.listings
    */
-  export type Restaurant$listingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Workspace$listingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Listing
      */
@@ -5465,33 +5465,33 @@ export namespace Prisma {
   }
 
   /**
-   * Restaurant.images
+   * Workspace.images
    */
-  export type Restaurant$imagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Workspace$imagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the RestaurantImage
+     * Select specific fields to fetch from the WorkspaceImage
      */
-    select?: RestaurantImageSelect<ExtArgs> | null
+    select?: WorkspaceImageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the RestaurantImage
+     * Omit specific fields from the WorkspaceImage
      */
-    omit?: RestaurantImageOmit<ExtArgs> | null
+    omit?: WorkspaceImageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantImageInclude<ExtArgs> | null
-    where?: RestaurantImageWhereInput
-    orderBy?: RestaurantImageOrderByWithRelationInput | RestaurantImageOrderByWithRelationInput[]
-    cursor?: RestaurantImageWhereUniqueInput
+    include?: WorkspaceImageInclude<ExtArgs> | null
+    where?: WorkspaceImageWhereInput
+    orderBy?: WorkspaceImageOrderByWithRelationInput | WorkspaceImageOrderByWithRelationInput[]
+    cursor?: WorkspaceImageWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: RestaurantImageScalarFieldEnum | RestaurantImageScalarFieldEnum[]
+    distinct?: WorkspaceImageScalarFieldEnum | WorkspaceImageScalarFieldEnum[]
   }
 
   /**
-   * Restaurant.operatingHours
+   * Workspace.operatingHours
    */
-  export type Restaurant$operatingHoursArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Workspace$operatingHoursArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the OperatingHours
      */
@@ -5513,21 +5513,21 @@ export namespace Prisma {
   }
 
   /**
-   * Restaurant without action
+   * Workspace without action
    */
-  export type RestaurantDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Workspace
      */
-    select?: RestaurantSelect<ExtArgs> | null
+    select?: WorkspaceSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Workspace
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: WorkspaceOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantInclude<ExtArgs> | null
+    include?: WorkspaceInclude<ExtArgs> | null
   }
 
 
@@ -5548,7 +5548,7 @@ export namespace Prisma {
     capacity: number | null
     pricePerHour: number | null
     pricePerDay: number | null
-    restaurantId: number | null
+    workspaceId: number | null
     hostId: number | null
   }
 
@@ -5557,7 +5557,7 @@ export namespace Prisma {
     capacity: number | null
     pricePerHour: number | null
     pricePerDay: number | null
-    restaurantId: number | null
+    workspaceId: number | null
     hostId: number | null
   }
 
@@ -5572,7 +5572,7 @@ export namespace Prisma {
     isActive: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
-    restaurantId: number | null
+    workspaceId: number | null
     hostId: number | null
   }
 
@@ -5587,7 +5587,7 @@ export namespace Prisma {
     isActive: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
-    restaurantId: number | null
+    workspaceId: number | null
     hostId: number | null
   }
 
@@ -5602,7 +5602,7 @@ export namespace Prisma {
     isActive: number
     createdAt: number
     updatedAt: number
-    restaurantId: number
+    workspaceId: number
     hostId: number
     _all: number
   }
@@ -5613,7 +5613,7 @@ export namespace Prisma {
     capacity?: true
     pricePerHour?: true
     pricePerDay?: true
-    restaurantId?: true
+    workspaceId?: true
     hostId?: true
   }
 
@@ -5622,7 +5622,7 @@ export namespace Prisma {
     capacity?: true
     pricePerHour?: true
     pricePerDay?: true
-    restaurantId?: true
+    workspaceId?: true
     hostId?: true
   }
 
@@ -5637,7 +5637,7 @@ export namespace Prisma {
     isActive?: true
     createdAt?: true
     updatedAt?: true
-    restaurantId?: true
+    workspaceId?: true
     hostId?: true
   }
 
@@ -5652,7 +5652,7 @@ export namespace Prisma {
     isActive?: true
     createdAt?: true
     updatedAt?: true
-    restaurantId?: true
+    workspaceId?: true
     hostId?: true
   }
 
@@ -5667,7 +5667,7 @@ export namespace Prisma {
     isActive?: true
     createdAt?: true
     updatedAt?: true
-    restaurantId?: true
+    workspaceId?: true
     hostId?: true
     _all?: true
   }
@@ -5769,7 +5769,7 @@ export namespace Prisma {
     isActive: boolean
     createdAt: Date
     updatedAt: Date
-    restaurantId: number | null
+    workspaceId: number | null
     hostId: number
     _count: ListingCountAggregateOutputType | null
     _avg: ListingAvgAggregateOutputType | null
@@ -5803,9 +5803,9 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    restaurantId?: boolean
+    workspaceId?: boolean
     hostId?: boolean
-    restaurant?: boolean | Listing$restaurantArgs<ExtArgs>
+    workspace?: boolean | Listing$workspaceArgs<ExtArgs>
     host?: boolean | UserDefaultArgs<ExtArgs>
     bookings?: boolean | Listing$bookingsArgs<ExtArgs>
     images?: boolean | Listing$imagesArgs<ExtArgs>
@@ -5826,9 +5826,9 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    restaurantId?: boolean
+    workspaceId?: boolean
     hostId?: boolean
-    restaurant?: boolean | Listing$restaurantArgs<ExtArgs>
+    workspace?: boolean | Listing$workspaceArgs<ExtArgs>
     host?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["listing"]>
 
@@ -5843,9 +5843,9 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    restaurantId?: boolean
+    workspaceId?: boolean
     hostId?: boolean
-    restaurant?: boolean | Listing$restaurantArgs<ExtArgs>
+    workspace?: boolean | Listing$workspaceArgs<ExtArgs>
     host?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["listing"]>
 
@@ -5860,13 +5860,13 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    restaurantId?: boolean
+    workspaceId?: boolean
     hostId?: boolean
   }
 
-  export type ListingOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "type" | "capacity" | "pricePerHour" | "pricePerDay" | "isActive" | "createdAt" | "updatedAt" | "restaurantId" | "hostId", ExtArgs["result"]["listing"]>
+  export type ListingOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "type" | "capacity" | "pricePerHour" | "pricePerDay" | "isActive" | "createdAt" | "updatedAt" | "workspaceId" | "hostId", ExtArgs["result"]["listing"]>
   export type ListingInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | Listing$restaurantArgs<ExtArgs>
+    workspace?: boolean | Listing$workspaceArgs<ExtArgs>
     host?: boolean | UserDefaultArgs<ExtArgs>
     bookings?: boolean | Listing$bookingsArgs<ExtArgs>
     images?: boolean | Listing$imagesArgs<ExtArgs>
@@ -5876,18 +5876,18 @@ export namespace Prisma {
     _count?: boolean | ListingCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ListingIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | Listing$restaurantArgs<ExtArgs>
+    workspace?: boolean | Listing$workspaceArgs<ExtArgs>
     host?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type ListingIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | Listing$restaurantArgs<ExtArgs>
+    workspace?: boolean | Listing$workspaceArgs<ExtArgs>
     host?: boolean | UserDefaultArgs<ExtArgs>
   }
 
   export type $ListingPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Listing"
     objects: {
-      restaurant: Prisma.$RestaurantPayload<ExtArgs> | null
+      workspace: Prisma.$WorkspacePayload<ExtArgs> | null
       host: Prisma.$UserPayload<ExtArgs>
       bookings: Prisma.$BookingPayload<ExtArgs>[]
       images: Prisma.$ListingImagePayload<ExtArgs>[]
@@ -5906,7 +5906,7 @@ export namespace Prisma {
       isActive: boolean
       createdAt: Date
       updatedAt: Date
-      restaurantId: number | null
+      workspaceId: number | null
       hostId: number
     }, ExtArgs["result"]["listing"]>
     composites: {}
@@ -6302,7 +6302,7 @@ export namespace Prisma {
    */
   export interface Prisma__ListingClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    restaurant<T extends Listing$restaurantArgs<ExtArgs> = {}>(args?: Subset<T, Listing$restaurantArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    workspace<T extends Listing$workspaceArgs<ExtArgs> = {}>(args?: Subset<T, Listing$workspaceArgs<ExtArgs>>): Prisma__WorkspaceClient<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     host<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     bookings<T extends Listing$bookingsArgs<ExtArgs> = {}>(args?: Subset<T, Listing$bookingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BookingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     images<T extends Listing$imagesArgs<ExtArgs> = {}>(args?: Subset<T, Listing$imagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ListingImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -6348,7 +6348,7 @@ export namespace Prisma {
     readonly isActive: FieldRef<"Listing", 'Boolean'>
     readonly createdAt: FieldRef<"Listing", 'DateTime'>
     readonly updatedAt: FieldRef<"Listing", 'DateTime'>
-    readonly restaurantId: FieldRef<"Listing", 'Int'>
+    readonly workspaceId: FieldRef<"Listing", 'Int'>
     readonly hostId: FieldRef<"Listing", 'Int'>
   }
     
@@ -6746,22 +6746,22 @@ export namespace Prisma {
   }
 
   /**
-   * Listing.restaurant
+   * Listing.workspace
    */
-  export type Listing$restaurantArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Listing$workspaceArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Workspace
      */
-    select?: RestaurantSelect<ExtArgs> | null
+    select?: WorkspaceSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Workspace
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: WorkspaceOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantInclude<ExtArgs> | null
-    where?: RestaurantWhereInput
+    include?: WorkspaceInclude<ExtArgs> | null
+    where?: WorkspaceWhereInput
   }
 
   /**
@@ -16026,262 +16026,262 @@ export namespace Prisma {
 
 
   /**
-   * Model RestaurantImage
+   * Model WorkspaceImage
    */
 
-  export type AggregateRestaurantImage = {
-    _count: RestaurantImageCountAggregateOutputType | null
-    _avg: RestaurantImageAvgAggregateOutputType | null
-    _sum: RestaurantImageSumAggregateOutputType | null
-    _min: RestaurantImageMinAggregateOutputType | null
-    _max: RestaurantImageMaxAggregateOutputType | null
+  export type AggregateWorkspaceImage = {
+    _count: WorkspaceImageCountAggregateOutputType | null
+    _avg: WorkspaceImageAvgAggregateOutputType | null
+    _sum: WorkspaceImageSumAggregateOutputType | null
+    _min: WorkspaceImageMinAggregateOutputType | null
+    _max: WorkspaceImageMaxAggregateOutputType | null
   }
 
-  export type RestaurantImageAvgAggregateOutputType = {
+  export type WorkspaceImageAvgAggregateOutputType = {
     id: number | null
-    restaurantId: number | null
+    workspaceId: number | null
   }
 
-  export type RestaurantImageSumAggregateOutputType = {
+  export type WorkspaceImageSumAggregateOutputType = {
     id: number | null
-    restaurantId: number | null
+    workspaceId: number | null
   }
 
-  export type RestaurantImageMinAggregateOutputType = {
-    id: number | null
-    url: string | null
-    caption: string | null
-    isPrimary: boolean | null
-    createdAt: Date | null
-    restaurantId: number | null
-  }
-
-  export type RestaurantImageMaxAggregateOutputType = {
+  export type WorkspaceImageMinAggregateOutputType = {
     id: number | null
     url: string | null
     caption: string | null
     isPrimary: boolean | null
     createdAt: Date | null
-    restaurantId: number | null
+    workspaceId: number | null
   }
 
-  export type RestaurantImageCountAggregateOutputType = {
+  export type WorkspaceImageMaxAggregateOutputType = {
+    id: number | null
+    url: string | null
+    caption: string | null
+    isPrimary: boolean | null
+    createdAt: Date | null
+    workspaceId: number | null
+  }
+
+  export type WorkspaceImageCountAggregateOutputType = {
     id: number
     url: number
     caption: number
     isPrimary: number
     createdAt: number
-    restaurantId: number
+    workspaceId: number
     _all: number
   }
 
 
-  export type RestaurantImageAvgAggregateInputType = {
+  export type WorkspaceImageAvgAggregateInputType = {
     id?: true
-    restaurantId?: true
+    workspaceId?: true
   }
 
-  export type RestaurantImageSumAggregateInputType = {
+  export type WorkspaceImageSumAggregateInputType = {
     id?: true
-    restaurantId?: true
+    workspaceId?: true
   }
 
-  export type RestaurantImageMinAggregateInputType = {
+  export type WorkspaceImageMinAggregateInputType = {
     id?: true
     url?: true
     caption?: true
     isPrimary?: true
     createdAt?: true
-    restaurantId?: true
+    workspaceId?: true
   }
 
-  export type RestaurantImageMaxAggregateInputType = {
+  export type WorkspaceImageMaxAggregateInputType = {
     id?: true
     url?: true
     caption?: true
     isPrimary?: true
     createdAt?: true
-    restaurantId?: true
+    workspaceId?: true
   }
 
-  export type RestaurantImageCountAggregateInputType = {
+  export type WorkspaceImageCountAggregateInputType = {
     id?: true
     url?: true
     caption?: true
     isPrimary?: true
     createdAt?: true
-    restaurantId?: true
+    workspaceId?: true
     _all?: true
   }
 
-  export type RestaurantImageAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which RestaurantImage to aggregate.
+     * Filter which WorkspaceImage to aggregate.
      */
-    where?: RestaurantImageWhereInput
+    where?: WorkspaceImageWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of RestaurantImages to fetch.
+     * Determine the order of WorkspaceImages to fetch.
      */
-    orderBy?: RestaurantImageOrderByWithRelationInput | RestaurantImageOrderByWithRelationInput[]
+    orderBy?: WorkspaceImageOrderByWithRelationInput | WorkspaceImageOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: RestaurantImageWhereUniqueInput
+    cursor?: WorkspaceImageWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` RestaurantImages from the position of the cursor.
+     * Take `±n` WorkspaceImages from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` RestaurantImages.
+     * Skip the first `n` WorkspaceImages.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned RestaurantImages
+     * Count returned WorkspaceImages
     **/
-    _count?: true | RestaurantImageCountAggregateInputType
+    _count?: true | WorkspaceImageCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: RestaurantImageAvgAggregateInputType
+    _avg?: WorkspaceImageAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: RestaurantImageSumAggregateInputType
+    _sum?: WorkspaceImageSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: RestaurantImageMinAggregateInputType
+    _min?: WorkspaceImageMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: RestaurantImageMaxAggregateInputType
+    _max?: WorkspaceImageMaxAggregateInputType
   }
 
-  export type GetRestaurantImageAggregateType<T extends RestaurantImageAggregateArgs> = {
-        [P in keyof T & keyof AggregateRestaurantImage]: P extends '_count' | 'count'
+  export type GetWorkspaceImageAggregateType<T extends WorkspaceImageAggregateArgs> = {
+        [P in keyof T & keyof AggregateWorkspaceImage]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateRestaurantImage[P]>
-      : GetScalarType<T[P], AggregateRestaurantImage[P]>
+        : GetScalarType<T[P], AggregateWorkspaceImage[P]>
+      : GetScalarType<T[P], AggregateWorkspaceImage[P]>
   }
 
 
 
 
-  export type RestaurantImageGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: RestaurantImageWhereInput
-    orderBy?: RestaurantImageOrderByWithAggregationInput | RestaurantImageOrderByWithAggregationInput[]
-    by: RestaurantImageScalarFieldEnum[] | RestaurantImageScalarFieldEnum
-    having?: RestaurantImageScalarWhereWithAggregatesInput
+  export type WorkspaceImageGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: WorkspaceImageWhereInput
+    orderBy?: WorkspaceImageOrderByWithAggregationInput | WorkspaceImageOrderByWithAggregationInput[]
+    by: WorkspaceImageScalarFieldEnum[] | WorkspaceImageScalarFieldEnum
+    having?: WorkspaceImageScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: RestaurantImageCountAggregateInputType | true
-    _avg?: RestaurantImageAvgAggregateInputType
-    _sum?: RestaurantImageSumAggregateInputType
-    _min?: RestaurantImageMinAggregateInputType
-    _max?: RestaurantImageMaxAggregateInputType
+    _count?: WorkspaceImageCountAggregateInputType | true
+    _avg?: WorkspaceImageAvgAggregateInputType
+    _sum?: WorkspaceImageSumAggregateInputType
+    _min?: WorkspaceImageMinAggregateInputType
+    _max?: WorkspaceImageMaxAggregateInputType
   }
 
-  export type RestaurantImageGroupByOutputType = {
+  export type WorkspaceImageGroupByOutputType = {
     id: number
     url: string
     caption: string | null
     isPrimary: boolean
     createdAt: Date
-    restaurantId: number
-    _count: RestaurantImageCountAggregateOutputType | null
-    _avg: RestaurantImageAvgAggregateOutputType | null
-    _sum: RestaurantImageSumAggregateOutputType | null
-    _min: RestaurantImageMinAggregateOutputType | null
-    _max: RestaurantImageMaxAggregateOutputType | null
+    workspaceId: number
+    _count: WorkspaceImageCountAggregateOutputType | null
+    _avg: WorkspaceImageAvgAggregateOutputType | null
+    _sum: WorkspaceImageSumAggregateOutputType | null
+    _min: WorkspaceImageMinAggregateOutputType | null
+    _max: WorkspaceImageMaxAggregateOutputType | null
   }
 
-  type GetRestaurantImageGroupByPayload<T extends RestaurantImageGroupByArgs> = Prisma.PrismaPromise<
+  type GetWorkspaceImageGroupByPayload<T extends WorkspaceImageGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<RestaurantImageGroupByOutputType, T['by']> &
+      PickEnumerable<WorkspaceImageGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof RestaurantImageGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof WorkspaceImageGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], RestaurantImageGroupByOutputType[P]>
-            : GetScalarType<T[P], RestaurantImageGroupByOutputType[P]>
+              : GetScalarType<T[P], WorkspaceImageGroupByOutputType[P]>
+            : GetScalarType<T[P], WorkspaceImageGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type RestaurantImageSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type WorkspaceImageSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     url?: boolean
     caption?: boolean
     isPrimary?: boolean
     createdAt?: boolean
-    restaurantId?: boolean
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["restaurantImage"]>
+    workspaceId?: boolean
+    workspace?: boolean | WorkspaceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["workspaceImage"]>
 
-  export type RestaurantImageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type WorkspaceImageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     url?: boolean
     caption?: boolean
     isPrimary?: boolean
     createdAt?: boolean
-    restaurantId?: boolean
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["restaurantImage"]>
+    workspaceId?: boolean
+    workspace?: boolean | WorkspaceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["workspaceImage"]>
 
-  export type RestaurantImageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type WorkspaceImageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     url?: boolean
     caption?: boolean
     isPrimary?: boolean
     createdAt?: boolean
-    restaurantId?: boolean
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["restaurantImage"]>
+    workspaceId?: boolean
+    workspace?: boolean | WorkspaceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["workspaceImage"]>
 
-  export type RestaurantImageSelectScalar = {
+  export type WorkspaceImageSelectScalar = {
     id?: boolean
     url?: boolean
     caption?: boolean
     isPrimary?: boolean
     createdAt?: boolean
-    restaurantId?: boolean
+    workspaceId?: boolean
   }
 
-  export type RestaurantImageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "url" | "caption" | "isPrimary" | "createdAt" | "restaurantId", ExtArgs["result"]["restaurantImage"]>
-  export type RestaurantImageInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+  export type WorkspaceImageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "url" | "caption" | "isPrimary" | "createdAt" | "workspaceId", ExtArgs["result"]["workspaceImage"]>
+  export type WorkspaceImageInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    workspace?: boolean | WorkspaceDefaultArgs<ExtArgs>
   }
-  export type RestaurantImageIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+  export type WorkspaceImageIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    workspace?: boolean | WorkspaceDefaultArgs<ExtArgs>
   }
-  export type RestaurantImageIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+  export type WorkspaceImageIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    workspace?: boolean | WorkspaceDefaultArgs<ExtArgs>
   }
 
-  export type $RestaurantImagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "RestaurantImage"
+  export type $WorkspaceImagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "WorkspaceImage"
     objects: {
-      restaurant: Prisma.$RestaurantPayload<ExtArgs>
+      workspace: Prisma.$WorkspacePayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -16289,137 +16289,137 @@ export namespace Prisma {
       caption: string | null
       isPrimary: boolean
       createdAt: Date
-      restaurantId: number
-    }, ExtArgs["result"]["restaurantImage"]>
+      workspaceId: number
+    }, ExtArgs["result"]["workspaceImage"]>
     composites: {}
   }
 
-  type RestaurantImageGetPayload<S extends boolean | null | undefined | RestaurantImageDefaultArgs> = $Result.GetResult<Prisma.$RestaurantImagePayload, S>
+  type WorkspaceImageGetPayload<S extends boolean | null | undefined | WorkspaceImageDefaultArgs> = $Result.GetResult<Prisma.$WorkspaceImagePayload, S>
 
-  type RestaurantImageCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<RestaurantImageFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: RestaurantImageCountAggregateInputType | true
+  type WorkspaceImageCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<WorkspaceImageFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: WorkspaceImageCountAggregateInputType | true
     }
 
-  export interface RestaurantImageDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['RestaurantImage'], meta: { name: 'RestaurantImage' } }
+  export interface WorkspaceImageDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['WorkspaceImage'], meta: { name: 'WorkspaceImage' } }
     /**
-     * Find zero or one RestaurantImage that matches the filter.
-     * @param {RestaurantImageFindUniqueArgs} args - Arguments to find a RestaurantImage
+     * Find zero or one WorkspaceImage that matches the filter.
+     * @param {WorkspaceImageFindUniqueArgs} args - Arguments to find a WorkspaceImage
      * @example
-     * // Get one RestaurantImage
-     * const restaurantImage = await prisma.restaurantImage.findUnique({
+     * // Get one WorkspaceImage
+     * const workspaceImage = await prisma.workspaceImage.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends RestaurantImageFindUniqueArgs>(args: SelectSubset<T, RestaurantImageFindUniqueArgs<ExtArgs>>): Prisma__RestaurantImageClient<$Result.GetResult<Prisma.$RestaurantImagePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends WorkspaceImageFindUniqueArgs>(args: SelectSubset<T, WorkspaceImageFindUniqueArgs<ExtArgs>>): Prisma__WorkspaceImageClient<$Result.GetResult<Prisma.$WorkspaceImagePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one RestaurantImage that matches the filter or throw an error with `error.code='P2025'`
+     * Find one WorkspaceImage that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {RestaurantImageFindUniqueOrThrowArgs} args - Arguments to find a RestaurantImage
+     * @param {WorkspaceImageFindUniqueOrThrowArgs} args - Arguments to find a WorkspaceImage
      * @example
-     * // Get one RestaurantImage
-     * const restaurantImage = await prisma.restaurantImage.findUniqueOrThrow({
+     * // Get one WorkspaceImage
+     * const workspaceImage = await prisma.workspaceImage.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends RestaurantImageFindUniqueOrThrowArgs>(args: SelectSubset<T, RestaurantImageFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RestaurantImageClient<$Result.GetResult<Prisma.$RestaurantImagePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends WorkspaceImageFindUniqueOrThrowArgs>(args: SelectSubset<T, WorkspaceImageFindUniqueOrThrowArgs<ExtArgs>>): Prisma__WorkspaceImageClient<$Result.GetResult<Prisma.$WorkspaceImagePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first RestaurantImage that matches the filter.
+     * Find the first WorkspaceImage that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RestaurantImageFindFirstArgs} args - Arguments to find a RestaurantImage
+     * @param {WorkspaceImageFindFirstArgs} args - Arguments to find a WorkspaceImage
      * @example
-     * // Get one RestaurantImage
-     * const restaurantImage = await prisma.restaurantImage.findFirst({
+     * // Get one WorkspaceImage
+     * const workspaceImage = await prisma.workspaceImage.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends RestaurantImageFindFirstArgs>(args?: SelectSubset<T, RestaurantImageFindFirstArgs<ExtArgs>>): Prisma__RestaurantImageClient<$Result.GetResult<Prisma.$RestaurantImagePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends WorkspaceImageFindFirstArgs>(args?: SelectSubset<T, WorkspaceImageFindFirstArgs<ExtArgs>>): Prisma__WorkspaceImageClient<$Result.GetResult<Prisma.$WorkspaceImagePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first RestaurantImage that matches the filter or
+     * Find the first WorkspaceImage that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RestaurantImageFindFirstOrThrowArgs} args - Arguments to find a RestaurantImage
+     * @param {WorkspaceImageFindFirstOrThrowArgs} args - Arguments to find a WorkspaceImage
      * @example
-     * // Get one RestaurantImage
-     * const restaurantImage = await prisma.restaurantImage.findFirstOrThrow({
+     * // Get one WorkspaceImage
+     * const workspaceImage = await prisma.workspaceImage.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends RestaurantImageFindFirstOrThrowArgs>(args?: SelectSubset<T, RestaurantImageFindFirstOrThrowArgs<ExtArgs>>): Prisma__RestaurantImageClient<$Result.GetResult<Prisma.$RestaurantImagePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends WorkspaceImageFindFirstOrThrowArgs>(args?: SelectSubset<T, WorkspaceImageFindFirstOrThrowArgs<ExtArgs>>): Prisma__WorkspaceImageClient<$Result.GetResult<Prisma.$WorkspaceImagePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more RestaurantImages that matches the filter.
+     * Find zero or more WorkspaceImages that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RestaurantImageFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {WorkspaceImageFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all RestaurantImages
-     * const restaurantImages = await prisma.restaurantImage.findMany()
+     * // Get all WorkspaceImages
+     * const workspaceImages = await prisma.workspaceImage.findMany()
      * 
-     * // Get first 10 RestaurantImages
-     * const restaurantImages = await prisma.restaurantImage.findMany({ take: 10 })
+     * // Get first 10 WorkspaceImages
+     * const workspaceImages = await prisma.workspaceImage.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const restaurantImageWithIdOnly = await prisma.restaurantImage.findMany({ select: { id: true } })
+     * const workspaceImageWithIdOnly = await prisma.workspaceImage.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends RestaurantImageFindManyArgs>(args?: SelectSubset<T, RestaurantImageFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RestaurantImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends WorkspaceImageFindManyArgs>(args?: SelectSubset<T, WorkspaceImageFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WorkspaceImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a RestaurantImage.
-     * @param {RestaurantImageCreateArgs} args - Arguments to create a RestaurantImage.
+     * Create a WorkspaceImage.
+     * @param {WorkspaceImageCreateArgs} args - Arguments to create a WorkspaceImage.
      * @example
-     * // Create one RestaurantImage
-     * const RestaurantImage = await prisma.restaurantImage.create({
+     * // Create one WorkspaceImage
+     * const WorkspaceImage = await prisma.workspaceImage.create({
      *   data: {
-     *     // ... data to create a RestaurantImage
+     *     // ... data to create a WorkspaceImage
      *   }
      * })
      * 
      */
-    create<T extends RestaurantImageCreateArgs>(args: SelectSubset<T, RestaurantImageCreateArgs<ExtArgs>>): Prisma__RestaurantImageClient<$Result.GetResult<Prisma.$RestaurantImagePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends WorkspaceImageCreateArgs>(args: SelectSubset<T, WorkspaceImageCreateArgs<ExtArgs>>): Prisma__WorkspaceImageClient<$Result.GetResult<Prisma.$WorkspaceImagePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many RestaurantImages.
-     * @param {RestaurantImageCreateManyArgs} args - Arguments to create many RestaurantImages.
+     * Create many WorkspaceImages.
+     * @param {WorkspaceImageCreateManyArgs} args - Arguments to create many WorkspaceImages.
      * @example
-     * // Create many RestaurantImages
-     * const restaurantImage = await prisma.restaurantImage.createMany({
+     * // Create many WorkspaceImages
+     * const workspaceImage = await prisma.workspaceImage.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends RestaurantImageCreateManyArgs>(args?: SelectSubset<T, RestaurantImageCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends WorkspaceImageCreateManyArgs>(args?: SelectSubset<T, WorkspaceImageCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many RestaurantImages and returns the data saved in the database.
-     * @param {RestaurantImageCreateManyAndReturnArgs} args - Arguments to create many RestaurantImages.
+     * Create many WorkspaceImages and returns the data saved in the database.
+     * @param {WorkspaceImageCreateManyAndReturnArgs} args - Arguments to create many WorkspaceImages.
      * @example
-     * // Create many RestaurantImages
-     * const restaurantImage = await prisma.restaurantImage.createManyAndReturn({
+     * // Create many WorkspaceImages
+     * const workspaceImage = await prisma.workspaceImage.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many RestaurantImages and only return the `id`
-     * const restaurantImageWithIdOnly = await prisma.restaurantImage.createManyAndReturn({
+     * // Create many WorkspaceImages and only return the `id`
+     * const workspaceImageWithIdOnly = await prisma.workspaceImage.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -16429,28 +16429,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends RestaurantImageCreateManyAndReturnArgs>(args?: SelectSubset<T, RestaurantImageCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RestaurantImagePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends WorkspaceImageCreateManyAndReturnArgs>(args?: SelectSubset<T, WorkspaceImageCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WorkspaceImagePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a RestaurantImage.
-     * @param {RestaurantImageDeleteArgs} args - Arguments to delete one RestaurantImage.
+     * Delete a WorkspaceImage.
+     * @param {WorkspaceImageDeleteArgs} args - Arguments to delete one WorkspaceImage.
      * @example
-     * // Delete one RestaurantImage
-     * const RestaurantImage = await prisma.restaurantImage.delete({
+     * // Delete one WorkspaceImage
+     * const WorkspaceImage = await prisma.workspaceImage.delete({
      *   where: {
-     *     // ... filter to delete one RestaurantImage
+     *     // ... filter to delete one WorkspaceImage
      *   }
      * })
      * 
      */
-    delete<T extends RestaurantImageDeleteArgs>(args: SelectSubset<T, RestaurantImageDeleteArgs<ExtArgs>>): Prisma__RestaurantImageClient<$Result.GetResult<Prisma.$RestaurantImagePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends WorkspaceImageDeleteArgs>(args: SelectSubset<T, WorkspaceImageDeleteArgs<ExtArgs>>): Prisma__WorkspaceImageClient<$Result.GetResult<Prisma.$WorkspaceImagePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one RestaurantImage.
-     * @param {RestaurantImageUpdateArgs} args - Arguments to update one RestaurantImage.
+     * Update one WorkspaceImage.
+     * @param {WorkspaceImageUpdateArgs} args - Arguments to update one WorkspaceImage.
      * @example
-     * // Update one RestaurantImage
-     * const restaurantImage = await prisma.restaurantImage.update({
+     * // Update one WorkspaceImage
+     * const workspaceImage = await prisma.workspaceImage.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -16460,30 +16460,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends RestaurantImageUpdateArgs>(args: SelectSubset<T, RestaurantImageUpdateArgs<ExtArgs>>): Prisma__RestaurantImageClient<$Result.GetResult<Prisma.$RestaurantImagePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends WorkspaceImageUpdateArgs>(args: SelectSubset<T, WorkspaceImageUpdateArgs<ExtArgs>>): Prisma__WorkspaceImageClient<$Result.GetResult<Prisma.$WorkspaceImagePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more RestaurantImages.
-     * @param {RestaurantImageDeleteManyArgs} args - Arguments to filter RestaurantImages to delete.
+     * Delete zero or more WorkspaceImages.
+     * @param {WorkspaceImageDeleteManyArgs} args - Arguments to filter WorkspaceImages to delete.
      * @example
-     * // Delete a few RestaurantImages
-     * const { count } = await prisma.restaurantImage.deleteMany({
+     * // Delete a few WorkspaceImages
+     * const { count } = await prisma.workspaceImage.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends RestaurantImageDeleteManyArgs>(args?: SelectSubset<T, RestaurantImageDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends WorkspaceImageDeleteManyArgs>(args?: SelectSubset<T, WorkspaceImageDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more RestaurantImages.
+     * Update zero or more WorkspaceImages.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RestaurantImageUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {WorkspaceImageUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many RestaurantImages
-     * const restaurantImage = await prisma.restaurantImage.updateMany({
+     * // Update many WorkspaceImages
+     * const workspaceImage = await prisma.workspaceImage.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -16493,14 +16493,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends RestaurantImageUpdateManyArgs>(args: SelectSubset<T, RestaurantImageUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends WorkspaceImageUpdateManyArgs>(args: SelectSubset<T, WorkspaceImageUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more RestaurantImages and returns the data updated in the database.
-     * @param {RestaurantImageUpdateManyAndReturnArgs} args - Arguments to update many RestaurantImages.
+     * Update zero or more WorkspaceImages and returns the data updated in the database.
+     * @param {WorkspaceImageUpdateManyAndReturnArgs} args - Arguments to update many WorkspaceImages.
      * @example
-     * // Update many RestaurantImages
-     * const restaurantImage = await prisma.restaurantImage.updateManyAndReturn({
+     * // Update many WorkspaceImages
+     * const workspaceImage = await prisma.workspaceImage.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -16509,8 +16509,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more RestaurantImages and only return the `id`
-     * const restaurantImageWithIdOnly = await prisma.restaurantImage.updateManyAndReturn({
+     * // Update zero or more WorkspaceImages and only return the `id`
+     * const workspaceImageWithIdOnly = await prisma.workspaceImage.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -16523,56 +16523,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends RestaurantImageUpdateManyAndReturnArgs>(args: SelectSubset<T, RestaurantImageUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RestaurantImagePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends WorkspaceImageUpdateManyAndReturnArgs>(args: SelectSubset<T, WorkspaceImageUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WorkspaceImagePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one RestaurantImage.
-     * @param {RestaurantImageUpsertArgs} args - Arguments to update or create a RestaurantImage.
+     * Create or update one WorkspaceImage.
+     * @param {WorkspaceImageUpsertArgs} args - Arguments to update or create a WorkspaceImage.
      * @example
-     * // Update or create a RestaurantImage
-     * const restaurantImage = await prisma.restaurantImage.upsert({
+     * // Update or create a WorkspaceImage
+     * const workspaceImage = await prisma.workspaceImage.upsert({
      *   create: {
-     *     // ... data to create a RestaurantImage
+     *     // ... data to create a WorkspaceImage
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the RestaurantImage we want to update
+     *     // ... the filter for the WorkspaceImage we want to update
      *   }
      * })
      */
-    upsert<T extends RestaurantImageUpsertArgs>(args: SelectSubset<T, RestaurantImageUpsertArgs<ExtArgs>>): Prisma__RestaurantImageClient<$Result.GetResult<Prisma.$RestaurantImagePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends WorkspaceImageUpsertArgs>(args: SelectSubset<T, WorkspaceImageUpsertArgs<ExtArgs>>): Prisma__WorkspaceImageClient<$Result.GetResult<Prisma.$WorkspaceImagePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of RestaurantImages.
+     * Count the number of WorkspaceImages.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RestaurantImageCountArgs} args - Arguments to filter RestaurantImages to count.
+     * @param {WorkspaceImageCountArgs} args - Arguments to filter WorkspaceImages to count.
      * @example
-     * // Count the number of RestaurantImages
-     * const count = await prisma.restaurantImage.count({
+     * // Count the number of WorkspaceImages
+     * const count = await prisma.workspaceImage.count({
      *   where: {
-     *     // ... the filter for the RestaurantImages we want to count
+     *     // ... the filter for the WorkspaceImages we want to count
      *   }
      * })
     **/
-    count<T extends RestaurantImageCountArgs>(
-      args?: Subset<T, RestaurantImageCountArgs>,
+    count<T extends WorkspaceImageCountArgs>(
+      args?: Subset<T, WorkspaceImageCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], RestaurantImageCountAggregateOutputType>
+          : GetScalarType<T['select'], WorkspaceImageCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a RestaurantImage.
+     * Allows you to perform aggregations operations on a WorkspaceImage.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RestaurantImageAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {WorkspaceImageAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -16592,13 +16592,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends RestaurantImageAggregateArgs>(args: Subset<T, RestaurantImageAggregateArgs>): Prisma.PrismaPromise<GetRestaurantImageAggregateType<T>>
+    aggregate<T extends WorkspaceImageAggregateArgs>(args: Subset<T, WorkspaceImageAggregateArgs>): Prisma.PrismaPromise<GetWorkspaceImageAggregateType<T>>
 
     /**
-     * Group by RestaurantImage.
+     * Group by WorkspaceImage.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {RestaurantImageGroupByArgs} args - Group by arguments.
+     * @param {WorkspaceImageGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -16613,14 +16613,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends RestaurantImageGroupByArgs,
+      T extends WorkspaceImageGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: RestaurantImageGroupByArgs['orderBy'] }
-        : { orderBy?: RestaurantImageGroupByArgs['orderBy'] },
+        ? { orderBy: WorkspaceImageGroupByArgs['orderBy'] }
+        : { orderBy?: WorkspaceImageGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -16669,22 +16669,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, RestaurantImageGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRestaurantImageGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, WorkspaceImageGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWorkspaceImageGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the RestaurantImage model
+   * Fields of the WorkspaceImage model
    */
-  readonly fields: RestaurantImageFieldRefs;
+  readonly fields: WorkspaceImageFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for RestaurantImage.
+   * The delegate class that acts as a "Promise-like" for WorkspaceImage.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__RestaurantImageClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__WorkspaceImageClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    restaurant<T extends RestaurantDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RestaurantDefaultArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    workspace<T extends WorkspaceDefaultArgs<ExtArgs> = {}>(args?: Subset<T, WorkspaceDefaultArgs<ExtArgs>>): Prisma__WorkspaceClient<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -16711,426 +16711,426 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the RestaurantImage model
+   * Fields of the WorkspaceImage model
    */
-  interface RestaurantImageFieldRefs {
-    readonly id: FieldRef<"RestaurantImage", 'Int'>
-    readonly url: FieldRef<"RestaurantImage", 'String'>
-    readonly caption: FieldRef<"RestaurantImage", 'String'>
-    readonly isPrimary: FieldRef<"RestaurantImage", 'Boolean'>
-    readonly createdAt: FieldRef<"RestaurantImage", 'DateTime'>
-    readonly restaurantId: FieldRef<"RestaurantImage", 'Int'>
+  interface WorkspaceImageFieldRefs {
+    readonly id: FieldRef<"WorkspaceImage", 'Int'>
+    readonly url: FieldRef<"WorkspaceImage", 'String'>
+    readonly caption: FieldRef<"WorkspaceImage", 'String'>
+    readonly isPrimary: FieldRef<"WorkspaceImage", 'Boolean'>
+    readonly createdAt: FieldRef<"WorkspaceImage", 'DateTime'>
+    readonly workspaceId: FieldRef<"WorkspaceImage", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * RestaurantImage findUnique
+   * WorkspaceImage findUnique
    */
-  export type RestaurantImageFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the RestaurantImage
+     * Select specific fields to fetch from the WorkspaceImage
      */
-    select?: RestaurantImageSelect<ExtArgs> | null
+    select?: WorkspaceImageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the RestaurantImage
+     * Omit specific fields from the WorkspaceImage
      */
-    omit?: RestaurantImageOmit<ExtArgs> | null
+    omit?: WorkspaceImageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantImageInclude<ExtArgs> | null
+    include?: WorkspaceImageInclude<ExtArgs> | null
     /**
-     * Filter, which RestaurantImage to fetch.
+     * Filter, which WorkspaceImage to fetch.
      */
-    where: RestaurantImageWhereUniqueInput
+    where: WorkspaceImageWhereUniqueInput
   }
 
   /**
-   * RestaurantImage findUniqueOrThrow
+   * WorkspaceImage findUniqueOrThrow
    */
-  export type RestaurantImageFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the RestaurantImage
+     * Select specific fields to fetch from the WorkspaceImage
      */
-    select?: RestaurantImageSelect<ExtArgs> | null
+    select?: WorkspaceImageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the RestaurantImage
+     * Omit specific fields from the WorkspaceImage
      */
-    omit?: RestaurantImageOmit<ExtArgs> | null
+    omit?: WorkspaceImageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantImageInclude<ExtArgs> | null
+    include?: WorkspaceImageInclude<ExtArgs> | null
     /**
-     * Filter, which RestaurantImage to fetch.
+     * Filter, which WorkspaceImage to fetch.
      */
-    where: RestaurantImageWhereUniqueInput
+    where: WorkspaceImageWhereUniqueInput
   }
 
   /**
-   * RestaurantImage findFirst
+   * WorkspaceImage findFirst
    */
-  export type RestaurantImageFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the RestaurantImage
+     * Select specific fields to fetch from the WorkspaceImage
      */
-    select?: RestaurantImageSelect<ExtArgs> | null
+    select?: WorkspaceImageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the RestaurantImage
+     * Omit specific fields from the WorkspaceImage
      */
-    omit?: RestaurantImageOmit<ExtArgs> | null
+    omit?: WorkspaceImageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantImageInclude<ExtArgs> | null
+    include?: WorkspaceImageInclude<ExtArgs> | null
     /**
-     * Filter, which RestaurantImage to fetch.
+     * Filter, which WorkspaceImage to fetch.
      */
-    where?: RestaurantImageWhereInput
+    where?: WorkspaceImageWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of RestaurantImages to fetch.
+     * Determine the order of WorkspaceImages to fetch.
      */
-    orderBy?: RestaurantImageOrderByWithRelationInput | RestaurantImageOrderByWithRelationInput[]
+    orderBy?: WorkspaceImageOrderByWithRelationInput | WorkspaceImageOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for RestaurantImages.
+     * Sets the position for searching for WorkspaceImages.
      */
-    cursor?: RestaurantImageWhereUniqueInput
+    cursor?: WorkspaceImageWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` RestaurantImages from the position of the cursor.
+     * Take `±n` WorkspaceImages from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` RestaurantImages.
+     * Skip the first `n` WorkspaceImages.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of RestaurantImages.
+     * Filter by unique combinations of WorkspaceImages.
      */
-    distinct?: RestaurantImageScalarFieldEnum | RestaurantImageScalarFieldEnum[]
+    distinct?: WorkspaceImageScalarFieldEnum | WorkspaceImageScalarFieldEnum[]
   }
 
   /**
-   * RestaurantImage findFirstOrThrow
+   * WorkspaceImage findFirstOrThrow
    */
-  export type RestaurantImageFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the RestaurantImage
+     * Select specific fields to fetch from the WorkspaceImage
      */
-    select?: RestaurantImageSelect<ExtArgs> | null
+    select?: WorkspaceImageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the RestaurantImage
+     * Omit specific fields from the WorkspaceImage
      */
-    omit?: RestaurantImageOmit<ExtArgs> | null
+    omit?: WorkspaceImageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantImageInclude<ExtArgs> | null
+    include?: WorkspaceImageInclude<ExtArgs> | null
     /**
-     * Filter, which RestaurantImage to fetch.
+     * Filter, which WorkspaceImage to fetch.
      */
-    where?: RestaurantImageWhereInput
+    where?: WorkspaceImageWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of RestaurantImages to fetch.
+     * Determine the order of WorkspaceImages to fetch.
      */
-    orderBy?: RestaurantImageOrderByWithRelationInput | RestaurantImageOrderByWithRelationInput[]
+    orderBy?: WorkspaceImageOrderByWithRelationInput | WorkspaceImageOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for RestaurantImages.
+     * Sets the position for searching for WorkspaceImages.
      */
-    cursor?: RestaurantImageWhereUniqueInput
+    cursor?: WorkspaceImageWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` RestaurantImages from the position of the cursor.
+     * Take `±n` WorkspaceImages from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` RestaurantImages.
+     * Skip the first `n` WorkspaceImages.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of RestaurantImages.
+     * Filter by unique combinations of WorkspaceImages.
      */
-    distinct?: RestaurantImageScalarFieldEnum | RestaurantImageScalarFieldEnum[]
+    distinct?: WorkspaceImageScalarFieldEnum | WorkspaceImageScalarFieldEnum[]
   }
 
   /**
-   * RestaurantImage findMany
+   * WorkspaceImage findMany
    */
-  export type RestaurantImageFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the RestaurantImage
+     * Select specific fields to fetch from the WorkspaceImage
      */
-    select?: RestaurantImageSelect<ExtArgs> | null
+    select?: WorkspaceImageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the RestaurantImage
+     * Omit specific fields from the WorkspaceImage
      */
-    omit?: RestaurantImageOmit<ExtArgs> | null
+    omit?: WorkspaceImageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantImageInclude<ExtArgs> | null
+    include?: WorkspaceImageInclude<ExtArgs> | null
     /**
-     * Filter, which RestaurantImages to fetch.
+     * Filter, which WorkspaceImages to fetch.
      */
-    where?: RestaurantImageWhereInput
+    where?: WorkspaceImageWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of RestaurantImages to fetch.
+     * Determine the order of WorkspaceImages to fetch.
      */
-    orderBy?: RestaurantImageOrderByWithRelationInput | RestaurantImageOrderByWithRelationInput[]
+    orderBy?: WorkspaceImageOrderByWithRelationInput | WorkspaceImageOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing RestaurantImages.
+     * Sets the position for listing WorkspaceImages.
      */
-    cursor?: RestaurantImageWhereUniqueInput
+    cursor?: WorkspaceImageWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` RestaurantImages from the position of the cursor.
+     * Take `±n` WorkspaceImages from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` RestaurantImages.
+     * Skip the first `n` WorkspaceImages.
      */
     skip?: number
-    distinct?: RestaurantImageScalarFieldEnum | RestaurantImageScalarFieldEnum[]
+    distinct?: WorkspaceImageScalarFieldEnum | WorkspaceImageScalarFieldEnum[]
   }
 
   /**
-   * RestaurantImage create
+   * WorkspaceImage create
    */
-  export type RestaurantImageCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the RestaurantImage
+     * Select specific fields to fetch from the WorkspaceImage
      */
-    select?: RestaurantImageSelect<ExtArgs> | null
+    select?: WorkspaceImageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the RestaurantImage
+     * Omit specific fields from the WorkspaceImage
      */
-    omit?: RestaurantImageOmit<ExtArgs> | null
+    omit?: WorkspaceImageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantImageInclude<ExtArgs> | null
+    include?: WorkspaceImageInclude<ExtArgs> | null
     /**
-     * The data needed to create a RestaurantImage.
+     * The data needed to create a WorkspaceImage.
      */
-    data: XOR<RestaurantImageCreateInput, RestaurantImageUncheckedCreateInput>
+    data: XOR<WorkspaceImageCreateInput, WorkspaceImageUncheckedCreateInput>
   }
 
   /**
-   * RestaurantImage createMany
+   * WorkspaceImage createMany
    */
-  export type RestaurantImageCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many RestaurantImages.
+     * The data used to create many WorkspaceImages.
      */
-    data: RestaurantImageCreateManyInput | RestaurantImageCreateManyInput[]
+    data: WorkspaceImageCreateManyInput | WorkspaceImageCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * RestaurantImage createManyAndReturn
+   * WorkspaceImage createManyAndReturn
    */
-  export type RestaurantImageCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the RestaurantImage
+     * Select specific fields to fetch from the WorkspaceImage
      */
-    select?: RestaurantImageSelectCreateManyAndReturn<ExtArgs> | null
+    select?: WorkspaceImageSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the RestaurantImage
+     * Omit specific fields from the WorkspaceImage
      */
-    omit?: RestaurantImageOmit<ExtArgs> | null
+    omit?: WorkspaceImageOmit<ExtArgs> | null
     /**
-     * The data used to create many RestaurantImages.
+     * The data used to create many WorkspaceImages.
      */
-    data: RestaurantImageCreateManyInput | RestaurantImageCreateManyInput[]
+    data: WorkspaceImageCreateManyInput | WorkspaceImageCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantImageIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: WorkspaceImageIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * RestaurantImage update
+   * WorkspaceImage update
    */
-  export type RestaurantImageUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the RestaurantImage
+     * Select specific fields to fetch from the WorkspaceImage
      */
-    select?: RestaurantImageSelect<ExtArgs> | null
+    select?: WorkspaceImageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the RestaurantImage
+     * Omit specific fields from the WorkspaceImage
      */
-    omit?: RestaurantImageOmit<ExtArgs> | null
+    omit?: WorkspaceImageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantImageInclude<ExtArgs> | null
+    include?: WorkspaceImageInclude<ExtArgs> | null
     /**
-     * The data needed to update a RestaurantImage.
+     * The data needed to update a WorkspaceImage.
      */
-    data: XOR<RestaurantImageUpdateInput, RestaurantImageUncheckedUpdateInput>
+    data: XOR<WorkspaceImageUpdateInput, WorkspaceImageUncheckedUpdateInput>
     /**
-     * Choose, which RestaurantImage to update.
+     * Choose, which WorkspaceImage to update.
      */
-    where: RestaurantImageWhereUniqueInput
+    where: WorkspaceImageWhereUniqueInput
   }
 
   /**
-   * RestaurantImage updateMany
+   * WorkspaceImage updateMany
    */
-  export type RestaurantImageUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update RestaurantImages.
+     * The data used to update WorkspaceImages.
      */
-    data: XOR<RestaurantImageUpdateManyMutationInput, RestaurantImageUncheckedUpdateManyInput>
+    data: XOR<WorkspaceImageUpdateManyMutationInput, WorkspaceImageUncheckedUpdateManyInput>
     /**
-     * Filter which RestaurantImages to update
+     * Filter which WorkspaceImages to update
      */
-    where?: RestaurantImageWhereInput
+    where?: WorkspaceImageWhereInput
     /**
-     * Limit how many RestaurantImages to update.
+     * Limit how many WorkspaceImages to update.
      */
     limit?: number
   }
 
   /**
-   * RestaurantImage updateManyAndReturn
+   * WorkspaceImage updateManyAndReturn
    */
-  export type RestaurantImageUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the RestaurantImage
+     * Select specific fields to fetch from the WorkspaceImage
      */
-    select?: RestaurantImageSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: WorkspaceImageSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the RestaurantImage
+     * Omit specific fields from the WorkspaceImage
      */
-    omit?: RestaurantImageOmit<ExtArgs> | null
+    omit?: WorkspaceImageOmit<ExtArgs> | null
     /**
-     * The data used to update RestaurantImages.
+     * The data used to update WorkspaceImages.
      */
-    data: XOR<RestaurantImageUpdateManyMutationInput, RestaurantImageUncheckedUpdateManyInput>
+    data: XOR<WorkspaceImageUpdateManyMutationInput, WorkspaceImageUncheckedUpdateManyInput>
     /**
-     * Filter which RestaurantImages to update
+     * Filter which WorkspaceImages to update
      */
-    where?: RestaurantImageWhereInput
+    where?: WorkspaceImageWhereInput
     /**
-     * Limit how many RestaurantImages to update.
+     * Limit how many WorkspaceImages to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantImageIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: WorkspaceImageIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * RestaurantImage upsert
+   * WorkspaceImage upsert
    */
-  export type RestaurantImageUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the RestaurantImage
+     * Select specific fields to fetch from the WorkspaceImage
      */
-    select?: RestaurantImageSelect<ExtArgs> | null
+    select?: WorkspaceImageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the RestaurantImage
+     * Omit specific fields from the WorkspaceImage
      */
-    omit?: RestaurantImageOmit<ExtArgs> | null
+    omit?: WorkspaceImageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantImageInclude<ExtArgs> | null
+    include?: WorkspaceImageInclude<ExtArgs> | null
     /**
-     * The filter to search for the RestaurantImage to update in case it exists.
+     * The filter to search for the WorkspaceImage to update in case it exists.
      */
-    where: RestaurantImageWhereUniqueInput
+    where: WorkspaceImageWhereUniqueInput
     /**
-     * In case the RestaurantImage found by the `where` argument doesn't exist, create a new RestaurantImage with this data.
+     * In case the WorkspaceImage found by the `where` argument doesn't exist, create a new WorkspaceImage with this data.
      */
-    create: XOR<RestaurantImageCreateInput, RestaurantImageUncheckedCreateInput>
+    create: XOR<WorkspaceImageCreateInput, WorkspaceImageUncheckedCreateInput>
     /**
-     * In case the RestaurantImage was found with the provided `where` argument, update it with this data.
+     * In case the WorkspaceImage was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<RestaurantImageUpdateInput, RestaurantImageUncheckedUpdateInput>
+    update: XOR<WorkspaceImageUpdateInput, WorkspaceImageUncheckedUpdateInput>
   }
 
   /**
-   * RestaurantImage delete
+   * WorkspaceImage delete
    */
-  export type RestaurantImageDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the RestaurantImage
+     * Select specific fields to fetch from the WorkspaceImage
      */
-    select?: RestaurantImageSelect<ExtArgs> | null
+    select?: WorkspaceImageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the RestaurantImage
+     * Omit specific fields from the WorkspaceImage
      */
-    omit?: RestaurantImageOmit<ExtArgs> | null
+    omit?: WorkspaceImageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantImageInclude<ExtArgs> | null
+    include?: WorkspaceImageInclude<ExtArgs> | null
     /**
-     * Filter which RestaurantImage to delete.
+     * Filter which WorkspaceImage to delete.
      */
-    where: RestaurantImageWhereUniqueInput
+    where: WorkspaceImageWhereUniqueInput
   }
 
   /**
-   * RestaurantImage deleteMany
+   * WorkspaceImage deleteMany
    */
-  export type RestaurantImageDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which RestaurantImages to delete
+     * Filter which WorkspaceImages to delete
      */
-    where?: RestaurantImageWhereInput
+    where?: WorkspaceImageWhereInput
     /**
-     * Limit how many RestaurantImages to delete.
+     * Limit how many WorkspaceImages to delete.
      */
     limit?: number
   }
 
   /**
-   * RestaurantImage without action
+   * WorkspaceImage without action
    */
-  export type RestaurantImageDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WorkspaceImageDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the RestaurantImage
+     * Select specific fields to fetch from the WorkspaceImage
      */
-    select?: RestaurantImageSelect<ExtArgs> | null
+    select?: WorkspaceImageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the RestaurantImage
+     * Omit specific fields from the WorkspaceImage
      */
-    omit?: RestaurantImageOmit<ExtArgs> | null
+    omit?: WorkspaceImageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantImageInclude<ExtArgs> | null
+    include?: WorkspaceImageInclude<ExtArgs> | null
   }
 
 
@@ -17149,13 +17149,13 @@ export namespace Prisma {
   export type OperatingHoursAvgAggregateOutputType = {
     id: number | null
     dayOfWeek: number | null
-    restaurantId: number | null
+    workspaceId: number | null
   }
 
   export type OperatingHoursSumAggregateOutputType = {
     id: number | null
     dayOfWeek: number | null
-    restaurantId: number | null
+    workspaceId: number | null
   }
 
   export type OperatingHoursMinAggregateOutputType = {
@@ -17164,7 +17164,7 @@ export namespace Prisma {
     openTime: string | null
     closeTime: string | null
     isClosed: boolean | null
-    restaurantId: number | null
+    workspaceId: number | null
   }
 
   export type OperatingHoursMaxAggregateOutputType = {
@@ -17173,7 +17173,7 @@ export namespace Prisma {
     openTime: string | null
     closeTime: string | null
     isClosed: boolean | null
-    restaurantId: number | null
+    workspaceId: number | null
   }
 
   export type OperatingHoursCountAggregateOutputType = {
@@ -17182,7 +17182,7 @@ export namespace Prisma {
     openTime: number
     closeTime: number
     isClosed: number
-    restaurantId: number
+    workspaceId: number
     _all: number
   }
 
@@ -17190,13 +17190,13 @@ export namespace Prisma {
   export type OperatingHoursAvgAggregateInputType = {
     id?: true
     dayOfWeek?: true
-    restaurantId?: true
+    workspaceId?: true
   }
 
   export type OperatingHoursSumAggregateInputType = {
     id?: true
     dayOfWeek?: true
-    restaurantId?: true
+    workspaceId?: true
   }
 
   export type OperatingHoursMinAggregateInputType = {
@@ -17205,7 +17205,7 @@ export namespace Prisma {
     openTime?: true
     closeTime?: true
     isClosed?: true
-    restaurantId?: true
+    workspaceId?: true
   }
 
   export type OperatingHoursMaxAggregateInputType = {
@@ -17214,7 +17214,7 @@ export namespace Prisma {
     openTime?: true
     closeTime?: true
     isClosed?: true
-    restaurantId?: true
+    workspaceId?: true
   }
 
   export type OperatingHoursCountAggregateInputType = {
@@ -17223,7 +17223,7 @@ export namespace Prisma {
     openTime?: true
     closeTime?: true
     isClosed?: true
-    restaurantId?: true
+    workspaceId?: true
     _all?: true
   }
 
@@ -17319,7 +17319,7 @@ export namespace Prisma {
     openTime: string
     closeTime: string
     isClosed: boolean
-    restaurantId: number
+    workspaceId: number
     _count: OperatingHoursCountAggregateOutputType | null
     _avg: OperatingHoursAvgAggregateOutputType | null
     _sum: OperatingHoursSumAggregateOutputType | null
@@ -17347,8 +17347,8 @@ export namespace Prisma {
     openTime?: boolean
     closeTime?: boolean
     isClosed?: boolean
-    restaurantId?: boolean
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+    workspaceId?: boolean
+    workspace?: boolean | WorkspaceDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["operatingHours"]>
 
   export type OperatingHoursSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -17357,8 +17357,8 @@ export namespace Prisma {
     openTime?: boolean
     closeTime?: boolean
     isClosed?: boolean
-    restaurantId?: boolean
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+    workspaceId?: boolean
+    workspace?: boolean | WorkspaceDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["operatingHours"]>
 
   export type OperatingHoursSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -17367,8 +17367,8 @@ export namespace Prisma {
     openTime?: boolean
     closeTime?: boolean
     isClosed?: boolean
-    restaurantId?: boolean
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+    workspaceId?: boolean
+    workspace?: boolean | WorkspaceDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["operatingHours"]>
 
   export type OperatingHoursSelectScalar = {
@@ -17377,24 +17377,24 @@ export namespace Prisma {
     openTime?: boolean
     closeTime?: boolean
     isClosed?: boolean
-    restaurantId?: boolean
+    workspaceId?: boolean
   }
 
-  export type OperatingHoursOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "dayOfWeek" | "openTime" | "closeTime" | "isClosed" | "restaurantId", ExtArgs["result"]["operatingHours"]>
+  export type OperatingHoursOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "dayOfWeek" | "openTime" | "closeTime" | "isClosed" | "workspaceId", ExtArgs["result"]["operatingHours"]>
   export type OperatingHoursInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+    workspace?: boolean | WorkspaceDefaultArgs<ExtArgs>
   }
   export type OperatingHoursIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+    workspace?: boolean | WorkspaceDefaultArgs<ExtArgs>
   }
   export type OperatingHoursIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+    workspace?: boolean | WorkspaceDefaultArgs<ExtArgs>
   }
 
   export type $OperatingHoursPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "OperatingHours"
     objects: {
-      restaurant: Prisma.$RestaurantPayload<ExtArgs>
+      workspace: Prisma.$WorkspacePayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -17402,7 +17402,7 @@ export namespace Prisma {
       openTime: string
       closeTime: string
       isClosed: boolean
-      restaurantId: number
+      workspaceId: number
     }, ExtArgs["result"]["operatingHours"]>
     composites: {}
   }
@@ -17797,7 +17797,7 @@ export namespace Prisma {
    */
   export interface Prisma__OperatingHoursClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    restaurant<T extends RestaurantDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RestaurantDefaultArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    workspace<T extends WorkspaceDefaultArgs<ExtArgs> = {}>(args?: Subset<T, WorkspaceDefaultArgs<ExtArgs>>): Prisma__WorkspaceClient<$Result.GetResult<Prisma.$WorkspacePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -17832,7 +17832,7 @@ export namespace Prisma {
     readonly openTime: FieldRef<"OperatingHours", 'String'>
     readonly closeTime: FieldRef<"OperatingHours", 'String'>
     readonly isClosed: FieldRef<"OperatingHours", 'Boolean'>
-    readonly restaurantId: FieldRef<"OperatingHours", 'Int'>
+    readonly workspaceId: FieldRef<"OperatingHours", 'Int'>
   }
     
 
@@ -22812,8 +22812,8 @@ export namespace Prisma {
     role: 'role',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
-    isRestaurantHost: 'isRestaurantHost',
-    restaurantId: 'restaurantId',
+    isWorkspaceHost: 'isWorkspaceHost',
+    workspaceId: 'workspaceId',
     profileImage: 'profileImage',
     bio: 'bio',
     address: 'address',
@@ -22826,7 +22826,7 @@ export namespace Prisma {
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
-  export const RestaurantScalarFieldEnum: {
+  export const WorkspaceScalarFieldEnum: {
     id: 'id',
     name: 'name',
     description: 'description',
@@ -22838,7 +22838,7 @@ export namespace Prisma {
     phone: 'phone',
     email: 'email',
     website: 'website',
-    cuisine: 'cuisine',
+    workspaceType: 'workspaceType',
     priceRange: 'priceRange',
     rating: 'rating',
     isActive: 'isActive',
@@ -22847,7 +22847,7 @@ export namespace Prisma {
     hostId: 'hostId'
   };
 
-  export type RestaurantScalarFieldEnum = (typeof RestaurantScalarFieldEnum)[keyof typeof RestaurantScalarFieldEnum]
+  export type WorkspaceScalarFieldEnum = (typeof WorkspaceScalarFieldEnum)[keyof typeof WorkspaceScalarFieldEnum]
 
 
   export const ListingScalarFieldEnum: {
@@ -22861,7 +22861,7 @@ export namespace Prisma {
     isActive: 'isActive',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
-    restaurantId: 'restaurantId',
+    workspaceId: 'workspaceId',
     hostId: 'hostId'
   };
 
@@ -22970,16 +22970,16 @@ export namespace Prisma {
   export type NotificationScalarFieldEnum = (typeof NotificationScalarFieldEnum)[keyof typeof NotificationScalarFieldEnum]
 
 
-  export const RestaurantImageScalarFieldEnum: {
+  export const WorkspaceImageScalarFieldEnum: {
     id: 'id',
     url: 'url',
     caption: 'caption',
     isPrimary: 'isPrimary',
     createdAt: 'createdAt',
-    restaurantId: 'restaurantId'
+    workspaceId: 'workspaceId'
   };
 
-  export type RestaurantImageScalarFieldEnum = (typeof RestaurantImageScalarFieldEnum)[keyof typeof RestaurantImageScalarFieldEnum]
+  export type WorkspaceImageScalarFieldEnum = (typeof WorkspaceImageScalarFieldEnum)[keyof typeof WorkspaceImageScalarFieldEnum]
 
 
   export const OperatingHoursScalarFieldEnum: {
@@ -22988,7 +22988,7 @@ export namespace Prisma {
     openTime: 'openTime',
     closeTime: 'closeTime',
     isClosed: 'isClosed',
-    restaurantId: 'restaurantId'
+    workspaceId: 'workspaceId'
   };
 
   export type OperatingHoursScalarFieldEnum = (typeof OperatingHoursScalarFieldEnum)[keyof typeof OperatingHoursScalarFieldEnum]
@@ -23153,8 +23153,8 @@ export namespace Prisma {
     role?: StringFilter<"User"> | string
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
-    isRestaurantHost?: BoolFilter<"User"> | boolean
-    restaurantId?: IntNullableFilter<"User"> | number | null
+    isWorkspaceHost?: BoolFilter<"User"> | boolean
+    workspaceId?: IntNullableFilter<"User"> | number | null
     profileImage?: StringNullableFilter<"User"> | string | null
     bio?: StringNullableFilter<"User"> | string | null
     address?: StringNullableFilter<"User"> | string | null
@@ -23162,8 +23162,8 @@ export namespace Prisma {
     state?: StringNullableFilter<"User"> | string | null
     country?: StringNullableFilter<"User"> | string | null
     zipCode?: StringNullableFilter<"User"> | string | null
-    restaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
-    hostedRestaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
+    workspace?: XOR<WorkspaceNullableScalarRelationFilter, WorkspaceWhereInput> | null
+    hostedWorkspace?: XOR<WorkspaceNullableScalarRelationFilter, WorkspaceWhereInput> | null
     listings?: ListingListRelationFilter
     bookings?: BookingListRelationFilter
     reviews?: ReviewListRelationFilter
@@ -23184,8 +23184,8 @@ export namespace Prisma {
     role?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    isRestaurantHost?: SortOrder
-    restaurantId?: SortOrderInput | SortOrder
+    isWorkspaceHost?: SortOrder
+    workspaceId?: SortOrderInput | SortOrder
     profileImage?: SortOrderInput | SortOrder
     bio?: SortOrderInput | SortOrder
     address?: SortOrderInput | SortOrder
@@ -23193,8 +23193,8 @@ export namespace Prisma {
     state?: SortOrderInput | SortOrder
     country?: SortOrderInput | SortOrder
     zipCode?: SortOrderInput | SortOrder
-    restaurant?: RestaurantOrderByWithRelationInput
-    hostedRestaurant?: RestaurantOrderByWithRelationInput
+    workspace?: WorkspaceOrderByWithRelationInput
+    hostedWorkspace?: WorkspaceOrderByWithRelationInput
     listings?: ListingOrderByRelationAggregateInput
     bookings?: BookingOrderByRelationAggregateInput
     reviews?: ReviewOrderByRelationAggregateInput
@@ -23218,8 +23218,8 @@ export namespace Prisma {
     role?: StringFilter<"User"> | string
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
-    isRestaurantHost?: BoolFilter<"User"> | boolean
-    restaurantId?: IntNullableFilter<"User"> | number | null
+    isWorkspaceHost?: BoolFilter<"User"> | boolean
+    workspaceId?: IntNullableFilter<"User"> | number | null
     profileImage?: StringNullableFilter<"User"> | string | null
     bio?: StringNullableFilter<"User"> | string | null
     address?: StringNullableFilter<"User"> | string | null
@@ -23227,8 +23227,8 @@ export namespace Prisma {
     state?: StringNullableFilter<"User"> | string | null
     country?: StringNullableFilter<"User"> | string | null
     zipCode?: StringNullableFilter<"User"> | string | null
-    restaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
-    hostedRestaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
+    workspace?: XOR<WorkspaceNullableScalarRelationFilter, WorkspaceWhereInput> | null
+    hostedWorkspace?: XOR<WorkspaceNullableScalarRelationFilter, WorkspaceWhereInput> | null
     listings?: ListingListRelationFilter
     bookings?: BookingListRelationFilter
     reviews?: ReviewListRelationFilter
@@ -23249,8 +23249,8 @@ export namespace Prisma {
     role?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    isRestaurantHost?: SortOrder
-    restaurantId?: SortOrderInput | SortOrder
+    isWorkspaceHost?: SortOrder
+    workspaceId?: SortOrderInput | SortOrder
     profileImage?: SortOrderInput | SortOrder
     bio?: SortOrderInput | SortOrder
     address?: SortOrderInput | SortOrder
@@ -23277,8 +23277,8 @@ export namespace Prisma {
     role?: StringWithAggregatesFilter<"User"> | string
     createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
-    isRestaurantHost?: BoolWithAggregatesFilter<"User"> | boolean
-    restaurantId?: IntNullableWithAggregatesFilter<"User"> | number | null
+    isWorkspaceHost?: BoolWithAggregatesFilter<"User"> | boolean
+    workspaceId?: IntNullableWithAggregatesFilter<"User"> | number | null
     profileImage?: StringNullableWithAggregatesFilter<"User"> | string | null
     bio?: StringNullableWithAggregatesFilter<"User"> | string | null
     address?: StringNullableWithAggregatesFilter<"User"> | string | null
@@ -23288,36 +23288,36 @@ export namespace Prisma {
     zipCode?: StringNullableWithAggregatesFilter<"User"> | string | null
   }
 
-  export type RestaurantWhereInput = {
-    AND?: RestaurantWhereInput | RestaurantWhereInput[]
-    OR?: RestaurantWhereInput[]
-    NOT?: RestaurantWhereInput | RestaurantWhereInput[]
-    id?: IntFilter<"Restaurant"> | number
-    name?: StringFilter<"Restaurant"> | string
-    description?: StringNullableFilter<"Restaurant"> | string | null
-    address?: StringFilter<"Restaurant"> | string
-    city?: StringFilter<"Restaurant"> | string
-    state?: StringFilter<"Restaurant"> | string
-    country?: StringFilter<"Restaurant"> | string
-    zipCode?: StringFilter<"Restaurant"> | string
-    phone?: StringNullableFilter<"Restaurant"> | string | null
-    email?: StringNullableFilter<"Restaurant"> | string | null
-    website?: StringNullableFilter<"Restaurant"> | string | null
-    cuisine?: StringNullableFilter<"Restaurant"> | string | null
-    priceRange?: StringNullableFilter<"Restaurant"> | string | null
-    rating?: FloatNullableFilter<"Restaurant"> | number | null
-    isActive?: BoolFilter<"Restaurant"> | boolean
-    createdAt?: DateTimeFilter<"Restaurant"> | Date | string
-    updatedAt?: DateTimeFilter<"Restaurant"> | Date | string
-    hostId?: IntFilter<"Restaurant"> | number
+  export type WorkspaceWhereInput = {
+    AND?: WorkspaceWhereInput | WorkspaceWhereInput[]
+    OR?: WorkspaceWhereInput[]
+    NOT?: WorkspaceWhereInput | WorkspaceWhereInput[]
+    id?: IntFilter<"Workspace"> | number
+    name?: StringFilter<"Workspace"> | string
+    description?: StringNullableFilter<"Workspace"> | string | null
+    address?: StringFilter<"Workspace"> | string
+    city?: StringFilter<"Workspace"> | string
+    state?: StringFilter<"Workspace"> | string
+    country?: StringFilter<"Workspace"> | string
+    zipCode?: StringFilter<"Workspace"> | string
+    phone?: StringNullableFilter<"Workspace"> | string | null
+    email?: StringNullableFilter<"Workspace"> | string | null
+    website?: StringNullableFilter<"Workspace"> | string | null
+    workspaceType?: StringNullableFilter<"Workspace"> | string | null
+    priceRange?: StringNullableFilter<"Workspace"> | string | null
+    rating?: FloatNullableFilter<"Workspace"> | number | null
+    isActive?: BoolFilter<"Workspace"> | boolean
+    createdAt?: DateTimeFilter<"Workspace"> | Date | string
+    updatedAt?: DateTimeFilter<"Workspace"> | Date | string
+    hostId?: IntFilter<"Workspace"> | number
     host?: XOR<UserScalarRelationFilter, UserWhereInput>
     users?: UserListRelationFilter
     listings?: ListingListRelationFilter
-    images?: RestaurantImageListRelationFilter
+    images?: WorkspaceImageListRelationFilter
     operatingHours?: OperatingHoursListRelationFilter
   }
 
-  export type RestaurantOrderByWithRelationInput = {
+  export type WorkspaceOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrderInput | SortOrder
@@ -23329,7 +23329,7 @@ export namespace Prisma {
     phone?: SortOrderInput | SortOrder
     email?: SortOrderInput | SortOrder
     website?: SortOrderInput | SortOrder
-    cuisine?: SortOrderInput | SortOrder
+    workspaceType?: SortOrderInput | SortOrder
     priceRange?: SortOrderInput | SortOrder
     rating?: SortOrderInput | SortOrder
     isActive?: SortOrder
@@ -23339,40 +23339,40 @@ export namespace Prisma {
     host?: UserOrderByWithRelationInput
     users?: UserOrderByRelationAggregateInput
     listings?: ListingOrderByRelationAggregateInput
-    images?: RestaurantImageOrderByRelationAggregateInput
+    images?: WorkspaceImageOrderByRelationAggregateInput
     operatingHours?: OperatingHoursOrderByRelationAggregateInput
   }
 
-  export type RestaurantWhereUniqueInput = Prisma.AtLeast<{
+  export type WorkspaceWhereUniqueInput = Prisma.AtLeast<{
     id?: number
     hostId?: number
-    AND?: RestaurantWhereInput | RestaurantWhereInput[]
-    OR?: RestaurantWhereInput[]
-    NOT?: RestaurantWhereInput | RestaurantWhereInput[]
-    name?: StringFilter<"Restaurant"> | string
-    description?: StringNullableFilter<"Restaurant"> | string | null
-    address?: StringFilter<"Restaurant"> | string
-    city?: StringFilter<"Restaurant"> | string
-    state?: StringFilter<"Restaurant"> | string
-    country?: StringFilter<"Restaurant"> | string
-    zipCode?: StringFilter<"Restaurant"> | string
-    phone?: StringNullableFilter<"Restaurant"> | string | null
-    email?: StringNullableFilter<"Restaurant"> | string | null
-    website?: StringNullableFilter<"Restaurant"> | string | null
-    cuisine?: StringNullableFilter<"Restaurant"> | string | null
-    priceRange?: StringNullableFilter<"Restaurant"> | string | null
-    rating?: FloatNullableFilter<"Restaurant"> | number | null
-    isActive?: BoolFilter<"Restaurant"> | boolean
-    createdAt?: DateTimeFilter<"Restaurant"> | Date | string
-    updatedAt?: DateTimeFilter<"Restaurant"> | Date | string
+    AND?: WorkspaceWhereInput | WorkspaceWhereInput[]
+    OR?: WorkspaceWhereInput[]
+    NOT?: WorkspaceWhereInput | WorkspaceWhereInput[]
+    name?: StringFilter<"Workspace"> | string
+    description?: StringNullableFilter<"Workspace"> | string | null
+    address?: StringFilter<"Workspace"> | string
+    city?: StringFilter<"Workspace"> | string
+    state?: StringFilter<"Workspace"> | string
+    country?: StringFilter<"Workspace"> | string
+    zipCode?: StringFilter<"Workspace"> | string
+    phone?: StringNullableFilter<"Workspace"> | string | null
+    email?: StringNullableFilter<"Workspace"> | string | null
+    website?: StringNullableFilter<"Workspace"> | string | null
+    workspaceType?: StringNullableFilter<"Workspace"> | string | null
+    priceRange?: StringNullableFilter<"Workspace"> | string | null
+    rating?: FloatNullableFilter<"Workspace"> | number | null
+    isActive?: BoolFilter<"Workspace"> | boolean
+    createdAt?: DateTimeFilter<"Workspace"> | Date | string
+    updatedAt?: DateTimeFilter<"Workspace"> | Date | string
     host?: XOR<UserScalarRelationFilter, UserWhereInput>
     users?: UserListRelationFilter
     listings?: ListingListRelationFilter
-    images?: RestaurantImageListRelationFilter
+    images?: WorkspaceImageListRelationFilter
     operatingHours?: OperatingHoursListRelationFilter
   }, "id" | "hostId">
 
-  export type RestaurantOrderByWithAggregationInput = {
+  export type WorkspaceOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrderInput | SortOrder
@@ -23384,42 +23384,42 @@ export namespace Prisma {
     phone?: SortOrderInput | SortOrder
     email?: SortOrderInput | SortOrder
     website?: SortOrderInput | SortOrder
-    cuisine?: SortOrderInput | SortOrder
+    workspaceType?: SortOrderInput | SortOrder
     priceRange?: SortOrderInput | SortOrder
     rating?: SortOrderInput | SortOrder
     isActive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     hostId?: SortOrder
-    _count?: RestaurantCountOrderByAggregateInput
-    _avg?: RestaurantAvgOrderByAggregateInput
-    _max?: RestaurantMaxOrderByAggregateInput
-    _min?: RestaurantMinOrderByAggregateInput
-    _sum?: RestaurantSumOrderByAggregateInput
+    _count?: WorkspaceCountOrderByAggregateInput
+    _avg?: WorkspaceAvgOrderByAggregateInput
+    _max?: WorkspaceMaxOrderByAggregateInput
+    _min?: WorkspaceMinOrderByAggregateInput
+    _sum?: WorkspaceSumOrderByAggregateInput
   }
 
-  export type RestaurantScalarWhereWithAggregatesInput = {
-    AND?: RestaurantScalarWhereWithAggregatesInput | RestaurantScalarWhereWithAggregatesInput[]
-    OR?: RestaurantScalarWhereWithAggregatesInput[]
-    NOT?: RestaurantScalarWhereWithAggregatesInput | RestaurantScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Restaurant"> | number
-    name?: StringWithAggregatesFilter<"Restaurant"> | string
-    description?: StringNullableWithAggregatesFilter<"Restaurant"> | string | null
-    address?: StringWithAggregatesFilter<"Restaurant"> | string
-    city?: StringWithAggregatesFilter<"Restaurant"> | string
-    state?: StringWithAggregatesFilter<"Restaurant"> | string
-    country?: StringWithAggregatesFilter<"Restaurant"> | string
-    zipCode?: StringWithAggregatesFilter<"Restaurant"> | string
-    phone?: StringNullableWithAggregatesFilter<"Restaurant"> | string | null
-    email?: StringNullableWithAggregatesFilter<"Restaurant"> | string | null
-    website?: StringNullableWithAggregatesFilter<"Restaurant"> | string | null
-    cuisine?: StringNullableWithAggregatesFilter<"Restaurant"> | string | null
-    priceRange?: StringNullableWithAggregatesFilter<"Restaurant"> | string | null
-    rating?: FloatNullableWithAggregatesFilter<"Restaurant"> | number | null
-    isActive?: BoolWithAggregatesFilter<"Restaurant"> | boolean
-    createdAt?: DateTimeWithAggregatesFilter<"Restaurant"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Restaurant"> | Date | string
-    hostId?: IntWithAggregatesFilter<"Restaurant"> | number
+  export type WorkspaceScalarWhereWithAggregatesInput = {
+    AND?: WorkspaceScalarWhereWithAggregatesInput | WorkspaceScalarWhereWithAggregatesInput[]
+    OR?: WorkspaceScalarWhereWithAggregatesInput[]
+    NOT?: WorkspaceScalarWhereWithAggregatesInput | WorkspaceScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Workspace"> | number
+    name?: StringWithAggregatesFilter<"Workspace"> | string
+    description?: StringNullableWithAggregatesFilter<"Workspace"> | string | null
+    address?: StringWithAggregatesFilter<"Workspace"> | string
+    city?: StringWithAggregatesFilter<"Workspace"> | string
+    state?: StringWithAggregatesFilter<"Workspace"> | string
+    country?: StringWithAggregatesFilter<"Workspace"> | string
+    zipCode?: StringWithAggregatesFilter<"Workspace"> | string
+    phone?: StringNullableWithAggregatesFilter<"Workspace"> | string | null
+    email?: StringNullableWithAggregatesFilter<"Workspace"> | string | null
+    website?: StringNullableWithAggregatesFilter<"Workspace"> | string | null
+    workspaceType?: StringNullableWithAggregatesFilter<"Workspace"> | string | null
+    priceRange?: StringNullableWithAggregatesFilter<"Workspace"> | string | null
+    rating?: FloatNullableWithAggregatesFilter<"Workspace"> | number | null
+    isActive?: BoolWithAggregatesFilter<"Workspace"> | boolean
+    createdAt?: DateTimeWithAggregatesFilter<"Workspace"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Workspace"> | Date | string
+    hostId?: IntWithAggregatesFilter<"Workspace"> | number
   }
 
   export type ListingWhereInput = {
@@ -23436,9 +23436,9 @@ export namespace Prisma {
     isActive?: BoolFilter<"Listing"> | boolean
     createdAt?: DateTimeFilter<"Listing"> | Date | string
     updatedAt?: DateTimeFilter<"Listing"> | Date | string
-    restaurantId?: IntNullableFilter<"Listing"> | number | null
+    workspaceId?: IntNullableFilter<"Listing"> | number | null
     hostId?: IntFilter<"Listing"> | number
-    restaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
+    workspace?: XOR<WorkspaceNullableScalarRelationFilter, WorkspaceWhereInput> | null
     host?: XOR<UserScalarRelationFilter, UserWhereInput>
     bookings?: BookingListRelationFilter
     images?: ListingImageListRelationFilter
@@ -23458,9 +23458,9 @@ export namespace Prisma {
     isActive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    restaurantId?: SortOrderInput | SortOrder
+    workspaceId?: SortOrderInput | SortOrder
     hostId?: SortOrder
-    restaurant?: RestaurantOrderByWithRelationInput
+    workspace?: WorkspaceOrderByWithRelationInput
     host?: UserOrderByWithRelationInput
     bookings?: BookingOrderByRelationAggregateInput
     images?: ListingImageOrderByRelationAggregateInput
@@ -23483,9 +23483,9 @@ export namespace Prisma {
     isActive?: BoolFilter<"Listing"> | boolean
     createdAt?: DateTimeFilter<"Listing"> | Date | string
     updatedAt?: DateTimeFilter<"Listing"> | Date | string
-    restaurantId?: IntNullableFilter<"Listing"> | number | null
+    workspaceId?: IntNullableFilter<"Listing"> | number | null
     hostId?: IntFilter<"Listing"> | number
-    restaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
+    workspace?: XOR<WorkspaceNullableScalarRelationFilter, WorkspaceWhereInput> | null
     host?: XOR<UserScalarRelationFilter, UserWhereInput>
     bookings?: BookingListRelationFilter
     images?: ListingImageListRelationFilter
@@ -23505,7 +23505,7 @@ export namespace Prisma {
     isActive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    restaurantId?: SortOrderInput | SortOrder
+    workspaceId?: SortOrderInput | SortOrder
     hostId?: SortOrder
     _count?: ListingCountOrderByAggregateInput
     _avg?: ListingAvgOrderByAggregateInput
@@ -23528,7 +23528,7 @@ export namespace Prisma {
     isActive?: BoolWithAggregatesFilter<"Listing"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"Listing"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Listing"> | Date | string
-    restaurantId?: IntNullableWithAggregatesFilter<"Listing"> | number | null
+    workspaceId?: IntNullableWithAggregatesFilter<"Listing"> | number | null
     hostId?: IntWithAggregatesFilter<"Listing"> | number
   }
 
@@ -24084,66 +24084,66 @@ export namespace Prisma {
     userId?: IntWithAggregatesFilter<"Notification"> | number
   }
 
-  export type RestaurantImageWhereInput = {
-    AND?: RestaurantImageWhereInput | RestaurantImageWhereInput[]
-    OR?: RestaurantImageWhereInput[]
-    NOT?: RestaurantImageWhereInput | RestaurantImageWhereInput[]
-    id?: IntFilter<"RestaurantImage"> | number
-    url?: StringFilter<"RestaurantImage"> | string
-    caption?: StringNullableFilter<"RestaurantImage"> | string | null
-    isPrimary?: BoolFilter<"RestaurantImage"> | boolean
-    createdAt?: DateTimeFilter<"RestaurantImage"> | Date | string
-    restaurantId?: IntFilter<"RestaurantImage"> | number
-    restaurant?: XOR<RestaurantScalarRelationFilter, RestaurantWhereInput>
+  export type WorkspaceImageWhereInput = {
+    AND?: WorkspaceImageWhereInput | WorkspaceImageWhereInput[]
+    OR?: WorkspaceImageWhereInput[]
+    NOT?: WorkspaceImageWhereInput | WorkspaceImageWhereInput[]
+    id?: IntFilter<"WorkspaceImage"> | number
+    url?: StringFilter<"WorkspaceImage"> | string
+    caption?: StringNullableFilter<"WorkspaceImage"> | string | null
+    isPrimary?: BoolFilter<"WorkspaceImage"> | boolean
+    createdAt?: DateTimeFilter<"WorkspaceImage"> | Date | string
+    workspaceId?: IntFilter<"WorkspaceImage"> | number
+    workspace?: XOR<WorkspaceScalarRelationFilter, WorkspaceWhereInput>
   }
 
-  export type RestaurantImageOrderByWithRelationInput = {
+  export type WorkspaceImageOrderByWithRelationInput = {
     id?: SortOrder
     url?: SortOrder
     caption?: SortOrderInput | SortOrder
     isPrimary?: SortOrder
     createdAt?: SortOrder
-    restaurantId?: SortOrder
-    restaurant?: RestaurantOrderByWithRelationInput
+    workspaceId?: SortOrder
+    workspace?: WorkspaceOrderByWithRelationInput
   }
 
-  export type RestaurantImageWhereUniqueInput = Prisma.AtLeast<{
+  export type WorkspaceImageWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: RestaurantImageWhereInput | RestaurantImageWhereInput[]
-    OR?: RestaurantImageWhereInput[]
-    NOT?: RestaurantImageWhereInput | RestaurantImageWhereInput[]
-    url?: StringFilter<"RestaurantImage"> | string
-    caption?: StringNullableFilter<"RestaurantImage"> | string | null
-    isPrimary?: BoolFilter<"RestaurantImage"> | boolean
-    createdAt?: DateTimeFilter<"RestaurantImage"> | Date | string
-    restaurantId?: IntFilter<"RestaurantImage"> | number
-    restaurant?: XOR<RestaurantScalarRelationFilter, RestaurantWhereInput>
+    AND?: WorkspaceImageWhereInput | WorkspaceImageWhereInput[]
+    OR?: WorkspaceImageWhereInput[]
+    NOT?: WorkspaceImageWhereInput | WorkspaceImageWhereInput[]
+    url?: StringFilter<"WorkspaceImage"> | string
+    caption?: StringNullableFilter<"WorkspaceImage"> | string | null
+    isPrimary?: BoolFilter<"WorkspaceImage"> | boolean
+    createdAt?: DateTimeFilter<"WorkspaceImage"> | Date | string
+    workspaceId?: IntFilter<"WorkspaceImage"> | number
+    workspace?: XOR<WorkspaceScalarRelationFilter, WorkspaceWhereInput>
   }, "id">
 
-  export type RestaurantImageOrderByWithAggregationInput = {
+  export type WorkspaceImageOrderByWithAggregationInput = {
     id?: SortOrder
     url?: SortOrder
     caption?: SortOrderInput | SortOrder
     isPrimary?: SortOrder
     createdAt?: SortOrder
-    restaurantId?: SortOrder
-    _count?: RestaurantImageCountOrderByAggregateInput
-    _avg?: RestaurantImageAvgOrderByAggregateInput
-    _max?: RestaurantImageMaxOrderByAggregateInput
-    _min?: RestaurantImageMinOrderByAggregateInput
-    _sum?: RestaurantImageSumOrderByAggregateInput
+    workspaceId?: SortOrder
+    _count?: WorkspaceImageCountOrderByAggregateInput
+    _avg?: WorkspaceImageAvgOrderByAggregateInput
+    _max?: WorkspaceImageMaxOrderByAggregateInput
+    _min?: WorkspaceImageMinOrderByAggregateInput
+    _sum?: WorkspaceImageSumOrderByAggregateInput
   }
 
-  export type RestaurantImageScalarWhereWithAggregatesInput = {
-    AND?: RestaurantImageScalarWhereWithAggregatesInput | RestaurantImageScalarWhereWithAggregatesInput[]
-    OR?: RestaurantImageScalarWhereWithAggregatesInput[]
-    NOT?: RestaurantImageScalarWhereWithAggregatesInput | RestaurantImageScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"RestaurantImage"> | number
-    url?: StringWithAggregatesFilter<"RestaurantImage"> | string
-    caption?: StringNullableWithAggregatesFilter<"RestaurantImage"> | string | null
-    isPrimary?: BoolWithAggregatesFilter<"RestaurantImage"> | boolean
-    createdAt?: DateTimeWithAggregatesFilter<"RestaurantImage"> | Date | string
-    restaurantId?: IntWithAggregatesFilter<"RestaurantImage"> | number
+  export type WorkspaceImageScalarWhereWithAggregatesInput = {
+    AND?: WorkspaceImageScalarWhereWithAggregatesInput | WorkspaceImageScalarWhereWithAggregatesInput[]
+    OR?: WorkspaceImageScalarWhereWithAggregatesInput[]
+    NOT?: WorkspaceImageScalarWhereWithAggregatesInput | WorkspaceImageScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"WorkspaceImage"> | number
+    url?: StringWithAggregatesFilter<"WorkspaceImage"> | string
+    caption?: StringNullableWithAggregatesFilter<"WorkspaceImage"> | string | null
+    isPrimary?: BoolWithAggregatesFilter<"WorkspaceImage"> | boolean
+    createdAt?: DateTimeWithAggregatesFilter<"WorkspaceImage"> | Date | string
+    workspaceId?: IntWithAggregatesFilter<"WorkspaceImage"> | number
   }
 
   export type OperatingHoursWhereInput = {
@@ -24155,8 +24155,8 @@ export namespace Prisma {
     openTime?: StringFilter<"OperatingHours"> | string
     closeTime?: StringFilter<"OperatingHours"> | string
     isClosed?: BoolFilter<"OperatingHours"> | boolean
-    restaurantId?: IntFilter<"OperatingHours"> | number
-    restaurant?: XOR<RestaurantScalarRelationFilter, RestaurantWhereInput>
+    workspaceId?: IntFilter<"OperatingHours"> | number
+    workspace?: XOR<WorkspaceScalarRelationFilter, WorkspaceWhereInput>
   }
 
   export type OperatingHoursOrderByWithRelationInput = {
@@ -24165,13 +24165,13 @@ export namespace Prisma {
     openTime?: SortOrder
     closeTime?: SortOrder
     isClosed?: SortOrder
-    restaurantId?: SortOrder
-    restaurant?: RestaurantOrderByWithRelationInput
+    workspaceId?: SortOrder
+    workspace?: WorkspaceOrderByWithRelationInput
   }
 
   export type OperatingHoursWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    restaurantId_dayOfWeek?: OperatingHoursRestaurantIdDayOfWeekCompoundUniqueInput
+    workspaceId_dayOfWeek?: OperatingHoursWorkspaceIdDayOfWeekCompoundUniqueInput
     AND?: OperatingHoursWhereInput | OperatingHoursWhereInput[]
     OR?: OperatingHoursWhereInput[]
     NOT?: OperatingHoursWhereInput | OperatingHoursWhereInput[]
@@ -24179,9 +24179,9 @@ export namespace Prisma {
     openTime?: StringFilter<"OperatingHours"> | string
     closeTime?: StringFilter<"OperatingHours"> | string
     isClosed?: BoolFilter<"OperatingHours"> | boolean
-    restaurantId?: IntFilter<"OperatingHours"> | number
-    restaurant?: XOR<RestaurantScalarRelationFilter, RestaurantWhereInput>
-  }, "id" | "restaurantId_dayOfWeek">
+    workspaceId?: IntFilter<"OperatingHours"> | number
+    workspace?: XOR<WorkspaceScalarRelationFilter, WorkspaceWhereInput>
+  }, "id" | "workspaceId_dayOfWeek">
 
   export type OperatingHoursOrderByWithAggregationInput = {
     id?: SortOrder
@@ -24189,7 +24189,7 @@ export namespace Prisma {
     openTime?: SortOrder
     closeTime?: SortOrder
     isClosed?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
     _count?: OperatingHoursCountOrderByAggregateInput
     _avg?: OperatingHoursAvgOrderByAggregateInput
     _max?: OperatingHoursMaxOrderByAggregateInput
@@ -24206,7 +24206,7 @@ export namespace Prisma {
     openTime?: StringWithAggregatesFilter<"OperatingHours"> | string
     closeTime?: StringWithAggregatesFilter<"OperatingHours"> | string
     isClosed?: BoolWithAggregatesFilter<"OperatingHours"> | boolean
-    restaurantId?: IntWithAggregatesFilter<"OperatingHours"> | number
+    workspaceId?: IntWithAggregatesFilter<"OperatingHours"> | number
   }
 
   export type HostSettingsWhereInput = {
@@ -24494,7 +24494,7 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
+    isWorkspaceHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -24502,8 +24502,8 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    workspace?: WorkspaceCreateNestedOneWithoutUsersInput
+    hostedWorkspace?: WorkspaceCreateNestedOneWithoutHostInput
     listings?: ListingCreateNestedManyWithoutHostInput
     bookings?: BookingCreateNestedManyWithoutGuestInput
     reviews?: ReviewCreateNestedManyWithoutAuthorInput
@@ -24524,8 +24524,8 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
+    isWorkspaceHost?: boolean
+    workspaceId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -24533,7 +24533,7 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    hostedWorkspace?: WorkspaceUncheckedCreateNestedOneWithoutHostInput
     listings?: ListingUncheckedCreateNestedManyWithoutHostInput
     bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
@@ -24553,7 +24553,7 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -24561,8 +24561,8 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    workspace?: WorkspaceUpdateOneWithoutUsersNestedInput
+    hostedWorkspace?: WorkspaceUpdateOneWithoutHostNestedInput
     listings?: ListingUpdateManyWithoutHostNestedInput
     bookings?: BookingUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUpdateManyWithoutAuthorNestedInput
@@ -24583,8 +24583,8 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -24592,7 +24592,7 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    hostedWorkspace?: WorkspaceUncheckedUpdateOneWithoutHostNestedInput
     listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
     bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
@@ -24613,8 +24613,8 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
+    isWorkspaceHost?: boolean
+    workspaceId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -24632,7 +24632,7 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -24651,8 +24651,8 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -24662,7 +24662,7 @@ export namespace Prisma {
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type RestaurantCreateInput = {
+  export type WorkspaceCreateInput = {
     name: string
     description?: string | null
     address: string
@@ -24673,20 +24673,20 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    workspaceType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    host: UserCreateNestedOneWithoutHostedRestaurantInput
-    users?: UserCreateNestedManyWithoutRestaurantInput
-    listings?: ListingCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursCreateNestedManyWithoutRestaurantInput
+    host: UserCreateNestedOneWithoutHostedWorkspaceInput
+    users?: UserCreateNestedManyWithoutWorkspaceInput
+    listings?: ListingCreateNestedManyWithoutWorkspaceInput
+    images?: WorkspaceImageCreateNestedManyWithoutWorkspaceInput
+    operatingHours?: OperatingHoursCreateNestedManyWithoutWorkspaceInput
   }
 
-  export type RestaurantUncheckedCreateInput = {
+  export type WorkspaceUncheckedCreateInput = {
     id?: number
     name: string
     description?: string | null
@@ -24698,20 +24698,20 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    workspaceType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     hostId: number
-    users?: UserUncheckedCreateNestedManyWithoutRestaurantInput
-    listings?: ListingUncheckedCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput
+    users?: UserUncheckedCreateNestedManyWithoutWorkspaceInput
+    listings?: ListingUncheckedCreateNestedManyWithoutWorkspaceInput
+    images?: WorkspaceImageUncheckedCreateNestedManyWithoutWorkspaceInput
+    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutWorkspaceInput
   }
 
-  export type RestaurantUpdateInput = {
+  export type WorkspaceUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     address?: StringFieldUpdateOperationsInput | string
@@ -24722,20 +24722,20 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    workspaceType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    host?: UserUpdateOneRequiredWithoutHostedRestaurantNestedInput
-    users?: UserUpdateManyWithoutRestaurantNestedInput
-    listings?: ListingUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUpdateManyWithoutRestaurantNestedInput
+    host?: UserUpdateOneRequiredWithoutHostedWorkspaceNestedInput
+    users?: UserUpdateManyWithoutWorkspaceNestedInput
+    listings?: ListingUpdateManyWithoutWorkspaceNestedInput
+    images?: WorkspaceImageUpdateManyWithoutWorkspaceNestedInput
+    operatingHours?: OperatingHoursUpdateManyWithoutWorkspaceNestedInput
   }
 
-  export type RestaurantUncheckedUpdateInput = {
+  export type WorkspaceUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
@@ -24747,20 +24747,20 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    workspaceType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     hostId?: IntFieldUpdateOperationsInput | number
-    users?: UserUncheckedUpdateManyWithoutRestaurantNestedInput
-    listings?: ListingUncheckedUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutRestaurantNestedInput
+    users?: UserUncheckedUpdateManyWithoutWorkspaceNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutWorkspaceNestedInput
+    images?: WorkspaceImageUncheckedUpdateManyWithoutWorkspaceNestedInput
+    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutWorkspaceNestedInput
   }
 
-  export type RestaurantCreateManyInput = {
+  export type WorkspaceCreateManyInput = {
     id?: number
     name: string
     description?: string | null
@@ -24772,7 +24772,7 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    workspaceType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
@@ -24781,7 +24781,7 @@ export namespace Prisma {
     hostId: number
   }
 
-  export type RestaurantUpdateManyMutationInput = {
+  export type WorkspaceUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     address?: StringFieldUpdateOperationsInput | string
@@ -24792,7 +24792,7 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    workspaceType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
@@ -24800,7 +24800,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type RestaurantUncheckedUpdateManyInput = {
+  export type WorkspaceUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
@@ -24812,7 +24812,7 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    workspaceType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
@@ -24831,7 +24831,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurant?: RestaurantCreateNestedOneWithoutListingsInput
+    workspace?: WorkspaceCreateNestedOneWithoutListingsInput
     host: UserCreateNestedOneWithoutListingsInput
     bookings?: BookingCreateNestedManyWithoutListingInput
     images?: ListingImageCreateNestedManyWithoutListingInput
@@ -24851,7 +24851,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurantId?: number | null
+    workspaceId?: number | null
     hostId: number
     bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
     images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
@@ -24870,7 +24870,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurant?: RestaurantUpdateOneWithoutListingsNestedInput
+    workspace?: WorkspaceUpdateOneWithoutListingsNestedInput
     host?: UserUpdateOneRequiredWithoutListingsNestedInput
     bookings?: BookingUpdateManyWithoutListingNestedInput
     images?: ListingImageUpdateManyWithoutListingNestedInput
@@ -24890,7 +24890,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     hostId?: IntFieldUpdateOperationsInput | number
     bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
     images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
@@ -24910,7 +24910,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurantId?: number | null
+    workspaceId?: number | null
     hostId: number
   }
 
@@ -24937,7 +24937,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     hostId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -25468,63 +25468,63 @@ export namespace Prisma {
     userId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type RestaurantImageCreateInput = {
+  export type WorkspaceImageCreateInput = {
     url: string
     caption?: string | null
     isPrimary?: boolean
     createdAt?: Date | string
-    restaurant: RestaurantCreateNestedOneWithoutImagesInput
+    workspace: WorkspaceCreateNestedOneWithoutImagesInput
   }
 
-  export type RestaurantImageUncheckedCreateInput = {
+  export type WorkspaceImageUncheckedCreateInput = {
     id?: number
     url: string
     caption?: string | null
     isPrimary?: boolean
     createdAt?: Date | string
-    restaurantId: number
+    workspaceId: number
   }
 
-  export type RestaurantImageUpdateInput = {
+  export type WorkspaceImageUpdateInput = {
     url?: StringFieldUpdateOperationsInput | string
     caption?: NullableStringFieldUpdateOperationsInput | string | null
     isPrimary?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurant?: RestaurantUpdateOneRequiredWithoutImagesNestedInput
+    workspace?: WorkspaceUpdateOneRequiredWithoutImagesNestedInput
   }
 
-  export type RestaurantImageUncheckedUpdateInput = {
+  export type WorkspaceImageUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     url?: StringFieldUpdateOperationsInput | string
     caption?: NullableStringFieldUpdateOperationsInput | string | null
     isPrimary?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: IntFieldUpdateOperationsInput | number
+    workspaceId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type RestaurantImageCreateManyInput = {
+  export type WorkspaceImageCreateManyInput = {
     id?: number
     url: string
     caption?: string | null
     isPrimary?: boolean
     createdAt?: Date | string
-    restaurantId: number
+    workspaceId: number
   }
 
-  export type RestaurantImageUpdateManyMutationInput = {
+  export type WorkspaceImageUpdateManyMutationInput = {
     url?: StringFieldUpdateOperationsInput | string
     caption?: NullableStringFieldUpdateOperationsInput | string | null
     isPrimary?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type RestaurantImageUncheckedUpdateManyInput = {
+  export type WorkspaceImageUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     url?: StringFieldUpdateOperationsInput | string
     caption?: NullableStringFieldUpdateOperationsInput | string | null
     isPrimary?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: IntFieldUpdateOperationsInput | number
+    workspaceId?: IntFieldUpdateOperationsInput | number
   }
 
   export type OperatingHoursCreateInput = {
@@ -25532,7 +25532,7 @@ export namespace Prisma {
     openTime: string
     closeTime: string
     isClosed?: boolean
-    restaurant: RestaurantCreateNestedOneWithoutOperatingHoursInput
+    workspace: WorkspaceCreateNestedOneWithoutOperatingHoursInput
   }
 
   export type OperatingHoursUncheckedCreateInput = {
@@ -25541,7 +25541,7 @@ export namespace Prisma {
     openTime: string
     closeTime: string
     isClosed?: boolean
-    restaurantId: number
+    workspaceId: number
   }
 
   export type OperatingHoursUpdateInput = {
@@ -25549,7 +25549,7 @@ export namespace Prisma {
     openTime?: StringFieldUpdateOperationsInput | string
     closeTime?: StringFieldUpdateOperationsInput | string
     isClosed?: BoolFieldUpdateOperationsInput | boolean
-    restaurant?: RestaurantUpdateOneRequiredWithoutOperatingHoursNestedInput
+    workspace?: WorkspaceUpdateOneRequiredWithoutOperatingHoursNestedInput
   }
 
   export type OperatingHoursUncheckedUpdateInput = {
@@ -25558,7 +25558,7 @@ export namespace Prisma {
     openTime?: StringFieldUpdateOperationsInput | string
     closeTime?: StringFieldUpdateOperationsInput | string
     isClosed?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: IntFieldUpdateOperationsInput | number
+    workspaceId?: IntFieldUpdateOperationsInput | number
   }
 
   export type OperatingHoursCreateManyInput = {
@@ -25567,7 +25567,7 @@ export namespace Prisma {
     openTime: string
     closeTime: string
     isClosed?: boolean
-    restaurantId: number
+    workspaceId: number
   }
 
   export type OperatingHoursUpdateManyMutationInput = {
@@ -25583,7 +25583,7 @@ export namespace Prisma {
     openTime?: StringFieldUpdateOperationsInput | string
     closeTime?: StringFieldUpdateOperationsInput | string
     isClosed?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: IntFieldUpdateOperationsInput | number
+    workspaceId?: IntFieldUpdateOperationsInput | number
   }
 
   export type HostSettingsCreateInput = {
@@ -25920,9 +25920,9 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type RestaurantNullableScalarRelationFilter = {
-    is?: RestaurantWhereInput | null
-    isNot?: RestaurantWhereInput | null
+  export type WorkspaceNullableScalarRelationFilter = {
+    is?: WorkspaceWhereInput | null
+    isNot?: WorkspaceWhereInput | null
   }
 
   export type ListingListRelationFilter = {
@@ -26014,8 +26014,8 @@ export namespace Prisma {
     role?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    isRestaurantHost?: SortOrder
-    restaurantId?: SortOrder
+    isWorkspaceHost?: SortOrder
+    workspaceId?: SortOrder
     profileImage?: SortOrder
     bio?: SortOrder
     address?: SortOrder
@@ -26027,7 +26027,7 @@ export namespace Prisma {
 
   export type UserAvgOrderByAggregateInput = {
     id?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
   }
 
   export type UserMaxOrderByAggregateInput = {
@@ -26039,8 +26039,8 @@ export namespace Prisma {
     role?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    isRestaurantHost?: SortOrder
-    restaurantId?: SortOrder
+    isWorkspaceHost?: SortOrder
+    workspaceId?: SortOrder
     profileImage?: SortOrder
     bio?: SortOrder
     address?: SortOrder
@@ -26059,8 +26059,8 @@ export namespace Prisma {
     role?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    isRestaurantHost?: SortOrder
-    restaurantId?: SortOrder
+    isWorkspaceHost?: SortOrder
+    workspaceId?: SortOrder
     profileImage?: SortOrder
     bio?: SortOrder
     address?: SortOrder
@@ -26072,7 +26072,7 @@ export namespace Prisma {
 
   export type UserSumOrderByAggregateInput = {
     id?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
   }
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {
@@ -26187,10 +26187,10 @@ export namespace Prisma {
     none?: UserWhereInput
   }
 
-  export type RestaurantImageListRelationFilter = {
-    every?: RestaurantImageWhereInput
-    some?: RestaurantImageWhereInput
-    none?: RestaurantImageWhereInput
+  export type WorkspaceImageListRelationFilter = {
+    every?: WorkspaceImageWhereInput
+    some?: WorkspaceImageWhereInput
+    none?: WorkspaceImageWhereInput
   }
 
   export type OperatingHoursListRelationFilter = {
@@ -26203,7 +26203,7 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type RestaurantImageOrderByRelationAggregateInput = {
+  export type WorkspaceImageOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -26211,7 +26211,7 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type RestaurantCountOrderByAggregateInput = {
+  export type WorkspaceCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
@@ -26223,7 +26223,7 @@ export namespace Prisma {
     phone?: SortOrder
     email?: SortOrder
     website?: SortOrder
-    cuisine?: SortOrder
+    workspaceType?: SortOrder
     priceRange?: SortOrder
     rating?: SortOrder
     isActive?: SortOrder
@@ -26232,34 +26232,13 @@ export namespace Prisma {
     hostId?: SortOrder
   }
 
-  export type RestaurantAvgOrderByAggregateInput = {
+  export type WorkspaceAvgOrderByAggregateInput = {
     id?: SortOrder
     rating?: SortOrder
     hostId?: SortOrder
   }
 
-  export type RestaurantMaxOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-    address?: SortOrder
-    city?: SortOrder
-    state?: SortOrder
-    country?: SortOrder
-    zipCode?: SortOrder
-    phone?: SortOrder
-    email?: SortOrder
-    website?: SortOrder
-    cuisine?: SortOrder
-    priceRange?: SortOrder
-    rating?: SortOrder
-    isActive?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    hostId?: SortOrder
-  }
-
-  export type RestaurantMinOrderByAggregateInput = {
+  export type WorkspaceMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
@@ -26271,7 +26250,7 @@ export namespace Prisma {
     phone?: SortOrder
     email?: SortOrder
     website?: SortOrder
-    cuisine?: SortOrder
+    workspaceType?: SortOrder
     priceRange?: SortOrder
     rating?: SortOrder
     isActive?: SortOrder
@@ -26280,7 +26259,28 @@ export namespace Prisma {
     hostId?: SortOrder
   }
 
-  export type RestaurantSumOrderByAggregateInput = {
+  export type WorkspaceMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    address?: SortOrder
+    city?: SortOrder
+    state?: SortOrder
+    country?: SortOrder
+    zipCode?: SortOrder
+    phone?: SortOrder
+    email?: SortOrder
+    website?: SortOrder
+    workspaceType?: SortOrder
+    priceRange?: SortOrder
+    rating?: SortOrder
+    isActive?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    hostId?: SortOrder
+  }
+
+  export type WorkspaceSumOrderByAggregateInput = {
     id?: SortOrder
     rating?: SortOrder
     hostId?: SortOrder
@@ -26343,7 +26343,7 @@ export namespace Prisma {
     isActive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
     hostId?: SortOrder
   }
 
@@ -26352,7 +26352,7 @@ export namespace Prisma {
     capacity?: SortOrder
     pricePerHour?: SortOrder
     pricePerDay?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
     hostId?: SortOrder
   }
 
@@ -26367,7 +26367,7 @@ export namespace Prisma {
     isActive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
     hostId?: SortOrder
   }
 
@@ -26382,7 +26382,7 @@ export namespace Prisma {
     isActive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
     hostId?: SortOrder
   }
 
@@ -26391,7 +26391,7 @@ export namespace Prisma {
     capacity?: SortOrder
     pricePerHour?: SortOrder
     pricePerDay?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
     hostId?: SortOrder
   }
 
@@ -26799,50 +26799,50 @@ export namespace Prisma {
     userId?: SortOrder
   }
 
-  export type RestaurantScalarRelationFilter = {
-    is?: RestaurantWhereInput
-    isNot?: RestaurantWhereInput
+  export type WorkspaceScalarRelationFilter = {
+    is?: WorkspaceWhereInput
+    isNot?: WorkspaceWhereInput
   }
 
-  export type RestaurantImageCountOrderByAggregateInput = {
+  export type WorkspaceImageCountOrderByAggregateInput = {
     id?: SortOrder
     url?: SortOrder
     caption?: SortOrder
     isPrimary?: SortOrder
     createdAt?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
   }
 
-  export type RestaurantImageAvgOrderByAggregateInput = {
+  export type WorkspaceImageAvgOrderByAggregateInput = {
     id?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
   }
 
-  export type RestaurantImageMaxOrderByAggregateInput = {
-    id?: SortOrder
-    url?: SortOrder
-    caption?: SortOrder
-    isPrimary?: SortOrder
-    createdAt?: SortOrder
-    restaurantId?: SortOrder
-  }
-
-  export type RestaurantImageMinOrderByAggregateInput = {
+  export type WorkspaceImageMaxOrderByAggregateInput = {
     id?: SortOrder
     url?: SortOrder
     caption?: SortOrder
     isPrimary?: SortOrder
     createdAt?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
   }
 
-  export type RestaurantImageSumOrderByAggregateInput = {
+  export type WorkspaceImageMinOrderByAggregateInput = {
     id?: SortOrder
-    restaurantId?: SortOrder
+    url?: SortOrder
+    caption?: SortOrder
+    isPrimary?: SortOrder
+    createdAt?: SortOrder
+    workspaceId?: SortOrder
   }
 
-  export type OperatingHoursRestaurantIdDayOfWeekCompoundUniqueInput = {
-    restaurantId: number
+  export type WorkspaceImageSumOrderByAggregateInput = {
+    id?: SortOrder
+    workspaceId?: SortOrder
+  }
+
+  export type OperatingHoursWorkspaceIdDayOfWeekCompoundUniqueInput = {
+    workspaceId: number
     dayOfWeek: number
   }
 
@@ -26852,13 +26852,13 @@ export namespace Prisma {
     openTime?: SortOrder
     closeTime?: SortOrder
     isClosed?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
   }
 
   export type OperatingHoursAvgOrderByAggregateInput = {
     id?: SortOrder
     dayOfWeek?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
   }
 
   export type OperatingHoursMaxOrderByAggregateInput = {
@@ -26867,7 +26867,7 @@ export namespace Prisma {
     openTime?: SortOrder
     closeTime?: SortOrder
     isClosed?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
   }
 
   export type OperatingHoursMinOrderByAggregateInput = {
@@ -26876,13 +26876,13 @@ export namespace Prisma {
     openTime?: SortOrder
     closeTime?: SortOrder
     isClosed?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
   }
 
   export type OperatingHoursSumOrderByAggregateInput = {
     id?: SortOrder
     dayOfWeek?: SortOrder
-    restaurantId?: SortOrder
+    workspaceId?: SortOrder
   }
 
   export type HostSettingsCountOrderByAggregateInput = {
@@ -27054,16 +27054,16 @@ export namespace Prisma {
     receiverId?: SortOrder
   }
 
-  export type RestaurantCreateNestedOneWithoutUsersInput = {
-    create?: XOR<RestaurantCreateWithoutUsersInput, RestaurantUncheckedCreateWithoutUsersInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutUsersInput
-    connect?: RestaurantWhereUniqueInput
+  export type WorkspaceCreateNestedOneWithoutUsersInput = {
+    create?: XOR<WorkspaceCreateWithoutUsersInput, WorkspaceUncheckedCreateWithoutUsersInput>
+    connectOrCreate?: WorkspaceCreateOrConnectWithoutUsersInput
+    connect?: WorkspaceWhereUniqueInput
   }
 
-  export type RestaurantCreateNestedOneWithoutHostInput = {
-    create?: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutHostInput
-    connect?: RestaurantWhereUniqueInput
+  export type WorkspaceCreateNestedOneWithoutHostInput = {
+    create?: XOR<WorkspaceCreateWithoutHostInput, WorkspaceUncheckedCreateWithoutHostInput>
+    connectOrCreate?: WorkspaceCreateOrConnectWithoutHostInput
+    connect?: WorkspaceWhereUniqueInput
   }
 
   export type ListingCreateNestedManyWithoutHostInput = {
@@ -27128,10 +27128,10 @@ export namespace Prisma {
     connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
   }
 
-  export type RestaurantUncheckedCreateNestedOneWithoutHostInput = {
-    create?: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutHostInput
-    connect?: RestaurantWhereUniqueInput
+  export type WorkspaceUncheckedCreateNestedOneWithoutHostInput = {
+    create?: XOR<WorkspaceCreateWithoutHostInput, WorkspaceUncheckedCreateWithoutHostInput>
+    connectOrCreate?: WorkspaceCreateOrConnectWithoutHostInput
+    connect?: WorkspaceWhereUniqueInput
   }
 
   export type ListingUncheckedCreateNestedManyWithoutHostInput = {
@@ -27212,24 +27212,24 @@ export namespace Prisma {
     set?: boolean
   }
 
-  export type RestaurantUpdateOneWithoutUsersNestedInput = {
-    create?: XOR<RestaurantCreateWithoutUsersInput, RestaurantUncheckedCreateWithoutUsersInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutUsersInput
-    upsert?: RestaurantUpsertWithoutUsersInput
-    disconnect?: RestaurantWhereInput | boolean
-    delete?: RestaurantWhereInput | boolean
-    connect?: RestaurantWhereUniqueInput
-    update?: XOR<XOR<RestaurantUpdateToOneWithWhereWithoutUsersInput, RestaurantUpdateWithoutUsersInput>, RestaurantUncheckedUpdateWithoutUsersInput>
+  export type WorkspaceUpdateOneWithoutUsersNestedInput = {
+    create?: XOR<WorkspaceCreateWithoutUsersInput, WorkspaceUncheckedCreateWithoutUsersInput>
+    connectOrCreate?: WorkspaceCreateOrConnectWithoutUsersInput
+    upsert?: WorkspaceUpsertWithoutUsersInput
+    disconnect?: WorkspaceWhereInput | boolean
+    delete?: WorkspaceWhereInput | boolean
+    connect?: WorkspaceWhereUniqueInput
+    update?: XOR<XOR<WorkspaceUpdateToOneWithWhereWithoutUsersInput, WorkspaceUpdateWithoutUsersInput>, WorkspaceUncheckedUpdateWithoutUsersInput>
   }
 
-  export type RestaurantUpdateOneWithoutHostNestedInput = {
-    create?: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutHostInput
-    upsert?: RestaurantUpsertWithoutHostInput
-    disconnect?: RestaurantWhereInput | boolean
-    delete?: RestaurantWhereInput | boolean
-    connect?: RestaurantWhereUniqueInput
-    update?: XOR<XOR<RestaurantUpdateToOneWithWhereWithoutHostInput, RestaurantUpdateWithoutHostInput>, RestaurantUncheckedUpdateWithoutHostInput>
+  export type WorkspaceUpdateOneWithoutHostNestedInput = {
+    create?: XOR<WorkspaceCreateWithoutHostInput, WorkspaceUncheckedCreateWithoutHostInput>
+    connectOrCreate?: WorkspaceCreateOrConnectWithoutHostInput
+    upsert?: WorkspaceUpsertWithoutHostInput
+    disconnect?: WorkspaceWhereInput | boolean
+    delete?: WorkspaceWhereInput | boolean
+    connect?: WorkspaceWhereUniqueInput
+    update?: XOR<XOR<WorkspaceUpdateToOneWithWhereWithoutHostInput, WorkspaceUpdateWithoutHostInput>, WorkspaceUncheckedUpdateWithoutHostInput>
   }
 
   export type ListingUpdateManyWithoutHostNestedInput = {
@@ -27370,14 +27370,14 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type RestaurantUncheckedUpdateOneWithoutHostNestedInput = {
-    create?: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutHostInput
-    upsert?: RestaurantUpsertWithoutHostInput
-    disconnect?: RestaurantWhereInput | boolean
-    delete?: RestaurantWhereInput | boolean
-    connect?: RestaurantWhereUniqueInput
-    update?: XOR<XOR<RestaurantUpdateToOneWithWhereWithoutHostInput, RestaurantUpdateWithoutHostInput>, RestaurantUncheckedUpdateWithoutHostInput>
+  export type WorkspaceUncheckedUpdateOneWithoutHostNestedInput = {
+    create?: XOR<WorkspaceCreateWithoutHostInput, WorkspaceUncheckedCreateWithoutHostInput>
+    connectOrCreate?: WorkspaceCreateOrConnectWithoutHostInput
+    upsert?: WorkspaceUpsertWithoutHostInput
+    disconnect?: WorkspaceWhereInput | boolean
+    delete?: WorkspaceWhereInput | boolean
+    connect?: WorkspaceWhereUniqueInput
+    update?: XOR<XOR<WorkspaceUpdateToOneWithWhereWithoutHostInput, WorkspaceUpdateWithoutHostInput>, WorkspaceUncheckedUpdateWithoutHostInput>
   }
 
   export type ListingUncheckedUpdateManyWithoutHostNestedInput = {
@@ -27502,65 +27502,65 @@ export namespace Prisma {
     deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
   }
 
-  export type UserCreateNestedOneWithoutHostedRestaurantInput = {
-    create?: XOR<UserCreateWithoutHostedRestaurantInput, UserUncheckedCreateWithoutHostedRestaurantInput>
-    connectOrCreate?: UserCreateOrConnectWithoutHostedRestaurantInput
+  export type UserCreateNestedOneWithoutHostedWorkspaceInput = {
+    create?: XOR<UserCreateWithoutHostedWorkspaceInput, UserUncheckedCreateWithoutHostedWorkspaceInput>
+    connectOrCreate?: UserCreateOrConnectWithoutHostedWorkspaceInput
     connect?: UserWhereUniqueInput
   }
 
-  export type UserCreateNestedManyWithoutRestaurantInput = {
-    create?: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput> | UserCreateWithoutRestaurantInput[] | UserUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: UserCreateOrConnectWithoutRestaurantInput | UserCreateOrConnectWithoutRestaurantInput[]
-    createMany?: UserCreateManyRestaurantInputEnvelope
+  export type UserCreateNestedManyWithoutWorkspaceInput = {
+    create?: XOR<UserCreateWithoutWorkspaceInput, UserUncheckedCreateWithoutWorkspaceInput> | UserCreateWithoutWorkspaceInput[] | UserUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: UserCreateOrConnectWithoutWorkspaceInput | UserCreateOrConnectWithoutWorkspaceInput[]
+    createMany?: UserCreateManyWorkspaceInputEnvelope
     connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
   }
 
-  export type ListingCreateNestedManyWithoutRestaurantInput = {
-    create?: XOR<ListingCreateWithoutRestaurantInput, ListingUncheckedCreateWithoutRestaurantInput> | ListingCreateWithoutRestaurantInput[] | ListingUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: ListingCreateOrConnectWithoutRestaurantInput | ListingCreateOrConnectWithoutRestaurantInput[]
-    createMany?: ListingCreateManyRestaurantInputEnvelope
+  export type ListingCreateNestedManyWithoutWorkspaceInput = {
+    create?: XOR<ListingCreateWithoutWorkspaceInput, ListingUncheckedCreateWithoutWorkspaceInput> | ListingCreateWithoutWorkspaceInput[] | ListingUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: ListingCreateOrConnectWithoutWorkspaceInput | ListingCreateOrConnectWithoutWorkspaceInput[]
+    createMany?: ListingCreateManyWorkspaceInputEnvelope
     connect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
   }
 
-  export type RestaurantImageCreateNestedManyWithoutRestaurantInput = {
-    create?: XOR<RestaurantImageCreateWithoutRestaurantInput, RestaurantImageUncheckedCreateWithoutRestaurantInput> | RestaurantImageCreateWithoutRestaurantInput[] | RestaurantImageUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: RestaurantImageCreateOrConnectWithoutRestaurantInput | RestaurantImageCreateOrConnectWithoutRestaurantInput[]
-    createMany?: RestaurantImageCreateManyRestaurantInputEnvelope
-    connect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
+  export type WorkspaceImageCreateNestedManyWithoutWorkspaceInput = {
+    create?: XOR<WorkspaceImageCreateWithoutWorkspaceInput, WorkspaceImageUncheckedCreateWithoutWorkspaceInput> | WorkspaceImageCreateWithoutWorkspaceInput[] | WorkspaceImageUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: WorkspaceImageCreateOrConnectWithoutWorkspaceInput | WorkspaceImageCreateOrConnectWithoutWorkspaceInput[]
+    createMany?: WorkspaceImageCreateManyWorkspaceInputEnvelope
+    connect?: WorkspaceImageWhereUniqueInput | WorkspaceImageWhereUniqueInput[]
   }
 
-  export type OperatingHoursCreateNestedManyWithoutRestaurantInput = {
-    create?: XOR<OperatingHoursCreateWithoutRestaurantInput, OperatingHoursUncheckedCreateWithoutRestaurantInput> | OperatingHoursCreateWithoutRestaurantInput[] | OperatingHoursUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: OperatingHoursCreateOrConnectWithoutRestaurantInput | OperatingHoursCreateOrConnectWithoutRestaurantInput[]
-    createMany?: OperatingHoursCreateManyRestaurantInputEnvelope
+  export type OperatingHoursCreateNestedManyWithoutWorkspaceInput = {
+    create?: XOR<OperatingHoursCreateWithoutWorkspaceInput, OperatingHoursUncheckedCreateWithoutWorkspaceInput> | OperatingHoursCreateWithoutWorkspaceInput[] | OperatingHoursUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: OperatingHoursCreateOrConnectWithoutWorkspaceInput | OperatingHoursCreateOrConnectWithoutWorkspaceInput[]
+    createMany?: OperatingHoursCreateManyWorkspaceInputEnvelope
     connect?: OperatingHoursWhereUniqueInput | OperatingHoursWhereUniqueInput[]
   }
 
-  export type UserUncheckedCreateNestedManyWithoutRestaurantInput = {
-    create?: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput> | UserCreateWithoutRestaurantInput[] | UserUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: UserCreateOrConnectWithoutRestaurantInput | UserCreateOrConnectWithoutRestaurantInput[]
-    createMany?: UserCreateManyRestaurantInputEnvelope
+  export type UserUncheckedCreateNestedManyWithoutWorkspaceInput = {
+    create?: XOR<UserCreateWithoutWorkspaceInput, UserUncheckedCreateWithoutWorkspaceInput> | UserCreateWithoutWorkspaceInput[] | UserUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: UserCreateOrConnectWithoutWorkspaceInput | UserCreateOrConnectWithoutWorkspaceInput[]
+    createMany?: UserCreateManyWorkspaceInputEnvelope
     connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
   }
 
-  export type ListingUncheckedCreateNestedManyWithoutRestaurantInput = {
-    create?: XOR<ListingCreateWithoutRestaurantInput, ListingUncheckedCreateWithoutRestaurantInput> | ListingCreateWithoutRestaurantInput[] | ListingUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: ListingCreateOrConnectWithoutRestaurantInput | ListingCreateOrConnectWithoutRestaurantInput[]
-    createMany?: ListingCreateManyRestaurantInputEnvelope
+  export type ListingUncheckedCreateNestedManyWithoutWorkspaceInput = {
+    create?: XOR<ListingCreateWithoutWorkspaceInput, ListingUncheckedCreateWithoutWorkspaceInput> | ListingCreateWithoutWorkspaceInput[] | ListingUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: ListingCreateOrConnectWithoutWorkspaceInput | ListingCreateOrConnectWithoutWorkspaceInput[]
+    createMany?: ListingCreateManyWorkspaceInputEnvelope
     connect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
   }
 
-  export type RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput = {
-    create?: XOR<RestaurantImageCreateWithoutRestaurantInput, RestaurantImageUncheckedCreateWithoutRestaurantInput> | RestaurantImageCreateWithoutRestaurantInput[] | RestaurantImageUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: RestaurantImageCreateOrConnectWithoutRestaurantInput | RestaurantImageCreateOrConnectWithoutRestaurantInput[]
-    createMany?: RestaurantImageCreateManyRestaurantInputEnvelope
-    connect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
+  export type WorkspaceImageUncheckedCreateNestedManyWithoutWorkspaceInput = {
+    create?: XOR<WorkspaceImageCreateWithoutWorkspaceInput, WorkspaceImageUncheckedCreateWithoutWorkspaceInput> | WorkspaceImageCreateWithoutWorkspaceInput[] | WorkspaceImageUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: WorkspaceImageCreateOrConnectWithoutWorkspaceInput | WorkspaceImageCreateOrConnectWithoutWorkspaceInput[]
+    createMany?: WorkspaceImageCreateManyWorkspaceInputEnvelope
+    connect?: WorkspaceImageWhereUniqueInput | WorkspaceImageWhereUniqueInput[]
   }
 
-  export type OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput = {
-    create?: XOR<OperatingHoursCreateWithoutRestaurantInput, OperatingHoursUncheckedCreateWithoutRestaurantInput> | OperatingHoursCreateWithoutRestaurantInput[] | OperatingHoursUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: OperatingHoursCreateOrConnectWithoutRestaurantInput | OperatingHoursCreateOrConnectWithoutRestaurantInput[]
-    createMany?: OperatingHoursCreateManyRestaurantInputEnvelope
+  export type OperatingHoursUncheckedCreateNestedManyWithoutWorkspaceInput = {
+    create?: XOR<OperatingHoursCreateWithoutWorkspaceInput, OperatingHoursUncheckedCreateWithoutWorkspaceInput> | OperatingHoursCreateWithoutWorkspaceInput[] | OperatingHoursUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: OperatingHoursCreateOrConnectWithoutWorkspaceInput | OperatingHoursCreateOrConnectWithoutWorkspaceInput[]
+    createMany?: OperatingHoursCreateManyWorkspaceInputEnvelope
     connect?: OperatingHoursWhereUniqueInput | OperatingHoursWhereUniqueInput[]
   }
 
@@ -27572,130 +27572,130 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type UserUpdateOneRequiredWithoutHostedRestaurantNestedInput = {
-    create?: XOR<UserCreateWithoutHostedRestaurantInput, UserUncheckedCreateWithoutHostedRestaurantInput>
-    connectOrCreate?: UserCreateOrConnectWithoutHostedRestaurantInput
-    upsert?: UserUpsertWithoutHostedRestaurantInput
+  export type UserUpdateOneRequiredWithoutHostedWorkspaceNestedInput = {
+    create?: XOR<UserCreateWithoutHostedWorkspaceInput, UserUncheckedCreateWithoutHostedWorkspaceInput>
+    connectOrCreate?: UserCreateOrConnectWithoutHostedWorkspaceInput
+    upsert?: UserUpsertWithoutHostedWorkspaceInput
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutHostedRestaurantInput, UserUpdateWithoutHostedRestaurantInput>, UserUncheckedUpdateWithoutHostedRestaurantInput>
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutHostedWorkspaceInput, UserUpdateWithoutHostedWorkspaceInput>, UserUncheckedUpdateWithoutHostedWorkspaceInput>
   }
 
-  export type UserUpdateManyWithoutRestaurantNestedInput = {
-    create?: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput> | UserCreateWithoutRestaurantInput[] | UserUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: UserCreateOrConnectWithoutRestaurantInput | UserCreateOrConnectWithoutRestaurantInput[]
-    upsert?: UserUpsertWithWhereUniqueWithoutRestaurantInput | UserUpsertWithWhereUniqueWithoutRestaurantInput[]
-    createMany?: UserCreateManyRestaurantInputEnvelope
+  export type UserUpdateManyWithoutWorkspaceNestedInput = {
+    create?: XOR<UserCreateWithoutWorkspaceInput, UserUncheckedCreateWithoutWorkspaceInput> | UserCreateWithoutWorkspaceInput[] | UserUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: UserCreateOrConnectWithoutWorkspaceInput | UserCreateOrConnectWithoutWorkspaceInput[]
+    upsert?: UserUpsertWithWhereUniqueWithoutWorkspaceInput | UserUpsertWithWhereUniqueWithoutWorkspaceInput[]
+    createMany?: UserCreateManyWorkspaceInputEnvelope
     set?: UserWhereUniqueInput | UserWhereUniqueInput[]
     disconnect?: UserWhereUniqueInput | UserWhereUniqueInput[]
     delete?: UserWhereUniqueInput | UserWhereUniqueInput[]
     connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    update?: UserUpdateWithWhereUniqueWithoutRestaurantInput | UserUpdateWithWhereUniqueWithoutRestaurantInput[]
-    updateMany?: UserUpdateManyWithWhereWithoutRestaurantInput | UserUpdateManyWithWhereWithoutRestaurantInput[]
+    update?: UserUpdateWithWhereUniqueWithoutWorkspaceInput | UserUpdateWithWhereUniqueWithoutWorkspaceInput[]
+    updateMany?: UserUpdateManyWithWhereWithoutWorkspaceInput | UserUpdateManyWithWhereWithoutWorkspaceInput[]
     deleteMany?: UserScalarWhereInput | UserScalarWhereInput[]
   }
 
-  export type ListingUpdateManyWithoutRestaurantNestedInput = {
-    create?: XOR<ListingCreateWithoutRestaurantInput, ListingUncheckedCreateWithoutRestaurantInput> | ListingCreateWithoutRestaurantInput[] | ListingUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: ListingCreateOrConnectWithoutRestaurantInput | ListingCreateOrConnectWithoutRestaurantInput[]
-    upsert?: ListingUpsertWithWhereUniqueWithoutRestaurantInput | ListingUpsertWithWhereUniqueWithoutRestaurantInput[]
-    createMany?: ListingCreateManyRestaurantInputEnvelope
+  export type ListingUpdateManyWithoutWorkspaceNestedInput = {
+    create?: XOR<ListingCreateWithoutWorkspaceInput, ListingUncheckedCreateWithoutWorkspaceInput> | ListingCreateWithoutWorkspaceInput[] | ListingUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: ListingCreateOrConnectWithoutWorkspaceInput | ListingCreateOrConnectWithoutWorkspaceInput[]
+    upsert?: ListingUpsertWithWhereUniqueWithoutWorkspaceInput | ListingUpsertWithWhereUniqueWithoutWorkspaceInput[]
+    createMany?: ListingCreateManyWorkspaceInputEnvelope
     set?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
     disconnect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
     delete?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
     connect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
-    update?: ListingUpdateWithWhereUniqueWithoutRestaurantInput | ListingUpdateWithWhereUniqueWithoutRestaurantInput[]
-    updateMany?: ListingUpdateManyWithWhereWithoutRestaurantInput | ListingUpdateManyWithWhereWithoutRestaurantInput[]
+    update?: ListingUpdateWithWhereUniqueWithoutWorkspaceInput | ListingUpdateWithWhereUniqueWithoutWorkspaceInput[]
+    updateMany?: ListingUpdateManyWithWhereWithoutWorkspaceInput | ListingUpdateManyWithWhereWithoutWorkspaceInput[]
     deleteMany?: ListingScalarWhereInput | ListingScalarWhereInput[]
   }
 
-  export type RestaurantImageUpdateManyWithoutRestaurantNestedInput = {
-    create?: XOR<RestaurantImageCreateWithoutRestaurantInput, RestaurantImageUncheckedCreateWithoutRestaurantInput> | RestaurantImageCreateWithoutRestaurantInput[] | RestaurantImageUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: RestaurantImageCreateOrConnectWithoutRestaurantInput | RestaurantImageCreateOrConnectWithoutRestaurantInput[]
-    upsert?: RestaurantImageUpsertWithWhereUniqueWithoutRestaurantInput | RestaurantImageUpsertWithWhereUniqueWithoutRestaurantInput[]
-    createMany?: RestaurantImageCreateManyRestaurantInputEnvelope
-    set?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    disconnect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    delete?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    connect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    update?: RestaurantImageUpdateWithWhereUniqueWithoutRestaurantInput | RestaurantImageUpdateWithWhereUniqueWithoutRestaurantInput[]
-    updateMany?: RestaurantImageUpdateManyWithWhereWithoutRestaurantInput | RestaurantImageUpdateManyWithWhereWithoutRestaurantInput[]
-    deleteMany?: RestaurantImageScalarWhereInput | RestaurantImageScalarWhereInput[]
+  export type WorkspaceImageUpdateManyWithoutWorkspaceNestedInput = {
+    create?: XOR<WorkspaceImageCreateWithoutWorkspaceInput, WorkspaceImageUncheckedCreateWithoutWorkspaceInput> | WorkspaceImageCreateWithoutWorkspaceInput[] | WorkspaceImageUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: WorkspaceImageCreateOrConnectWithoutWorkspaceInput | WorkspaceImageCreateOrConnectWithoutWorkspaceInput[]
+    upsert?: WorkspaceImageUpsertWithWhereUniqueWithoutWorkspaceInput | WorkspaceImageUpsertWithWhereUniqueWithoutWorkspaceInput[]
+    createMany?: WorkspaceImageCreateManyWorkspaceInputEnvelope
+    set?: WorkspaceImageWhereUniqueInput | WorkspaceImageWhereUniqueInput[]
+    disconnect?: WorkspaceImageWhereUniqueInput | WorkspaceImageWhereUniqueInput[]
+    delete?: WorkspaceImageWhereUniqueInput | WorkspaceImageWhereUniqueInput[]
+    connect?: WorkspaceImageWhereUniqueInput | WorkspaceImageWhereUniqueInput[]
+    update?: WorkspaceImageUpdateWithWhereUniqueWithoutWorkspaceInput | WorkspaceImageUpdateWithWhereUniqueWithoutWorkspaceInput[]
+    updateMany?: WorkspaceImageUpdateManyWithWhereWithoutWorkspaceInput | WorkspaceImageUpdateManyWithWhereWithoutWorkspaceInput[]
+    deleteMany?: WorkspaceImageScalarWhereInput | WorkspaceImageScalarWhereInput[]
   }
 
-  export type OperatingHoursUpdateManyWithoutRestaurantNestedInput = {
-    create?: XOR<OperatingHoursCreateWithoutRestaurantInput, OperatingHoursUncheckedCreateWithoutRestaurantInput> | OperatingHoursCreateWithoutRestaurantInput[] | OperatingHoursUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: OperatingHoursCreateOrConnectWithoutRestaurantInput | OperatingHoursCreateOrConnectWithoutRestaurantInput[]
-    upsert?: OperatingHoursUpsertWithWhereUniqueWithoutRestaurantInput | OperatingHoursUpsertWithWhereUniqueWithoutRestaurantInput[]
-    createMany?: OperatingHoursCreateManyRestaurantInputEnvelope
+  export type OperatingHoursUpdateManyWithoutWorkspaceNestedInput = {
+    create?: XOR<OperatingHoursCreateWithoutWorkspaceInput, OperatingHoursUncheckedCreateWithoutWorkspaceInput> | OperatingHoursCreateWithoutWorkspaceInput[] | OperatingHoursUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: OperatingHoursCreateOrConnectWithoutWorkspaceInput | OperatingHoursCreateOrConnectWithoutWorkspaceInput[]
+    upsert?: OperatingHoursUpsertWithWhereUniqueWithoutWorkspaceInput | OperatingHoursUpsertWithWhereUniqueWithoutWorkspaceInput[]
+    createMany?: OperatingHoursCreateManyWorkspaceInputEnvelope
     set?: OperatingHoursWhereUniqueInput | OperatingHoursWhereUniqueInput[]
     disconnect?: OperatingHoursWhereUniqueInput | OperatingHoursWhereUniqueInput[]
     delete?: OperatingHoursWhereUniqueInput | OperatingHoursWhereUniqueInput[]
     connect?: OperatingHoursWhereUniqueInput | OperatingHoursWhereUniqueInput[]
-    update?: OperatingHoursUpdateWithWhereUniqueWithoutRestaurantInput | OperatingHoursUpdateWithWhereUniqueWithoutRestaurantInput[]
-    updateMany?: OperatingHoursUpdateManyWithWhereWithoutRestaurantInput | OperatingHoursUpdateManyWithWhereWithoutRestaurantInput[]
+    update?: OperatingHoursUpdateWithWhereUniqueWithoutWorkspaceInput | OperatingHoursUpdateWithWhereUniqueWithoutWorkspaceInput[]
+    updateMany?: OperatingHoursUpdateManyWithWhereWithoutWorkspaceInput | OperatingHoursUpdateManyWithWhereWithoutWorkspaceInput[]
     deleteMany?: OperatingHoursScalarWhereInput | OperatingHoursScalarWhereInput[]
   }
 
-  export type UserUncheckedUpdateManyWithoutRestaurantNestedInput = {
-    create?: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput> | UserCreateWithoutRestaurantInput[] | UserUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: UserCreateOrConnectWithoutRestaurantInput | UserCreateOrConnectWithoutRestaurantInput[]
-    upsert?: UserUpsertWithWhereUniqueWithoutRestaurantInput | UserUpsertWithWhereUniqueWithoutRestaurantInput[]
-    createMany?: UserCreateManyRestaurantInputEnvelope
+  export type UserUncheckedUpdateManyWithoutWorkspaceNestedInput = {
+    create?: XOR<UserCreateWithoutWorkspaceInput, UserUncheckedCreateWithoutWorkspaceInput> | UserCreateWithoutWorkspaceInput[] | UserUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: UserCreateOrConnectWithoutWorkspaceInput | UserCreateOrConnectWithoutWorkspaceInput[]
+    upsert?: UserUpsertWithWhereUniqueWithoutWorkspaceInput | UserUpsertWithWhereUniqueWithoutWorkspaceInput[]
+    createMany?: UserCreateManyWorkspaceInputEnvelope
     set?: UserWhereUniqueInput | UserWhereUniqueInput[]
     disconnect?: UserWhereUniqueInput | UserWhereUniqueInput[]
     delete?: UserWhereUniqueInput | UserWhereUniqueInput[]
     connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    update?: UserUpdateWithWhereUniqueWithoutRestaurantInput | UserUpdateWithWhereUniqueWithoutRestaurantInput[]
-    updateMany?: UserUpdateManyWithWhereWithoutRestaurantInput | UserUpdateManyWithWhereWithoutRestaurantInput[]
+    update?: UserUpdateWithWhereUniqueWithoutWorkspaceInput | UserUpdateWithWhereUniqueWithoutWorkspaceInput[]
+    updateMany?: UserUpdateManyWithWhereWithoutWorkspaceInput | UserUpdateManyWithWhereWithoutWorkspaceInput[]
     deleteMany?: UserScalarWhereInput | UserScalarWhereInput[]
   }
 
-  export type ListingUncheckedUpdateManyWithoutRestaurantNestedInput = {
-    create?: XOR<ListingCreateWithoutRestaurantInput, ListingUncheckedCreateWithoutRestaurantInput> | ListingCreateWithoutRestaurantInput[] | ListingUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: ListingCreateOrConnectWithoutRestaurantInput | ListingCreateOrConnectWithoutRestaurantInput[]
-    upsert?: ListingUpsertWithWhereUniqueWithoutRestaurantInput | ListingUpsertWithWhereUniqueWithoutRestaurantInput[]
-    createMany?: ListingCreateManyRestaurantInputEnvelope
+  export type ListingUncheckedUpdateManyWithoutWorkspaceNestedInput = {
+    create?: XOR<ListingCreateWithoutWorkspaceInput, ListingUncheckedCreateWithoutWorkspaceInput> | ListingCreateWithoutWorkspaceInput[] | ListingUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: ListingCreateOrConnectWithoutWorkspaceInput | ListingCreateOrConnectWithoutWorkspaceInput[]
+    upsert?: ListingUpsertWithWhereUniqueWithoutWorkspaceInput | ListingUpsertWithWhereUniqueWithoutWorkspaceInput[]
+    createMany?: ListingCreateManyWorkspaceInputEnvelope
     set?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
     disconnect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
     delete?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
     connect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
-    update?: ListingUpdateWithWhereUniqueWithoutRestaurantInput | ListingUpdateWithWhereUniqueWithoutRestaurantInput[]
-    updateMany?: ListingUpdateManyWithWhereWithoutRestaurantInput | ListingUpdateManyWithWhereWithoutRestaurantInput[]
+    update?: ListingUpdateWithWhereUniqueWithoutWorkspaceInput | ListingUpdateWithWhereUniqueWithoutWorkspaceInput[]
+    updateMany?: ListingUpdateManyWithWhereWithoutWorkspaceInput | ListingUpdateManyWithWhereWithoutWorkspaceInput[]
     deleteMany?: ListingScalarWhereInput | ListingScalarWhereInput[]
   }
 
-  export type RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput = {
-    create?: XOR<RestaurantImageCreateWithoutRestaurantInput, RestaurantImageUncheckedCreateWithoutRestaurantInput> | RestaurantImageCreateWithoutRestaurantInput[] | RestaurantImageUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: RestaurantImageCreateOrConnectWithoutRestaurantInput | RestaurantImageCreateOrConnectWithoutRestaurantInput[]
-    upsert?: RestaurantImageUpsertWithWhereUniqueWithoutRestaurantInput | RestaurantImageUpsertWithWhereUniqueWithoutRestaurantInput[]
-    createMany?: RestaurantImageCreateManyRestaurantInputEnvelope
-    set?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    disconnect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    delete?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    connect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    update?: RestaurantImageUpdateWithWhereUniqueWithoutRestaurantInput | RestaurantImageUpdateWithWhereUniqueWithoutRestaurantInput[]
-    updateMany?: RestaurantImageUpdateManyWithWhereWithoutRestaurantInput | RestaurantImageUpdateManyWithWhereWithoutRestaurantInput[]
-    deleteMany?: RestaurantImageScalarWhereInput | RestaurantImageScalarWhereInput[]
+  export type WorkspaceImageUncheckedUpdateManyWithoutWorkspaceNestedInput = {
+    create?: XOR<WorkspaceImageCreateWithoutWorkspaceInput, WorkspaceImageUncheckedCreateWithoutWorkspaceInput> | WorkspaceImageCreateWithoutWorkspaceInput[] | WorkspaceImageUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: WorkspaceImageCreateOrConnectWithoutWorkspaceInput | WorkspaceImageCreateOrConnectWithoutWorkspaceInput[]
+    upsert?: WorkspaceImageUpsertWithWhereUniqueWithoutWorkspaceInput | WorkspaceImageUpsertWithWhereUniqueWithoutWorkspaceInput[]
+    createMany?: WorkspaceImageCreateManyWorkspaceInputEnvelope
+    set?: WorkspaceImageWhereUniqueInput | WorkspaceImageWhereUniqueInput[]
+    disconnect?: WorkspaceImageWhereUniqueInput | WorkspaceImageWhereUniqueInput[]
+    delete?: WorkspaceImageWhereUniqueInput | WorkspaceImageWhereUniqueInput[]
+    connect?: WorkspaceImageWhereUniqueInput | WorkspaceImageWhereUniqueInput[]
+    update?: WorkspaceImageUpdateWithWhereUniqueWithoutWorkspaceInput | WorkspaceImageUpdateWithWhereUniqueWithoutWorkspaceInput[]
+    updateMany?: WorkspaceImageUpdateManyWithWhereWithoutWorkspaceInput | WorkspaceImageUpdateManyWithWhereWithoutWorkspaceInput[]
+    deleteMany?: WorkspaceImageScalarWhereInput | WorkspaceImageScalarWhereInput[]
   }
 
-  export type OperatingHoursUncheckedUpdateManyWithoutRestaurantNestedInput = {
-    create?: XOR<OperatingHoursCreateWithoutRestaurantInput, OperatingHoursUncheckedCreateWithoutRestaurantInput> | OperatingHoursCreateWithoutRestaurantInput[] | OperatingHoursUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: OperatingHoursCreateOrConnectWithoutRestaurantInput | OperatingHoursCreateOrConnectWithoutRestaurantInput[]
-    upsert?: OperatingHoursUpsertWithWhereUniqueWithoutRestaurantInput | OperatingHoursUpsertWithWhereUniqueWithoutRestaurantInput[]
-    createMany?: OperatingHoursCreateManyRestaurantInputEnvelope
+  export type OperatingHoursUncheckedUpdateManyWithoutWorkspaceNestedInput = {
+    create?: XOR<OperatingHoursCreateWithoutWorkspaceInput, OperatingHoursUncheckedCreateWithoutWorkspaceInput> | OperatingHoursCreateWithoutWorkspaceInput[] | OperatingHoursUncheckedCreateWithoutWorkspaceInput[]
+    connectOrCreate?: OperatingHoursCreateOrConnectWithoutWorkspaceInput | OperatingHoursCreateOrConnectWithoutWorkspaceInput[]
+    upsert?: OperatingHoursUpsertWithWhereUniqueWithoutWorkspaceInput | OperatingHoursUpsertWithWhereUniqueWithoutWorkspaceInput[]
+    createMany?: OperatingHoursCreateManyWorkspaceInputEnvelope
     set?: OperatingHoursWhereUniqueInput | OperatingHoursWhereUniqueInput[]
     disconnect?: OperatingHoursWhereUniqueInput | OperatingHoursWhereUniqueInput[]
     delete?: OperatingHoursWhereUniqueInput | OperatingHoursWhereUniqueInput[]
     connect?: OperatingHoursWhereUniqueInput | OperatingHoursWhereUniqueInput[]
-    update?: OperatingHoursUpdateWithWhereUniqueWithoutRestaurantInput | OperatingHoursUpdateWithWhereUniqueWithoutRestaurantInput[]
-    updateMany?: OperatingHoursUpdateManyWithWhereWithoutRestaurantInput | OperatingHoursUpdateManyWithWhereWithoutRestaurantInput[]
+    update?: OperatingHoursUpdateWithWhereUniqueWithoutWorkspaceInput | OperatingHoursUpdateWithWhereUniqueWithoutWorkspaceInput[]
+    updateMany?: OperatingHoursUpdateManyWithWhereWithoutWorkspaceInput | OperatingHoursUpdateManyWithWhereWithoutWorkspaceInput[]
     deleteMany?: OperatingHoursScalarWhereInput | OperatingHoursScalarWhereInput[]
   }
 
-  export type RestaurantCreateNestedOneWithoutListingsInput = {
-    create?: XOR<RestaurantCreateWithoutListingsInput, RestaurantUncheckedCreateWithoutListingsInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutListingsInput
-    connect?: RestaurantWhereUniqueInput
+  export type WorkspaceCreateNestedOneWithoutListingsInput = {
+    create?: XOR<WorkspaceCreateWithoutListingsInput, WorkspaceUncheckedCreateWithoutListingsInput>
+    connectOrCreate?: WorkspaceCreateOrConnectWithoutListingsInput
+    connect?: WorkspaceWhereUniqueInput
   }
 
   export type UserCreateNestedOneWithoutListingsInput = {
@@ -27774,14 +27774,14 @@ export namespace Prisma {
     connect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
   }
 
-  export type RestaurantUpdateOneWithoutListingsNestedInput = {
-    create?: XOR<RestaurantCreateWithoutListingsInput, RestaurantUncheckedCreateWithoutListingsInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutListingsInput
-    upsert?: RestaurantUpsertWithoutListingsInput
-    disconnect?: RestaurantWhereInput | boolean
-    delete?: RestaurantWhereInput | boolean
-    connect?: RestaurantWhereUniqueInput
-    update?: XOR<XOR<RestaurantUpdateToOneWithWhereWithoutListingsInput, RestaurantUpdateWithoutListingsInput>, RestaurantUncheckedUpdateWithoutListingsInput>
+  export type WorkspaceUpdateOneWithoutListingsNestedInput = {
+    create?: XOR<WorkspaceCreateWithoutListingsInput, WorkspaceUncheckedCreateWithoutListingsInput>
+    connectOrCreate?: WorkspaceCreateOrConnectWithoutListingsInput
+    upsert?: WorkspaceUpsertWithoutListingsInput
+    disconnect?: WorkspaceWhereInput | boolean
+    delete?: WorkspaceWhereInput | boolean
+    connect?: WorkspaceWhereUniqueInput
+    update?: XOR<XOR<WorkspaceUpdateToOneWithWhereWithoutListingsInput, WorkspaceUpdateWithoutListingsInput>, WorkspaceUncheckedUpdateWithoutListingsInput>
   }
 
   export type UserUpdateOneRequiredWithoutListingsNestedInput = {
@@ -28248,32 +28248,32 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutNotificationsInput, UserUpdateWithoutNotificationsInput>, UserUncheckedUpdateWithoutNotificationsInput>
   }
 
-  export type RestaurantCreateNestedOneWithoutImagesInput = {
-    create?: XOR<RestaurantCreateWithoutImagesInput, RestaurantUncheckedCreateWithoutImagesInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutImagesInput
-    connect?: RestaurantWhereUniqueInput
+  export type WorkspaceCreateNestedOneWithoutImagesInput = {
+    create?: XOR<WorkspaceCreateWithoutImagesInput, WorkspaceUncheckedCreateWithoutImagesInput>
+    connectOrCreate?: WorkspaceCreateOrConnectWithoutImagesInput
+    connect?: WorkspaceWhereUniqueInput
   }
 
-  export type RestaurantUpdateOneRequiredWithoutImagesNestedInput = {
-    create?: XOR<RestaurantCreateWithoutImagesInput, RestaurantUncheckedCreateWithoutImagesInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutImagesInput
-    upsert?: RestaurantUpsertWithoutImagesInput
-    connect?: RestaurantWhereUniqueInput
-    update?: XOR<XOR<RestaurantUpdateToOneWithWhereWithoutImagesInput, RestaurantUpdateWithoutImagesInput>, RestaurantUncheckedUpdateWithoutImagesInput>
+  export type WorkspaceUpdateOneRequiredWithoutImagesNestedInput = {
+    create?: XOR<WorkspaceCreateWithoutImagesInput, WorkspaceUncheckedCreateWithoutImagesInput>
+    connectOrCreate?: WorkspaceCreateOrConnectWithoutImagesInput
+    upsert?: WorkspaceUpsertWithoutImagesInput
+    connect?: WorkspaceWhereUniqueInput
+    update?: XOR<XOR<WorkspaceUpdateToOneWithWhereWithoutImagesInput, WorkspaceUpdateWithoutImagesInput>, WorkspaceUncheckedUpdateWithoutImagesInput>
   }
 
-  export type RestaurantCreateNestedOneWithoutOperatingHoursInput = {
-    create?: XOR<RestaurantCreateWithoutOperatingHoursInput, RestaurantUncheckedCreateWithoutOperatingHoursInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutOperatingHoursInput
-    connect?: RestaurantWhereUniqueInput
+  export type WorkspaceCreateNestedOneWithoutOperatingHoursInput = {
+    create?: XOR<WorkspaceCreateWithoutOperatingHoursInput, WorkspaceUncheckedCreateWithoutOperatingHoursInput>
+    connectOrCreate?: WorkspaceCreateOrConnectWithoutOperatingHoursInput
+    connect?: WorkspaceWhereUniqueInput
   }
 
-  export type RestaurantUpdateOneRequiredWithoutOperatingHoursNestedInput = {
-    create?: XOR<RestaurantCreateWithoutOperatingHoursInput, RestaurantUncheckedCreateWithoutOperatingHoursInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutOperatingHoursInput
-    upsert?: RestaurantUpsertWithoutOperatingHoursInput
-    connect?: RestaurantWhereUniqueInput
-    update?: XOR<XOR<RestaurantUpdateToOneWithWhereWithoutOperatingHoursInput, RestaurantUpdateWithoutOperatingHoursInput>, RestaurantUncheckedUpdateWithoutOperatingHoursInput>
+  export type WorkspaceUpdateOneRequiredWithoutOperatingHoursNestedInput = {
+    create?: XOR<WorkspaceCreateWithoutOperatingHoursInput, WorkspaceUncheckedCreateWithoutOperatingHoursInput>
+    connectOrCreate?: WorkspaceCreateOrConnectWithoutOperatingHoursInput
+    upsert?: WorkspaceUpsertWithoutOperatingHoursInput
+    connect?: WorkspaceWhereUniqueInput
+    update?: XOR<XOR<WorkspaceUpdateToOneWithWhereWithoutOperatingHoursInput, WorkspaceUpdateWithoutOperatingHoursInput>, WorkspaceUncheckedUpdateWithoutOperatingHoursInput>
   }
 
   export type UserCreateNestedOneWithoutHostSettingsInput = {
@@ -28610,7 +28610,7 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type RestaurantCreateWithoutUsersInput = {
+  export type WorkspaceCreateWithoutUsersInput = {
     name: string
     description?: string | null
     address: string
@@ -28621,19 +28621,19 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    workspaceType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    host: UserCreateNestedOneWithoutHostedRestaurantInput
-    listings?: ListingCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursCreateNestedManyWithoutRestaurantInput
+    host: UserCreateNestedOneWithoutHostedWorkspaceInput
+    listings?: ListingCreateNestedManyWithoutWorkspaceInput
+    images?: WorkspaceImageCreateNestedManyWithoutWorkspaceInput
+    operatingHours?: OperatingHoursCreateNestedManyWithoutWorkspaceInput
   }
 
-  export type RestaurantUncheckedCreateWithoutUsersInput = {
+  export type WorkspaceUncheckedCreateWithoutUsersInput = {
     id?: number
     name: string
     description?: string | null
@@ -28645,24 +28645,24 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    workspaceType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     hostId: number
-    listings?: ListingUncheckedCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput
+    listings?: ListingUncheckedCreateNestedManyWithoutWorkspaceInput
+    images?: WorkspaceImageUncheckedCreateNestedManyWithoutWorkspaceInput
+    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutWorkspaceInput
   }
 
-  export type RestaurantCreateOrConnectWithoutUsersInput = {
-    where: RestaurantWhereUniqueInput
-    create: XOR<RestaurantCreateWithoutUsersInput, RestaurantUncheckedCreateWithoutUsersInput>
+  export type WorkspaceCreateOrConnectWithoutUsersInput = {
+    where: WorkspaceWhereUniqueInput
+    create: XOR<WorkspaceCreateWithoutUsersInput, WorkspaceUncheckedCreateWithoutUsersInput>
   }
 
-  export type RestaurantCreateWithoutHostInput = {
+  export type WorkspaceCreateWithoutHostInput = {
     name: string
     description?: string | null
     address: string
@@ -28673,19 +28673,19 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    workspaceType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    users?: UserCreateNestedManyWithoutRestaurantInput
-    listings?: ListingCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursCreateNestedManyWithoutRestaurantInput
+    users?: UserCreateNestedManyWithoutWorkspaceInput
+    listings?: ListingCreateNestedManyWithoutWorkspaceInput
+    images?: WorkspaceImageCreateNestedManyWithoutWorkspaceInput
+    operatingHours?: OperatingHoursCreateNestedManyWithoutWorkspaceInput
   }
 
-  export type RestaurantUncheckedCreateWithoutHostInput = {
+  export type WorkspaceUncheckedCreateWithoutHostInput = {
     id?: number
     name: string
     description?: string | null
@@ -28697,21 +28697,21 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    workspaceType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    users?: UserUncheckedCreateNestedManyWithoutRestaurantInput
-    listings?: ListingUncheckedCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput
+    users?: UserUncheckedCreateNestedManyWithoutWorkspaceInput
+    listings?: ListingUncheckedCreateNestedManyWithoutWorkspaceInput
+    images?: WorkspaceImageUncheckedCreateNestedManyWithoutWorkspaceInput
+    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutWorkspaceInput
   }
 
-  export type RestaurantCreateOrConnectWithoutHostInput = {
-    where: RestaurantWhereUniqueInput
-    create: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
+  export type WorkspaceCreateOrConnectWithoutHostInput = {
+    where: WorkspaceWhereUniqueInput
+    create: XOR<WorkspaceCreateWithoutHostInput, WorkspaceUncheckedCreateWithoutHostInput>
   }
 
   export type ListingCreateWithoutHostInput = {
@@ -28724,7 +28724,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurant?: RestaurantCreateNestedOneWithoutListingsInput
+    workspace?: WorkspaceCreateNestedOneWithoutListingsInput
     bookings?: BookingCreateNestedManyWithoutListingInput
     images?: ListingImageCreateNestedManyWithoutListingInput
     amenities?: ListingAmenityCreateNestedManyWithoutListingInput
@@ -28743,7 +28743,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurantId?: number | null
+    workspaceId?: number | null
     bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
     images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
     amenities?: ListingAmenityUncheckedCreateNestedManyWithoutListingInput
@@ -28994,18 +28994,18 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type RestaurantUpsertWithoutUsersInput = {
-    update: XOR<RestaurantUpdateWithoutUsersInput, RestaurantUncheckedUpdateWithoutUsersInput>
-    create: XOR<RestaurantCreateWithoutUsersInput, RestaurantUncheckedCreateWithoutUsersInput>
-    where?: RestaurantWhereInput
+  export type WorkspaceUpsertWithoutUsersInput = {
+    update: XOR<WorkspaceUpdateWithoutUsersInput, WorkspaceUncheckedUpdateWithoutUsersInput>
+    create: XOR<WorkspaceCreateWithoutUsersInput, WorkspaceUncheckedCreateWithoutUsersInput>
+    where?: WorkspaceWhereInput
   }
 
-  export type RestaurantUpdateToOneWithWhereWithoutUsersInput = {
-    where?: RestaurantWhereInput
-    data: XOR<RestaurantUpdateWithoutUsersInput, RestaurantUncheckedUpdateWithoutUsersInput>
+  export type WorkspaceUpdateToOneWithWhereWithoutUsersInput = {
+    where?: WorkspaceWhereInput
+    data: XOR<WorkspaceUpdateWithoutUsersInput, WorkspaceUncheckedUpdateWithoutUsersInput>
   }
 
-  export type RestaurantUpdateWithoutUsersInput = {
+  export type WorkspaceUpdateWithoutUsersInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     address?: StringFieldUpdateOperationsInput | string
@@ -29016,19 +29016,19 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    workspaceType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    host?: UserUpdateOneRequiredWithoutHostedRestaurantNestedInput
-    listings?: ListingUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUpdateManyWithoutRestaurantNestedInput
+    host?: UserUpdateOneRequiredWithoutHostedWorkspaceNestedInput
+    listings?: ListingUpdateManyWithoutWorkspaceNestedInput
+    images?: WorkspaceImageUpdateManyWithoutWorkspaceNestedInput
+    operatingHours?: OperatingHoursUpdateManyWithoutWorkspaceNestedInput
   }
 
-  export type RestaurantUncheckedUpdateWithoutUsersInput = {
+  export type WorkspaceUncheckedUpdateWithoutUsersInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
@@ -29040,30 +29040,30 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    workspaceType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     hostId?: IntFieldUpdateOperationsInput | number
-    listings?: ListingUncheckedUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutRestaurantNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutWorkspaceNestedInput
+    images?: WorkspaceImageUncheckedUpdateManyWithoutWorkspaceNestedInput
+    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutWorkspaceNestedInput
   }
 
-  export type RestaurantUpsertWithoutHostInput = {
-    update: XOR<RestaurantUpdateWithoutHostInput, RestaurantUncheckedUpdateWithoutHostInput>
-    create: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
-    where?: RestaurantWhereInput
+  export type WorkspaceUpsertWithoutHostInput = {
+    update: XOR<WorkspaceUpdateWithoutHostInput, WorkspaceUncheckedUpdateWithoutHostInput>
+    create: XOR<WorkspaceCreateWithoutHostInput, WorkspaceUncheckedCreateWithoutHostInput>
+    where?: WorkspaceWhereInput
   }
 
-  export type RestaurantUpdateToOneWithWhereWithoutHostInput = {
-    where?: RestaurantWhereInput
-    data: XOR<RestaurantUpdateWithoutHostInput, RestaurantUncheckedUpdateWithoutHostInput>
+  export type WorkspaceUpdateToOneWithWhereWithoutHostInput = {
+    where?: WorkspaceWhereInput
+    data: XOR<WorkspaceUpdateWithoutHostInput, WorkspaceUncheckedUpdateWithoutHostInput>
   }
 
-  export type RestaurantUpdateWithoutHostInput = {
+  export type WorkspaceUpdateWithoutHostInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     address?: StringFieldUpdateOperationsInput | string
@@ -29074,19 +29074,19 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    workspaceType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    users?: UserUpdateManyWithoutRestaurantNestedInput
-    listings?: ListingUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUpdateManyWithoutRestaurantNestedInput
+    users?: UserUpdateManyWithoutWorkspaceNestedInput
+    listings?: ListingUpdateManyWithoutWorkspaceNestedInput
+    images?: WorkspaceImageUpdateManyWithoutWorkspaceNestedInput
+    operatingHours?: OperatingHoursUpdateManyWithoutWorkspaceNestedInput
   }
 
-  export type RestaurantUncheckedUpdateWithoutHostInput = {
+  export type WorkspaceUncheckedUpdateWithoutHostInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
@@ -29098,16 +29098,16 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    workspaceType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    users?: UserUncheckedUpdateManyWithoutRestaurantNestedInput
-    listings?: ListingUncheckedUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutRestaurantNestedInput
+    users?: UserUncheckedUpdateManyWithoutWorkspaceNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutWorkspaceNestedInput
+    images?: WorkspaceImageUncheckedUpdateManyWithoutWorkspaceNestedInput
+    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutWorkspaceNestedInput
   }
 
   export type ListingUpsertWithWhereUniqueWithoutHostInput = {
@@ -29140,7 +29140,7 @@ export namespace Prisma {
     isActive?: BoolFilter<"Listing"> | boolean
     createdAt?: DateTimeFilter<"Listing"> | Date | string
     updatedAt?: DateTimeFilter<"Listing"> | Date | string
-    restaurantId?: IntNullableFilter<"Listing"> | number | null
+    workspaceId?: IntNullableFilter<"Listing"> | number | null
     hostId?: IntFilter<"Listing"> | number
   }
 
@@ -29374,7 +29374,7 @@ export namespace Prisma {
     data: XOR<MessageUpdateManyMutationInput, MessageUncheckedUpdateManyWithoutReceiverInput>
   }
 
-  export type UserCreateWithoutHostedRestaurantInput = {
+  export type UserCreateWithoutHostedWorkspaceInput = {
     email: string
     phone?: string | null
     password: string
@@ -29382,7 +29382,7 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
+    isWorkspaceHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -29390,7 +29390,7 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
+    workspace?: WorkspaceCreateNestedOneWithoutUsersInput
     listings?: ListingCreateNestedManyWithoutHostInput
     bookings?: BookingCreateNestedManyWithoutGuestInput
     reviews?: ReviewCreateNestedManyWithoutAuthorInput
@@ -29402,7 +29402,7 @@ export namespace Prisma {
     messagesReceived?: MessageCreateNestedManyWithoutReceiverInput
   }
 
-  export type UserUncheckedCreateWithoutHostedRestaurantInput = {
+  export type UserUncheckedCreateWithoutHostedWorkspaceInput = {
     id?: number
     email: string
     phone?: string | null
@@ -29411,8 +29411,8 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
+    isWorkspaceHost?: boolean
+    workspaceId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -29431,12 +29431,12 @@ export namespace Prisma {
     messagesReceived?: MessageUncheckedCreateNestedManyWithoutReceiverInput
   }
 
-  export type UserCreateOrConnectWithoutHostedRestaurantInput = {
+  export type UserCreateOrConnectWithoutHostedWorkspaceInput = {
     where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutHostedRestaurantInput, UserUncheckedCreateWithoutHostedRestaurantInput>
+    create: XOR<UserCreateWithoutHostedWorkspaceInput, UserUncheckedCreateWithoutHostedWorkspaceInput>
   }
 
-  export type UserCreateWithoutRestaurantInput = {
+  export type UserCreateWithoutWorkspaceInput = {
     email: string
     phone?: string | null
     password: string
@@ -29444,7 +29444,7 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
+    isWorkspaceHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -29452,7 +29452,7 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    hostedWorkspace?: WorkspaceCreateNestedOneWithoutHostInput
     listings?: ListingCreateNestedManyWithoutHostInput
     bookings?: BookingCreateNestedManyWithoutGuestInput
     reviews?: ReviewCreateNestedManyWithoutAuthorInput
@@ -29464,7 +29464,7 @@ export namespace Prisma {
     messagesReceived?: MessageCreateNestedManyWithoutReceiverInput
   }
 
-  export type UserUncheckedCreateWithoutRestaurantInput = {
+  export type UserUncheckedCreateWithoutWorkspaceInput = {
     id?: number
     email: string
     phone?: string | null
@@ -29473,7 +29473,7 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
+    isWorkspaceHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -29481,7 +29481,7 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    hostedWorkspace?: WorkspaceUncheckedCreateNestedOneWithoutHostInput
     listings?: ListingUncheckedCreateNestedManyWithoutHostInput
     bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
@@ -29493,17 +29493,17 @@ export namespace Prisma {
     messagesReceived?: MessageUncheckedCreateNestedManyWithoutReceiverInput
   }
 
-  export type UserCreateOrConnectWithoutRestaurantInput = {
+  export type UserCreateOrConnectWithoutWorkspaceInput = {
     where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput>
+    create: XOR<UserCreateWithoutWorkspaceInput, UserUncheckedCreateWithoutWorkspaceInput>
   }
 
-  export type UserCreateManyRestaurantInputEnvelope = {
-    data: UserCreateManyRestaurantInput | UserCreateManyRestaurantInput[]
+  export type UserCreateManyWorkspaceInputEnvelope = {
+    data: UserCreateManyWorkspaceInput | UserCreateManyWorkspaceInput[]
     skipDuplicates?: boolean
   }
 
-  export type ListingCreateWithoutRestaurantInput = {
+  export type ListingCreateWithoutWorkspaceInput = {
     title: string
     description?: string | null
     type: string
@@ -29521,7 +29521,7 @@ export namespace Prisma {
     reviews?: ReviewCreateNestedManyWithoutListingInput
   }
 
-  export type ListingUncheckedCreateWithoutRestaurantInput = {
+  export type ListingUncheckedCreateWithoutWorkspaceInput = {
     id?: number
     title: string
     description?: string | null
@@ -29540,24 +29540,24 @@ export namespace Prisma {
     reviews?: ReviewUncheckedCreateNestedManyWithoutListingInput
   }
 
-  export type ListingCreateOrConnectWithoutRestaurantInput = {
+  export type ListingCreateOrConnectWithoutWorkspaceInput = {
     where: ListingWhereUniqueInput
-    create: XOR<ListingCreateWithoutRestaurantInput, ListingUncheckedCreateWithoutRestaurantInput>
+    create: XOR<ListingCreateWithoutWorkspaceInput, ListingUncheckedCreateWithoutWorkspaceInput>
   }
 
-  export type ListingCreateManyRestaurantInputEnvelope = {
-    data: ListingCreateManyRestaurantInput | ListingCreateManyRestaurantInput[]
+  export type ListingCreateManyWorkspaceInputEnvelope = {
+    data: ListingCreateManyWorkspaceInput | ListingCreateManyWorkspaceInput[]
     skipDuplicates?: boolean
   }
 
-  export type RestaurantImageCreateWithoutRestaurantInput = {
+  export type WorkspaceImageCreateWithoutWorkspaceInput = {
     url: string
     caption?: string | null
     isPrimary?: boolean
     createdAt?: Date | string
   }
 
-  export type RestaurantImageUncheckedCreateWithoutRestaurantInput = {
+  export type WorkspaceImageUncheckedCreateWithoutWorkspaceInput = {
     id?: number
     url: string
     caption?: string | null
@@ -29565,24 +29565,24 @@ export namespace Prisma {
     createdAt?: Date | string
   }
 
-  export type RestaurantImageCreateOrConnectWithoutRestaurantInput = {
-    where: RestaurantImageWhereUniqueInput
-    create: XOR<RestaurantImageCreateWithoutRestaurantInput, RestaurantImageUncheckedCreateWithoutRestaurantInput>
+  export type WorkspaceImageCreateOrConnectWithoutWorkspaceInput = {
+    where: WorkspaceImageWhereUniqueInput
+    create: XOR<WorkspaceImageCreateWithoutWorkspaceInput, WorkspaceImageUncheckedCreateWithoutWorkspaceInput>
   }
 
-  export type RestaurantImageCreateManyRestaurantInputEnvelope = {
-    data: RestaurantImageCreateManyRestaurantInput | RestaurantImageCreateManyRestaurantInput[]
+  export type WorkspaceImageCreateManyWorkspaceInputEnvelope = {
+    data: WorkspaceImageCreateManyWorkspaceInput | WorkspaceImageCreateManyWorkspaceInput[]
     skipDuplicates?: boolean
   }
 
-  export type OperatingHoursCreateWithoutRestaurantInput = {
+  export type OperatingHoursCreateWithoutWorkspaceInput = {
     dayOfWeek: number
     openTime: string
     closeTime: string
     isClosed?: boolean
   }
 
-  export type OperatingHoursUncheckedCreateWithoutRestaurantInput = {
+  export type OperatingHoursUncheckedCreateWithoutWorkspaceInput = {
     id?: number
     dayOfWeek: number
     openTime: string
@@ -29590,28 +29590,28 @@ export namespace Prisma {
     isClosed?: boolean
   }
 
-  export type OperatingHoursCreateOrConnectWithoutRestaurantInput = {
+  export type OperatingHoursCreateOrConnectWithoutWorkspaceInput = {
     where: OperatingHoursWhereUniqueInput
-    create: XOR<OperatingHoursCreateWithoutRestaurantInput, OperatingHoursUncheckedCreateWithoutRestaurantInput>
+    create: XOR<OperatingHoursCreateWithoutWorkspaceInput, OperatingHoursUncheckedCreateWithoutWorkspaceInput>
   }
 
-  export type OperatingHoursCreateManyRestaurantInputEnvelope = {
-    data: OperatingHoursCreateManyRestaurantInput | OperatingHoursCreateManyRestaurantInput[]
+  export type OperatingHoursCreateManyWorkspaceInputEnvelope = {
+    data: OperatingHoursCreateManyWorkspaceInput | OperatingHoursCreateManyWorkspaceInput[]
     skipDuplicates?: boolean
   }
 
-  export type UserUpsertWithoutHostedRestaurantInput = {
-    update: XOR<UserUpdateWithoutHostedRestaurantInput, UserUncheckedUpdateWithoutHostedRestaurantInput>
-    create: XOR<UserCreateWithoutHostedRestaurantInput, UserUncheckedCreateWithoutHostedRestaurantInput>
+  export type UserUpsertWithoutHostedWorkspaceInput = {
+    update: XOR<UserUpdateWithoutHostedWorkspaceInput, UserUncheckedUpdateWithoutHostedWorkspaceInput>
+    create: XOR<UserCreateWithoutHostedWorkspaceInput, UserUncheckedCreateWithoutHostedWorkspaceInput>
     where?: UserWhereInput
   }
 
-  export type UserUpdateToOneWithWhereWithoutHostedRestaurantInput = {
+  export type UserUpdateToOneWithWhereWithoutHostedWorkspaceInput = {
     where?: UserWhereInput
-    data: XOR<UserUpdateWithoutHostedRestaurantInput, UserUncheckedUpdateWithoutHostedRestaurantInput>
+    data: XOR<UserUpdateWithoutHostedWorkspaceInput, UserUncheckedUpdateWithoutHostedWorkspaceInput>
   }
 
-  export type UserUpdateWithoutHostedRestaurantInput = {
+  export type UserUpdateWithoutHostedWorkspaceInput = {
     email?: StringFieldUpdateOperationsInput | string
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     password?: StringFieldUpdateOperationsInput | string
@@ -29619,7 +29619,7 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -29627,7 +29627,7 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
+    workspace?: WorkspaceUpdateOneWithoutUsersNestedInput
     listings?: ListingUpdateManyWithoutHostNestedInput
     bookings?: BookingUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUpdateManyWithoutAuthorNestedInput
@@ -29639,7 +29639,7 @@ export namespace Prisma {
     messagesReceived?: MessageUpdateManyWithoutReceiverNestedInput
   }
 
-  export type UserUncheckedUpdateWithoutHostedRestaurantInput = {
+  export type UserUncheckedUpdateWithoutHostedWorkspaceInput = {
     id?: IntFieldUpdateOperationsInput | number
     email?: StringFieldUpdateOperationsInput | string
     phone?: NullableStringFieldUpdateOperationsInput | string | null
@@ -29648,8 +29648,8 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -29668,20 +29668,20 @@ export namespace Prisma {
     messagesReceived?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
   }
 
-  export type UserUpsertWithWhereUniqueWithoutRestaurantInput = {
+  export type UserUpsertWithWhereUniqueWithoutWorkspaceInput = {
     where: UserWhereUniqueInput
-    update: XOR<UserUpdateWithoutRestaurantInput, UserUncheckedUpdateWithoutRestaurantInput>
-    create: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput>
+    update: XOR<UserUpdateWithoutWorkspaceInput, UserUncheckedUpdateWithoutWorkspaceInput>
+    create: XOR<UserCreateWithoutWorkspaceInput, UserUncheckedCreateWithoutWorkspaceInput>
   }
 
-  export type UserUpdateWithWhereUniqueWithoutRestaurantInput = {
+  export type UserUpdateWithWhereUniqueWithoutWorkspaceInput = {
     where: UserWhereUniqueInput
-    data: XOR<UserUpdateWithoutRestaurantInput, UserUncheckedUpdateWithoutRestaurantInput>
+    data: XOR<UserUpdateWithoutWorkspaceInput, UserUncheckedUpdateWithoutWorkspaceInput>
   }
 
-  export type UserUpdateManyWithWhereWithoutRestaurantInput = {
+  export type UserUpdateManyWithWhereWithoutWorkspaceInput = {
     where: UserScalarWhereInput
-    data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyWithoutRestaurantInput>
+    data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyWithoutWorkspaceInput>
   }
 
   export type UserScalarWhereInput = {
@@ -29696,8 +29696,8 @@ export namespace Prisma {
     role?: StringFilter<"User"> | string
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
-    isRestaurantHost?: BoolFilter<"User"> | boolean
-    restaurantId?: IntNullableFilter<"User"> | number | null
+    isWorkspaceHost?: BoolFilter<"User"> | boolean
+    workspaceId?: IntNullableFilter<"User"> | number | null
     profileImage?: StringNullableFilter<"User"> | string | null
     bio?: StringNullableFilter<"User"> | string | null
     address?: StringNullableFilter<"User"> | string | null
@@ -29707,64 +29707,64 @@ export namespace Prisma {
     zipCode?: StringNullableFilter<"User"> | string | null
   }
 
-  export type ListingUpsertWithWhereUniqueWithoutRestaurantInput = {
+  export type ListingUpsertWithWhereUniqueWithoutWorkspaceInput = {
     where: ListingWhereUniqueInput
-    update: XOR<ListingUpdateWithoutRestaurantInput, ListingUncheckedUpdateWithoutRestaurantInput>
-    create: XOR<ListingCreateWithoutRestaurantInput, ListingUncheckedCreateWithoutRestaurantInput>
+    update: XOR<ListingUpdateWithoutWorkspaceInput, ListingUncheckedUpdateWithoutWorkspaceInput>
+    create: XOR<ListingCreateWithoutWorkspaceInput, ListingUncheckedCreateWithoutWorkspaceInput>
   }
 
-  export type ListingUpdateWithWhereUniqueWithoutRestaurantInput = {
+  export type ListingUpdateWithWhereUniqueWithoutWorkspaceInput = {
     where: ListingWhereUniqueInput
-    data: XOR<ListingUpdateWithoutRestaurantInput, ListingUncheckedUpdateWithoutRestaurantInput>
+    data: XOR<ListingUpdateWithoutWorkspaceInput, ListingUncheckedUpdateWithoutWorkspaceInput>
   }
 
-  export type ListingUpdateManyWithWhereWithoutRestaurantInput = {
+  export type ListingUpdateManyWithWhereWithoutWorkspaceInput = {
     where: ListingScalarWhereInput
-    data: XOR<ListingUpdateManyMutationInput, ListingUncheckedUpdateManyWithoutRestaurantInput>
+    data: XOR<ListingUpdateManyMutationInput, ListingUncheckedUpdateManyWithoutWorkspaceInput>
   }
 
-  export type RestaurantImageUpsertWithWhereUniqueWithoutRestaurantInput = {
-    where: RestaurantImageWhereUniqueInput
-    update: XOR<RestaurantImageUpdateWithoutRestaurantInput, RestaurantImageUncheckedUpdateWithoutRestaurantInput>
-    create: XOR<RestaurantImageCreateWithoutRestaurantInput, RestaurantImageUncheckedCreateWithoutRestaurantInput>
+  export type WorkspaceImageUpsertWithWhereUniqueWithoutWorkspaceInput = {
+    where: WorkspaceImageWhereUniqueInput
+    update: XOR<WorkspaceImageUpdateWithoutWorkspaceInput, WorkspaceImageUncheckedUpdateWithoutWorkspaceInput>
+    create: XOR<WorkspaceImageCreateWithoutWorkspaceInput, WorkspaceImageUncheckedCreateWithoutWorkspaceInput>
   }
 
-  export type RestaurantImageUpdateWithWhereUniqueWithoutRestaurantInput = {
-    where: RestaurantImageWhereUniqueInput
-    data: XOR<RestaurantImageUpdateWithoutRestaurantInput, RestaurantImageUncheckedUpdateWithoutRestaurantInput>
+  export type WorkspaceImageUpdateWithWhereUniqueWithoutWorkspaceInput = {
+    where: WorkspaceImageWhereUniqueInput
+    data: XOR<WorkspaceImageUpdateWithoutWorkspaceInput, WorkspaceImageUncheckedUpdateWithoutWorkspaceInput>
   }
 
-  export type RestaurantImageUpdateManyWithWhereWithoutRestaurantInput = {
-    where: RestaurantImageScalarWhereInput
-    data: XOR<RestaurantImageUpdateManyMutationInput, RestaurantImageUncheckedUpdateManyWithoutRestaurantInput>
+  export type WorkspaceImageUpdateManyWithWhereWithoutWorkspaceInput = {
+    where: WorkspaceImageScalarWhereInput
+    data: XOR<WorkspaceImageUpdateManyMutationInput, WorkspaceImageUncheckedUpdateManyWithoutWorkspaceInput>
   }
 
-  export type RestaurantImageScalarWhereInput = {
-    AND?: RestaurantImageScalarWhereInput | RestaurantImageScalarWhereInput[]
-    OR?: RestaurantImageScalarWhereInput[]
-    NOT?: RestaurantImageScalarWhereInput | RestaurantImageScalarWhereInput[]
-    id?: IntFilter<"RestaurantImage"> | number
-    url?: StringFilter<"RestaurantImage"> | string
-    caption?: StringNullableFilter<"RestaurantImage"> | string | null
-    isPrimary?: BoolFilter<"RestaurantImage"> | boolean
-    createdAt?: DateTimeFilter<"RestaurantImage"> | Date | string
-    restaurantId?: IntFilter<"RestaurantImage"> | number
+  export type WorkspaceImageScalarWhereInput = {
+    AND?: WorkspaceImageScalarWhereInput | WorkspaceImageScalarWhereInput[]
+    OR?: WorkspaceImageScalarWhereInput[]
+    NOT?: WorkspaceImageScalarWhereInput | WorkspaceImageScalarWhereInput[]
+    id?: IntFilter<"WorkspaceImage"> | number
+    url?: StringFilter<"WorkspaceImage"> | string
+    caption?: StringNullableFilter<"WorkspaceImage"> | string | null
+    isPrimary?: BoolFilter<"WorkspaceImage"> | boolean
+    createdAt?: DateTimeFilter<"WorkspaceImage"> | Date | string
+    workspaceId?: IntFilter<"WorkspaceImage"> | number
   }
 
-  export type OperatingHoursUpsertWithWhereUniqueWithoutRestaurantInput = {
+  export type OperatingHoursUpsertWithWhereUniqueWithoutWorkspaceInput = {
     where: OperatingHoursWhereUniqueInput
-    update: XOR<OperatingHoursUpdateWithoutRestaurantInput, OperatingHoursUncheckedUpdateWithoutRestaurantInput>
-    create: XOR<OperatingHoursCreateWithoutRestaurantInput, OperatingHoursUncheckedCreateWithoutRestaurantInput>
+    update: XOR<OperatingHoursUpdateWithoutWorkspaceInput, OperatingHoursUncheckedUpdateWithoutWorkspaceInput>
+    create: XOR<OperatingHoursCreateWithoutWorkspaceInput, OperatingHoursUncheckedCreateWithoutWorkspaceInput>
   }
 
-  export type OperatingHoursUpdateWithWhereUniqueWithoutRestaurantInput = {
+  export type OperatingHoursUpdateWithWhereUniqueWithoutWorkspaceInput = {
     where: OperatingHoursWhereUniqueInput
-    data: XOR<OperatingHoursUpdateWithoutRestaurantInput, OperatingHoursUncheckedUpdateWithoutRestaurantInput>
+    data: XOR<OperatingHoursUpdateWithoutWorkspaceInput, OperatingHoursUncheckedUpdateWithoutWorkspaceInput>
   }
 
-  export type OperatingHoursUpdateManyWithWhereWithoutRestaurantInput = {
+  export type OperatingHoursUpdateManyWithWhereWithoutWorkspaceInput = {
     where: OperatingHoursScalarWhereInput
-    data: XOR<OperatingHoursUpdateManyMutationInput, OperatingHoursUncheckedUpdateManyWithoutRestaurantInput>
+    data: XOR<OperatingHoursUpdateManyMutationInput, OperatingHoursUncheckedUpdateManyWithoutWorkspaceInput>
   }
 
   export type OperatingHoursScalarWhereInput = {
@@ -29776,10 +29776,10 @@ export namespace Prisma {
     openTime?: StringFilter<"OperatingHours"> | string
     closeTime?: StringFilter<"OperatingHours"> | string
     isClosed?: BoolFilter<"OperatingHours"> | boolean
-    restaurantId?: IntFilter<"OperatingHours"> | number
+    workspaceId?: IntFilter<"OperatingHours"> | number
   }
 
-  export type RestaurantCreateWithoutListingsInput = {
+  export type WorkspaceCreateWithoutListingsInput = {
     name: string
     description?: string | null
     address: string
@@ -29790,19 +29790,19 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    workspaceType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    host: UserCreateNestedOneWithoutHostedRestaurantInput
-    users?: UserCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursCreateNestedManyWithoutRestaurantInput
+    host: UserCreateNestedOneWithoutHostedWorkspaceInput
+    users?: UserCreateNestedManyWithoutWorkspaceInput
+    images?: WorkspaceImageCreateNestedManyWithoutWorkspaceInput
+    operatingHours?: OperatingHoursCreateNestedManyWithoutWorkspaceInput
   }
 
-  export type RestaurantUncheckedCreateWithoutListingsInput = {
+  export type WorkspaceUncheckedCreateWithoutListingsInput = {
     id?: number
     name: string
     description?: string | null
@@ -29814,21 +29814,21 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    workspaceType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     hostId: number
-    users?: UserUncheckedCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput
+    users?: UserUncheckedCreateNestedManyWithoutWorkspaceInput
+    images?: WorkspaceImageUncheckedCreateNestedManyWithoutWorkspaceInput
+    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutWorkspaceInput
   }
 
-  export type RestaurantCreateOrConnectWithoutListingsInput = {
-    where: RestaurantWhereUniqueInput
-    create: XOR<RestaurantCreateWithoutListingsInput, RestaurantUncheckedCreateWithoutListingsInput>
+  export type WorkspaceCreateOrConnectWithoutListingsInput = {
+    where: WorkspaceWhereUniqueInput
+    create: XOR<WorkspaceCreateWithoutListingsInput, WorkspaceUncheckedCreateWithoutListingsInput>
   }
 
   export type UserCreateWithoutListingsInput = {
@@ -29839,7 +29839,7 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
+    isWorkspaceHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -29847,8 +29847,8 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    workspace?: WorkspaceCreateNestedOneWithoutUsersInput
+    hostedWorkspace?: WorkspaceCreateNestedOneWithoutHostInput
     bookings?: BookingCreateNestedManyWithoutGuestInput
     reviews?: ReviewCreateNestedManyWithoutAuthorInput
     notifications?: NotificationCreateNestedManyWithoutUserInput
@@ -29868,8 +29868,8 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
+    isWorkspaceHost?: boolean
+    workspaceId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -29877,7 +29877,7 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    hostedWorkspace?: WorkspaceUncheckedCreateNestedOneWithoutHostInput
     bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
     notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
@@ -30032,18 +30032,18 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type RestaurantUpsertWithoutListingsInput = {
-    update: XOR<RestaurantUpdateWithoutListingsInput, RestaurantUncheckedUpdateWithoutListingsInput>
-    create: XOR<RestaurantCreateWithoutListingsInput, RestaurantUncheckedCreateWithoutListingsInput>
-    where?: RestaurantWhereInput
+  export type WorkspaceUpsertWithoutListingsInput = {
+    update: XOR<WorkspaceUpdateWithoutListingsInput, WorkspaceUncheckedUpdateWithoutListingsInput>
+    create: XOR<WorkspaceCreateWithoutListingsInput, WorkspaceUncheckedCreateWithoutListingsInput>
+    where?: WorkspaceWhereInput
   }
 
-  export type RestaurantUpdateToOneWithWhereWithoutListingsInput = {
-    where?: RestaurantWhereInput
-    data: XOR<RestaurantUpdateWithoutListingsInput, RestaurantUncheckedUpdateWithoutListingsInput>
+  export type WorkspaceUpdateToOneWithWhereWithoutListingsInput = {
+    where?: WorkspaceWhereInput
+    data: XOR<WorkspaceUpdateWithoutListingsInput, WorkspaceUncheckedUpdateWithoutListingsInput>
   }
 
-  export type RestaurantUpdateWithoutListingsInput = {
+  export type WorkspaceUpdateWithoutListingsInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     address?: StringFieldUpdateOperationsInput | string
@@ -30054,19 +30054,19 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    workspaceType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    host?: UserUpdateOneRequiredWithoutHostedRestaurantNestedInput
-    users?: UserUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUpdateManyWithoutRestaurantNestedInput
+    host?: UserUpdateOneRequiredWithoutHostedWorkspaceNestedInput
+    users?: UserUpdateManyWithoutWorkspaceNestedInput
+    images?: WorkspaceImageUpdateManyWithoutWorkspaceNestedInput
+    operatingHours?: OperatingHoursUpdateManyWithoutWorkspaceNestedInput
   }
 
-  export type RestaurantUncheckedUpdateWithoutListingsInput = {
+  export type WorkspaceUncheckedUpdateWithoutListingsInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
@@ -30078,16 +30078,16 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    workspaceType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     hostId?: IntFieldUpdateOperationsInput | number
-    users?: UserUncheckedUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutRestaurantNestedInput
+    users?: UserUncheckedUpdateManyWithoutWorkspaceNestedInput
+    images?: WorkspaceImageUncheckedUpdateManyWithoutWorkspaceNestedInput
+    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutWorkspaceNestedInput
   }
 
   export type UserUpsertWithoutListingsInput = {
@@ -30109,7 +30109,7 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -30117,8 +30117,8 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    workspace?: WorkspaceUpdateOneWithoutUsersNestedInput
+    hostedWorkspace?: WorkspaceUpdateOneWithoutHostNestedInput
     bookings?: BookingUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUpdateManyWithoutAuthorNestedInput
     notifications?: NotificationUpdateManyWithoutUserNestedInput
@@ -30138,8 +30138,8 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -30147,7 +30147,7 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    hostedWorkspace?: WorkspaceUncheckedUpdateOneWithoutHostNestedInput
     bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
     notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
@@ -30282,7 +30282,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurant?: RestaurantCreateNestedOneWithoutListingsInput
+    workspace?: WorkspaceCreateNestedOneWithoutListingsInput
     host: UserCreateNestedOneWithoutListingsInput
     bookings?: BookingCreateNestedManyWithoutListingInput
     amenities?: ListingAmenityCreateNestedManyWithoutListingInput
@@ -30301,7 +30301,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurantId?: number | null
+    workspaceId?: number | null
     hostId: number
     bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
     amenities?: ListingAmenityUncheckedCreateNestedManyWithoutListingInput
@@ -30335,7 +30335,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurant?: RestaurantUpdateOneWithoutListingsNestedInput
+    workspace?: WorkspaceUpdateOneWithoutListingsNestedInput
     host?: UserUpdateOneRequiredWithoutListingsNestedInput
     bookings?: BookingUpdateManyWithoutListingNestedInput
     amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
@@ -30354,7 +30354,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     hostId?: IntFieldUpdateOperationsInput | number
     bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
     amenities?: ListingAmenityUncheckedUpdateManyWithoutListingNestedInput
@@ -30407,7 +30407,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurant?: RestaurantCreateNestedOneWithoutListingsInput
+    workspace?: WorkspaceCreateNestedOneWithoutListingsInput
     host: UserCreateNestedOneWithoutListingsInput
     bookings?: BookingCreateNestedManyWithoutListingInput
     images?: ListingImageCreateNestedManyWithoutListingInput
@@ -30426,7 +30426,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurantId?: number | null
+    workspaceId?: number | null
     hostId: number
     bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
     images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
@@ -30480,7 +30480,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurant?: RestaurantUpdateOneWithoutListingsNestedInput
+    workspace?: WorkspaceUpdateOneWithoutListingsNestedInput
     host?: UserUpdateOneRequiredWithoutListingsNestedInput
     bookings?: BookingUpdateManyWithoutListingNestedInput
     images?: ListingImageUpdateManyWithoutListingNestedInput
@@ -30499,7 +30499,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     hostId?: IntFieldUpdateOperationsInput | number
     bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
     images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
@@ -30543,7 +30543,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurant?: RestaurantCreateNestedOneWithoutListingsInput
+    workspace?: WorkspaceCreateNestedOneWithoutListingsInput
     host: UserCreateNestedOneWithoutListingsInput
     bookings?: BookingCreateNestedManyWithoutListingInput
     images?: ListingImageCreateNestedManyWithoutListingInput
@@ -30562,7 +30562,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurantId?: number | null
+    workspaceId?: number | null
     hostId: number
     bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
     images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
@@ -30596,7 +30596,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurant?: RestaurantUpdateOneWithoutListingsNestedInput
+    workspace?: WorkspaceUpdateOneWithoutListingsNestedInput
     host?: UserUpdateOneRequiredWithoutListingsNestedInput
     bookings?: BookingUpdateManyWithoutListingNestedInput
     images?: ListingImageUpdateManyWithoutListingNestedInput
@@ -30615,7 +30615,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     hostId?: IntFieldUpdateOperationsInput | number
     bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
     images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
@@ -30633,7 +30633,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurant?: RestaurantCreateNestedOneWithoutListingsInput
+    workspace?: WorkspaceCreateNestedOneWithoutListingsInput
     host: UserCreateNestedOneWithoutListingsInput
     images?: ListingImageCreateNestedManyWithoutListingInput
     amenities?: ListingAmenityCreateNestedManyWithoutListingInput
@@ -30652,7 +30652,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurantId?: number | null
+    workspaceId?: number | null
     hostId: number
     images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
     amenities?: ListingAmenityUncheckedCreateNestedManyWithoutListingInput
@@ -30673,7 +30673,7 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
+    isWorkspaceHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -30681,8 +30681,8 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    workspace?: WorkspaceCreateNestedOneWithoutUsersInput
+    hostedWorkspace?: WorkspaceCreateNestedOneWithoutHostInput
     listings?: ListingCreateNestedManyWithoutHostInput
     reviews?: ReviewCreateNestedManyWithoutAuthorInput
     notifications?: NotificationCreateNestedManyWithoutUserInput
@@ -30702,8 +30702,8 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
+    isWorkspaceHost?: boolean
+    workspaceId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -30711,7 +30711,7 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    hostedWorkspace?: WorkspaceUncheckedCreateNestedOneWithoutHostInput
     listings?: ListingUncheckedCreateNestedManyWithoutHostInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
     notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
@@ -30812,7 +30812,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurant?: RestaurantUpdateOneWithoutListingsNestedInput
+    workspace?: WorkspaceUpdateOneWithoutListingsNestedInput
     host?: UserUpdateOneRequiredWithoutListingsNestedInput
     images?: ListingImageUpdateManyWithoutListingNestedInput
     amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
@@ -30831,7 +30831,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     hostId?: IntFieldUpdateOperationsInput | number
     images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
     amenities?: ListingAmenityUncheckedUpdateManyWithoutListingNestedInput
@@ -30858,7 +30858,7 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -30866,8 +30866,8 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    workspace?: WorkspaceUpdateOneWithoutUsersNestedInput
+    hostedWorkspace?: WorkspaceUpdateOneWithoutHostNestedInput
     listings?: ListingUpdateManyWithoutHostNestedInput
     reviews?: ReviewUpdateManyWithoutAuthorNestedInput
     notifications?: NotificationUpdateManyWithoutUserNestedInput
@@ -30887,8 +30887,8 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -30896,7 +30896,7 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    hostedWorkspace?: WorkspaceUncheckedUpdateOneWithoutHostNestedInput
     listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
     notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
@@ -30999,7 +30999,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurant?: RestaurantCreateNestedOneWithoutListingsInput
+    workspace?: WorkspaceCreateNestedOneWithoutListingsInput
     host: UserCreateNestedOneWithoutListingsInput
     bookings?: BookingCreateNestedManyWithoutListingInput
     images?: ListingImageCreateNestedManyWithoutListingInput
@@ -31018,7 +31018,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurantId?: number | null
+    workspaceId?: number | null
     hostId: number
     bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
     images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
@@ -31039,7 +31039,7 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
+    isWorkspaceHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -31047,8 +31047,8 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    workspace?: WorkspaceCreateNestedOneWithoutUsersInput
+    hostedWorkspace?: WorkspaceCreateNestedOneWithoutHostInput
     listings?: ListingCreateNestedManyWithoutHostInput
     bookings?: BookingCreateNestedManyWithoutGuestInput
     notifications?: NotificationCreateNestedManyWithoutUserInput
@@ -31068,8 +31068,8 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
+    isWorkspaceHost?: boolean
+    workspaceId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -31077,7 +31077,7 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    hostedWorkspace?: WorkspaceUncheckedCreateNestedOneWithoutHostInput
     listings?: ListingUncheckedCreateNestedManyWithoutHostInput
     bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
     notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
@@ -31150,7 +31150,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurant?: RestaurantUpdateOneWithoutListingsNestedInput
+    workspace?: WorkspaceUpdateOneWithoutListingsNestedInput
     host?: UserUpdateOneRequiredWithoutListingsNestedInput
     bookings?: BookingUpdateManyWithoutListingNestedInput
     images?: ListingImageUpdateManyWithoutListingNestedInput
@@ -31169,7 +31169,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     hostId?: IntFieldUpdateOperationsInput | number
     bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
     images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
@@ -31196,7 +31196,7 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -31204,8 +31204,8 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    workspace?: WorkspaceUpdateOneWithoutUsersNestedInput
+    hostedWorkspace?: WorkspaceUpdateOneWithoutHostNestedInput
     listings?: ListingUpdateManyWithoutHostNestedInput
     bookings?: BookingUpdateManyWithoutGuestNestedInput
     notifications?: NotificationUpdateManyWithoutUserNestedInput
@@ -31225,8 +31225,8 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -31234,7 +31234,7 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    hostedWorkspace?: WorkspaceUncheckedUpdateOneWithoutHostNestedInput
     listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
     bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
     notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
@@ -31295,7 +31295,7 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
+    isWorkspaceHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -31303,8 +31303,8 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    workspace?: WorkspaceCreateNestedOneWithoutUsersInput
+    hostedWorkspace?: WorkspaceCreateNestedOneWithoutHostInput
     listings?: ListingCreateNestedManyWithoutHostInput
     bookings?: BookingCreateNestedManyWithoutGuestInput
     reviews?: ReviewCreateNestedManyWithoutAuthorInput
@@ -31324,8 +31324,8 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
+    isWorkspaceHost?: boolean
+    workspaceId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -31333,7 +31333,7 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    hostedWorkspace?: WorkspaceUncheckedCreateNestedOneWithoutHostInput
     listings?: ListingUncheckedCreateNestedManyWithoutHostInput
     bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
@@ -31404,7 +31404,7 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -31412,8 +31412,8 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    workspace?: WorkspaceUpdateOneWithoutUsersNestedInput
+    hostedWorkspace?: WorkspaceUpdateOneWithoutHostNestedInput
     listings?: ListingUpdateManyWithoutHostNestedInput
     bookings?: BookingUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUpdateManyWithoutAuthorNestedInput
@@ -31433,8 +31433,8 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -31442,7 +31442,7 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    hostedWorkspace?: WorkspaceUncheckedUpdateOneWithoutHostNestedInput
     listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
     bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
@@ -31503,7 +31503,7 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
+    isWorkspaceHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -31511,8 +31511,8 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    workspace?: WorkspaceCreateNestedOneWithoutUsersInput
+    hostedWorkspace?: WorkspaceCreateNestedOneWithoutHostInput
     listings?: ListingCreateNestedManyWithoutHostInput
     bookings?: BookingCreateNestedManyWithoutGuestInput
     reviews?: ReviewCreateNestedManyWithoutAuthorInput
@@ -31532,8 +31532,8 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
+    isWorkspaceHost?: boolean
+    workspaceId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -31541,7 +31541,7 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    hostedWorkspace?: WorkspaceUncheckedCreateNestedOneWithoutHostInput
     listings?: ListingUncheckedCreateNestedManyWithoutHostInput
     bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
@@ -31576,7 +31576,7 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -31584,8 +31584,8 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    workspace?: WorkspaceUpdateOneWithoutUsersNestedInput
+    hostedWorkspace?: WorkspaceUpdateOneWithoutHostNestedInput
     listings?: ListingUpdateManyWithoutHostNestedInput
     bookings?: BookingUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUpdateManyWithoutAuthorNestedInput
@@ -31605,8 +31605,8 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -31614,7 +31614,7 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    hostedWorkspace?: WorkspaceUncheckedUpdateOneWithoutHostNestedInput
     listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
     bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
@@ -31625,7 +31625,7 @@ export namespace Prisma {
     messagesReceived?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
   }
 
-  export type RestaurantCreateWithoutImagesInput = {
+  export type WorkspaceCreateWithoutImagesInput = {
     name: string
     description?: string | null
     address: string
@@ -31636,19 +31636,19 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    workspaceType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    host: UserCreateNestedOneWithoutHostedRestaurantInput
-    users?: UserCreateNestedManyWithoutRestaurantInput
-    listings?: ListingCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursCreateNestedManyWithoutRestaurantInput
+    host: UserCreateNestedOneWithoutHostedWorkspaceInput
+    users?: UserCreateNestedManyWithoutWorkspaceInput
+    listings?: ListingCreateNestedManyWithoutWorkspaceInput
+    operatingHours?: OperatingHoursCreateNestedManyWithoutWorkspaceInput
   }
 
-  export type RestaurantUncheckedCreateWithoutImagesInput = {
+  export type WorkspaceUncheckedCreateWithoutImagesInput = {
     id?: number
     name: string
     description?: string | null
@@ -31660,35 +31660,35 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    workspaceType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     hostId: number
-    users?: UserUncheckedCreateNestedManyWithoutRestaurantInput
-    listings?: ListingUncheckedCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput
+    users?: UserUncheckedCreateNestedManyWithoutWorkspaceInput
+    listings?: ListingUncheckedCreateNestedManyWithoutWorkspaceInput
+    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutWorkspaceInput
   }
 
-  export type RestaurantCreateOrConnectWithoutImagesInput = {
-    where: RestaurantWhereUniqueInput
-    create: XOR<RestaurantCreateWithoutImagesInput, RestaurantUncheckedCreateWithoutImagesInput>
+  export type WorkspaceCreateOrConnectWithoutImagesInput = {
+    where: WorkspaceWhereUniqueInput
+    create: XOR<WorkspaceCreateWithoutImagesInput, WorkspaceUncheckedCreateWithoutImagesInput>
   }
 
-  export type RestaurantUpsertWithoutImagesInput = {
-    update: XOR<RestaurantUpdateWithoutImagesInput, RestaurantUncheckedUpdateWithoutImagesInput>
-    create: XOR<RestaurantCreateWithoutImagesInput, RestaurantUncheckedCreateWithoutImagesInput>
-    where?: RestaurantWhereInput
+  export type WorkspaceUpsertWithoutImagesInput = {
+    update: XOR<WorkspaceUpdateWithoutImagesInput, WorkspaceUncheckedUpdateWithoutImagesInput>
+    create: XOR<WorkspaceCreateWithoutImagesInput, WorkspaceUncheckedCreateWithoutImagesInput>
+    where?: WorkspaceWhereInput
   }
 
-  export type RestaurantUpdateToOneWithWhereWithoutImagesInput = {
-    where?: RestaurantWhereInput
-    data: XOR<RestaurantUpdateWithoutImagesInput, RestaurantUncheckedUpdateWithoutImagesInput>
+  export type WorkspaceUpdateToOneWithWhereWithoutImagesInput = {
+    where?: WorkspaceWhereInput
+    data: XOR<WorkspaceUpdateWithoutImagesInput, WorkspaceUncheckedUpdateWithoutImagesInput>
   }
 
-  export type RestaurantUpdateWithoutImagesInput = {
+  export type WorkspaceUpdateWithoutImagesInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     address?: StringFieldUpdateOperationsInput | string
@@ -31699,19 +31699,19 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    workspaceType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    host?: UserUpdateOneRequiredWithoutHostedRestaurantNestedInput
-    users?: UserUpdateManyWithoutRestaurantNestedInput
-    listings?: ListingUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUpdateManyWithoutRestaurantNestedInput
+    host?: UserUpdateOneRequiredWithoutHostedWorkspaceNestedInput
+    users?: UserUpdateManyWithoutWorkspaceNestedInput
+    listings?: ListingUpdateManyWithoutWorkspaceNestedInput
+    operatingHours?: OperatingHoursUpdateManyWithoutWorkspaceNestedInput
   }
 
-  export type RestaurantUncheckedUpdateWithoutImagesInput = {
+  export type WorkspaceUncheckedUpdateWithoutImagesInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
@@ -31723,19 +31723,19 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    workspaceType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     hostId?: IntFieldUpdateOperationsInput | number
-    users?: UserUncheckedUpdateManyWithoutRestaurantNestedInput
-    listings?: ListingUncheckedUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutRestaurantNestedInput
+    users?: UserUncheckedUpdateManyWithoutWorkspaceNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutWorkspaceNestedInput
+    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutWorkspaceNestedInput
   }
 
-  export type RestaurantCreateWithoutOperatingHoursInput = {
+  export type WorkspaceCreateWithoutOperatingHoursInput = {
     name: string
     description?: string | null
     address: string
@@ -31746,19 +31746,19 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    workspaceType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    host: UserCreateNestedOneWithoutHostedRestaurantInput
-    users?: UserCreateNestedManyWithoutRestaurantInput
-    listings?: ListingCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageCreateNestedManyWithoutRestaurantInput
+    host: UserCreateNestedOneWithoutHostedWorkspaceInput
+    users?: UserCreateNestedManyWithoutWorkspaceInput
+    listings?: ListingCreateNestedManyWithoutWorkspaceInput
+    images?: WorkspaceImageCreateNestedManyWithoutWorkspaceInput
   }
 
-  export type RestaurantUncheckedCreateWithoutOperatingHoursInput = {
+  export type WorkspaceUncheckedCreateWithoutOperatingHoursInput = {
     id?: number
     name: string
     description?: string | null
@@ -31770,35 +31770,35 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    workspaceType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     hostId: number
-    users?: UserUncheckedCreateNestedManyWithoutRestaurantInput
-    listings?: ListingUncheckedCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput
+    users?: UserUncheckedCreateNestedManyWithoutWorkspaceInput
+    listings?: ListingUncheckedCreateNestedManyWithoutWorkspaceInput
+    images?: WorkspaceImageUncheckedCreateNestedManyWithoutWorkspaceInput
   }
 
-  export type RestaurantCreateOrConnectWithoutOperatingHoursInput = {
-    where: RestaurantWhereUniqueInput
-    create: XOR<RestaurantCreateWithoutOperatingHoursInput, RestaurantUncheckedCreateWithoutOperatingHoursInput>
+  export type WorkspaceCreateOrConnectWithoutOperatingHoursInput = {
+    where: WorkspaceWhereUniqueInput
+    create: XOR<WorkspaceCreateWithoutOperatingHoursInput, WorkspaceUncheckedCreateWithoutOperatingHoursInput>
   }
 
-  export type RestaurantUpsertWithoutOperatingHoursInput = {
-    update: XOR<RestaurantUpdateWithoutOperatingHoursInput, RestaurantUncheckedUpdateWithoutOperatingHoursInput>
-    create: XOR<RestaurantCreateWithoutOperatingHoursInput, RestaurantUncheckedCreateWithoutOperatingHoursInput>
-    where?: RestaurantWhereInput
+  export type WorkspaceUpsertWithoutOperatingHoursInput = {
+    update: XOR<WorkspaceUpdateWithoutOperatingHoursInput, WorkspaceUncheckedUpdateWithoutOperatingHoursInput>
+    create: XOR<WorkspaceCreateWithoutOperatingHoursInput, WorkspaceUncheckedCreateWithoutOperatingHoursInput>
+    where?: WorkspaceWhereInput
   }
 
-  export type RestaurantUpdateToOneWithWhereWithoutOperatingHoursInput = {
-    where?: RestaurantWhereInput
-    data: XOR<RestaurantUpdateWithoutOperatingHoursInput, RestaurantUncheckedUpdateWithoutOperatingHoursInput>
+  export type WorkspaceUpdateToOneWithWhereWithoutOperatingHoursInput = {
+    where?: WorkspaceWhereInput
+    data: XOR<WorkspaceUpdateWithoutOperatingHoursInput, WorkspaceUncheckedUpdateWithoutOperatingHoursInput>
   }
 
-  export type RestaurantUpdateWithoutOperatingHoursInput = {
+  export type WorkspaceUpdateWithoutOperatingHoursInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     address?: StringFieldUpdateOperationsInput | string
@@ -31809,19 +31809,19 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    workspaceType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    host?: UserUpdateOneRequiredWithoutHostedRestaurantNestedInput
-    users?: UserUpdateManyWithoutRestaurantNestedInput
-    listings?: ListingUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUpdateManyWithoutRestaurantNestedInput
+    host?: UserUpdateOneRequiredWithoutHostedWorkspaceNestedInput
+    users?: UserUpdateManyWithoutWorkspaceNestedInput
+    listings?: ListingUpdateManyWithoutWorkspaceNestedInput
+    images?: WorkspaceImageUpdateManyWithoutWorkspaceNestedInput
   }
 
-  export type RestaurantUncheckedUpdateWithoutOperatingHoursInput = {
+  export type WorkspaceUncheckedUpdateWithoutOperatingHoursInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
@@ -31833,16 +31833,16 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    workspaceType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     hostId?: IntFieldUpdateOperationsInput | number
-    users?: UserUncheckedUpdateManyWithoutRestaurantNestedInput
-    listings?: ListingUncheckedUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput
+    users?: UserUncheckedUpdateManyWithoutWorkspaceNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutWorkspaceNestedInput
+    images?: WorkspaceImageUncheckedUpdateManyWithoutWorkspaceNestedInput
   }
 
   export type UserCreateWithoutHostSettingsInput = {
@@ -31853,7 +31853,7 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
+    isWorkspaceHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -31861,8 +31861,8 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    workspace?: WorkspaceCreateNestedOneWithoutUsersInput
+    hostedWorkspace?: WorkspaceCreateNestedOneWithoutHostInput
     listings?: ListingCreateNestedManyWithoutHostInput
     bookings?: BookingCreateNestedManyWithoutGuestInput
     reviews?: ReviewCreateNestedManyWithoutAuthorInput
@@ -31882,8 +31882,8 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
+    isWorkspaceHost?: boolean
+    workspaceId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -31891,7 +31891,7 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    hostedWorkspace?: WorkspaceUncheckedCreateNestedOneWithoutHostInput
     listings?: ListingUncheckedCreateNestedManyWithoutHostInput
     bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
@@ -31926,7 +31926,7 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -31934,8 +31934,8 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    workspace?: WorkspaceUpdateOneWithoutUsersNestedInput
+    hostedWorkspace?: WorkspaceUpdateOneWithoutHostNestedInput
     listings?: ListingUpdateManyWithoutHostNestedInput
     bookings?: BookingUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUpdateManyWithoutAuthorNestedInput
@@ -31955,8 +31955,8 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -31964,7 +31964,7 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    hostedWorkspace?: WorkspaceUncheckedUpdateOneWithoutHostNestedInput
     listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
     bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
@@ -31983,7 +31983,7 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
+    isWorkspaceHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -31991,8 +31991,8 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    workspace?: WorkspaceCreateNestedOneWithoutUsersInput
+    hostedWorkspace?: WorkspaceCreateNestedOneWithoutHostInput
     listings?: ListingCreateNestedManyWithoutHostInput
     bookings?: BookingCreateNestedManyWithoutGuestInput
     reviews?: ReviewCreateNestedManyWithoutAuthorInput
@@ -32012,8 +32012,8 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
+    isWorkspaceHost?: boolean
+    workspaceId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -32021,7 +32021,7 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    hostedWorkspace?: WorkspaceUncheckedCreateNestedOneWithoutHostInput
     listings?: ListingUncheckedCreateNestedManyWithoutHostInput
     bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
@@ -32056,7 +32056,7 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -32064,8 +32064,8 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    workspace?: WorkspaceUpdateOneWithoutUsersNestedInput
+    hostedWorkspace?: WorkspaceUpdateOneWithoutHostNestedInput
     listings?: ListingUpdateManyWithoutHostNestedInput
     bookings?: BookingUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUpdateManyWithoutAuthorNestedInput
@@ -32085,8 +32085,8 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -32094,7 +32094,7 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    hostedWorkspace?: WorkspaceUncheckedUpdateOneWithoutHostNestedInput
     listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
     bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
@@ -32252,7 +32252,7 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
+    isWorkspaceHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -32260,8 +32260,8 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    workspace?: WorkspaceCreateNestedOneWithoutUsersInput
+    hostedWorkspace?: WorkspaceCreateNestedOneWithoutHostInput
     listings?: ListingCreateNestedManyWithoutHostInput
     bookings?: BookingCreateNestedManyWithoutGuestInput
     reviews?: ReviewCreateNestedManyWithoutAuthorInput
@@ -32281,8 +32281,8 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
+    isWorkspaceHost?: boolean
+    workspaceId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -32290,7 +32290,7 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    hostedWorkspace?: WorkspaceUncheckedCreateNestedOneWithoutHostInput
     listings?: ListingUncheckedCreateNestedManyWithoutHostInput
     bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
@@ -32314,7 +32314,7 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
+    isWorkspaceHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -32322,8 +32322,8 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    workspace?: WorkspaceCreateNestedOneWithoutUsersInput
+    hostedWorkspace?: WorkspaceCreateNestedOneWithoutHostInput
     listings?: ListingCreateNestedManyWithoutHostInput
     bookings?: BookingCreateNestedManyWithoutGuestInput
     reviews?: ReviewCreateNestedManyWithoutAuthorInput
@@ -32343,8 +32343,8 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
+    isWorkspaceHost?: boolean
+    workspaceId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -32352,7 +32352,7 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    hostedWorkspace?: WorkspaceUncheckedCreateNestedOneWithoutHostInput
     listings?: ListingUncheckedCreateNestedManyWithoutHostInput
     bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
@@ -32411,7 +32411,7 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -32419,8 +32419,8 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    workspace?: WorkspaceUpdateOneWithoutUsersNestedInput
+    hostedWorkspace?: WorkspaceUpdateOneWithoutHostNestedInput
     listings?: ListingUpdateManyWithoutHostNestedInput
     bookings?: BookingUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUpdateManyWithoutAuthorNestedInput
@@ -32440,8 +32440,8 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -32449,7 +32449,7 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    hostedWorkspace?: WorkspaceUncheckedUpdateOneWithoutHostNestedInput
     listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
     bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
@@ -32479,7 +32479,7 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -32487,8 +32487,8 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    workspace?: WorkspaceUpdateOneWithoutUsersNestedInput
+    hostedWorkspace?: WorkspaceUpdateOneWithoutHostNestedInput
     listings?: ListingUpdateManyWithoutHostNestedInput
     bookings?: BookingUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUpdateManyWithoutAuthorNestedInput
@@ -32508,8 +32508,8 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -32517,7 +32517,7 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    hostedWorkspace?: WorkspaceUncheckedUpdateOneWithoutHostNestedInput
     listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
     bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
@@ -32539,7 +32539,7 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurantId?: number | null
+    workspaceId?: number | null
   }
 
   export type BookingCreateManyGuestInput = {
@@ -32619,7 +32619,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurant?: RestaurantUpdateOneWithoutListingsNestedInput
+    workspace?: WorkspaceUpdateOneWithoutListingsNestedInput
     bookings?: BookingUpdateManyWithoutListingNestedInput
     images?: ListingImageUpdateManyWithoutListingNestedInput
     amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
@@ -32638,7 +32638,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
     bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
     images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
     amenities?: ListingAmenityUncheckedUpdateManyWithoutListingNestedInput
@@ -32657,7 +32657,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    workspaceId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type BookingUpdateWithoutGuestInput = {
@@ -32860,7 +32860,7 @@ export namespace Prisma {
     timestamp?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type UserCreateManyRestaurantInput = {
+  export type UserCreateManyWorkspaceInput = {
     id?: number
     email: string
     phone?: string | null
@@ -32869,7 +32869,7 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
+    isWorkspaceHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -32879,7 +32879,7 @@ export namespace Prisma {
     zipCode?: string | null
   }
 
-  export type ListingCreateManyRestaurantInput = {
+  export type ListingCreateManyWorkspaceInput = {
     id?: number
     title: string
     description?: string | null
@@ -32893,7 +32893,7 @@ export namespace Prisma {
     hostId: number
   }
 
-  export type RestaurantImageCreateManyRestaurantInput = {
+  export type WorkspaceImageCreateManyWorkspaceInput = {
     id?: number
     url: string
     caption?: string | null
@@ -32901,7 +32901,7 @@ export namespace Prisma {
     createdAt?: Date | string
   }
 
-  export type OperatingHoursCreateManyRestaurantInput = {
+  export type OperatingHoursCreateManyWorkspaceInput = {
     id?: number
     dayOfWeek: number
     openTime: string
@@ -32909,7 +32909,7 @@ export namespace Prisma {
     isClosed?: boolean
   }
 
-  export type UserUpdateWithoutRestaurantInput = {
+  export type UserUpdateWithoutWorkspaceInput = {
     email?: StringFieldUpdateOperationsInput | string
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     password?: StringFieldUpdateOperationsInput | string
@@ -32917,7 +32917,7 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -32925,7 +32925,7 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    hostedWorkspace?: WorkspaceUpdateOneWithoutHostNestedInput
     listings?: ListingUpdateManyWithoutHostNestedInput
     bookings?: BookingUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUpdateManyWithoutAuthorNestedInput
@@ -32937,7 +32937,7 @@ export namespace Prisma {
     messagesReceived?: MessageUpdateManyWithoutReceiverNestedInput
   }
 
-  export type UserUncheckedUpdateWithoutRestaurantInput = {
+  export type UserUncheckedUpdateWithoutWorkspaceInput = {
     id?: IntFieldUpdateOperationsInput | number
     email?: StringFieldUpdateOperationsInput | string
     phone?: NullableStringFieldUpdateOperationsInput | string | null
@@ -32946,7 +32946,7 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -32954,7 +32954,7 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    hostedWorkspace?: WorkspaceUncheckedUpdateOneWithoutHostNestedInput
     listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
     bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
@@ -32966,7 +32966,7 @@ export namespace Prisma {
     messagesReceived?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
   }
 
-  export type UserUncheckedUpdateManyWithoutRestaurantInput = {
+  export type UserUncheckedUpdateManyWithoutWorkspaceInput = {
     id?: IntFieldUpdateOperationsInput | number
     email?: StringFieldUpdateOperationsInput | string
     phone?: NullableStringFieldUpdateOperationsInput | string | null
@@ -32975,7 +32975,7 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    isWorkspaceHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -32985,7 +32985,7 @@ export namespace Prisma {
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type ListingUpdateWithoutRestaurantInput = {
+  export type ListingUpdateWithoutWorkspaceInput = {
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     type?: StringFieldUpdateOperationsInput | string
@@ -33003,7 +33003,7 @@ export namespace Prisma {
     reviews?: ReviewUpdateManyWithoutListingNestedInput
   }
 
-  export type ListingUncheckedUpdateWithoutRestaurantInput = {
+  export type ListingUncheckedUpdateWithoutWorkspaceInput = {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
@@ -33022,7 +33022,7 @@ export namespace Prisma {
     reviews?: ReviewUncheckedUpdateManyWithoutListingNestedInput
   }
 
-  export type ListingUncheckedUpdateManyWithoutRestaurantInput = {
+  export type ListingUncheckedUpdateManyWithoutWorkspaceInput = {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
@@ -33036,14 +33036,14 @@ export namespace Prisma {
     hostId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type RestaurantImageUpdateWithoutRestaurantInput = {
+  export type WorkspaceImageUpdateWithoutWorkspaceInput = {
     url?: StringFieldUpdateOperationsInput | string
     caption?: NullableStringFieldUpdateOperationsInput | string | null
     isPrimary?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type RestaurantImageUncheckedUpdateWithoutRestaurantInput = {
+  export type WorkspaceImageUncheckedUpdateWithoutWorkspaceInput = {
     id?: IntFieldUpdateOperationsInput | number
     url?: StringFieldUpdateOperationsInput | string
     caption?: NullableStringFieldUpdateOperationsInput | string | null
@@ -33051,7 +33051,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type RestaurantImageUncheckedUpdateManyWithoutRestaurantInput = {
+  export type WorkspaceImageUncheckedUpdateManyWithoutWorkspaceInput = {
     id?: IntFieldUpdateOperationsInput | number
     url?: StringFieldUpdateOperationsInput | string
     caption?: NullableStringFieldUpdateOperationsInput | string | null
@@ -33059,14 +33059,14 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type OperatingHoursUpdateWithoutRestaurantInput = {
+  export type OperatingHoursUpdateWithoutWorkspaceInput = {
     dayOfWeek?: IntFieldUpdateOperationsInput | number
     openTime?: StringFieldUpdateOperationsInput | string
     closeTime?: StringFieldUpdateOperationsInput | string
     isClosed?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type OperatingHoursUncheckedUpdateWithoutRestaurantInput = {
+  export type OperatingHoursUncheckedUpdateWithoutWorkspaceInput = {
     id?: IntFieldUpdateOperationsInput | number
     dayOfWeek?: IntFieldUpdateOperationsInput | number
     openTime?: StringFieldUpdateOperationsInput | string
@@ -33074,7 +33074,7 @@ export namespace Prisma {
     isClosed?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type OperatingHoursUncheckedUpdateManyWithoutRestaurantInput = {
+  export type OperatingHoursUncheckedUpdateManyWithoutWorkspaceInput = {
     id?: IntFieldUpdateOperationsInput | number
     dayOfWeek?: IntFieldUpdateOperationsInput | number
     openTime?: StringFieldUpdateOperationsInput | string

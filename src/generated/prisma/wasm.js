@@ -20,12 +20,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 6.10.1
- * Query Engine version: 9b628578b3b7cae625e8c927178f15a170e74a9c
+ * Prisma Client JS version: 6.11.0
+ * Query Engine version: 9c30299f5a0ea26a96790e13f796dc6094db3173
  */
 Prisma.prismaVersion = {
-  client: "6.10.1",
-  engine: "9b628578b3b7cae625e8c927178f15a170e74a9c"
+  client: "6.11.0",
+  engine: "9c30299f5a0ea26a96790e13f796dc6094db3173"
 }
 
 Prisma.PrismaClientKnownRequestError = () => {
@@ -129,8 +129,8 @@ exports.Prisma.UserScalarFieldEnum = {
   role: 'role',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  isRestaurantHost: 'isRestaurantHost',
-  restaurantId: 'restaurantId',
+  isWorkspaceHost: 'isWorkspaceHost',
+  workspaceId: 'workspaceId',
   profileImage: 'profileImage',
   bio: 'bio',
   address: 'address',
@@ -140,7 +140,7 @@ exports.Prisma.UserScalarFieldEnum = {
   zipCode: 'zipCode'
 };
 
-exports.Prisma.RestaurantScalarFieldEnum = {
+exports.Prisma.WorkspaceScalarFieldEnum = {
   id: 'id',
   name: 'name',
   description: 'description',
@@ -152,7 +152,7 @@ exports.Prisma.RestaurantScalarFieldEnum = {
   phone: 'phone',
   email: 'email',
   website: 'website',
-  cuisine: 'cuisine',
+  workspaceType: 'workspaceType',
   priceRange: 'priceRange',
   rating: 'rating',
   isActive: 'isActive',
@@ -172,7 +172,7 @@ exports.Prisma.ListingScalarFieldEnum = {
   isActive: 'isActive',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  restaurantId: 'restaurantId',
+  workspaceId: 'workspaceId',
   hostId: 'hostId'
 };
 
@@ -254,13 +254,13 @@ exports.Prisma.NotificationScalarFieldEnum = {
   userId: 'userId'
 };
 
-exports.Prisma.RestaurantImageScalarFieldEnum = {
+exports.Prisma.WorkspaceImageScalarFieldEnum = {
   id: 'id',
   url: 'url',
   caption: 'caption',
   isPrimary: 'isPrimary',
   createdAt: 'createdAt',
-  restaurantId: 'restaurantId'
+  workspaceId: 'workspaceId'
 };
 
 exports.Prisma.OperatingHoursScalarFieldEnum = {
@@ -269,7 +269,7 @@ exports.Prisma.OperatingHoursScalarFieldEnum = {
   openTime: 'openTime',
   closeTime: 'closeTime',
   isClosed: 'isClosed',
-  restaurantId: 'restaurantId'
+  workspaceId: 'workspaceId'
 };
 
 exports.Prisma.HostSettingsScalarFieldEnum = {
@@ -330,7 +330,7 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   User: 'User',
-  Restaurant: 'Restaurant',
+  Workspace: 'Workspace',
   Listing: 'Listing',
   ListingImage: 'ListingImage',
   Amenity: 'Amenity',
@@ -340,7 +340,7 @@ exports.Prisma.ModelName = {
   Review: 'Review',
   Earning: 'Earning',
   Notification: 'Notification',
-  RestaurantImage: 'RestaurantImage',
+  WorkspaceImage: 'WorkspaceImage',
   OperatingHours: 'OperatingHours',
   HostSettings: 'HostSettings',
   PaymentMethod: 'PaymentMethod',
