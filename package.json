@@ -24,8 +24,9 @@
     "prisma/generated/"
   ],
   "scripts": {
-    "build": "tsc",
-    "seed": "node prisma/seed.js"
+    "build": "npx prisma generate && tsc",
+    "seed": "node prisma/seed.js",
+    "postinstall": "npx prisma generate"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
