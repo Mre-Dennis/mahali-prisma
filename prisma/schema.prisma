@@ -1,12 +1,6 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
+  output   = "./generated/client"
 }
 
 datasource db {
@@ -15,136 +9,110 @@ datasource db {
 }
 
 model User {
-  id        Int     @id @default(autoincrement())
-  email     String  @unique
-  phone     String?  @unique
-  password  String
-  name      String
-  role      String   @default("user")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  
-  // Restaurant host specific fields
-  isRestaurantHost Boolean @default(false)
-  restaurantId     Int?
-  restaurant       Restaurant? @relation("UserRestaurant", fields: [restaurantId], references: [id])
-  
-  // Profile fields for restaurant hosts
+  id               Int             @id @default(autoincrement())
+  email            String          @unique
+  phone            String?         @unique
+  password         String
+  name             String
+  role             String          @default("user")
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
   profileImage     String?
-  bio             String?
-  address         String?
-  city            String?
-  state           String?
-  country         String?
-  zipCode         String?
-  
-  // Relations
-  hostedRestaurant Restaurant? @relation("RestaurantHost")
-  listings        Listing[]
-  bookings        Booking[]    // As a guest
-  reviews         Review[]     // Reviews given by user
-  notifications   Notification[]
-  earnings        Earning[]
-  paymentMethods  PaymentMethod[]
-  hostSettings    HostSettings?
-  messagesSent    Message[] @relation("MessagesSent")
-  messagesReceived Message[] @relation("MessagesReceived")
+  bio              String?
+  address          String?
+  city             String?
+  state            String?
+  country          String?
+  zipCode          String?
+  isRestaurantHost Boolean         @default(false)
+  restaurantId     Int?
+  bookings         Booking[]
+  earnings         Earning[]
+  hostSettings     HostSettings?
+  listings         Listing[]
+  messagesReceived Message[]       @relation("MessagesReceived")
+  messagesSent     Message[]       @relation("MessagesSent")
+  notifications    Notification[]
+  paymentMethods   PaymentMethod[]
+  hostedRestaurant Restaurant?     @relation("RestaurantHost")
+  reviews          Review[]
+  restaurant       Restaurant?     @relation("UserRestaurant", fields: [restaurantId], references: [id])
 }
 
 model Restaurant {
-  id          Int      @id @default(autoincrement())
-  name        String
-  description String?
-  address     String
-  city        String
-  state       String
-  country     String
-  zipCode     String
-  phone       String?
-  email       String?
-  website     String?
+  id             Int               @id @default(autoincrement())
+  name           String
+  description    String?
+  address        String
+  city           String
+  state          String
+  country        String
+  zipCode        String
+  phone          String?
+  email          String?
+  website        String?
   restaurantType String?
-  priceRange  String?  // e.g., "$", "$$", "$$$", "$$$$"
-  rating      Float?   @default(0)
-  isActive    Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  
-  // Relations
-  host        User     @relation("RestaurantHost", fields: [hostId], references: [id])
-  hostId      Int      @unique
-  users       User[]   @relation("UserRestaurant")
-  listings    Listing[]
-  
-  // Restaurant images
-  images      RestaurantImage[]
-  
-  // Operating hours
+  priceRange     String?
+  rating         Float?            @default(0)
+  isActive       Boolean           @default(true)
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+  hostId         Int               @unique
+  listings       Listing[]
   operatingHours OperatingHours[]
+  host           User              @relation("RestaurantHost", fields: [hostId], references: [id])
+  images         RestaurantImage[]
+  users          User[]            @relation("UserRestaurant")
 }
 
 model Listing {
-  id          Int      @id @default(autoincrement())
-  title       String
-  description String?
-  type        String   // "space", "room", "venue", etc.
-  capacity    Int?
+  id           Int              @id @default(autoincrement())
+  title        String
+  description  String?
+  type         String
+  capacity     Int?
   pricePerHour Float?
   pricePerDay  Float?
-  isActive    Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  
-  // Relations
-  restaurantId Int? // Make this optional
-  restaurant   Restaurant? @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  isActive     Boolean          @default(true)
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
   hostId       Int
-  host         User       @relation(fields: [hostId], references: [id])
-  
-  // Listing images
-  images       ListingImage[]
-  
-  // Amenities
-  amenities    ListingAmenity[]
-  
-  // Availability
+  restaurantId Int?
   availability Availability[]
-  
-  // Reviews
-  reviews      Review[]
-  
-  // Bookings
   bookings     Booking[]
+  host         User             @relation(fields: [hostId], references: [id])
+  restaurant   Restaurant?      @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  amenities    ListingAmenity[]
+  images       ListingImage[]
+  reviews      Review[]
 }
 
 model ListingImage {
-  id          Int      @id @default(autoincrement())
-  url         String
-  caption     String?
-  isPrimary   Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  listingId   Int
-  listing     Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  id        Int      @id @default(autoincrement())
+  url       String
+  caption   String?
+  isPrimary Boolean  @default(false)
+  createdAt DateTime @default(now())
+  listingId Int
+  listing   Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
 }
 
 model Amenity {
-  id        Int      @id @default(autoincrement())
+  id        Int              @id @default(autoincrement())
   name      String
   icon      String?
   category  String?
-  createdAt DateTime @default(now())
-  
-  // Relations
+  createdAt DateTime         @default(now())
   listings  ListingAmenity[]
 }
 
 model ListingAmenity {
-  id         Int      @id @default(autoincrement())
-  listingId  Int
-  amenityId  Int
-  listing    Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
-  amenity    Amenity  @relation(fields: [amenityId], references: [id], onDelete: Cascade)
-  
+  id        Int     @id @default(autoincrement())
+  listingId Int
+  amenityId Int
+  amenity   Amenity @relation(fields: [amenityId], references: [id], onDelete: Cascade)
+  listing   Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
   @@unique([listingId, amenityId])
 }
 
@@ -163,22 +131,18 @@ model Booking {
   id              Int      @id @default(autoincrement())
   startTime       DateTime
   endTime         DateTime
-  status          String   @default("pending") // pending, confirmed, completed, cancelled
+  totalPrice      Float?
+  status          String   @default("pending")
   guestCount      Int?
   specialRequests String?
-  totalPrice      Float?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
-  
-  // Relations
   listingId       Int
-  listing         Listing  @relation(fields: [listingId], references: [id])
   guestId         Int
   guest           User     @relation(fields: [guestId], references: [id])
-  
-  // Optional relations
-  review          Review?
+  listing         Listing  @relation(fields: [listingId], references: [id])
   earning         Earning?
+  review          Review?
 }
 
 model Review {
@@ -186,116 +150,101 @@ model Review {
   rating    Int
   comment   String?
   createdAt DateTime @default(now())
-  
-  // Relations
-  listingId  Int
-  listing    Listing  @relation(fields: [listingId], references: [id])
-  authorId   Int
-  author     User     @relation(fields: [authorId], references: [id])
-  bookingId  Int      @unique
-  booking    Booking  @relation(fields: [bookingId], references: [id])
+  listingId Int
+  authorId  Int
+  bookingId Int      @unique
+  author    User     @relation(fields: [authorId], references: [id])
+  booking   Booking  @relation(fields: [bookingId], references: [id])
+  listing   Listing  @relation(fields: [listingId], references: [id])
 }
 
 model Earning {
   id          Int      @id @default(autoincrement())
   amount      Float
-  type        String   // "booking", "payout", etc.
-  status      String   @default("pending") // pending, paid, failed
+  type        String
+  status      String   @default("pending")
   description String?
   createdAt   DateTime @default(now())
-  
-  // Relations
   hostId      Int
-  host        User     @relation(fields: [hostId], references: [id])
   bookingId   Int?     @unique
   booking     Booking? @relation(fields: [bookingId], references: [id])
+  host        User     @relation(fields: [hostId], references: [id])
 }
 
 model Notification {
   id        Int      @id @default(autoincrement())
   title     String
   message   String
-  type      String   // "booking", "message", "payout", etc.
+  type      String
   isRead    Boolean  @default(false)
   createdAt DateTime @default(now())
-  
-  // Relations
   userId    Int
   user      User     @relation(fields: [userId], references: [id])
 }
 
 model RestaurantImage {
-  id           Int      @id @default(autoincrement())
+  id           Int        @id @default(autoincrement())
   url          String
   caption      String?
-  isPrimary    Boolean  @default(false)
-  createdAt    DateTime @default(now())
+  isPrimary    Boolean    @default(false)
+  createdAt    DateTime   @default(now())
   restaurantId Int
   restaurant   Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
 }
 
 model OperatingHours {
-  id           Int      @id @default(autoincrement())
-  dayOfWeek    Int      // 0 = Sunday, 1 = Monday, etc.
+  id           Int         @id @default(autoincrement())
+  dayOfWeek    Int
   openTime     String
   closeTime    String
-  isClosed     Boolean  @default(false)
-  restaurantId Int
-  restaurant   Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
-  
+  isClosed     Boolean     @default(false)
+  restaurantId Int?
+  restaurant   Restaurant? @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+
   @@unique([restaurantId, dayOfWeek])
 }
 
 model HostSettings {
-  id              Int      @id @default(autoincrement())
-  userId          Int      @unique
-  user            User     @relation(fields: [userId], references: [id])
-  
-  // Notification settings
-  emailBookings   Boolean  @default(true)
-  emailMessages   Boolean  @default(true)
-  emailPayouts    Boolean  @default(true)
-  pushBookings    Boolean  @default(true)
-  pushMessages    Boolean  @default(true)
-  pushPayouts     Boolean  @default(true)
-  
-  // Business settings
-  companyName     String?
-  kraPin          String?
-  
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  id            Int      @id @default(autoincrement())
+  userId        Int      @unique
+  emailBookings Boolean  @default(true)
+  emailMessages Boolean  @default(true)
+  emailPayouts  Boolean  @default(true)
+  pushBookings  Boolean  @default(true)
+  pushMessages  Boolean  @default(true)
+  pushPayouts   Boolean  @default(true)
+  companyName   String?
+  kraPin        String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @default(now()) @updatedAt
+  user          User     @relation(fields: [userId], references: [id])
 }
 
 model PaymentMethod {
   id        Int      @id @default(autoincrement())
-  type      String   // "bank", "mpesa", "card", etc.
-  details   String   // JSON string with payment details
+  userId    Int
+  type      String
+  details   String
   isPrimary Boolean  @default(false)
   createdAt DateTime @default(now())
-  
-  // Relations
-  userId    Int
   user      User     @relation(fields: [userId], references: [id])
 }
 
 model Conversation {
-  id        Int      @id @default(autoincrement())
-  bookingId Int      @unique
-  createdAt DateTime @default(now())
-  
-  // Relations
+  id        Int       @id @default(autoincrement())
+  bookingId Int       @unique
+  createdAt DateTime  @default(now())
   messages  Message[]
 }
 
 model Message {
-  id             Int      @id @default(autoincrement())
-  content        String
-  timestamp      DateTime @default(now())
+  id             Int          @id @default(autoincrement())
   conversationId Int
-  conversation   Conversation @relation(fields: [conversationId], references: [id])
   senderId       Int
-  sender         User     @relation("MessagesSent", fields: [senderId], references: [id])
   receiverId     Int
-  receiver       User     @relation("MessagesReceived", fields: [receiverId], references: [id])
+  content        String
+  timestamp      DateTime     @default(now())
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
+  receiver       User         @relation("MessagesReceived", fields: [receiverId], references: [id])
+  sender         User         @relation("MessagesSent", fields: [senderId], references: [id])
 }

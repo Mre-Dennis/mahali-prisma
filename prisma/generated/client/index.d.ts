@@ -78,6 +78,26 @@ export type RestaurantImage = $Result.DefaultSelection<Prisma.$RestaurantImagePa
  * 
  */
 export type OperatingHours = $Result.DefaultSelection<Prisma.$OperatingHoursPayload>
+/**
+ * Model HostSettings
+ * 
+ */
+export type HostSettings = $Result.DefaultSelection<Prisma.$HostSettingsPayload>
+/**
+ * Model PaymentMethod
+ * 
+ */
+export type PaymentMethod = $Result.DefaultSelection<Prisma.$PaymentMethodPayload>
+/**
+ * Model Conversation
+ * 
+ */
+export type Conversation = $Result.DefaultSelection<Prisma.$ConversationPayload>
+/**
+ * Model Message
+ * 
+ */
+export type Message = $Result.DefaultSelection<Prisma.$MessagePayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -333,6 +353,46 @@ export class PrismaClient<
     * ```
     */
   get operatingHours(): Prisma.OperatingHoursDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.hostSettings`: Exposes CRUD operations for the **HostSettings** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more HostSettings
+    * const hostSettings = await prisma.hostSettings.findMany()
+    * ```
+    */
+  get hostSettings(): Prisma.HostSettingsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.paymentMethod`: Exposes CRUD operations for the **PaymentMethod** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more PaymentMethods
+    * const paymentMethods = await prisma.paymentMethod.findMany()
+    * ```
+    */
+  get paymentMethod(): Prisma.PaymentMethodDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.conversation`: Exposes CRUD operations for the **Conversation** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Conversations
+    * const conversations = await prisma.conversation.findMany()
+    * ```
+    */
+  get conversation(): Prisma.ConversationDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.message`: Exposes CRUD operations for the **Message** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Messages
+    * const messages = await prisma.message.findMany()
+    * ```
+    */
+  get message(): Prisma.MessageDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -785,7 +845,11 @@ export namespace Prisma {
     Earning: 'Earning',
     Notification: 'Notification',
     RestaurantImage: 'RestaurantImage',
-    OperatingHours: 'OperatingHours'
+    OperatingHours: 'OperatingHours',
+    HostSettings: 'HostSettings',
+    PaymentMethod: 'PaymentMethod',
+    Conversation: 'Conversation',
+    Message: 'Message'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -804,7 +868,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "restaurant" | "listing" | "listingImage" | "amenity" | "listingAmenity" | "availability" | "booking" | "review" | "earning" | "notification" | "restaurantImage" | "operatingHours"
+      modelProps: "user" | "restaurant" | "listing" | "listingImage" | "amenity" | "listingAmenity" | "availability" | "booking" | "review" | "earning" | "notification" | "restaurantImage" | "operatingHours" | "hostSettings" | "paymentMethod" | "conversation" | "message"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1770,6 +1834,302 @@ export namespace Prisma {
           }
         }
       }
+      HostSettings: {
+        payload: Prisma.$HostSettingsPayload<ExtArgs>
+        fields: Prisma.HostSettingsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HostSettingsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HostSettingsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HostSettingsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HostSettingsPayload>
+          }
+          findFirst: {
+            args: Prisma.HostSettingsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HostSettingsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HostSettingsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HostSettingsPayload>
+          }
+          findMany: {
+            args: Prisma.HostSettingsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HostSettingsPayload>[]
+          }
+          create: {
+            args: Prisma.HostSettingsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HostSettingsPayload>
+          }
+          createMany: {
+            args: Prisma.HostSettingsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.HostSettingsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HostSettingsPayload>[]
+          }
+          delete: {
+            args: Prisma.HostSettingsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HostSettingsPayload>
+          }
+          update: {
+            args: Prisma.HostSettingsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HostSettingsPayload>
+          }
+          deleteMany: {
+            args: Prisma.HostSettingsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HostSettingsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.HostSettingsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HostSettingsPayload>[]
+          }
+          upsert: {
+            args: Prisma.HostSettingsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HostSettingsPayload>
+          }
+          aggregate: {
+            args: Prisma.HostSettingsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHostSettings>
+          }
+          groupBy: {
+            args: Prisma.HostSettingsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HostSettingsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HostSettingsCountArgs<ExtArgs>
+            result: $Utils.Optional<HostSettingsCountAggregateOutputType> | number
+          }
+        }
+      }
+      PaymentMethod: {
+        payload: Prisma.$PaymentMethodPayload<ExtArgs>
+        fields: Prisma.PaymentMethodFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.PaymentMethodFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PaymentMethodPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.PaymentMethodFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PaymentMethodPayload>
+          }
+          findFirst: {
+            args: Prisma.PaymentMethodFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PaymentMethodPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.PaymentMethodFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PaymentMethodPayload>
+          }
+          findMany: {
+            args: Prisma.PaymentMethodFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PaymentMethodPayload>[]
+          }
+          create: {
+            args: Prisma.PaymentMethodCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PaymentMethodPayload>
+          }
+          createMany: {
+            args: Prisma.PaymentMethodCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.PaymentMethodCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PaymentMethodPayload>[]
+          }
+          delete: {
+            args: Prisma.PaymentMethodDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PaymentMethodPayload>
+          }
+          update: {
+            args: Prisma.PaymentMethodUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PaymentMethodPayload>
+          }
+          deleteMany: {
+            args: Prisma.PaymentMethodDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.PaymentMethodUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.PaymentMethodUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PaymentMethodPayload>[]
+          }
+          upsert: {
+            args: Prisma.PaymentMethodUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PaymentMethodPayload>
+          }
+          aggregate: {
+            args: Prisma.PaymentMethodAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePaymentMethod>
+          }
+          groupBy: {
+            args: Prisma.PaymentMethodGroupByArgs<ExtArgs>
+            result: $Utils.Optional<PaymentMethodGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.PaymentMethodCountArgs<ExtArgs>
+            result: $Utils.Optional<PaymentMethodCountAggregateOutputType> | number
+          }
+        }
+      }
+      Conversation: {
+        payload: Prisma.$ConversationPayload<ExtArgs>
+        fields: Prisma.ConversationFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ConversationFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ConversationFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>
+          }
+          findFirst: {
+            args: Prisma.ConversationFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ConversationFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>
+          }
+          findMany: {
+            args: Prisma.ConversationFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>[]
+          }
+          create: {
+            args: Prisma.ConversationCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>
+          }
+          createMany: {
+            args: Prisma.ConversationCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ConversationCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>[]
+          }
+          delete: {
+            args: Prisma.ConversationDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>
+          }
+          update: {
+            args: Prisma.ConversationUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>
+          }
+          deleteMany: {
+            args: Prisma.ConversationDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ConversationUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ConversationUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>[]
+          }
+          upsert: {
+            args: Prisma.ConversationUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ConversationPayload>
+          }
+          aggregate: {
+            args: Prisma.ConversationAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateConversation>
+          }
+          groupBy: {
+            args: Prisma.ConversationGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ConversationGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ConversationCountArgs<ExtArgs>
+            result: $Utils.Optional<ConversationCountAggregateOutputType> | number
+          }
+        }
+      }
+      Message: {
+        payload: Prisma.$MessagePayload<ExtArgs>
+        fields: Prisma.MessageFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.MessageFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.MessageFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>
+          }
+          findFirst: {
+            args: Prisma.MessageFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.MessageFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>
+          }
+          findMany: {
+            args: Prisma.MessageFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>[]
+          }
+          create: {
+            args: Prisma.MessageCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>
+          }
+          createMany: {
+            args: Prisma.MessageCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.MessageCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>[]
+          }
+          delete: {
+            args: Prisma.MessageDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>
+          }
+          update: {
+            args: Prisma.MessageUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>
+          }
+          deleteMany: {
+            args: Prisma.MessageDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.MessageUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.MessageUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>[]
+          }
+          upsert: {
+            args: Prisma.MessageUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MessagePayload>
+          }
+          aggregate: {
+            args: Prisma.MessageAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateMessage>
+          }
+          groupBy: {
+            args: Prisma.MessageGroupByArgs<ExtArgs>
+            result: $Utils.Optional<MessageGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.MessageCountArgs<ExtArgs>
+            result: $Utils.Optional<MessageCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1867,6 +2227,10 @@ export namespace Prisma {
     notification?: NotificationOmit
     restaurantImage?: RestaurantImageOmit
     operatingHours?: OperatingHoursOmit
+    hostSettings?: HostSettingsOmit
+    paymentMethod?: PaymentMethodOmit
+    conversation?: ConversationOmit
+    message?: MessageOmit
   }
 
   /* Types for Logging */
@@ -1961,19 +2325,25 @@ export namespace Prisma {
    */
 
   export type UserCountOutputType = {
-    listings: number
     bookings: number
-    reviews: number
-    notifications: number
     earnings: number
+    listings: number
+    messagesReceived: number
+    messagesSent: number
+    notifications: number
+    paymentMethods: number
+    reviews: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    listings?: boolean | UserCountOutputTypeCountListingsArgs
     bookings?: boolean | UserCountOutputTypeCountBookingsArgs
-    reviews?: boolean | UserCountOutputTypeCountReviewsArgs
-    notifications?: boolean | UserCountOutputTypeCountNotificationsArgs
     earnings?: boolean | UserCountOutputTypeCountEarningsArgs
+    listings?: boolean | UserCountOutputTypeCountListingsArgs
+    messagesReceived?: boolean | UserCountOutputTypeCountMessagesReceivedArgs
+    messagesSent?: boolean | UserCountOutputTypeCountMessagesSentArgs
+    notifications?: boolean | UserCountOutputTypeCountNotificationsArgs
+    paymentMethods?: boolean | UserCountOutputTypeCountPaymentMethodsArgs
+    reviews?: boolean | UserCountOutputTypeCountReviewsArgs
   }
 
   // Custom InputTypes
@@ -1990,13 +2360,6 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountListingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ListingWhereInput
-  }
-
-  /**
-   * UserCountOutputType without action
-   */
   export type UserCountOutputTypeCountBookingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: BookingWhereInput
   }
@@ -2004,8 +2367,29 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountReviewsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ReviewWhereInput
+  export type UserCountOutputTypeCountEarningsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: EarningWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountListingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ListingWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountMessagesReceivedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MessageWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountMessagesSentArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MessageWhereInput
   }
 
   /**
@@ -2018,8 +2402,15 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountEarningsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: EarningWhereInput
+  export type UserCountOutputTypeCountPaymentMethodsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PaymentMethodWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountReviewsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ReviewWhereInput
   }
 
 
@@ -2028,17 +2419,17 @@ export namespace Prisma {
    */
 
   export type RestaurantCountOutputType = {
-    users: number
     listings: number
-    images: number
     operatingHours: number
+    images: number
+    users: number
   }
 
   export type RestaurantCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    users?: boolean | RestaurantCountOutputTypeCountUsersArgs
     listings?: boolean | RestaurantCountOutputTypeCountListingsArgs
-    images?: boolean | RestaurantCountOutputTypeCountImagesArgs
     operatingHours?: boolean | RestaurantCountOutputTypeCountOperatingHoursArgs
+    images?: boolean | RestaurantCountOutputTypeCountImagesArgs
+    users?: boolean | RestaurantCountOutputTypeCountUsersArgs
   }
 
   // Custom InputTypes
@@ -2055,15 +2446,15 @@ export namespace Prisma {
   /**
    * RestaurantCountOutputType without action
    */
-  export type RestaurantCountOutputTypeCountUsersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UserWhereInput
+  export type RestaurantCountOutputTypeCountListingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ListingWhereInput
   }
 
   /**
    * RestaurantCountOutputType without action
    */
-  export type RestaurantCountOutputTypeCountListingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ListingWhereInput
+  export type RestaurantCountOutputTypeCountOperatingHoursArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: OperatingHoursWhereInput
   }
 
   /**
@@ -2076,8 +2467,8 @@ export namespace Prisma {
   /**
    * RestaurantCountOutputType without action
    */
-  export type RestaurantCountOutputTypeCountOperatingHoursArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: OperatingHoursWhereInput
+  export type RestaurantCountOutputTypeCountUsersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: UserWhereInput
   }
 
 
@@ -2086,18 +2477,18 @@ export namespace Prisma {
    */
 
   export type ListingCountOutputType = {
-    bookings: number
-    images: number
-    amenities: number
     availability: number
+    bookings: number
+    amenities: number
+    images: number
     reviews: number
   }
 
   export type ListingCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    bookings?: boolean | ListingCountOutputTypeCountBookingsArgs
-    images?: boolean | ListingCountOutputTypeCountImagesArgs
-    amenities?: boolean | ListingCountOutputTypeCountAmenitiesArgs
     availability?: boolean | ListingCountOutputTypeCountAvailabilityArgs
+    bookings?: boolean | ListingCountOutputTypeCountBookingsArgs
+    amenities?: boolean | ListingCountOutputTypeCountAmenitiesArgs
+    images?: boolean | ListingCountOutputTypeCountImagesArgs
     reviews?: boolean | ListingCountOutputTypeCountReviewsArgs
   }
 
@@ -2115,15 +2506,15 @@ export namespace Prisma {
   /**
    * ListingCountOutputType without action
    */
-  export type ListingCountOutputTypeCountBookingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: BookingWhereInput
+  export type ListingCountOutputTypeCountAvailabilityArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: AvailabilityWhereInput
   }
 
   /**
    * ListingCountOutputType without action
    */
-  export type ListingCountOutputTypeCountImagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ListingImageWhereInput
+  export type ListingCountOutputTypeCountBookingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BookingWhereInput
   }
 
   /**
@@ -2136,8 +2527,8 @@ export namespace Prisma {
   /**
    * ListingCountOutputType without action
    */
-  export type ListingCountOutputTypeCountAvailabilityArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: AvailabilityWhereInput
+  export type ListingCountOutputTypeCountImagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ListingImageWhereInput
   }
 
   /**
@@ -2180,6 +2571,37 @@ export namespace Prisma {
 
 
   /**
+   * Count Type ConversationCountOutputType
+   */
+
+  export type ConversationCountOutputType = {
+    messages: number
+  }
+
+  export type ConversationCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    messages?: boolean | ConversationCountOutputTypeCountMessagesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * ConversationCountOutputType without action
+   */
+  export type ConversationCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ConversationCountOutputType
+     */
+    select?: ConversationCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * ConversationCountOutputType without action
+   */
+  export type ConversationCountOutputTypeCountMessagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MessageWhereInput
+  }
+
+
+  /**
    * Models
    */
 
@@ -2214,8 +2636,6 @@ export namespace Prisma {
     role: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    isRestaurantHost: boolean | null
-    restaurantId: number | null
     profileImage: string | null
     bio: string | null
     address: string | null
@@ -2223,6 +2643,8 @@ export namespace Prisma {
     state: string | null
     country: string | null
     zipCode: string | null
+    isRestaurantHost: boolean | null
+    restaurantId: number | null
   }
 
   export type UserMaxAggregateOutputType = {
@@ -2234,8 +2656,6 @@ export namespace Prisma {
     role: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    isRestaurantHost: boolean | null
-    restaurantId: number | null
     profileImage: string | null
     bio: string | null
     address: string | null
@@ -2243,6 +2663,8 @@ export namespace Prisma {
     state: string | null
     country: string | null
     zipCode: string | null
+    isRestaurantHost: boolean | null
+    restaurantId: number | null
   }
 
   export type UserCountAggregateOutputType = {
@@ -2254,8 +2676,6 @@ export namespace Prisma {
     role: number
     createdAt: number
     updatedAt: number
-    isRestaurantHost: number
-    restaurantId: number
     profileImage: number
     bio: number
     address: number
@@ -2263,6 +2683,8 @@ export namespace Prisma {
     state: number
     country: number
     zipCode: number
+    isRestaurantHost: number
+    restaurantId: number
     _all: number
   }
 
@@ -2286,8 +2708,6 @@ export namespace Prisma {
     role?: true
     createdAt?: true
     updatedAt?: true
-    isRestaurantHost?: true
-    restaurantId?: true
     profileImage?: true
     bio?: true
     address?: true
@@ -2295,6 +2715,8 @@ export namespace Prisma {
     state?: true
     country?: true
     zipCode?: true
+    isRestaurantHost?: true
+    restaurantId?: true
   }
 
   export type UserMaxAggregateInputType = {
@@ -2306,8 +2728,6 @@ export namespace Prisma {
     role?: true
     createdAt?: true
     updatedAt?: true
-    isRestaurantHost?: true
-    restaurantId?: true
     profileImage?: true
     bio?: true
     address?: true
@@ -2315,6 +2735,8 @@ export namespace Prisma {
     state?: true
     country?: true
     zipCode?: true
+    isRestaurantHost?: true
+    restaurantId?: true
   }
 
   export type UserCountAggregateInputType = {
@@ -2326,8 +2748,6 @@ export namespace Prisma {
     role?: true
     createdAt?: true
     updatedAt?: true
-    isRestaurantHost?: true
-    restaurantId?: true
     profileImage?: true
     bio?: true
     address?: true
@@ -2335,6 +2755,8 @@ export namespace Prisma {
     state?: true
     country?: true
     zipCode?: true
+    isRestaurantHost?: true
+    restaurantId?: true
     _all?: true
   }
 
@@ -2433,8 +2855,6 @@ export namespace Prisma {
     role: string
     createdAt: Date
     updatedAt: Date
-    isRestaurantHost: boolean
-    restaurantId: number | null
     profileImage: string | null
     bio: string | null
     address: string | null
@@ -2442,6 +2862,8 @@ export namespace Prisma {
     state: string | null
     country: string | null
     zipCode: string | null
+    isRestaurantHost: boolean
+    restaurantId: number | null
     _count: UserCountAggregateOutputType | null
     _avg: UserAvgAggregateOutputType | null
     _sum: UserSumAggregateOutputType | null
@@ -2472,8 +2894,6 @@ export namespace Prisma {
     role?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    isRestaurantHost?: boolean
-    restaurantId?: boolean
     profileImage?: boolean
     bio?: boolean
     address?: boolean
@@ -2481,13 +2901,19 @@ export namespace Prisma {
     state?: boolean
     country?: boolean
     zipCode?: boolean
-    restaurant?: boolean | User$restaurantArgs<ExtArgs>
-    hostedRestaurant?: boolean | User$hostedRestaurantArgs<ExtArgs>
-    listings?: boolean | User$listingsArgs<ExtArgs>
+    isRestaurantHost?: boolean
+    restaurantId?: boolean
     bookings?: boolean | User$bookingsArgs<ExtArgs>
-    reviews?: boolean | User$reviewsArgs<ExtArgs>
-    notifications?: boolean | User$notificationsArgs<ExtArgs>
     earnings?: boolean | User$earningsArgs<ExtArgs>
+    hostSettings?: boolean | User$hostSettingsArgs<ExtArgs>
+    listings?: boolean | User$listingsArgs<ExtArgs>
+    messagesReceived?: boolean | User$messagesReceivedArgs<ExtArgs>
+    messagesSent?: boolean | User$messagesSentArgs<ExtArgs>
+    notifications?: boolean | User$notificationsArgs<ExtArgs>
+    paymentMethods?: boolean | User$paymentMethodsArgs<ExtArgs>
+    hostedRestaurant?: boolean | User$hostedRestaurantArgs<ExtArgs>
+    reviews?: boolean | User$reviewsArgs<ExtArgs>
+    restaurant?: boolean | User$restaurantArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -2500,8 +2926,6 @@ export namespace Prisma {
     role?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    isRestaurantHost?: boolean
-    restaurantId?: boolean
     profileImage?: boolean
     bio?: boolean
     address?: boolean
@@ -2509,6 +2933,8 @@ export namespace Prisma {
     state?: boolean
     country?: boolean
     zipCode?: boolean
+    isRestaurantHost?: boolean
+    restaurantId?: boolean
     restaurant?: boolean | User$restaurantArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -2521,8 +2947,6 @@ export namespace Prisma {
     role?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    isRestaurantHost?: boolean
-    restaurantId?: boolean
     profileImage?: boolean
     bio?: boolean
     address?: boolean
@@ -2530,6 +2954,8 @@ export namespace Prisma {
     state?: boolean
     country?: boolean
     zipCode?: boolean
+    isRestaurantHost?: boolean
+    restaurantId?: boolean
     restaurant?: boolean | User$restaurantArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -2542,8 +2968,6 @@ export namespace Prisma {
     role?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    isRestaurantHost?: boolean
-    restaurantId?: boolean
     profileImage?: boolean
     bio?: boolean
     address?: boolean
@@ -2551,17 +2975,23 @@ export namespace Prisma {
     state?: boolean
     country?: boolean
     zipCode?: boolean
+    isRestaurantHost?: boolean
+    restaurantId?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "phone" | "password" | "name" | "role" | "createdAt" | "updatedAt" | "isRestaurantHost" | "restaurantId" | "profileImage" | "bio" | "address" | "city" | "state" | "country" | "zipCode", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "phone" | "password" | "name" | "role" | "createdAt" | "updatedAt" | "profileImage" | "bio" | "address" | "city" | "state" | "country" | "zipCode" | "isRestaurantHost" | "restaurantId", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | User$restaurantArgs<ExtArgs>
-    hostedRestaurant?: boolean | User$hostedRestaurantArgs<ExtArgs>
-    listings?: boolean | User$listingsArgs<ExtArgs>
     bookings?: boolean | User$bookingsArgs<ExtArgs>
-    reviews?: boolean | User$reviewsArgs<ExtArgs>
-    notifications?: boolean | User$notificationsArgs<ExtArgs>
     earnings?: boolean | User$earningsArgs<ExtArgs>
+    hostSettings?: boolean | User$hostSettingsArgs<ExtArgs>
+    listings?: boolean | User$listingsArgs<ExtArgs>
+    messagesReceived?: boolean | User$messagesReceivedArgs<ExtArgs>
+    messagesSent?: boolean | User$messagesSentArgs<ExtArgs>
+    notifications?: boolean | User$notificationsArgs<ExtArgs>
+    paymentMethods?: boolean | User$paymentMethodsArgs<ExtArgs>
+    hostedRestaurant?: boolean | User$hostedRestaurantArgs<ExtArgs>
+    reviews?: boolean | User$reviewsArgs<ExtArgs>
+    restaurant?: boolean | User$restaurantArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2574,13 +3004,17 @@ export namespace Prisma {
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
     objects: {
-      restaurant: Prisma.$RestaurantPayload<ExtArgs> | null
-      hostedRestaurant: Prisma.$RestaurantPayload<ExtArgs> | null
-      listings: Prisma.$ListingPayload<ExtArgs>[]
       bookings: Prisma.$BookingPayload<ExtArgs>[]
-      reviews: Prisma.$ReviewPayload<ExtArgs>[]
-      notifications: Prisma.$NotificationPayload<ExtArgs>[]
       earnings: Prisma.$EarningPayload<ExtArgs>[]
+      hostSettings: Prisma.$HostSettingsPayload<ExtArgs> | null
+      listings: Prisma.$ListingPayload<ExtArgs>[]
+      messagesReceived: Prisma.$MessagePayload<ExtArgs>[]
+      messagesSent: Prisma.$MessagePayload<ExtArgs>[]
+      notifications: Prisma.$NotificationPayload<ExtArgs>[]
+      paymentMethods: Prisma.$PaymentMethodPayload<ExtArgs>[]
+      hostedRestaurant: Prisma.$RestaurantPayload<ExtArgs> | null
+      reviews: Prisma.$ReviewPayload<ExtArgs>[]
+      restaurant: Prisma.$RestaurantPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -2591,8 +3025,6 @@ export namespace Prisma {
       role: string
       createdAt: Date
       updatedAt: Date
-      isRestaurantHost: boolean
-      restaurantId: number | null
       profileImage: string | null
       bio: string | null
       address: string | null
@@ -2600,6 +3032,8 @@ export namespace Prisma {
       state: string | null
       country: string | null
       zipCode: string | null
+      isRestaurantHost: boolean
+      restaurantId: number | null
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -2994,13 +3428,17 @@ export namespace Prisma {
    */
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    restaurant<T extends User$restaurantArgs<ExtArgs> = {}>(args?: Subset<T, User$restaurantArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    hostedRestaurant<T extends User$hostedRestaurantArgs<ExtArgs> = {}>(args?: Subset<T, User$hostedRestaurantArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    listings<T extends User$listingsArgs<ExtArgs> = {}>(args?: Subset<T, User$listingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     bookings<T extends User$bookingsArgs<ExtArgs> = {}>(args?: Subset<T, User$bookingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BookingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    reviews<T extends User$reviewsArgs<ExtArgs> = {}>(args?: Subset<T, User$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    notifications<T extends User$notificationsArgs<ExtArgs> = {}>(args?: Subset<T, User$notificationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NotificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     earnings<T extends User$earningsArgs<ExtArgs> = {}>(args?: Subset<T, User$earningsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EarningPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    hostSettings<T extends User$hostSettingsArgs<ExtArgs> = {}>(args?: Subset<T, User$hostSettingsArgs<ExtArgs>>): Prisma__HostSettingsClient<$Result.GetResult<Prisma.$HostSettingsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    listings<T extends User$listingsArgs<ExtArgs> = {}>(args?: Subset<T, User$listingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    messagesReceived<T extends User$messagesReceivedArgs<ExtArgs> = {}>(args?: Subset<T, User$messagesReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    messagesSent<T extends User$messagesSentArgs<ExtArgs> = {}>(args?: Subset<T, User$messagesSentArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    notifications<T extends User$notificationsArgs<ExtArgs> = {}>(args?: Subset<T, User$notificationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NotificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    paymentMethods<T extends User$paymentMethodsArgs<ExtArgs> = {}>(args?: Subset<T, User$paymentMethodsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PaymentMethodPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    hostedRestaurant<T extends User$hostedRestaurantArgs<ExtArgs> = {}>(args?: Subset<T, User$hostedRestaurantArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    reviews<T extends User$reviewsArgs<ExtArgs> = {}>(args?: Subset<T, User$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    restaurant<T extends User$restaurantArgs<ExtArgs> = {}>(args?: Subset<T, User$restaurantArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3038,8 +3476,6 @@ export namespace Prisma {
     readonly role: FieldRef<"User", 'String'>
     readonly createdAt: FieldRef<"User", 'DateTime'>
     readonly updatedAt: FieldRef<"User", 'DateTime'>
-    readonly isRestaurantHost: FieldRef<"User", 'Boolean'>
-    readonly restaurantId: FieldRef<"User", 'Int'>
     readonly profileImage: FieldRef<"User", 'String'>
     readonly bio: FieldRef<"User", 'String'>
     readonly address: FieldRef<"User", 'String'>
@@ -3047,6 +3483,8 @@ export namespace Prisma {
     readonly state: FieldRef<"User", 'String'>
     readonly country: FieldRef<"User", 'String'>
     readonly zipCode: FieldRef<"User", 'String'>
+    readonly isRestaurantHost: FieldRef<"User", 'Boolean'>
+    readonly restaurantId: FieldRef<"User", 'Int'>
   }
     
 
@@ -3443,41 +3881,70 @@ export namespace Prisma {
   }
 
   /**
-   * User.restaurant
+   * User.bookings
    */
-  export type User$restaurantArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$bookingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Booking
      */
-    select?: RestaurantSelect<ExtArgs> | null
+    select?: BookingSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Booking
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: BookingOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantInclude<ExtArgs> | null
-    where?: RestaurantWhereInput
+    include?: BookingInclude<ExtArgs> | null
+    where?: BookingWhereInput
+    orderBy?: BookingOrderByWithRelationInput | BookingOrderByWithRelationInput[]
+    cursor?: BookingWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BookingScalarFieldEnum | BookingScalarFieldEnum[]
   }
 
   /**
-   * User.hostedRestaurant
+   * User.earnings
    */
-  export type User$hostedRestaurantArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$earningsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Restaurant
+     * Select specific fields to fetch from the Earning
      */
-    select?: RestaurantSelect<ExtArgs> | null
+    select?: EarningSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Restaurant
+     * Omit specific fields from the Earning
      */
-    omit?: RestaurantOmit<ExtArgs> | null
+    omit?: EarningOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: RestaurantInclude<ExtArgs> | null
-    where?: RestaurantWhereInput
+    include?: EarningInclude<ExtArgs> | null
+    where?: EarningWhereInput
+    orderBy?: EarningOrderByWithRelationInput | EarningOrderByWithRelationInput[]
+    cursor?: EarningWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: EarningScalarFieldEnum | EarningScalarFieldEnum[]
+  }
+
+  /**
+   * User.hostSettings
+   */
+  export type User$hostSettingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HostSettings
+     */
+    select?: HostSettingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HostSettings
+     */
+    omit?: HostSettingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HostSettingsInclude<ExtArgs> | null
+    where?: HostSettingsWhereInput
   }
 
   /**
@@ -3505,51 +3972,51 @@ export namespace Prisma {
   }
 
   /**
-   * User.bookings
+   * User.messagesReceived
    */
-  export type User$bookingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$messagesReceivedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Booking
+     * Select specific fields to fetch from the Message
      */
-    select?: BookingSelect<ExtArgs> | null
+    select?: MessageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Booking
+     * Omit specific fields from the Message
      */
-    omit?: BookingOmit<ExtArgs> | null
+    omit?: MessageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: BookingInclude<ExtArgs> | null
-    where?: BookingWhereInput
-    orderBy?: BookingOrderByWithRelationInput | BookingOrderByWithRelationInput[]
-    cursor?: BookingWhereUniqueInput
+    include?: MessageInclude<ExtArgs> | null
+    where?: MessageWhereInput
+    orderBy?: MessageOrderByWithRelationInput | MessageOrderByWithRelationInput[]
+    cursor?: MessageWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: BookingScalarFieldEnum | BookingScalarFieldEnum[]
+    distinct?: MessageScalarFieldEnum | MessageScalarFieldEnum[]
   }
 
   /**
-   * User.reviews
+   * User.messagesSent
    */
-  export type User$reviewsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$messagesSentArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Review
+     * Select specific fields to fetch from the Message
      */
-    select?: ReviewSelect<ExtArgs> | null
+    select?: MessageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Review
+     * Omit specific fields from the Message
      */
-    omit?: ReviewOmit<ExtArgs> | null
+    omit?: MessageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ReviewInclude<ExtArgs> | null
-    where?: ReviewWhereInput
-    orderBy?: ReviewOrderByWithRelationInput | ReviewOrderByWithRelationInput[]
-    cursor?: ReviewWhereUniqueInput
+    include?: MessageInclude<ExtArgs> | null
+    where?: MessageWhereInput
+    orderBy?: MessageOrderByWithRelationInput | MessageOrderByWithRelationInput[]
+    cursor?: MessageWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: ReviewScalarFieldEnum | ReviewScalarFieldEnum[]
+    distinct?: MessageScalarFieldEnum | MessageScalarFieldEnum[]
   }
 
   /**
@@ -3577,27 +4044,89 @@ export namespace Prisma {
   }
 
   /**
-   * User.earnings
+   * User.paymentMethods
    */
-  export type User$earningsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$paymentMethodsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Earning
+     * Select specific fields to fetch from the PaymentMethod
      */
-    select?: EarningSelect<ExtArgs> | null
+    select?: PaymentMethodSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Earning
+     * Omit specific fields from the PaymentMethod
      */
-    omit?: EarningOmit<ExtArgs> | null
+    omit?: PaymentMethodOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: EarningInclude<ExtArgs> | null
-    where?: EarningWhereInput
-    orderBy?: EarningOrderByWithRelationInput | EarningOrderByWithRelationInput[]
-    cursor?: EarningWhereUniqueInput
+    include?: PaymentMethodInclude<ExtArgs> | null
+    where?: PaymentMethodWhereInput
+    orderBy?: PaymentMethodOrderByWithRelationInput | PaymentMethodOrderByWithRelationInput[]
+    cursor?: PaymentMethodWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: EarningScalarFieldEnum | EarningScalarFieldEnum[]
+    distinct?: PaymentMethodScalarFieldEnum | PaymentMethodScalarFieldEnum[]
+  }
+
+  /**
+   * User.hostedRestaurant
+   */
+  export type User$hostedRestaurantArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Restaurant
+     */
+    select?: RestaurantSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Restaurant
+     */
+    omit?: RestaurantOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RestaurantInclude<ExtArgs> | null
+    where?: RestaurantWhereInput
+  }
+
+  /**
+   * User.reviews
+   */
+  export type User$reviewsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Review
+     */
+    select?: ReviewSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Review
+     */
+    omit?: ReviewOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ReviewInclude<ExtArgs> | null
+    where?: ReviewWhereInput
+    orderBy?: ReviewOrderByWithRelationInput | ReviewOrderByWithRelationInput[]
+    cursor?: ReviewWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ReviewScalarFieldEnum | ReviewScalarFieldEnum[]
+  }
+
+  /**
+   * User.restaurant
+   */
+  export type User$restaurantArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Restaurant
+     */
+    select?: RestaurantSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Restaurant
+     */
+    omit?: RestaurantOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RestaurantInclude<ExtArgs> | null
+    where?: RestaurantWhereInput
   }
 
   /**
@@ -3655,7 +4184,7 @@ export namespace Prisma {
     phone: string | null
     email: string | null
     website: string | null
-    cuisine: string | null
+    restaurantType: string | null
     priceRange: string | null
     rating: number | null
     isActive: boolean | null
@@ -3676,7 +4205,7 @@ export namespace Prisma {
     phone: string | null
     email: string | null
     website: string | null
-    cuisine: string | null
+    restaurantType: string | null
     priceRange: string | null
     rating: number | null
     isActive: boolean | null
@@ -3697,7 +4226,7 @@ export namespace Prisma {
     phone: number
     email: number
     website: number
-    cuisine: number
+    restaurantType: number
     priceRange: number
     rating: number
     isActive: number
@@ -3732,7 +4261,7 @@ export namespace Prisma {
     phone?: true
     email?: true
     website?: true
-    cuisine?: true
+    restaurantType?: true
     priceRange?: true
     rating?: true
     isActive?: true
@@ -3753,7 +4282,7 @@ export namespace Prisma {
     phone?: true
     email?: true
     website?: true
-    cuisine?: true
+    restaurantType?: true
     priceRange?: true
     rating?: true
     isActive?: true
@@ -3774,7 +4303,7 @@ export namespace Prisma {
     phone?: true
     email?: true
     website?: true
-    cuisine?: true
+    restaurantType?: true
     priceRange?: true
     rating?: true
     isActive?: true
@@ -3882,7 +4411,7 @@ export namespace Prisma {
     phone: string | null
     email: string | null
     website: string | null
-    cuisine: string | null
+    restaurantType: string | null
     priceRange: string | null
     rating: number | null
     isActive: boolean
@@ -3922,18 +4451,18 @@ export namespace Prisma {
     phone?: boolean
     email?: boolean
     website?: boolean
-    cuisine?: boolean
+    restaurantType?: boolean
     priceRange?: boolean
     rating?: boolean
     isActive?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     hostId?: boolean
-    host?: boolean | UserDefaultArgs<ExtArgs>
-    users?: boolean | Restaurant$usersArgs<ExtArgs>
     listings?: boolean | Restaurant$listingsArgs<ExtArgs>
-    images?: boolean | Restaurant$imagesArgs<ExtArgs>
     operatingHours?: boolean | Restaurant$operatingHoursArgs<ExtArgs>
+    host?: boolean | UserDefaultArgs<ExtArgs>
+    images?: boolean | Restaurant$imagesArgs<ExtArgs>
+    users?: boolean | Restaurant$usersArgs<ExtArgs>
     _count?: boolean | RestaurantCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["restaurant"]>
 
@@ -3949,7 +4478,7 @@ export namespace Prisma {
     phone?: boolean
     email?: boolean
     website?: boolean
-    cuisine?: boolean
+    restaurantType?: boolean
     priceRange?: boolean
     rating?: boolean
     isActive?: boolean
@@ -3971,7 +4500,7 @@ export namespace Prisma {
     phone?: boolean
     email?: boolean
     website?: boolean
-    cuisine?: boolean
+    restaurantType?: boolean
     priceRange?: boolean
     rating?: boolean
     isActive?: boolean
@@ -3993,7 +4522,7 @@ export namespace Prisma {
     phone?: boolean
     email?: boolean
     website?: boolean
-    cuisine?: boolean
+    restaurantType?: boolean
     priceRange?: boolean
     rating?: boolean
     isActive?: boolean
@@ -4002,13 +4531,13 @@ export namespace Prisma {
     hostId?: boolean
   }
 
-  export type RestaurantOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "address" | "city" | "state" | "country" | "zipCode" | "phone" | "email" | "website" | "cuisine" | "priceRange" | "rating" | "isActive" | "createdAt" | "updatedAt" | "hostId", ExtArgs["result"]["restaurant"]>
+  export type RestaurantOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "address" | "city" | "state" | "country" | "zipCode" | "phone" | "email" | "website" | "restaurantType" | "priceRange" | "rating" | "isActive" | "createdAt" | "updatedAt" | "hostId", ExtArgs["result"]["restaurant"]>
   export type RestaurantInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    host?: boolean | UserDefaultArgs<ExtArgs>
-    users?: boolean | Restaurant$usersArgs<ExtArgs>
     listings?: boolean | Restaurant$listingsArgs<ExtArgs>
-    images?: boolean | Restaurant$imagesArgs<ExtArgs>
     operatingHours?: boolean | Restaurant$operatingHoursArgs<ExtArgs>
+    host?: boolean | UserDefaultArgs<ExtArgs>
+    images?: boolean | Restaurant$imagesArgs<ExtArgs>
+    users?: boolean | Restaurant$usersArgs<ExtArgs>
     _count?: boolean | RestaurantCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type RestaurantIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -4021,11 +4550,11 @@ export namespace Prisma {
   export type $RestaurantPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Restaurant"
     objects: {
-      host: Prisma.$UserPayload<ExtArgs>
-      users: Prisma.$UserPayload<ExtArgs>[]
       listings: Prisma.$ListingPayload<ExtArgs>[]
-      images: Prisma.$RestaurantImagePayload<ExtArgs>[]
       operatingHours: Prisma.$OperatingHoursPayload<ExtArgs>[]
+      host: Prisma.$UserPayload<ExtArgs>
+      images: Prisma.$RestaurantImagePayload<ExtArgs>[]
+      users: Prisma.$UserPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -4039,7 +4568,7 @@ export namespace Prisma {
       phone: string | null
       email: string | null
       website: string | null
-      cuisine: string | null
+      restaurantType: string | null
       priceRange: string | null
       rating: number | null
       isActive: boolean
@@ -4440,11 +4969,11 @@ export namespace Prisma {
    */
   export interface Prisma__RestaurantClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    host<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    users<T extends Restaurant$usersArgs<ExtArgs> = {}>(args?: Subset<T, Restaurant$usersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     listings<T extends Restaurant$listingsArgs<ExtArgs> = {}>(args?: Subset<T, Restaurant$listingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    images<T extends Restaurant$imagesArgs<ExtArgs> = {}>(args?: Subset<T, Restaurant$imagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RestaurantImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     operatingHours<T extends Restaurant$operatingHoursArgs<ExtArgs> = {}>(args?: Subset<T, Restaurant$operatingHoursArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OperatingHoursPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    host<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    images<T extends Restaurant$imagesArgs<ExtArgs> = {}>(args?: Subset<T, Restaurant$imagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RestaurantImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    users<T extends Restaurant$usersArgs<ExtArgs> = {}>(args?: Subset<T, Restaurant$usersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4485,7 +5014,7 @@ export namespace Prisma {
     readonly phone: FieldRef<"Restaurant", 'String'>
     readonly email: FieldRef<"Restaurant", 'String'>
     readonly website: FieldRef<"Restaurant", 'String'>
-    readonly cuisine: FieldRef<"Restaurant", 'String'>
+    readonly restaurantType: FieldRef<"Restaurant", 'String'>
     readonly priceRange: FieldRef<"Restaurant", 'String'>
     readonly rating: FieldRef<"Restaurant", 'Float'>
     readonly isActive: FieldRef<"Restaurant", 'Boolean'>
@@ -4888,30 +5417,6 @@ export namespace Prisma {
   }
 
   /**
-   * Restaurant.users
-   */
-  export type Restaurant$usersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the User
-     */
-    omit?: UserOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: UserInclude<ExtArgs> | null
-    where?: UserWhereInput
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
-    cursor?: UserWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
-  }
-
-  /**
    * Restaurant.listings
    */
   export type Restaurant$listingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -4933,6 +5438,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: ListingScalarFieldEnum | ListingScalarFieldEnum[]
+  }
+
+  /**
+   * Restaurant.operatingHours
+   */
+  export type Restaurant$operatingHoursArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the OperatingHours
+     */
+    select?: OperatingHoursSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the OperatingHours
+     */
+    omit?: OperatingHoursOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OperatingHoursInclude<ExtArgs> | null
+    where?: OperatingHoursWhereInput
+    orderBy?: OperatingHoursOrderByWithRelationInput | OperatingHoursOrderByWithRelationInput[]
+    cursor?: OperatingHoursWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: OperatingHoursScalarFieldEnum | OperatingHoursScalarFieldEnum[]
   }
 
   /**
@@ -4960,27 +5489,27 @@ export namespace Prisma {
   }
 
   /**
-   * Restaurant.operatingHours
+   * Restaurant.users
    */
-  export type Restaurant$operatingHoursArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Restaurant$usersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the OperatingHours
+     * Select specific fields to fetch from the User
      */
-    select?: OperatingHoursSelect<ExtArgs> | null
+    select?: UserSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the OperatingHours
+     * Omit specific fields from the User
      */
-    omit?: OperatingHoursOmit<ExtArgs> | null
+    omit?: UserOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: OperatingHoursInclude<ExtArgs> | null
-    where?: OperatingHoursWhereInput
-    orderBy?: OperatingHoursOrderByWithRelationInput | OperatingHoursOrderByWithRelationInput[]
-    cursor?: OperatingHoursWhereUniqueInput
+    include?: UserInclude<ExtArgs> | null
+    where?: UserWhereInput
+    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
+    cursor?: UserWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: OperatingHoursScalarFieldEnum | OperatingHoursScalarFieldEnum[]
+    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
   }
 
   /**
@@ -5019,8 +5548,8 @@ export namespace Prisma {
     capacity: number | null
     pricePerHour: number | null
     pricePerDay: number | null
-    restaurantId: number | null
     hostId: number | null
+    restaurantId: number | null
   }
 
   export type ListingSumAggregateOutputType = {
@@ -5028,8 +5557,8 @@ export namespace Prisma {
     capacity: number | null
     pricePerHour: number | null
     pricePerDay: number | null
-    restaurantId: number | null
     hostId: number | null
+    restaurantId: number | null
   }
 
   export type ListingMinAggregateOutputType = {
@@ -5043,8 +5572,8 @@ export namespace Prisma {
     isActive: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
-    restaurantId: number | null
     hostId: number | null
+    restaurantId: number | null
   }
 
   export type ListingMaxAggregateOutputType = {
@@ -5058,8 +5587,8 @@ export namespace Prisma {
     isActive: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
-    restaurantId: number | null
     hostId: number | null
+    restaurantId: number | null
   }
 
   export type ListingCountAggregateOutputType = {
@@ -5073,8 +5602,8 @@ export namespace Prisma {
     isActive: number
     createdAt: number
     updatedAt: number
-    restaurantId: number
     hostId: number
+    restaurantId: number
     _all: number
   }
 
@@ -5084,8 +5613,8 @@ export namespace Prisma {
     capacity?: true
     pricePerHour?: true
     pricePerDay?: true
-    restaurantId?: true
     hostId?: true
+    restaurantId?: true
   }
 
   export type ListingSumAggregateInputType = {
@@ -5093,8 +5622,8 @@ export namespace Prisma {
     capacity?: true
     pricePerHour?: true
     pricePerDay?: true
-    restaurantId?: true
     hostId?: true
+    restaurantId?: true
   }
 
   export type ListingMinAggregateInputType = {
@@ -5108,8 +5637,8 @@ export namespace Prisma {
     isActive?: true
     createdAt?: true
     updatedAt?: true
-    restaurantId?: true
     hostId?: true
+    restaurantId?: true
   }
 
   export type ListingMaxAggregateInputType = {
@@ -5123,8 +5652,8 @@ export namespace Prisma {
     isActive?: true
     createdAt?: true
     updatedAt?: true
-    restaurantId?: true
     hostId?: true
+    restaurantId?: true
   }
 
   export type ListingCountAggregateInputType = {
@@ -5138,8 +5667,8 @@ export namespace Prisma {
     isActive?: true
     createdAt?: true
     updatedAt?: true
-    restaurantId?: true
     hostId?: true
+    restaurantId?: true
     _all?: true
   }
 
@@ -5240,8 +5769,8 @@ export namespace Prisma {
     isActive: boolean
     createdAt: Date
     updatedAt: Date
-    restaurantId: number
     hostId: number
+    restaurantId: number | null
     _count: ListingCountAggregateOutputType | null
     _avg: ListingAvgAggregateOutputType | null
     _sum: ListingSumAggregateOutputType | null
@@ -5274,14 +5803,14 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    restaurantId?: boolean
     hostId?: boolean
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
-    host?: boolean | UserDefaultArgs<ExtArgs>
-    bookings?: boolean | Listing$bookingsArgs<ExtArgs>
-    images?: boolean | Listing$imagesArgs<ExtArgs>
-    amenities?: boolean | Listing$amenitiesArgs<ExtArgs>
+    restaurantId?: boolean
     availability?: boolean | Listing$availabilityArgs<ExtArgs>
+    bookings?: boolean | Listing$bookingsArgs<ExtArgs>
+    host?: boolean | UserDefaultArgs<ExtArgs>
+    restaurant?: boolean | Listing$restaurantArgs<ExtArgs>
+    amenities?: boolean | Listing$amenitiesArgs<ExtArgs>
+    images?: boolean | Listing$imagesArgs<ExtArgs>
     reviews?: boolean | Listing$reviewsArgs<ExtArgs>
     _count?: boolean | ListingCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["listing"]>
@@ -5297,10 +5826,10 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    restaurantId?: boolean
     hostId?: boolean
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+    restaurantId?: boolean
     host?: boolean | UserDefaultArgs<ExtArgs>
+    restaurant?: boolean | Listing$restaurantArgs<ExtArgs>
   }, ExtArgs["result"]["listing"]>
 
   export type ListingSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -5314,10 +5843,10 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    restaurantId?: boolean
     hostId?: boolean
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+    restaurantId?: boolean
     host?: boolean | UserDefaultArgs<ExtArgs>
+    restaurant?: boolean | Listing$restaurantArgs<ExtArgs>
   }, ExtArgs["result"]["listing"]>
 
   export type ListingSelectScalar = {
@@ -5331,39 +5860,39 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    restaurantId?: boolean
     hostId?: boolean
+    restaurantId?: boolean
   }
 
-  export type ListingOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "type" | "capacity" | "pricePerHour" | "pricePerDay" | "isActive" | "createdAt" | "updatedAt" | "restaurantId" | "hostId", ExtArgs["result"]["listing"]>
+  export type ListingOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "type" | "capacity" | "pricePerHour" | "pricePerDay" | "isActive" | "createdAt" | "updatedAt" | "hostId" | "restaurantId", ExtArgs["result"]["listing"]>
   export type ListingInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
-    host?: boolean | UserDefaultArgs<ExtArgs>
-    bookings?: boolean | Listing$bookingsArgs<ExtArgs>
-    images?: boolean | Listing$imagesArgs<ExtArgs>
-    amenities?: boolean | Listing$amenitiesArgs<ExtArgs>
     availability?: boolean | Listing$availabilityArgs<ExtArgs>
+    bookings?: boolean | Listing$bookingsArgs<ExtArgs>
+    host?: boolean | UserDefaultArgs<ExtArgs>
+    restaurant?: boolean | Listing$restaurantArgs<ExtArgs>
+    amenities?: boolean | Listing$amenitiesArgs<ExtArgs>
+    images?: boolean | Listing$imagesArgs<ExtArgs>
     reviews?: boolean | Listing$reviewsArgs<ExtArgs>
     _count?: boolean | ListingCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ListingIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
     host?: boolean | UserDefaultArgs<ExtArgs>
+    restaurant?: boolean | Listing$restaurantArgs<ExtArgs>
   }
   export type ListingIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
     host?: boolean | UserDefaultArgs<ExtArgs>
+    restaurant?: boolean | Listing$restaurantArgs<ExtArgs>
   }
 
   export type $ListingPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Listing"
     objects: {
-      restaurant: Prisma.$RestaurantPayload<ExtArgs>
-      host: Prisma.$UserPayload<ExtArgs>
-      bookings: Prisma.$BookingPayload<ExtArgs>[]
-      images: Prisma.$ListingImagePayload<ExtArgs>[]
-      amenities: Prisma.$ListingAmenityPayload<ExtArgs>[]
       availability: Prisma.$AvailabilityPayload<ExtArgs>[]
+      bookings: Prisma.$BookingPayload<ExtArgs>[]
+      host: Prisma.$UserPayload<ExtArgs>
+      restaurant: Prisma.$RestaurantPayload<ExtArgs> | null
+      amenities: Prisma.$ListingAmenityPayload<ExtArgs>[]
+      images: Prisma.$ListingImagePayload<ExtArgs>[]
       reviews: Prisma.$ReviewPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -5377,8 +5906,8 @@ export namespace Prisma {
       isActive: boolean
       createdAt: Date
       updatedAt: Date
-      restaurantId: number
       hostId: number
+      restaurantId: number | null
     }, ExtArgs["result"]["listing"]>
     composites: {}
   }
@@ -5773,12 +6302,12 @@ export namespace Prisma {
    */
   export interface Prisma__ListingClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    restaurant<T extends RestaurantDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RestaurantDefaultArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    host<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    bookings<T extends Listing$bookingsArgs<ExtArgs> = {}>(args?: Subset<T, Listing$bookingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BookingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    images<T extends Listing$imagesArgs<ExtArgs> = {}>(args?: Subset<T, Listing$imagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ListingImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    amenities<T extends Listing$amenitiesArgs<ExtArgs> = {}>(args?: Subset<T, Listing$amenitiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ListingAmenityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     availability<T extends Listing$availabilityArgs<ExtArgs> = {}>(args?: Subset<T, Listing$availabilityArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AvailabilityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    bookings<T extends Listing$bookingsArgs<ExtArgs> = {}>(args?: Subset<T, Listing$bookingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BookingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    host<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    restaurant<T extends Listing$restaurantArgs<ExtArgs> = {}>(args?: Subset<T, Listing$restaurantArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    amenities<T extends Listing$amenitiesArgs<ExtArgs> = {}>(args?: Subset<T, Listing$amenitiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ListingAmenityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    images<T extends Listing$imagesArgs<ExtArgs> = {}>(args?: Subset<T, Listing$imagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ListingImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     reviews<T extends Listing$reviewsArgs<ExtArgs> = {}>(args?: Subset<T, Listing$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -5819,8 +6348,8 @@ export namespace Prisma {
     readonly isActive: FieldRef<"Listing", 'Boolean'>
     readonly createdAt: FieldRef<"Listing", 'DateTime'>
     readonly updatedAt: FieldRef<"Listing", 'DateTime'>
-    readonly restaurantId: FieldRef<"Listing", 'Int'>
     readonly hostId: FieldRef<"Listing", 'Int'>
+    readonly restaurantId: FieldRef<"Listing", 'Int'>
   }
     
 
@@ -6217,6 +6746,30 @@ export namespace Prisma {
   }
 
   /**
+   * Listing.availability
+   */
+  export type Listing$availabilityArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Availability
+     */
+    select?: AvailabilitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Availability
+     */
+    omit?: AvailabilityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: AvailabilityInclude<ExtArgs> | null
+    where?: AvailabilityWhereInput
+    orderBy?: AvailabilityOrderByWithRelationInput | AvailabilityOrderByWithRelationInput[]
+    cursor?: AvailabilityWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: AvailabilityScalarFieldEnum | AvailabilityScalarFieldEnum[]
+  }
+
+  /**
    * Listing.bookings
    */
   export type Listing$bookingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -6241,27 +6794,22 @@ export namespace Prisma {
   }
 
   /**
-   * Listing.images
+   * Listing.restaurant
    */
-  export type Listing$imagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Listing$restaurantArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ListingImage
+     * Select specific fields to fetch from the Restaurant
      */
-    select?: ListingImageSelect<ExtArgs> | null
+    select?: RestaurantSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ListingImage
+     * Omit specific fields from the Restaurant
      */
-    omit?: ListingImageOmit<ExtArgs> | null
+    omit?: RestaurantOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ListingImageInclude<ExtArgs> | null
-    where?: ListingImageWhereInput
-    orderBy?: ListingImageOrderByWithRelationInput | ListingImageOrderByWithRelationInput[]
-    cursor?: ListingImageWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ListingImageScalarFieldEnum | ListingImageScalarFieldEnum[]
+    include?: RestaurantInclude<ExtArgs> | null
+    where?: RestaurantWhereInput
   }
 
   /**
@@ -6289,27 +6837,27 @@ export namespace Prisma {
   }
 
   /**
-   * Listing.availability
+   * Listing.images
    */
-  export type Listing$availabilityArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Listing$imagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Availability
+     * Select specific fields to fetch from the ListingImage
      */
-    select?: AvailabilitySelect<ExtArgs> | null
+    select?: ListingImageSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Availability
+     * Omit specific fields from the ListingImage
      */
-    omit?: AvailabilityOmit<ExtArgs> | null
+    omit?: ListingImageOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AvailabilityInclude<ExtArgs> | null
-    where?: AvailabilityWhereInput
-    orderBy?: AvailabilityOrderByWithRelationInput | AvailabilityOrderByWithRelationInput[]
-    cursor?: AvailabilityWhereUniqueInput
+    include?: ListingImageInclude<ExtArgs> | null
+    where?: ListingImageWhereInput
+    orderBy?: ListingImageOrderByWithRelationInput | ListingImageOrderByWithRelationInput[]
+    cursor?: ListingImageWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: AvailabilityScalarFieldEnum | AvailabilityScalarFieldEnum[]
+    distinct?: ListingImageScalarFieldEnum | ListingImageScalarFieldEnum[]
   }
 
   /**
@@ -8758,24 +9306,24 @@ export namespace Prisma {
     id?: boolean
     listingId?: boolean
     amenityId?: boolean
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     amenity?: boolean | AmenityDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["listingAmenity"]>
 
   export type ListingAmenitySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     listingId?: boolean
     amenityId?: boolean
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     amenity?: boolean | AmenityDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["listingAmenity"]>
 
   export type ListingAmenitySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     listingId?: boolean
     amenityId?: boolean
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     amenity?: boolean | AmenityDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["listingAmenity"]>
 
   export type ListingAmenitySelectScalar = {
@@ -8786,23 +9334,23 @@ export namespace Prisma {
 
   export type ListingAmenityOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "listingId" | "amenityId", ExtArgs["result"]["listingAmenity"]>
   export type ListingAmenityInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     amenity?: boolean | AmenityDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }
   export type ListingAmenityIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     amenity?: boolean | AmenityDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }
   export type ListingAmenityIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     amenity?: boolean | AmenityDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }
 
   export type $ListingAmenityPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "ListingAmenity"
     objects: {
-      listing: Prisma.$ListingPayload<ExtArgs>
       amenity: Prisma.$AmenityPayload<ExtArgs>
+      listing: Prisma.$ListingPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -9202,8 +9750,8 @@ export namespace Prisma {
    */
   export interface Prisma__ListingAmenityClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    listing<T extends ListingDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ListingDefaultArgs<ExtArgs>>): Prisma__ListingClient<$Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     amenity<T extends AmenityDefaultArgs<ExtArgs> = {}>(args?: Subset<T, AmenityDefaultArgs<ExtArgs>>): Prisma__AmenityClient<$Result.GetResult<Prisma.$AmenityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    listing<T extends ListingDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ListingDefaultArgs<ExtArgs>>): Prisma__ListingClient<$Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -10993,7 +11541,7 @@ export namespace Prisma {
     id: number
     startTime: Date
     endTime: Date
-    totalPrice: number
+    totalPrice: number | null
     status: string
     guestCount: number | null
     specialRequests: string | null
@@ -11034,10 +11582,10 @@ export namespace Prisma {
     updatedAt?: boolean
     listingId?: boolean
     guestId?: boolean
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     guest?: boolean | UserDefaultArgs<ExtArgs>
-    review?: boolean | Booking$reviewArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
     earning?: boolean | Booking$earningArgs<ExtArgs>
+    review?: boolean | Booking$reviewArgs<ExtArgs>
   }, ExtArgs["result"]["booking"]>
 
   export type BookingSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -11052,8 +11600,8 @@ export namespace Prisma {
     updatedAt?: boolean
     listingId?: boolean
     guestId?: boolean
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     guest?: boolean | UserDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["booking"]>
 
   export type BookingSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -11068,8 +11616,8 @@ export namespace Prisma {
     updatedAt?: boolean
     listingId?: boolean
     guestId?: boolean
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     guest?: boolean | UserDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["booking"]>
 
   export type BookingSelectScalar = {
@@ -11088,33 +11636,33 @@ export namespace Prisma {
 
   export type BookingOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "startTime" | "endTime" | "totalPrice" | "status" | "guestCount" | "specialRequests" | "createdAt" | "updatedAt" | "listingId" | "guestId", ExtArgs["result"]["booking"]>
   export type BookingInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     guest?: boolean | UserDefaultArgs<ExtArgs>
-    review?: boolean | Booking$reviewArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
     earning?: boolean | Booking$earningArgs<ExtArgs>
+    review?: boolean | Booking$reviewArgs<ExtArgs>
   }
   export type BookingIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     guest?: boolean | UserDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }
   export type BookingIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     guest?: boolean | UserDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }
 
   export type $BookingPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Booking"
     objects: {
-      listing: Prisma.$ListingPayload<ExtArgs>
       guest: Prisma.$UserPayload<ExtArgs>
-      review: Prisma.$ReviewPayload<ExtArgs> | null
+      listing: Prisma.$ListingPayload<ExtArgs>
       earning: Prisma.$EarningPayload<ExtArgs> | null
+      review: Prisma.$ReviewPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
       startTime: Date
       endTime: Date
-      totalPrice: number
+      totalPrice: number | null
       status: string
       guestCount: number | null
       specialRequests: string | null
@@ -11516,10 +12064,10 @@ export namespace Prisma {
    */
   export interface Prisma__BookingClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    listing<T extends ListingDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ListingDefaultArgs<ExtArgs>>): Prisma__ListingClient<$Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     guest<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    review<T extends Booking$reviewArgs<ExtArgs> = {}>(args?: Subset<T, Booking$reviewArgs<ExtArgs>>): Prisma__ReviewClient<$Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    listing<T extends ListingDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ListingDefaultArgs<ExtArgs>>): Prisma__ListingClient<$Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     earning<T extends Booking$earningArgs<ExtArgs> = {}>(args?: Subset<T, Booking$earningArgs<ExtArgs>>): Prisma__EarningClient<$Result.GetResult<Prisma.$EarningPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    review<T extends Booking$reviewArgs<ExtArgs> = {}>(args?: Subset<T, Booking$reviewArgs<ExtArgs>>): Prisma__ReviewClient<$Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -11956,25 +12504,6 @@ export namespace Prisma {
   }
 
   /**
-   * Booking.review
-   */
-  export type Booking$reviewArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Review
-     */
-    select?: ReviewSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Review
-     */
-    omit?: ReviewOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ReviewInclude<ExtArgs> | null
-    where?: ReviewWhereInput
-  }
-
-  /**
    * Booking.earning
    */
   export type Booking$earningArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -11991,6 +12520,25 @@ export namespace Prisma {
      */
     include?: EarningInclude<ExtArgs> | null
     where?: EarningWhereInput
+  }
+
+  /**
+   * Booking.review
+   */
+  export type Booking$reviewArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Review
+     */
+    select?: ReviewSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Review
+     */
+    omit?: ReviewOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ReviewInclude<ExtArgs> | null
+    where?: ReviewWhereInput
   }
 
   /**
@@ -12242,9 +12790,9 @@ export namespace Prisma {
     listingId?: boolean
     authorId?: boolean
     bookingId?: boolean
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     author?: boolean | UserDefaultArgs<ExtArgs>
     booking?: boolean | BookingDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["review"]>
 
   export type ReviewSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -12255,9 +12803,9 @@ export namespace Prisma {
     listingId?: boolean
     authorId?: boolean
     bookingId?: boolean
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     author?: boolean | UserDefaultArgs<ExtArgs>
     booking?: boolean | BookingDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["review"]>
 
   export type ReviewSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -12268,9 +12816,9 @@ export namespace Prisma {
     listingId?: boolean
     authorId?: boolean
     bookingId?: boolean
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     author?: boolean | UserDefaultArgs<ExtArgs>
     booking?: boolean | BookingDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["review"]>
 
   export type ReviewSelectScalar = {
@@ -12285,27 +12833,27 @@ export namespace Prisma {
 
   export type ReviewOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "rating" | "comment" | "createdAt" | "listingId" | "authorId" | "bookingId", ExtArgs["result"]["review"]>
   export type ReviewInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     author?: boolean | UserDefaultArgs<ExtArgs>
     booking?: boolean | BookingDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }
   export type ReviewIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     author?: boolean | UserDefaultArgs<ExtArgs>
     booking?: boolean | BookingDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }
   export type ReviewIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    listing?: boolean | ListingDefaultArgs<ExtArgs>
     author?: boolean | UserDefaultArgs<ExtArgs>
     booking?: boolean | BookingDefaultArgs<ExtArgs>
+    listing?: boolean | ListingDefaultArgs<ExtArgs>
   }
 
   export type $ReviewPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Review"
     objects: {
-      listing: Prisma.$ListingPayload<ExtArgs>
       author: Prisma.$UserPayload<ExtArgs>
       booking: Prisma.$BookingPayload<ExtArgs>
+      listing: Prisma.$ListingPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -12709,9 +13257,9 @@ export namespace Prisma {
    */
   export interface Prisma__ReviewClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    listing<T extends ListingDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ListingDefaultArgs<ExtArgs>>): Prisma__ListingClient<$Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     author<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     booking<T extends BookingDefaultArgs<ExtArgs> = {}>(args?: Subset<T, BookingDefaultArgs<ExtArgs>>): Prisma__BookingClient<$Result.GetResult<Prisma.$BookingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    listing<T extends ListingDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ListingDefaultArgs<ExtArgs>>): Prisma__ListingClient<$Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -13396,8 +13944,8 @@ export namespace Prisma {
     createdAt?: boolean
     hostId?: boolean
     bookingId?: boolean
-    host?: boolean | UserDefaultArgs<ExtArgs>
     booking?: boolean | Earning$bookingArgs<ExtArgs>
+    host?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["earning"]>
 
   export type EarningSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -13409,8 +13957,8 @@ export namespace Prisma {
     createdAt?: boolean
     hostId?: boolean
     bookingId?: boolean
-    host?: boolean | UserDefaultArgs<ExtArgs>
     booking?: boolean | Earning$bookingArgs<ExtArgs>
+    host?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["earning"]>
 
   export type EarningSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -13422,8 +13970,8 @@ export namespace Prisma {
     createdAt?: boolean
     hostId?: boolean
     bookingId?: boolean
-    host?: boolean | UserDefaultArgs<ExtArgs>
     booking?: boolean | Earning$bookingArgs<ExtArgs>
+    host?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["earning"]>
 
   export type EarningSelectScalar = {
@@ -13439,23 +13987,23 @@ export namespace Prisma {
 
   export type EarningOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "amount" | "type" | "status" | "description" | "createdAt" | "hostId" | "bookingId", ExtArgs["result"]["earning"]>
   export type EarningInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    host?: boolean | UserDefaultArgs<ExtArgs>
     booking?: boolean | Earning$bookingArgs<ExtArgs>
+    host?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type EarningIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    host?: boolean | UserDefaultArgs<ExtArgs>
     booking?: boolean | Earning$bookingArgs<ExtArgs>
+    host?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type EarningIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    host?: boolean | UserDefaultArgs<ExtArgs>
     booking?: boolean | Earning$bookingArgs<ExtArgs>
+    host?: boolean | UserDefaultArgs<ExtArgs>
   }
 
   export type $EarningPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Earning"
     objects: {
-      host: Prisma.$UserPayload<ExtArgs>
       booking: Prisma.$BookingPayload<ExtArgs> | null
+      host: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -13860,8 +14408,8 @@ export namespace Prisma {
    */
   export interface Prisma__EarningClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    host<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     booking<T extends Earning$bookingArgs<ExtArgs> = {}>(args?: Subset<T, Earning$bookingArgs<ExtArgs>>): Prisma__BookingClient<$Result.GetResult<Prisma.$BookingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    host<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -16748,7 +17296,7 @@ export namespace Prisma {
     openTime: string
     closeTime: string
     isClosed: boolean
-    restaurantId: number
+    restaurantId: number | null
     _count: OperatingHoursCountAggregateOutputType | null
     _avg: OperatingHoursAvgAggregateOutputType | null
     _sum: OperatingHoursSumAggregateOutputType | null
@@ -16777,7 +17325,7 @@ export namespace Prisma {
     closeTime?: boolean
     isClosed?: boolean
     restaurantId?: boolean
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+    restaurant?: boolean | OperatingHours$restaurantArgs<ExtArgs>
   }, ExtArgs["result"]["operatingHours"]>
 
   export type OperatingHoursSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -16787,7 +17335,7 @@ export namespace Prisma {
     closeTime?: boolean
     isClosed?: boolean
     restaurantId?: boolean
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+    restaurant?: boolean | OperatingHours$restaurantArgs<ExtArgs>
   }, ExtArgs["result"]["operatingHours"]>
 
   export type OperatingHoursSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -16797,7 +17345,7 @@ export namespace Prisma {
     closeTime?: boolean
     isClosed?: boolean
     restaurantId?: boolean
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+    restaurant?: boolean | OperatingHours$restaurantArgs<ExtArgs>
   }, ExtArgs["result"]["operatingHours"]>
 
   export type OperatingHoursSelectScalar = {
@@ -16811,19 +17359,19 @@ export namespace Prisma {
 
   export type OperatingHoursOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "dayOfWeek" | "openTime" | "closeTime" | "isClosed" | "restaurantId", ExtArgs["result"]["operatingHours"]>
   export type OperatingHoursInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+    restaurant?: boolean | OperatingHours$restaurantArgs<ExtArgs>
   }
   export type OperatingHoursIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+    restaurant?: boolean | OperatingHours$restaurantArgs<ExtArgs>
   }
   export type OperatingHoursIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    restaurant?: boolean | RestaurantDefaultArgs<ExtArgs>
+    restaurant?: boolean | OperatingHours$restaurantArgs<ExtArgs>
   }
 
   export type $OperatingHoursPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "OperatingHours"
     objects: {
-      restaurant: Prisma.$RestaurantPayload<ExtArgs>
+      restaurant: Prisma.$RestaurantPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -16831,7 +17379,7 @@ export namespace Prisma {
       openTime: string
       closeTime: string
       isClosed: boolean
-      restaurantId: number
+      restaurantId: number | null
     }, ExtArgs["result"]["operatingHours"]>
     composites: {}
   }
@@ -17226,7 +17774,7 @@ export namespace Prisma {
    */
   export interface Prisma__OperatingHoursClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    restaurant<T extends RestaurantDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RestaurantDefaultArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    restaurant<T extends OperatingHours$restaurantArgs<ExtArgs> = {}>(args?: Subset<T, OperatingHours$restaurantArgs<ExtArgs>>): Prisma__RestaurantClient<$Result.GetResult<Prisma.$RestaurantPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -17658,6 +18206,25 @@ export namespace Prisma {
   }
 
   /**
+   * OperatingHours.restaurant
+   */
+  export type OperatingHours$restaurantArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Restaurant
+     */
+    select?: RestaurantSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Restaurant
+     */
+    omit?: RestaurantOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RestaurantInclude<ExtArgs> | null
+    where?: RestaurantWhereInput
+  }
+
+  /**
    * OperatingHours without action
    */
   export type OperatingHoursDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -17673,6 +18240,4517 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: OperatingHoursInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model HostSettings
+   */
+
+  export type AggregateHostSettings = {
+    _count: HostSettingsCountAggregateOutputType | null
+    _avg: HostSettingsAvgAggregateOutputType | null
+    _sum: HostSettingsSumAggregateOutputType | null
+    _min: HostSettingsMinAggregateOutputType | null
+    _max: HostSettingsMaxAggregateOutputType | null
+  }
+
+  export type HostSettingsAvgAggregateOutputType = {
+    id: number | null
+    userId: number | null
+  }
+
+  export type HostSettingsSumAggregateOutputType = {
+    id: number | null
+    userId: number | null
+  }
+
+  export type HostSettingsMinAggregateOutputType = {
+    id: number | null
+    userId: number | null
+    emailBookings: boolean | null
+    emailMessages: boolean | null
+    emailPayouts: boolean | null
+    pushBookings: boolean | null
+    pushMessages: boolean | null
+    pushPayouts: boolean | null
+    companyName: string | null
+    kraPin: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type HostSettingsMaxAggregateOutputType = {
+    id: number | null
+    userId: number | null
+    emailBookings: boolean | null
+    emailMessages: boolean | null
+    emailPayouts: boolean | null
+    pushBookings: boolean | null
+    pushMessages: boolean | null
+    pushPayouts: boolean | null
+    companyName: string | null
+    kraPin: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type HostSettingsCountAggregateOutputType = {
+    id: number
+    userId: number
+    emailBookings: number
+    emailMessages: number
+    emailPayouts: number
+    pushBookings: number
+    pushMessages: number
+    pushPayouts: number
+    companyName: number
+    kraPin: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type HostSettingsAvgAggregateInputType = {
+    id?: true
+    userId?: true
+  }
+
+  export type HostSettingsSumAggregateInputType = {
+    id?: true
+    userId?: true
+  }
+
+  export type HostSettingsMinAggregateInputType = {
+    id?: true
+    userId?: true
+    emailBookings?: true
+    emailMessages?: true
+    emailPayouts?: true
+    pushBookings?: true
+    pushMessages?: true
+    pushPayouts?: true
+    companyName?: true
+    kraPin?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type HostSettingsMaxAggregateInputType = {
+    id?: true
+    userId?: true
+    emailBookings?: true
+    emailMessages?: true
+    emailPayouts?: true
+    pushBookings?: true
+    pushMessages?: true
+    pushPayouts?: true
+    companyName?: true
+    kraPin?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type HostSettingsCountAggregateInputType = {
+    id?: true
+    userId?: true
+    emailBookings?: true
+    emailMessages?: true
+    emailPayouts?: true
+    pushBookings?: true
+    pushMessages?: true
+    pushPayouts?: true
+    companyName?: true
+    kraPin?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type HostSettingsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HostSettings to aggregate.
+     */
+    where?: HostSettingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HostSettings to fetch.
+     */
+    orderBy?: HostSettingsOrderByWithRelationInput | HostSettingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: HostSettingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HostSettings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HostSettings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned HostSettings
+    **/
+    _count?: true | HostSettingsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: HostSettingsAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: HostSettingsSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: HostSettingsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: HostSettingsMaxAggregateInputType
+  }
+
+  export type GetHostSettingsAggregateType<T extends HostSettingsAggregateArgs> = {
+        [P in keyof T & keyof AggregateHostSettings]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHostSettings[P]>
+      : GetScalarType<T[P], AggregateHostSettings[P]>
+  }
+
+
+
+
+  export type HostSettingsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HostSettingsWhereInput
+    orderBy?: HostSettingsOrderByWithAggregationInput | HostSettingsOrderByWithAggregationInput[]
+    by: HostSettingsScalarFieldEnum[] | HostSettingsScalarFieldEnum
+    having?: HostSettingsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HostSettingsCountAggregateInputType | true
+    _avg?: HostSettingsAvgAggregateInputType
+    _sum?: HostSettingsSumAggregateInputType
+    _min?: HostSettingsMinAggregateInputType
+    _max?: HostSettingsMaxAggregateInputType
+  }
+
+  export type HostSettingsGroupByOutputType = {
+    id: number
+    userId: number
+    emailBookings: boolean
+    emailMessages: boolean
+    emailPayouts: boolean
+    pushBookings: boolean
+    pushMessages: boolean
+    pushPayouts: boolean
+    companyName: string | null
+    kraPin: string | null
+    createdAt: Date
+    updatedAt: Date
+    _count: HostSettingsCountAggregateOutputType | null
+    _avg: HostSettingsAvgAggregateOutputType | null
+    _sum: HostSettingsSumAggregateOutputType | null
+    _min: HostSettingsMinAggregateOutputType | null
+    _max: HostSettingsMaxAggregateOutputType | null
+  }
+
+  type GetHostSettingsGroupByPayload<T extends HostSettingsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HostSettingsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HostSettingsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HostSettingsGroupByOutputType[P]>
+            : GetScalarType<T[P], HostSettingsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type HostSettingsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    emailBookings?: boolean
+    emailMessages?: boolean
+    emailPayouts?: boolean
+    pushBookings?: boolean
+    pushMessages?: boolean
+    pushPayouts?: boolean
+    companyName?: boolean
+    kraPin?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["hostSettings"]>
+
+  export type HostSettingsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    emailBookings?: boolean
+    emailMessages?: boolean
+    emailPayouts?: boolean
+    pushBookings?: boolean
+    pushMessages?: boolean
+    pushPayouts?: boolean
+    companyName?: boolean
+    kraPin?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["hostSettings"]>
+
+  export type HostSettingsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    emailBookings?: boolean
+    emailMessages?: boolean
+    emailPayouts?: boolean
+    pushBookings?: boolean
+    pushMessages?: boolean
+    pushPayouts?: boolean
+    companyName?: boolean
+    kraPin?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["hostSettings"]>
+
+  export type HostSettingsSelectScalar = {
+    id?: boolean
+    userId?: boolean
+    emailBookings?: boolean
+    emailMessages?: boolean
+    emailPayouts?: boolean
+    pushBookings?: boolean
+    pushMessages?: boolean
+    pushPayouts?: boolean
+    companyName?: boolean
+    kraPin?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type HostSettingsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "emailBookings" | "emailMessages" | "emailPayouts" | "pushBookings" | "pushMessages" | "pushPayouts" | "companyName" | "kraPin" | "createdAt" | "updatedAt", ExtArgs["result"]["hostSettings"]>
+  export type HostSettingsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type HostSettingsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type HostSettingsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+
+  export type $HostSettingsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "HostSettings"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      userId: number
+      emailBookings: boolean
+      emailMessages: boolean
+      emailPayouts: boolean
+      pushBookings: boolean
+      pushMessages: boolean
+      pushPayouts: boolean
+      companyName: string | null
+      kraPin: string | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["hostSettings"]>
+    composites: {}
+  }
+
+  type HostSettingsGetPayload<S extends boolean | null | undefined | HostSettingsDefaultArgs> = $Result.GetResult<Prisma.$HostSettingsPayload, S>
+
+  type HostSettingsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HostSettingsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HostSettingsCountAggregateInputType | true
+    }
+
+  export interface HostSettingsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['HostSettings'], meta: { name: 'HostSettings' } }
+    /**
+     * Find zero or one HostSettings that matches the filter.
+     * @param {HostSettingsFindUniqueArgs} args - Arguments to find a HostSettings
+     * @example
+     * // Get one HostSettings
+     * const hostSettings = await prisma.hostSettings.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends HostSettingsFindUniqueArgs>(args: SelectSubset<T, HostSettingsFindUniqueArgs<ExtArgs>>): Prisma__HostSettingsClient<$Result.GetResult<Prisma.$HostSettingsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one HostSettings that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HostSettingsFindUniqueOrThrowArgs} args - Arguments to find a HostSettings
+     * @example
+     * // Get one HostSettings
+     * const hostSettings = await prisma.hostSettings.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends HostSettingsFindUniqueOrThrowArgs>(args: SelectSubset<T, HostSettingsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HostSettingsClient<$Result.GetResult<Prisma.$HostSettingsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HostSettings that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HostSettingsFindFirstArgs} args - Arguments to find a HostSettings
+     * @example
+     * // Get one HostSettings
+     * const hostSettings = await prisma.hostSettings.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends HostSettingsFindFirstArgs>(args?: SelectSubset<T, HostSettingsFindFirstArgs<ExtArgs>>): Prisma__HostSettingsClient<$Result.GetResult<Prisma.$HostSettingsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HostSettings that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HostSettingsFindFirstOrThrowArgs} args - Arguments to find a HostSettings
+     * @example
+     * // Get one HostSettings
+     * const hostSettings = await prisma.hostSettings.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends HostSettingsFindFirstOrThrowArgs>(args?: SelectSubset<T, HostSettingsFindFirstOrThrowArgs<ExtArgs>>): Prisma__HostSettingsClient<$Result.GetResult<Prisma.$HostSettingsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more HostSettings that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HostSettingsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all HostSettings
+     * const hostSettings = await prisma.hostSettings.findMany()
+     * 
+     * // Get first 10 HostSettings
+     * const hostSettings = await prisma.hostSettings.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const hostSettingsWithIdOnly = await prisma.hostSettings.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HostSettingsFindManyArgs>(args?: SelectSubset<T, HostSettingsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HostSettingsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a HostSettings.
+     * @param {HostSettingsCreateArgs} args - Arguments to create a HostSettings.
+     * @example
+     * // Create one HostSettings
+     * const HostSettings = await prisma.hostSettings.create({
+     *   data: {
+     *     // ... data to create a HostSettings
+     *   }
+     * })
+     * 
+     */
+    create<T extends HostSettingsCreateArgs>(args: SelectSubset<T, HostSettingsCreateArgs<ExtArgs>>): Prisma__HostSettingsClient<$Result.GetResult<Prisma.$HostSettingsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many HostSettings.
+     * @param {HostSettingsCreateManyArgs} args - Arguments to create many HostSettings.
+     * @example
+     * // Create many HostSettings
+     * const hostSettings = await prisma.hostSettings.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends HostSettingsCreateManyArgs>(args?: SelectSubset<T, HostSettingsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many HostSettings and returns the data saved in the database.
+     * @param {HostSettingsCreateManyAndReturnArgs} args - Arguments to create many HostSettings.
+     * @example
+     * // Create many HostSettings
+     * const hostSettings = await prisma.hostSettings.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many HostSettings and only return the `id`
+     * const hostSettingsWithIdOnly = await prisma.hostSettings.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends HostSettingsCreateManyAndReturnArgs>(args?: SelectSubset<T, HostSettingsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HostSettingsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a HostSettings.
+     * @param {HostSettingsDeleteArgs} args - Arguments to delete one HostSettings.
+     * @example
+     * // Delete one HostSettings
+     * const HostSettings = await prisma.hostSettings.delete({
+     *   where: {
+     *     // ... filter to delete one HostSettings
+     *   }
+     * })
+     * 
+     */
+    delete<T extends HostSettingsDeleteArgs>(args: SelectSubset<T, HostSettingsDeleteArgs<ExtArgs>>): Prisma__HostSettingsClient<$Result.GetResult<Prisma.$HostSettingsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one HostSettings.
+     * @param {HostSettingsUpdateArgs} args - Arguments to update one HostSettings.
+     * @example
+     * // Update one HostSettings
+     * const hostSettings = await prisma.hostSettings.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends HostSettingsUpdateArgs>(args: SelectSubset<T, HostSettingsUpdateArgs<ExtArgs>>): Prisma__HostSettingsClient<$Result.GetResult<Prisma.$HostSettingsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more HostSettings.
+     * @param {HostSettingsDeleteManyArgs} args - Arguments to filter HostSettings to delete.
+     * @example
+     * // Delete a few HostSettings
+     * const { count } = await prisma.hostSettings.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends HostSettingsDeleteManyArgs>(args?: SelectSubset<T, HostSettingsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HostSettings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HostSettingsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many HostSettings
+     * const hostSettings = await prisma.hostSettings.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends HostSettingsUpdateManyArgs>(args: SelectSubset<T, HostSettingsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HostSettings and returns the data updated in the database.
+     * @param {HostSettingsUpdateManyAndReturnArgs} args - Arguments to update many HostSettings.
+     * @example
+     * // Update many HostSettings
+     * const hostSettings = await prisma.hostSettings.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more HostSettings and only return the `id`
+     * const hostSettingsWithIdOnly = await prisma.hostSettings.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends HostSettingsUpdateManyAndReturnArgs>(args: SelectSubset<T, HostSettingsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HostSettingsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one HostSettings.
+     * @param {HostSettingsUpsertArgs} args - Arguments to update or create a HostSettings.
+     * @example
+     * // Update or create a HostSettings
+     * const hostSettings = await prisma.hostSettings.upsert({
+     *   create: {
+     *     // ... data to create a HostSettings
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the HostSettings we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HostSettingsUpsertArgs>(args: SelectSubset<T, HostSettingsUpsertArgs<ExtArgs>>): Prisma__HostSettingsClient<$Result.GetResult<Prisma.$HostSettingsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of HostSettings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HostSettingsCountArgs} args - Arguments to filter HostSettings to count.
+     * @example
+     * // Count the number of HostSettings
+     * const count = await prisma.hostSettings.count({
+     *   where: {
+     *     // ... the filter for the HostSettings we want to count
+     *   }
+     * })
+    **/
+    count<T extends HostSettingsCountArgs>(
+      args?: Subset<T, HostSettingsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], HostSettingsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a HostSettings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HostSettingsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends HostSettingsAggregateArgs>(args: Subset<T, HostSettingsAggregateArgs>): Prisma.PrismaPromise<GetHostSettingsAggregateType<T>>
+
+    /**
+     * Group by HostSettings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HostSettingsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends HostSettingsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: HostSettingsGroupByArgs['orderBy'] }
+        : { orderBy?: HostSettingsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, HostSettingsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHostSettingsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the HostSettings model
+   */
+  readonly fields: HostSettingsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for HostSettings.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__HostSettingsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the HostSettings model
+   */
+  interface HostSettingsFieldRefs {
+    readonly id: FieldRef<"HostSettings", 'Int'>
+    readonly userId: FieldRef<"HostSettings", 'Int'>
+    readonly emailBookings: FieldRef<"HostSettings", 'Boolean'>
+    readonly emailMessages: FieldRef<"HostSettings", 'Boolean'>
+    readonly emailPayouts: FieldRef<"HostSettings", 'Boolean'>
+    readonly pushBookings: FieldRef<"HostSettings", 'Boolean'>
+    readonly pushMessages: FieldRef<"HostSettings", 'Boolean'>
+    readonly pushPayouts: FieldRef<"HostSettings", 'Boolean'>
+    readonly companyName: FieldRef<"HostSettings", 'String'>
+    readonly kraPin: FieldRef<"HostSettings", 'String'>
+    readonly createdAt: FieldRef<"HostSettings", 'DateTime'>
+    readonly updatedAt: FieldRef<"HostSettings", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * HostSettings findUnique
+   */
+  export type HostSettingsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HostSettings
+     */
+    select?: HostSettingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HostSettings
+     */
+    omit?: HostSettingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HostSettingsInclude<ExtArgs> | null
+    /**
+     * Filter, which HostSettings to fetch.
+     */
+    where: HostSettingsWhereUniqueInput
+  }
+
+  /**
+   * HostSettings findUniqueOrThrow
+   */
+  export type HostSettingsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HostSettings
+     */
+    select?: HostSettingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HostSettings
+     */
+    omit?: HostSettingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HostSettingsInclude<ExtArgs> | null
+    /**
+     * Filter, which HostSettings to fetch.
+     */
+    where: HostSettingsWhereUniqueInput
+  }
+
+  /**
+   * HostSettings findFirst
+   */
+  export type HostSettingsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HostSettings
+     */
+    select?: HostSettingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HostSettings
+     */
+    omit?: HostSettingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HostSettingsInclude<ExtArgs> | null
+    /**
+     * Filter, which HostSettings to fetch.
+     */
+    where?: HostSettingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HostSettings to fetch.
+     */
+    orderBy?: HostSettingsOrderByWithRelationInput | HostSettingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HostSettings.
+     */
+    cursor?: HostSettingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HostSettings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HostSettings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HostSettings.
+     */
+    distinct?: HostSettingsScalarFieldEnum | HostSettingsScalarFieldEnum[]
+  }
+
+  /**
+   * HostSettings findFirstOrThrow
+   */
+  export type HostSettingsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HostSettings
+     */
+    select?: HostSettingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HostSettings
+     */
+    omit?: HostSettingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HostSettingsInclude<ExtArgs> | null
+    /**
+     * Filter, which HostSettings to fetch.
+     */
+    where?: HostSettingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HostSettings to fetch.
+     */
+    orderBy?: HostSettingsOrderByWithRelationInput | HostSettingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HostSettings.
+     */
+    cursor?: HostSettingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HostSettings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HostSettings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HostSettings.
+     */
+    distinct?: HostSettingsScalarFieldEnum | HostSettingsScalarFieldEnum[]
+  }
+
+  /**
+   * HostSettings findMany
+   */
+  export type HostSettingsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HostSettings
+     */
+    select?: HostSettingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HostSettings
+     */
+    omit?: HostSettingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HostSettingsInclude<ExtArgs> | null
+    /**
+     * Filter, which HostSettings to fetch.
+     */
+    where?: HostSettingsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HostSettings to fetch.
+     */
+    orderBy?: HostSettingsOrderByWithRelationInput | HostSettingsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing HostSettings.
+     */
+    cursor?: HostSettingsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HostSettings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HostSettings.
+     */
+    skip?: number
+    distinct?: HostSettingsScalarFieldEnum | HostSettingsScalarFieldEnum[]
+  }
+
+  /**
+   * HostSettings create
+   */
+  export type HostSettingsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HostSettings
+     */
+    select?: HostSettingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HostSettings
+     */
+    omit?: HostSettingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HostSettingsInclude<ExtArgs> | null
+    /**
+     * The data needed to create a HostSettings.
+     */
+    data: XOR<HostSettingsCreateInput, HostSettingsUncheckedCreateInput>
+  }
+
+  /**
+   * HostSettings createMany
+   */
+  export type HostSettingsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many HostSettings.
+     */
+    data: HostSettingsCreateManyInput | HostSettingsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HostSettings createManyAndReturn
+   */
+  export type HostSettingsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HostSettings
+     */
+    select?: HostSettingsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HostSettings
+     */
+    omit?: HostSettingsOmit<ExtArgs> | null
+    /**
+     * The data used to create many HostSettings.
+     */
+    data: HostSettingsCreateManyInput | HostSettingsCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HostSettingsIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * HostSettings update
+   */
+  export type HostSettingsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HostSettings
+     */
+    select?: HostSettingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HostSettings
+     */
+    omit?: HostSettingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HostSettingsInclude<ExtArgs> | null
+    /**
+     * The data needed to update a HostSettings.
+     */
+    data: XOR<HostSettingsUpdateInput, HostSettingsUncheckedUpdateInput>
+    /**
+     * Choose, which HostSettings to update.
+     */
+    where: HostSettingsWhereUniqueInput
+  }
+
+  /**
+   * HostSettings updateMany
+   */
+  export type HostSettingsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update HostSettings.
+     */
+    data: XOR<HostSettingsUpdateManyMutationInput, HostSettingsUncheckedUpdateManyInput>
+    /**
+     * Filter which HostSettings to update
+     */
+    where?: HostSettingsWhereInput
+    /**
+     * Limit how many HostSettings to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HostSettings updateManyAndReturn
+   */
+  export type HostSettingsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HostSettings
+     */
+    select?: HostSettingsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the HostSettings
+     */
+    omit?: HostSettingsOmit<ExtArgs> | null
+    /**
+     * The data used to update HostSettings.
+     */
+    data: XOR<HostSettingsUpdateManyMutationInput, HostSettingsUncheckedUpdateManyInput>
+    /**
+     * Filter which HostSettings to update
+     */
+    where?: HostSettingsWhereInput
+    /**
+     * Limit how many HostSettings to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HostSettingsIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * HostSettings upsert
+   */
+  export type HostSettingsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HostSettings
+     */
+    select?: HostSettingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HostSettings
+     */
+    omit?: HostSettingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HostSettingsInclude<ExtArgs> | null
+    /**
+     * The filter to search for the HostSettings to update in case it exists.
+     */
+    where: HostSettingsWhereUniqueInput
+    /**
+     * In case the HostSettings found by the `where` argument doesn't exist, create a new HostSettings with this data.
+     */
+    create: XOR<HostSettingsCreateInput, HostSettingsUncheckedCreateInput>
+    /**
+     * In case the HostSettings was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HostSettingsUpdateInput, HostSettingsUncheckedUpdateInput>
+  }
+
+  /**
+   * HostSettings delete
+   */
+  export type HostSettingsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HostSettings
+     */
+    select?: HostSettingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HostSettings
+     */
+    omit?: HostSettingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HostSettingsInclude<ExtArgs> | null
+    /**
+     * Filter which HostSettings to delete.
+     */
+    where: HostSettingsWhereUniqueInput
+  }
+
+  /**
+   * HostSettings deleteMany
+   */
+  export type HostSettingsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HostSettings to delete
+     */
+    where?: HostSettingsWhereInput
+    /**
+     * Limit how many HostSettings to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * HostSettings without action
+   */
+  export type HostSettingsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HostSettings
+     */
+    select?: HostSettingsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HostSettings
+     */
+    omit?: HostSettingsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HostSettingsInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model PaymentMethod
+   */
+
+  export type AggregatePaymentMethod = {
+    _count: PaymentMethodCountAggregateOutputType | null
+    _avg: PaymentMethodAvgAggregateOutputType | null
+    _sum: PaymentMethodSumAggregateOutputType | null
+    _min: PaymentMethodMinAggregateOutputType | null
+    _max: PaymentMethodMaxAggregateOutputType | null
+  }
+
+  export type PaymentMethodAvgAggregateOutputType = {
+    id: number | null
+    userId: number | null
+  }
+
+  export type PaymentMethodSumAggregateOutputType = {
+    id: number | null
+    userId: number | null
+  }
+
+  export type PaymentMethodMinAggregateOutputType = {
+    id: number | null
+    userId: number | null
+    type: string | null
+    details: string | null
+    isPrimary: boolean | null
+    createdAt: Date | null
+  }
+
+  export type PaymentMethodMaxAggregateOutputType = {
+    id: number | null
+    userId: number | null
+    type: string | null
+    details: string | null
+    isPrimary: boolean | null
+    createdAt: Date | null
+  }
+
+  export type PaymentMethodCountAggregateOutputType = {
+    id: number
+    userId: number
+    type: number
+    details: number
+    isPrimary: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type PaymentMethodAvgAggregateInputType = {
+    id?: true
+    userId?: true
+  }
+
+  export type PaymentMethodSumAggregateInputType = {
+    id?: true
+    userId?: true
+  }
+
+  export type PaymentMethodMinAggregateInputType = {
+    id?: true
+    userId?: true
+    type?: true
+    details?: true
+    isPrimary?: true
+    createdAt?: true
+  }
+
+  export type PaymentMethodMaxAggregateInputType = {
+    id?: true
+    userId?: true
+    type?: true
+    details?: true
+    isPrimary?: true
+    createdAt?: true
+  }
+
+  export type PaymentMethodCountAggregateInputType = {
+    id?: true
+    userId?: true
+    type?: true
+    details?: true
+    isPrimary?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type PaymentMethodAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which PaymentMethod to aggregate.
+     */
+    where?: PaymentMethodWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PaymentMethods to fetch.
+     */
+    orderBy?: PaymentMethodOrderByWithRelationInput | PaymentMethodOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: PaymentMethodWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PaymentMethods from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PaymentMethods.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned PaymentMethods
+    **/
+    _count?: true | PaymentMethodCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: PaymentMethodAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: PaymentMethodSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: PaymentMethodMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: PaymentMethodMaxAggregateInputType
+  }
+
+  export type GetPaymentMethodAggregateType<T extends PaymentMethodAggregateArgs> = {
+        [P in keyof T & keyof AggregatePaymentMethod]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePaymentMethod[P]>
+      : GetScalarType<T[P], AggregatePaymentMethod[P]>
+  }
+
+
+
+
+  export type PaymentMethodGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PaymentMethodWhereInput
+    orderBy?: PaymentMethodOrderByWithAggregationInput | PaymentMethodOrderByWithAggregationInput[]
+    by: PaymentMethodScalarFieldEnum[] | PaymentMethodScalarFieldEnum
+    having?: PaymentMethodScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: PaymentMethodCountAggregateInputType | true
+    _avg?: PaymentMethodAvgAggregateInputType
+    _sum?: PaymentMethodSumAggregateInputType
+    _min?: PaymentMethodMinAggregateInputType
+    _max?: PaymentMethodMaxAggregateInputType
+  }
+
+  export type PaymentMethodGroupByOutputType = {
+    id: number
+    userId: number
+    type: string
+    details: string
+    isPrimary: boolean
+    createdAt: Date
+    _count: PaymentMethodCountAggregateOutputType | null
+    _avg: PaymentMethodAvgAggregateOutputType | null
+    _sum: PaymentMethodSumAggregateOutputType | null
+    _min: PaymentMethodMinAggregateOutputType | null
+    _max: PaymentMethodMaxAggregateOutputType | null
+  }
+
+  type GetPaymentMethodGroupByPayload<T extends PaymentMethodGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<PaymentMethodGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof PaymentMethodGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], PaymentMethodGroupByOutputType[P]>
+            : GetScalarType<T[P], PaymentMethodGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type PaymentMethodSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    type?: boolean
+    details?: boolean
+    isPrimary?: boolean
+    createdAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["paymentMethod"]>
+
+  export type PaymentMethodSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    type?: boolean
+    details?: boolean
+    isPrimary?: boolean
+    createdAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["paymentMethod"]>
+
+  export type PaymentMethodSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    type?: boolean
+    details?: boolean
+    isPrimary?: boolean
+    createdAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["paymentMethod"]>
+
+  export type PaymentMethodSelectScalar = {
+    id?: boolean
+    userId?: boolean
+    type?: boolean
+    details?: boolean
+    isPrimary?: boolean
+    createdAt?: boolean
+  }
+
+  export type PaymentMethodOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "type" | "details" | "isPrimary" | "createdAt", ExtArgs["result"]["paymentMethod"]>
+  export type PaymentMethodInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type PaymentMethodIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type PaymentMethodIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+
+  export type $PaymentMethodPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "PaymentMethod"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      userId: number
+      type: string
+      details: string
+      isPrimary: boolean
+      createdAt: Date
+    }, ExtArgs["result"]["paymentMethod"]>
+    composites: {}
+  }
+
+  type PaymentMethodGetPayload<S extends boolean | null | undefined | PaymentMethodDefaultArgs> = $Result.GetResult<Prisma.$PaymentMethodPayload, S>
+
+  type PaymentMethodCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<PaymentMethodFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: PaymentMethodCountAggregateInputType | true
+    }
+
+  export interface PaymentMethodDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['PaymentMethod'], meta: { name: 'PaymentMethod' } }
+    /**
+     * Find zero or one PaymentMethod that matches the filter.
+     * @param {PaymentMethodFindUniqueArgs} args - Arguments to find a PaymentMethod
+     * @example
+     * // Get one PaymentMethod
+     * const paymentMethod = await prisma.paymentMethod.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends PaymentMethodFindUniqueArgs>(args: SelectSubset<T, PaymentMethodFindUniqueArgs<ExtArgs>>): Prisma__PaymentMethodClient<$Result.GetResult<Prisma.$PaymentMethodPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one PaymentMethod that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {PaymentMethodFindUniqueOrThrowArgs} args - Arguments to find a PaymentMethod
+     * @example
+     * // Get one PaymentMethod
+     * const paymentMethod = await prisma.paymentMethod.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends PaymentMethodFindUniqueOrThrowArgs>(args: SelectSubset<T, PaymentMethodFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PaymentMethodClient<$Result.GetResult<Prisma.$PaymentMethodPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first PaymentMethod that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PaymentMethodFindFirstArgs} args - Arguments to find a PaymentMethod
+     * @example
+     * // Get one PaymentMethod
+     * const paymentMethod = await prisma.paymentMethod.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends PaymentMethodFindFirstArgs>(args?: SelectSubset<T, PaymentMethodFindFirstArgs<ExtArgs>>): Prisma__PaymentMethodClient<$Result.GetResult<Prisma.$PaymentMethodPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first PaymentMethod that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PaymentMethodFindFirstOrThrowArgs} args - Arguments to find a PaymentMethod
+     * @example
+     * // Get one PaymentMethod
+     * const paymentMethod = await prisma.paymentMethod.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends PaymentMethodFindFirstOrThrowArgs>(args?: SelectSubset<T, PaymentMethodFindFirstOrThrowArgs<ExtArgs>>): Prisma__PaymentMethodClient<$Result.GetResult<Prisma.$PaymentMethodPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more PaymentMethods that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PaymentMethodFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all PaymentMethods
+     * const paymentMethods = await prisma.paymentMethod.findMany()
+     * 
+     * // Get first 10 PaymentMethods
+     * const paymentMethods = await prisma.paymentMethod.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const paymentMethodWithIdOnly = await prisma.paymentMethod.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends PaymentMethodFindManyArgs>(args?: SelectSubset<T, PaymentMethodFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PaymentMethodPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a PaymentMethod.
+     * @param {PaymentMethodCreateArgs} args - Arguments to create a PaymentMethod.
+     * @example
+     * // Create one PaymentMethod
+     * const PaymentMethod = await prisma.paymentMethod.create({
+     *   data: {
+     *     // ... data to create a PaymentMethod
+     *   }
+     * })
+     * 
+     */
+    create<T extends PaymentMethodCreateArgs>(args: SelectSubset<T, PaymentMethodCreateArgs<ExtArgs>>): Prisma__PaymentMethodClient<$Result.GetResult<Prisma.$PaymentMethodPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many PaymentMethods.
+     * @param {PaymentMethodCreateManyArgs} args - Arguments to create many PaymentMethods.
+     * @example
+     * // Create many PaymentMethods
+     * const paymentMethod = await prisma.paymentMethod.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends PaymentMethodCreateManyArgs>(args?: SelectSubset<T, PaymentMethodCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many PaymentMethods and returns the data saved in the database.
+     * @param {PaymentMethodCreateManyAndReturnArgs} args - Arguments to create many PaymentMethods.
+     * @example
+     * // Create many PaymentMethods
+     * const paymentMethod = await prisma.paymentMethod.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many PaymentMethods and only return the `id`
+     * const paymentMethodWithIdOnly = await prisma.paymentMethod.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends PaymentMethodCreateManyAndReturnArgs>(args?: SelectSubset<T, PaymentMethodCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PaymentMethodPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a PaymentMethod.
+     * @param {PaymentMethodDeleteArgs} args - Arguments to delete one PaymentMethod.
+     * @example
+     * // Delete one PaymentMethod
+     * const PaymentMethod = await prisma.paymentMethod.delete({
+     *   where: {
+     *     // ... filter to delete one PaymentMethod
+     *   }
+     * })
+     * 
+     */
+    delete<T extends PaymentMethodDeleteArgs>(args: SelectSubset<T, PaymentMethodDeleteArgs<ExtArgs>>): Prisma__PaymentMethodClient<$Result.GetResult<Prisma.$PaymentMethodPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one PaymentMethod.
+     * @param {PaymentMethodUpdateArgs} args - Arguments to update one PaymentMethod.
+     * @example
+     * // Update one PaymentMethod
+     * const paymentMethod = await prisma.paymentMethod.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends PaymentMethodUpdateArgs>(args: SelectSubset<T, PaymentMethodUpdateArgs<ExtArgs>>): Prisma__PaymentMethodClient<$Result.GetResult<Prisma.$PaymentMethodPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more PaymentMethods.
+     * @param {PaymentMethodDeleteManyArgs} args - Arguments to filter PaymentMethods to delete.
+     * @example
+     * // Delete a few PaymentMethods
+     * const { count } = await prisma.paymentMethod.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends PaymentMethodDeleteManyArgs>(args?: SelectSubset<T, PaymentMethodDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more PaymentMethods.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PaymentMethodUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many PaymentMethods
+     * const paymentMethod = await prisma.paymentMethod.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends PaymentMethodUpdateManyArgs>(args: SelectSubset<T, PaymentMethodUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more PaymentMethods and returns the data updated in the database.
+     * @param {PaymentMethodUpdateManyAndReturnArgs} args - Arguments to update many PaymentMethods.
+     * @example
+     * // Update many PaymentMethods
+     * const paymentMethod = await prisma.paymentMethod.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more PaymentMethods and only return the `id`
+     * const paymentMethodWithIdOnly = await prisma.paymentMethod.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends PaymentMethodUpdateManyAndReturnArgs>(args: SelectSubset<T, PaymentMethodUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PaymentMethodPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one PaymentMethod.
+     * @param {PaymentMethodUpsertArgs} args - Arguments to update or create a PaymentMethod.
+     * @example
+     * // Update or create a PaymentMethod
+     * const paymentMethod = await prisma.paymentMethod.upsert({
+     *   create: {
+     *     // ... data to create a PaymentMethod
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the PaymentMethod we want to update
+     *   }
+     * })
+     */
+    upsert<T extends PaymentMethodUpsertArgs>(args: SelectSubset<T, PaymentMethodUpsertArgs<ExtArgs>>): Prisma__PaymentMethodClient<$Result.GetResult<Prisma.$PaymentMethodPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of PaymentMethods.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PaymentMethodCountArgs} args - Arguments to filter PaymentMethods to count.
+     * @example
+     * // Count the number of PaymentMethods
+     * const count = await prisma.paymentMethod.count({
+     *   where: {
+     *     // ... the filter for the PaymentMethods we want to count
+     *   }
+     * })
+    **/
+    count<T extends PaymentMethodCountArgs>(
+      args?: Subset<T, PaymentMethodCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], PaymentMethodCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a PaymentMethod.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PaymentMethodAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends PaymentMethodAggregateArgs>(args: Subset<T, PaymentMethodAggregateArgs>): Prisma.PrismaPromise<GetPaymentMethodAggregateType<T>>
+
+    /**
+     * Group by PaymentMethod.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PaymentMethodGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends PaymentMethodGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: PaymentMethodGroupByArgs['orderBy'] }
+        : { orderBy?: PaymentMethodGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, PaymentMethodGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPaymentMethodGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the PaymentMethod model
+   */
+  readonly fields: PaymentMethodFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for PaymentMethod.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__PaymentMethodClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the PaymentMethod model
+   */
+  interface PaymentMethodFieldRefs {
+    readonly id: FieldRef<"PaymentMethod", 'Int'>
+    readonly userId: FieldRef<"PaymentMethod", 'Int'>
+    readonly type: FieldRef<"PaymentMethod", 'String'>
+    readonly details: FieldRef<"PaymentMethod", 'String'>
+    readonly isPrimary: FieldRef<"PaymentMethod", 'Boolean'>
+    readonly createdAt: FieldRef<"PaymentMethod", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * PaymentMethod findUnique
+   */
+  export type PaymentMethodFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PaymentMethod
+     */
+    select?: PaymentMethodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PaymentMethod
+     */
+    omit?: PaymentMethodOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PaymentMethodInclude<ExtArgs> | null
+    /**
+     * Filter, which PaymentMethod to fetch.
+     */
+    where: PaymentMethodWhereUniqueInput
+  }
+
+  /**
+   * PaymentMethod findUniqueOrThrow
+   */
+  export type PaymentMethodFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PaymentMethod
+     */
+    select?: PaymentMethodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PaymentMethod
+     */
+    omit?: PaymentMethodOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PaymentMethodInclude<ExtArgs> | null
+    /**
+     * Filter, which PaymentMethod to fetch.
+     */
+    where: PaymentMethodWhereUniqueInput
+  }
+
+  /**
+   * PaymentMethod findFirst
+   */
+  export type PaymentMethodFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PaymentMethod
+     */
+    select?: PaymentMethodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PaymentMethod
+     */
+    omit?: PaymentMethodOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PaymentMethodInclude<ExtArgs> | null
+    /**
+     * Filter, which PaymentMethod to fetch.
+     */
+    where?: PaymentMethodWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PaymentMethods to fetch.
+     */
+    orderBy?: PaymentMethodOrderByWithRelationInput | PaymentMethodOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for PaymentMethods.
+     */
+    cursor?: PaymentMethodWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PaymentMethods from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PaymentMethods.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of PaymentMethods.
+     */
+    distinct?: PaymentMethodScalarFieldEnum | PaymentMethodScalarFieldEnum[]
+  }
+
+  /**
+   * PaymentMethod findFirstOrThrow
+   */
+  export type PaymentMethodFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PaymentMethod
+     */
+    select?: PaymentMethodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PaymentMethod
+     */
+    omit?: PaymentMethodOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PaymentMethodInclude<ExtArgs> | null
+    /**
+     * Filter, which PaymentMethod to fetch.
+     */
+    where?: PaymentMethodWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PaymentMethods to fetch.
+     */
+    orderBy?: PaymentMethodOrderByWithRelationInput | PaymentMethodOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for PaymentMethods.
+     */
+    cursor?: PaymentMethodWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PaymentMethods from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PaymentMethods.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of PaymentMethods.
+     */
+    distinct?: PaymentMethodScalarFieldEnum | PaymentMethodScalarFieldEnum[]
+  }
+
+  /**
+   * PaymentMethod findMany
+   */
+  export type PaymentMethodFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PaymentMethod
+     */
+    select?: PaymentMethodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PaymentMethod
+     */
+    omit?: PaymentMethodOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PaymentMethodInclude<ExtArgs> | null
+    /**
+     * Filter, which PaymentMethods to fetch.
+     */
+    where?: PaymentMethodWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PaymentMethods to fetch.
+     */
+    orderBy?: PaymentMethodOrderByWithRelationInput | PaymentMethodOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing PaymentMethods.
+     */
+    cursor?: PaymentMethodWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PaymentMethods from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PaymentMethods.
+     */
+    skip?: number
+    distinct?: PaymentMethodScalarFieldEnum | PaymentMethodScalarFieldEnum[]
+  }
+
+  /**
+   * PaymentMethod create
+   */
+  export type PaymentMethodCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PaymentMethod
+     */
+    select?: PaymentMethodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PaymentMethod
+     */
+    omit?: PaymentMethodOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PaymentMethodInclude<ExtArgs> | null
+    /**
+     * The data needed to create a PaymentMethod.
+     */
+    data: XOR<PaymentMethodCreateInput, PaymentMethodUncheckedCreateInput>
+  }
+
+  /**
+   * PaymentMethod createMany
+   */
+  export type PaymentMethodCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many PaymentMethods.
+     */
+    data: PaymentMethodCreateManyInput | PaymentMethodCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * PaymentMethod createManyAndReturn
+   */
+  export type PaymentMethodCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PaymentMethod
+     */
+    select?: PaymentMethodSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the PaymentMethod
+     */
+    omit?: PaymentMethodOmit<ExtArgs> | null
+    /**
+     * The data used to create many PaymentMethods.
+     */
+    data: PaymentMethodCreateManyInput | PaymentMethodCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PaymentMethodIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * PaymentMethod update
+   */
+  export type PaymentMethodUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PaymentMethod
+     */
+    select?: PaymentMethodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PaymentMethod
+     */
+    omit?: PaymentMethodOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PaymentMethodInclude<ExtArgs> | null
+    /**
+     * The data needed to update a PaymentMethod.
+     */
+    data: XOR<PaymentMethodUpdateInput, PaymentMethodUncheckedUpdateInput>
+    /**
+     * Choose, which PaymentMethod to update.
+     */
+    where: PaymentMethodWhereUniqueInput
+  }
+
+  /**
+   * PaymentMethod updateMany
+   */
+  export type PaymentMethodUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update PaymentMethods.
+     */
+    data: XOR<PaymentMethodUpdateManyMutationInput, PaymentMethodUncheckedUpdateManyInput>
+    /**
+     * Filter which PaymentMethods to update
+     */
+    where?: PaymentMethodWhereInput
+    /**
+     * Limit how many PaymentMethods to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * PaymentMethod updateManyAndReturn
+   */
+  export type PaymentMethodUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PaymentMethod
+     */
+    select?: PaymentMethodSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the PaymentMethod
+     */
+    omit?: PaymentMethodOmit<ExtArgs> | null
+    /**
+     * The data used to update PaymentMethods.
+     */
+    data: XOR<PaymentMethodUpdateManyMutationInput, PaymentMethodUncheckedUpdateManyInput>
+    /**
+     * Filter which PaymentMethods to update
+     */
+    where?: PaymentMethodWhereInput
+    /**
+     * Limit how many PaymentMethods to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PaymentMethodIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * PaymentMethod upsert
+   */
+  export type PaymentMethodUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PaymentMethod
+     */
+    select?: PaymentMethodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PaymentMethod
+     */
+    omit?: PaymentMethodOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PaymentMethodInclude<ExtArgs> | null
+    /**
+     * The filter to search for the PaymentMethod to update in case it exists.
+     */
+    where: PaymentMethodWhereUniqueInput
+    /**
+     * In case the PaymentMethod found by the `where` argument doesn't exist, create a new PaymentMethod with this data.
+     */
+    create: XOR<PaymentMethodCreateInput, PaymentMethodUncheckedCreateInput>
+    /**
+     * In case the PaymentMethod was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<PaymentMethodUpdateInput, PaymentMethodUncheckedUpdateInput>
+  }
+
+  /**
+   * PaymentMethod delete
+   */
+  export type PaymentMethodDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PaymentMethod
+     */
+    select?: PaymentMethodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PaymentMethod
+     */
+    omit?: PaymentMethodOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PaymentMethodInclude<ExtArgs> | null
+    /**
+     * Filter which PaymentMethod to delete.
+     */
+    where: PaymentMethodWhereUniqueInput
+  }
+
+  /**
+   * PaymentMethod deleteMany
+   */
+  export type PaymentMethodDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which PaymentMethods to delete
+     */
+    where?: PaymentMethodWhereInput
+    /**
+     * Limit how many PaymentMethods to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * PaymentMethod without action
+   */
+  export type PaymentMethodDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PaymentMethod
+     */
+    select?: PaymentMethodSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PaymentMethod
+     */
+    omit?: PaymentMethodOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PaymentMethodInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Conversation
+   */
+
+  export type AggregateConversation = {
+    _count: ConversationCountAggregateOutputType | null
+    _avg: ConversationAvgAggregateOutputType | null
+    _sum: ConversationSumAggregateOutputType | null
+    _min: ConversationMinAggregateOutputType | null
+    _max: ConversationMaxAggregateOutputType | null
+  }
+
+  export type ConversationAvgAggregateOutputType = {
+    id: number | null
+    bookingId: number | null
+  }
+
+  export type ConversationSumAggregateOutputType = {
+    id: number | null
+    bookingId: number | null
+  }
+
+  export type ConversationMinAggregateOutputType = {
+    id: number | null
+    bookingId: number | null
+    createdAt: Date | null
+  }
+
+  export type ConversationMaxAggregateOutputType = {
+    id: number | null
+    bookingId: number | null
+    createdAt: Date | null
+  }
+
+  export type ConversationCountAggregateOutputType = {
+    id: number
+    bookingId: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type ConversationAvgAggregateInputType = {
+    id?: true
+    bookingId?: true
+  }
+
+  export type ConversationSumAggregateInputType = {
+    id?: true
+    bookingId?: true
+  }
+
+  export type ConversationMinAggregateInputType = {
+    id?: true
+    bookingId?: true
+    createdAt?: true
+  }
+
+  export type ConversationMaxAggregateInputType = {
+    id?: true
+    bookingId?: true
+    createdAt?: true
+  }
+
+  export type ConversationCountAggregateInputType = {
+    id?: true
+    bookingId?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type ConversationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Conversation to aggregate.
+     */
+    where?: ConversationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Conversations to fetch.
+     */
+    orderBy?: ConversationOrderByWithRelationInput | ConversationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ConversationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Conversations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Conversations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Conversations
+    **/
+    _count?: true | ConversationCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ConversationAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ConversationSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ConversationMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ConversationMaxAggregateInputType
+  }
+
+  export type GetConversationAggregateType<T extends ConversationAggregateArgs> = {
+        [P in keyof T & keyof AggregateConversation]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateConversation[P]>
+      : GetScalarType<T[P], AggregateConversation[P]>
+  }
+
+
+
+
+  export type ConversationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ConversationWhereInput
+    orderBy?: ConversationOrderByWithAggregationInput | ConversationOrderByWithAggregationInput[]
+    by: ConversationScalarFieldEnum[] | ConversationScalarFieldEnum
+    having?: ConversationScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ConversationCountAggregateInputType | true
+    _avg?: ConversationAvgAggregateInputType
+    _sum?: ConversationSumAggregateInputType
+    _min?: ConversationMinAggregateInputType
+    _max?: ConversationMaxAggregateInputType
+  }
+
+  export type ConversationGroupByOutputType = {
+    id: number
+    bookingId: number
+    createdAt: Date
+    _count: ConversationCountAggregateOutputType | null
+    _avg: ConversationAvgAggregateOutputType | null
+    _sum: ConversationSumAggregateOutputType | null
+    _min: ConversationMinAggregateOutputType | null
+    _max: ConversationMaxAggregateOutputType | null
+  }
+
+  type GetConversationGroupByPayload<T extends ConversationGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ConversationGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ConversationGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ConversationGroupByOutputType[P]>
+            : GetScalarType<T[P], ConversationGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ConversationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    bookingId?: boolean
+    createdAt?: boolean
+    messages?: boolean | Conversation$messagesArgs<ExtArgs>
+    _count?: boolean | ConversationCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["conversation"]>
+
+  export type ConversationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    bookingId?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["conversation"]>
+
+  export type ConversationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    bookingId?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["conversation"]>
+
+  export type ConversationSelectScalar = {
+    id?: boolean
+    bookingId?: boolean
+    createdAt?: boolean
+  }
+
+  export type ConversationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "bookingId" | "createdAt", ExtArgs["result"]["conversation"]>
+  export type ConversationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    messages?: boolean | Conversation$messagesArgs<ExtArgs>
+    _count?: boolean | ConversationCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type ConversationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type ConversationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $ConversationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Conversation"
+    objects: {
+      messages: Prisma.$MessagePayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      bookingId: number
+      createdAt: Date
+    }, ExtArgs["result"]["conversation"]>
+    composites: {}
+  }
+
+  type ConversationGetPayload<S extends boolean | null | undefined | ConversationDefaultArgs> = $Result.GetResult<Prisma.$ConversationPayload, S>
+
+  type ConversationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ConversationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ConversationCountAggregateInputType | true
+    }
+
+  export interface ConversationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Conversation'], meta: { name: 'Conversation' } }
+    /**
+     * Find zero or one Conversation that matches the filter.
+     * @param {ConversationFindUniqueArgs} args - Arguments to find a Conversation
+     * @example
+     * // Get one Conversation
+     * const conversation = await prisma.conversation.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ConversationFindUniqueArgs>(args: SelectSubset<T, ConversationFindUniqueArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Conversation that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ConversationFindUniqueOrThrowArgs} args - Arguments to find a Conversation
+     * @example
+     * // Get one Conversation
+     * const conversation = await prisma.conversation.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ConversationFindUniqueOrThrowArgs>(args: SelectSubset<T, ConversationFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Conversation that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationFindFirstArgs} args - Arguments to find a Conversation
+     * @example
+     * // Get one Conversation
+     * const conversation = await prisma.conversation.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ConversationFindFirstArgs>(args?: SelectSubset<T, ConversationFindFirstArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Conversation that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationFindFirstOrThrowArgs} args - Arguments to find a Conversation
+     * @example
+     * // Get one Conversation
+     * const conversation = await prisma.conversation.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ConversationFindFirstOrThrowArgs>(args?: SelectSubset<T, ConversationFindFirstOrThrowArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Conversations that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Conversations
+     * const conversations = await prisma.conversation.findMany()
+     * 
+     * // Get first 10 Conversations
+     * const conversations = await prisma.conversation.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const conversationWithIdOnly = await prisma.conversation.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ConversationFindManyArgs>(args?: SelectSubset<T, ConversationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Conversation.
+     * @param {ConversationCreateArgs} args - Arguments to create a Conversation.
+     * @example
+     * // Create one Conversation
+     * const Conversation = await prisma.conversation.create({
+     *   data: {
+     *     // ... data to create a Conversation
+     *   }
+     * })
+     * 
+     */
+    create<T extends ConversationCreateArgs>(args: SelectSubset<T, ConversationCreateArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Conversations.
+     * @param {ConversationCreateManyArgs} args - Arguments to create many Conversations.
+     * @example
+     * // Create many Conversations
+     * const conversation = await prisma.conversation.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ConversationCreateManyArgs>(args?: SelectSubset<T, ConversationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Conversations and returns the data saved in the database.
+     * @param {ConversationCreateManyAndReturnArgs} args - Arguments to create many Conversations.
+     * @example
+     * // Create many Conversations
+     * const conversation = await prisma.conversation.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Conversations and only return the `id`
+     * const conversationWithIdOnly = await prisma.conversation.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ConversationCreateManyAndReturnArgs>(args?: SelectSubset<T, ConversationCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Conversation.
+     * @param {ConversationDeleteArgs} args - Arguments to delete one Conversation.
+     * @example
+     * // Delete one Conversation
+     * const Conversation = await prisma.conversation.delete({
+     *   where: {
+     *     // ... filter to delete one Conversation
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ConversationDeleteArgs>(args: SelectSubset<T, ConversationDeleteArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Conversation.
+     * @param {ConversationUpdateArgs} args - Arguments to update one Conversation.
+     * @example
+     * // Update one Conversation
+     * const conversation = await prisma.conversation.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ConversationUpdateArgs>(args: SelectSubset<T, ConversationUpdateArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Conversations.
+     * @param {ConversationDeleteManyArgs} args - Arguments to filter Conversations to delete.
+     * @example
+     * // Delete a few Conversations
+     * const { count } = await prisma.conversation.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ConversationDeleteManyArgs>(args?: SelectSubset<T, ConversationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Conversations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Conversations
+     * const conversation = await prisma.conversation.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ConversationUpdateManyArgs>(args: SelectSubset<T, ConversationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Conversations and returns the data updated in the database.
+     * @param {ConversationUpdateManyAndReturnArgs} args - Arguments to update many Conversations.
+     * @example
+     * // Update many Conversations
+     * const conversation = await prisma.conversation.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Conversations and only return the `id`
+     * const conversationWithIdOnly = await prisma.conversation.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ConversationUpdateManyAndReturnArgs>(args: SelectSubset<T, ConversationUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Conversation.
+     * @param {ConversationUpsertArgs} args - Arguments to update or create a Conversation.
+     * @example
+     * // Update or create a Conversation
+     * const conversation = await prisma.conversation.upsert({
+     *   create: {
+     *     // ... data to create a Conversation
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Conversation we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ConversationUpsertArgs>(args: SelectSubset<T, ConversationUpsertArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Conversations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationCountArgs} args - Arguments to filter Conversations to count.
+     * @example
+     * // Count the number of Conversations
+     * const count = await prisma.conversation.count({
+     *   where: {
+     *     // ... the filter for the Conversations we want to count
+     *   }
+     * })
+    **/
+    count<T extends ConversationCountArgs>(
+      args?: Subset<T, ConversationCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ConversationCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Conversation.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ConversationAggregateArgs>(args: Subset<T, ConversationAggregateArgs>): Prisma.PrismaPromise<GetConversationAggregateType<T>>
+
+    /**
+     * Group by Conversation.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ConversationGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ConversationGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ConversationGroupByArgs['orderBy'] }
+        : { orderBy?: ConversationGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ConversationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetConversationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Conversation model
+   */
+  readonly fields: ConversationFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Conversation.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ConversationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    messages<T extends Conversation$messagesArgs<ExtArgs> = {}>(args?: Subset<T, Conversation$messagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Conversation model
+   */
+  interface ConversationFieldRefs {
+    readonly id: FieldRef<"Conversation", 'Int'>
+    readonly bookingId: FieldRef<"Conversation", 'Int'>
+    readonly createdAt: FieldRef<"Conversation", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Conversation findUnique
+   */
+  export type ConversationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * Filter, which Conversation to fetch.
+     */
+    where: ConversationWhereUniqueInput
+  }
+
+  /**
+   * Conversation findUniqueOrThrow
+   */
+  export type ConversationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * Filter, which Conversation to fetch.
+     */
+    where: ConversationWhereUniqueInput
+  }
+
+  /**
+   * Conversation findFirst
+   */
+  export type ConversationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * Filter, which Conversation to fetch.
+     */
+    where?: ConversationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Conversations to fetch.
+     */
+    orderBy?: ConversationOrderByWithRelationInput | ConversationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Conversations.
+     */
+    cursor?: ConversationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Conversations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Conversations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Conversations.
+     */
+    distinct?: ConversationScalarFieldEnum | ConversationScalarFieldEnum[]
+  }
+
+  /**
+   * Conversation findFirstOrThrow
+   */
+  export type ConversationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * Filter, which Conversation to fetch.
+     */
+    where?: ConversationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Conversations to fetch.
+     */
+    orderBy?: ConversationOrderByWithRelationInput | ConversationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Conversations.
+     */
+    cursor?: ConversationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Conversations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Conversations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Conversations.
+     */
+    distinct?: ConversationScalarFieldEnum | ConversationScalarFieldEnum[]
+  }
+
+  /**
+   * Conversation findMany
+   */
+  export type ConversationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * Filter, which Conversations to fetch.
+     */
+    where?: ConversationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Conversations to fetch.
+     */
+    orderBy?: ConversationOrderByWithRelationInput | ConversationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Conversations.
+     */
+    cursor?: ConversationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Conversations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Conversations.
+     */
+    skip?: number
+    distinct?: ConversationScalarFieldEnum | ConversationScalarFieldEnum[]
+  }
+
+  /**
+   * Conversation create
+   */
+  export type ConversationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Conversation.
+     */
+    data: XOR<ConversationCreateInput, ConversationUncheckedCreateInput>
+  }
+
+  /**
+   * Conversation createMany
+   */
+  export type ConversationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Conversations.
+     */
+    data: ConversationCreateManyInput | ConversationCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Conversation createManyAndReturn
+   */
+  export type ConversationCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * The data used to create many Conversations.
+     */
+    data: ConversationCreateManyInput | ConversationCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Conversation update
+   */
+  export type ConversationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Conversation.
+     */
+    data: XOR<ConversationUpdateInput, ConversationUncheckedUpdateInput>
+    /**
+     * Choose, which Conversation to update.
+     */
+    where: ConversationWhereUniqueInput
+  }
+
+  /**
+   * Conversation updateMany
+   */
+  export type ConversationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Conversations.
+     */
+    data: XOR<ConversationUpdateManyMutationInput, ConversationUncheckedUpdateManyInput>
+    /**
+     * Filter which Conversations to update
+     */
+    where?: ConversationWhereInput
+    /**
+     * Limit how many Conversations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Conversation updateManyAndReturn
+   */
+  export type ConversationUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * The data used to update Conversations.
+     */
+    data: XOR<ConversationUpdateManyMutationInput, ConversationUncheckedUpdateManyInput>
+    /**
+     * Filter which Conversations to update
+     */
+    where?: ConversationWhereInput
+    /**
+     * Limit how many Conversations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Conversation upsert
+   */
+  export type ConversationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Conversation to update in case it exists.
+     */
+    where: ConversationWhereUniqueInput
+    /**
+     * In case the Conversation found by the `where` argument doesn't exist, create a new Conversation with this data.
+     */
+    create: XOR<ConversationCreateInput, ConversationUncheckedCreateInput>
+    /**
+     * In case the Conversation was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ConversationUpdateInput, ConversationUncheckedUpdateInput>
+  }
+
+  /**
+   * Conversation delete
+   */
+  export type ConversationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+    /**
+     * Filter which Conversation to delete.
+     */
+    where: ConversationWhereUniqueInput
+  }
+
+  /**
+   * Conversation deleteMany
+   */
+  export type ConversationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Conversations to delete
+     */
+    where?: ConversationWhereInput
+    /**
+     * Limit how many Conversations to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Conversation.messages
+   */
+  export type Conversation$messagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    where?: MessageWhereInput
+    orderBy?: MessageOrderByWithRelationInput | MessageOrderByWithRelationInput[]
+    cursor?: MessageWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: MessageScalarFieldEnum | MessageScalarFieldEnum[]
+  }
+
+  /**
+   * Conversation without action
+   */
+  export type ConversationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Conversation
+     */
+    select?: ConversationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Conversation
+     */
+    omit?: ConversationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ConversationInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Message
+   */
+
+  export type AggregateMessage = {
+    _count: MessageCountAggregateOutputType | null
+    _avg: MessageAvgAggregateOutputType | null
+    _sum: MessageSumAggregateOutputType | null
+    _min: MessageMinAggregateOutputType | null
+    _max: MessageMaxAggregateOutputType | null
+  }
+
+  export type MessageAvgAggregateOutputType = {
+    id: number | null
+    conversationId: number | null
+    senderId: number | null
+    receiverId: number | null
+  }
+
+  export type MessageSumAggregateOutputType = {
+    id: number | null
+    conversationId: number | null
+    senderId: number | null
+    receiverId: number | null
+  }
+
+  export type MessageMinAggregateOutputType = {
+    id: number | null
+    conversationId: number | null
+    senderId: number | null
+    receiverId: number | null
+    content: string | null
+    timestamp: Date | null
+  }
+
+  export type MessageMaxAggregateOutputType = {
+    id: number | null
+    conversationId: number | null
+    senderId: number | null
+    receiverId: number | null
+    content: string | null
+    timestamp: Date | null
+  }
+
+  export type MessageCountAggregateOutputType = {
+    id: number
+    conversationId: number
+    senderId: number
+    receiverId: number
+    content: number
+    timestamp: number
+    _all: number
+  }
+
+
+  export type MessageAvgAggregateInputType = {
+    id?: true
+    conversationId?: true
+    senderId?: true
+    receiverId?: true
+  }
+
+  export type MessageSumAggregateInputType = {
+    id?: true
+    conversationId?: true
+    senderId?: true
+    receiverId?: true
+  }
+
+  export type MessageMinAggregateInputType = {
+    id?: true
+    conversationId?: true
+    senderId?: true
+    receiverId?: true
+    content?: true
+    timestamp?: true
+  }
+
+  export type MessageMaxAggregateInputType = {
+    id?: true
+    conversationId?: true
+    senderId?: true
+    receiverId?: true
+    content?: true
+    timestamp?: true
+  }
+
+  export type MessageCountAggregateInputType = {
+    id?: true
+    conversationId?: true
+    senderId?: true
+    receiverId?: true
+    content?: true
+    timestamp?: true
+    _all?: true
+  }
+
+  export type MessageAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Message to aggregate.
+     */
+    where?: MessageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Messages to fetch.
+     */
+    orderBy?: MessageOrderByWithRelationInput | MessageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: MessageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Messages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Messages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Messages
+    **/
+    _count?: true | MessageCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: MessageAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: MessageSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: MessageMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: MessageMaxAggregateInputType
+  }
+
+  export type GetMessageAggregateType<T extends MessageAggregateArgs> = {
+        [P in keyof T & keyof AggregateMessage]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateMessage[P]>
+      : GetScalarType<T[P], AggregateMessage[P]>
+  }
+
+
+
+
+  export type MessageGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MessageWhereInput
+    orderBy?: MessageOrderByWithAggregationInput | MessageOrderByWithAggregationInput[]
+    by: MessageScalarFieldEnum[] | MessageScalarFieldEnum
+    having?: MessageScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: MessageCountAggregateInputType | true
+    _avg?: MessageAvgAggregateInputType
+    _sum?: MessageSumAggregateInputType
+    _min?: MessageMinAggregateInputType
+    _max?: MessageMaxAggregateInputType
+  }
+
+  export type MessageGroupByOutputType = {
+    id: number
+    conversationId: number
+    senderId: number
+    receiverId: number
+    content: string
+    timestamp: Date
+    _count: MessageCountAggregateOutputType | null
+    _avg: MessageAvgAggregateOutputType | null
+    _sum: MessageSumAggregateOutputType | null
+    _min: MessageMinAggregateOutputType | null
+    _max: MessageMaxAggregateOutputType | null
+  }
+
+  type GetMessageGroupByPayload<T extends MessageGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<MessageGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof MessageGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], MessageGroupByOutputType[P]>
+            : GetScalarType<T[P], MessageGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type MessageSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    conversationId?: boolean
+    senderId?: boolean
+    receiverId?: boolean
+    content?: boolean
+    timestamp?: boolean
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+    receiver?: boolean | UserDefaultArgs<ExtArgs>
+    sender?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["message"]>
+
+  export type MessageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    conversationId?: boolean
+    senderId?: boolean
+    receiverId?: boolean
+    content?: boolean
+    timestamp?: boolean
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+    receiver?: boolean | UserDefaultArgs<ExtArgs>
+    sender?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["message"]>
+
+  export type MessageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    conversationId?: boolean
+    senderId?: boolean
+    receiverId?: boolean
+    content?: boolean
+    timestamp?: boolean
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+    receiver?: boolean | UserDefaultArgs<ExtArgs>
+    sender?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["message"]>
+
+  export type MessageSelectScalar = {
+    id?: boolean
+    conversationId?: boolean
+    senderId?: boolean
+    receiverId?: boolean
+    content?: boolean
+    timestamp?: boolean
+  }
+
+  export type MessageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "conversationId" | "senderId" | "receiverId" | "content" | "timestamp", ExtArgs["result"]["message"]>
+  export type MessageInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+    receiver?: boolean | UserDefaultArgs<ExtArgs>
+    sender?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type MessageIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+    receiver?: boolean | UserDefaultArgs<ExtArgs>
+    sender?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type MessageIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    conversation?: boolean | ConversationDefaultArgs<ExtArgs>
+    receiver?: boolean | UserDefaultArgs<ExtArgs>
+    sender?: boolean | UserDefaultArgs<ExtArgs>
+  }
+
+  export type $MessagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Message"
+    objects: {
+      conversation: Prisma.$ConversationPayload<ExtArgs>
+      receiver: Prisma.$UserPayload<ExtArgs>
+      sender: Prisma.$UserPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      conversationId: number
+      senderId: number
+      receiverId: number
+      content: string
+      timestamp: Date
+    }, ExtArgs["result"]["message"]>
+    composites: {}
+  }
+
+  type MessageGetPayload<S extends boolean | null | undefined | MessageDefaultArgs> = $Result.GetResult<Prisma.$MessagePayload, S>
+
+  type MessageCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<MessageFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: MessageCountAggregateInputType | true
+    }
+
+  export interface MessageDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Message'], meta: { name: 'Message' } }
+    /**
+     * Find zero or one Message that matches the filter.
+     * @param {MessageFindUniqueArgs} args - Arguments to find a Message
+     * @example
+     * // Get one Message
+     * const message = await prisma.message.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends MessageFindUniqueArgs>(args: SelectSubset<T, MessageFindUniqueArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Message that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {MessageFindUniqueOrThrowArgs} args - Arguments to find a Message
+     * @example
+     * // Get one Message
+     * const message = await prisma.message.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends MessageFindUniqueOrThrowArgs>(args: SelectSubset<T, MessageFindUniqueOrThrowArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Message that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MessageFindFirstArgs} args - Arguments to find a Message
+     * @example
+     * // Get one Message
+     * const message = await prisma.message.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends MessageFindFirstArgs>(args?: SelectSubset<T, MessageFindFirstArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Message that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MessageFindFirstOrThrowArgs} args - Arguments to find a Message
+     * @example
+     * // Get one Message
+     * const message = await prisma.message.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends MessageFindFirstOrThrowArgs>(args?: SelectSubset<T, MessageFindFirstOrThrowArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Messages that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MessageFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Messages
+     * const messages = await prisma.message.findMany()
+     * 
+     * // Get first 10 Messages
+     * const messages = await prisma.message.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const messageWithIdOnly = await prisma.message.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends MessageFindManyArgs>(args?: SelectSubset<T, MessageFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Message.
+     * @param {MessageCreateArgs} args - Arguments to create a Message.
+     * @example
+     * // Create one Message
+     * const Message = await prisma.message.create({
+     *   data: {
+     *     // ... data to create a Message
+     *   }
+     * })
+     * 
+     */
+    create<T extends MessageCreateArgs>(args: SelectSubset<T, MessageCreateArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Messages.
+     * @param {MessageCreateManyArgs} args - Arguments to create many Messages.
+     * @example
+     * // Create many Messages
+     * const message = await prisma.message.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends MessageCreateManyArgs>(args?: SelectSubset<T, MessageCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Messages and returns the data saved in the database.
+     * @param {MessageCreateManyAndReturnArgs} args - Arguments to create many Messages.
+     * @example
+     * // Create many Messages
+     * const message = await prisma.message.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Messages and only return the `id`
+     * const messageWithIdOnly = await prisma.message.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends MessageCreateManyAndReturnArgs>(args?: SelectSubset<T, MessageCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Message.
+     * @param {MessageDeleteArgs} args - Arguments to delete one Message.
+     * @example
+     * // Delete one Message
+     * const Message = await prisma.message.delete({
+     *   where: {
+     *     // ... filter to delete one Message
+     *   }
+     * })
+     * 
+     */
+    delete<T extends MessageDeleteArgs>(args: SelectSubset<T, MessageDeleteArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Message.
+     * @param {MessageUpdateArgs} args - Arguments to update one Message.
+     * @example
+     * // Update one Message
+     * const message = await prisma.message.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends MessageUpdateArgs>(args: SelectSubset<T, MessageUpdateArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Messages.
+     * @param {MessageDeleteManyArgs} args - Arguments to filter Messages to delete.
+     * @example
+     * // Delete a few Messages
+     * const { count } = await prisma.message.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends MessageDeleteManyArgs>(args?: SelectSubset<T, MessageDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Messages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MessageUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Messages
+     * const message = await prisma.message.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends MessageUpdateManyArgs>(args: SelectSubset<T, MessageUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Messages and returns the data updated in the database.
+     * @param {MessageUpdateManyAndReturnArgs} args - Arguments to update many Messages.
+     * @example
+     * // Update many Messages
+     * const message = await prisma.message.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Messages and only return the `id`
+     * const messageWithIdOnly = await prisma.message.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends MessageUpdateManyAndReturnArgs>(args: SelectSubset<T, MessageUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Message.
+     * @param {MessageUpsertArgs} args - Arguments to update or create a Message.
+     * @example
+     * // Update or create a Message
+     * const message = await prisma.message.upsert({
+     *   create: {
+     *     // ... data to create a Message
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Message we want to update
+     *   }
+     * })
+     */
+    upsert<T extends MessageUpsertArgs>(args: SelectSubset<T, MessageUpsertArgs<ExtArgs>>): Prisma__MessageClient<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Messages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MessageCountArgs} args - Arguments to filter Messages to count.
+     * @example
+     * // Count the number of Messages
+     * const count = await prisma.message.count({
+     *   where: {
+     *     // ... the filter for the Messages we want to count
+     *   }
+     * })
+    **/
+    count<T extends MessageCountArgs>(
+      args?: Subset<T, MessageCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], MessageCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Message.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MessageAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends MessageAggregateArgs>(args: Subset<T, MessageAggregateArgs>): Prisma.PrismaPromise<GetMessageAggregateType<T>>
+
+    /**
+     * Group by Message.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MessageGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends MessageGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: MessageGroupByArgs['orderBy'] }
+        : { orderBy?: MessageGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, MessageGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMessageGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Message model
+   */
+  readonly fields: MessageFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Message.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__MessageClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    conversation<T extends ConversationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ConversationDefaultArgs<ExtArgs>>): Prisma__ConversationClient<$Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    receiver<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    sender<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Message model
+   */
+  interface MessageFieldRefs {
+    readonly id: FieldRef<"Message", 'Int'>
+    readonly conversationId: FieldRef<"Message", 'Int'>
+    readonly senderId: FieldRef<"Message", 'Int'>
+    readonly receiverId: FieldRef<"Message", 'Int'>
+    readonly content: FieldRef<"Message", 'String'>
+    readonly timestamp: FieldRef<"Message", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Message findUnique
+   */
+  export type MessageFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * Filter, which Message to fetch.
+     */
+    where: MessageWhereUniqueInput
+  }
+
+  /**
+   * Message findUniqueOrThrow
+   */
+  export type MessageFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * Filter, which Message to fetch.
+     */
+    where: MessageWhereUniqueInput
+  }
+
+  /**
+   * Message findFirst
+   */
+  export type MessageFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * Filter, which Message to fetch.
+     */
+    where?: MessageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Messages to fetch.
+     */
+    orderBy?: MessageOrderByWithRelationInput | MessageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Messages.
+     */
+    cursor?: MessageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Messages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Messages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Messages.
+     */
+    distinct?: MessageScalarFieldEnum | MessageScalarFieldEnum[]
+  }
+
+  /**
+   * Message findFirstOrThrow
+   */
+  export type MessageFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * Filter, which Message to fetch.
+     */
+    where?: MessageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Messages to fetch.
+     */
+    orderBy?: MessageOrderByWithRelationInput | MessageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Messages.
+     */
+    cursor?: MessageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Messages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Messages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Messages.
+     */
+    distinct?: MessageScalarFieldEnum | MessageScalarFieldEnum[]
+  }
+
+  /**
+   * Message findMany
+   */
+  export type MessageFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * Filter, which Messages to fetch.
+     */
+    where?: MessageWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Messages to fetch.
+     */
+    orderBy?: MessageOrderByWithRelationInput | MessageOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Messages.
+     */
+    cursor?: MessageWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Messages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Messages.
+     */
+    skip?: number
+    distinct?: MessageScalarFieldEnum | MessageScalarFieldEnum[]
+  }
+
+  /**
+   * Message create
+   */
+  export type MessageCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Message.
+     */
+    data: XOR<MessageCreateInput, MessageUncheckedCreateInput>
+  }
+
+  /**
+   * Message createMany
+   */
+  export type MessageCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Messages.
+     */
+    data: MessageCreateManyInput | MessageCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Message createManyAndReturn
+   */
+  export type MessageCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * The data used to create many Messages.
+     */
+    data: MessageCreateManyInput | MessageCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Message update
+   */
+  export type MessageUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Message.
+     */
+    data: XOR<MessageUpdateInput, MessageUncheckedUpdateInput>
+    /**
+     * Choose, which Message to update.
+     */
+    where: MessageWhereUniqueInput
+  }
+
+  /**
+   * Message updateMany
+   */
+  export type MessageUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Messages.
+     */
+    data: XOR<MessageUpdateManyMutationInput, MessageUncheckedUpdateManyInput>
+    /**
+     * Filter which Messages to update
+     */
+    where?: MessageWhereInput
+    /**
+     * Limit how many Messages to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Message updateManyAndReturn
+   */
+  export type MessageUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * The data used to update Messages.
+     */
+    data: XOR<MessageUpdateManyMutationInput, MessageUncheckedUpdateManyInput>
+    /**
+     * Filter which Messages to update
+     */
+    where?: MessageWhereInput
+    /**
+     * Limit how many Messages to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Message upsert
+   */
+  export type MessageUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Message to update in case it exists.
+     */
+    where: MessageWhereUniqueInput
+    /**
+     * In case the Message found by the `where` argument doesn't exist, create a new Message with this data.
+     */
+    create: XOR<MessageCreateInput, MessageUncheckedCreateInput>
+    /**
+     * In case the Message was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<MessageUpdateInput, MessageUncheckedUpdateInput>
+  }
+
+  /**
+   * Message delete
+   */
+  export type MessageDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
+    /**
+     * Filter which Message to delete.
+     */
+    where: MessageWhereUniqueInput
+  }
+
+  /**
+   * Message deleteMany
+   */
+  export type MessageDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Messages to delete
+     */
+    where?: MessageWhereInput
+    /**
+     * Limit how many Messages to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Message without action
+   */
+  export type MessageDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Message
+     */
+    select?: MessageSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Message
+     */
+    omit?: MessageOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MessageInclude<ExtArgs> | null
   }
 
 
@@ -17699,15 +22777,15 @@ export namespace Prisma {
     role: 'role',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
-    isRestaurantHost: 'isRestaurantHost',
-    restaurantId: 'restaurantId',
     profileImage: 'profileImage',
     bio: 'bio',
     address: 'address',
     city: 'city',
     state: 'state',
     country: 'country',
-    zipCode: 'zipCode'
+    zipCode: 'zipCode',
+    isRestaurantHost: 'isRestaurantHost',
+    restaurantId: 'restaurantId'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -17725,7 +22803,7 @@ export namespace Prisma {
     phone: 'phone',
     email: 'email',
     website: 'website',
-    cuisine: 'cuisine',
+    restaurantType: 'restaurantType',
     priceRange: 'priceRange',
     rating: 'rating',
     isActive: 'isActive',
@@ -17748,8 +22826,8 @@ export namespace Prisma {
     isActive: 'isActive',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
-    restaurantId: 'restaurantId',
-    hostId: 'hostId'
+    hostId: 'hostId',
+    restaurantId: 'restaurantId'
   };
 
   export type ListingScalarFieldEnum = (typeof ListingScalarFieldEnum)[keyof typeof ListingScalarFieldEnum]
@@ -17881,6 +22959,57 @@ export namespace Prisma {
   export type OperatingHoursScalarFieldEnum = (typeof OperatingHoursScalarFieldEnum)[keyof typeof OperatingHoursScalarFieldEnum]
 
 
+  export const HostSettingsScalarFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    emailBookings: 'emailBookings',
+    emailMessages: 'emailMessages',
+    emailPayouts: 'emailPayouts',
+    pushBookings: 'pushBookings',
+    pushMessages: 'pushMessages',
+    pushPayouts: 'pushPayouts',
+    companyName: 'companyName',
+    kraPin: 'kraPin',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type HostSettingsScalarFieldEnum = (typeof HostSettingsScalarFieldEnum)[keyof typeof HostSettingsScalarFieldEnum]
+
+
+  export const PaymentMethodScalarFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    type: 'type',
+    details: 'details',
+    isPrimary: 'isPrimary',
+    createdAt: 'createdAt'
+  };
+
+  export type PaymentMethodScalarFieldEnum = (typeof PaymentMethodScalarFieldEnum)[keyof typeof PaymentMethodScalarFieldEnum]
+
+
+  export const ConversationScalarFieldEnum: {
+    id: 'id',
+    bookingId: 'bookingId',
+    createdAt: 'createdAt'
+  };
+
+  export type ConversationScalarFieldEnum = (typeof ConversationScalarFieldEnum)[keyof typeof ConversationScalarFieldEnum]
+
+
+  export const MessageScalarFieldEnum: {
+    id: 'id',
+    conversationId: 'conversationId',
+    senderId: 'senderId',
+    receiverId: 'receiverId',
+    content: 'content',
+    timestamp: 'timestamp'
+  };
+
+  export type MessageScalarFieldEnum = (typeof MessageScalarFieldEnum)[keyof typeof MessageScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -17988,8 +23117,6 @@ export namespace Prisma {
     role?: StringFilter<"User"> | string
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
-    isRestaurantHost?: BoolFilter<"User"> | boolean
-    restaurantId?: IntNullableFilter<"User"> | number | null
     profileImage?: StringNullableFilter<"User"> | string | null
     bio?: StringNullableFilter<"User"> | string | null
     address?: StringNullableFilter<"User"> | string | null
@@ -17997,13 +23124,19 @@ export namespace Prisma {
     state?: StringNullableFilter<"User"> | string | null
     country?: StringNullableFilter<"User"> | string | null
     zipCode?: StringNullableFilter<"User"> | string | null
-    restaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
-    hostedRestaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
-    listings?: ListingListRelationFilter
+    isRestaurantHost?: BoolFilter<"User"> | boolean
+    restaurantId?: IntNullableFilter<"User"> | number | null
     bookings?: BookingListRelationFilter
-    reviews?: ReviewListRelationFilter
-    notifications?: NotificationListRelationFilter
     earnings?: EarningListRelationFilter
+    hostSettings?: XOR<HostSettingsNullableScalarRelationFilter, HostSettingsWhereInput> | null
+    listings?: ListingListRelationFilter
+    messagesReceived?: MessageListRelationFilter
+    messagesSent?: MessageListRelationFilter
+    notifications?: NotificationListRelationFilter
+    paymentMethods?: PaymentMethodListRelationFilter
+    hostedRestaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
+    reviews?: ReviewListRelationFilter
+    restaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
   }
 
   export type UserOrderByWithRelationInput = {
@@ -18015,8 +23148,6 @@ export namespace Prisma {
     role?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    isRestaurantHost?: SortOrder
-    restaurantId?: SortOrderInput | SortOrder
     profileImage?: SortOrderInput | SortOrder
     bio?: SortOrderInput | SortOrder
     address?: SortOrderInput | SortOrder
@@ -18024,13 +23155,19 @@ export namespace Prisma {
     state?: SortOrderInput | SortOrder
     country?: SortOrderInput | SortOrder
     zipCode?: SortOrderInput | SortOrder
-    restaurant?: RestaurantOrderByWithRelationInput
-    hostedRestaurant?: RestaurantOrderByWithRelationInput
-    listings?: ListingOrderByRelationAggregateInput
+    isRestaurantHost?: SortOrder
+    restaurantId?: SortOrderInput | SortOrder
     bookings?: BookingOrderByRelationAggregateInput
-    reviews?: ReviewOrderByRelationAggregateInput
-    notifications?: NotificationOrderByRelationAggregateInput
     earnings?: EarningOrderByRelationAggregateInput
+    hostSettings?: HostSettingsOrderByWithRelationInput
+    listings?: ListingOrderByRelationAggregateInput
+    messagesReceived?: MessageOrderByRelationAggregateInput
+    messagesSent?: MessageOrderByRelationAggregateInput
+    notifications?: NotificationOrderByRelationAggregateInput
+    paymentMethods?: PaymentMethodOrderByRelationAggregateInput
+    hostedRestaurant?: RestaurantOrderByWithRelationInput
+    reviews?: ReviewOrderByRelationAggregateInput
+    restaurant?: RestaurantOrderByWithRelationInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -18045,8 +23182,6 @@ export namespace Prisma {
     role?: StringFilter<"User"> | string
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
-    isRestaurantHost?: BoolFilter<"User"> | boolean
-    restaurantId?: IntNullableFilter<"User"> | number | null
     profileImage?: StringNullableFilter<"User"> | string | null
     bio?: StringNullableFilter<"User"> | string | null
     address?: StringNullableFilter<"User"> | string | null
@@ -18054,13 +23189,19 @@ export namespace Prisma {
     state?: StringNullableFilter<"User"> | string | null
     country?: StringNullableFilter<"User"> | string | null
     zipCode?: StringNullableFilter<"User"> | string | null
-    restaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
-    hostedRestaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
-    listings?: ListingListRelationFilter
+    isRestaurantHost?: BoolFilter<"User"> | boolean
+    restaurantId?: IntNullableFilter<"User"> | number | null
     bookings?: BookingListRelationFilter
-    reviews?: ReviewListRelationFilter
-    notifications?: NotificationListRelationFilter
     earnings?: EarningListRelationFilter
+    hostSettings?: XOR<HostSettingsNullableScalarRelationFilter, HostSettingsWhereInput> | null
+    listings?: ListingListRelationFilter
+    messagesReceived?: MessageListRelationFilter
+    messagesSent?: MessageListRelationFilter
+    notifications?: NotificationListRelationFilter
+    paymentMethods?: PaymentMethodListRelationFilter
+    hostedRestaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
+    reviews?: ReviewListRelationFilter
+    restaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
   }, "id" | "email" | "phone">
 
   export type UserOrderByWithAggregationInput = {
@@ -18072,8 +23213,6 @@ export namespace Prisma {
     role?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    isRestaurantHost?: SortOrder
-    restaurantId?: SortOrderInput | SortOrder
     profileImage?: SortOrderInput | SortOrder
     bio?: SortOrderInput | SortOrder
     address?: SortOrderInput | SortOrder
@@ -18081,6 +23220,8 @@ export namespace Prisma {
     state?: SortOrderInput | SortOrder
     country?: SortOrderInput | SortOrder
     zipCode?: SortOrderInput | SortOrder
+    isRestaurantHost?: SortOrder
+    restaurantId?: SortOrderInput | SortOrder
     _count?: UserCountOrderByAggregateInput
     _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
@@ -18100,8 +23241,6 @@ export namespace Prisma {
     role?: StringWithAggregatesFilter<"User"> | string
     createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
-    isRestaurantHost?: BoolWithAggregatesFilter<"User"> | boolean
-    restaurantId?: IntNullableWithAggregatesFilter<"User"> | number | null
     profileImage?: StringNullableWithAggregatesFilter<"User"> | string | null
     bio?: StringNullableWithAggregatesFilter<"User"> | string | null
     address?: StringNullableWithAggregatesFilter<"User"> | string | null
@@ -18109,6 +23248,8 @@ export namespace Prisma {
     state?: StringNullableWithAggregatesFilter<"User"> | string | null
     country?: StringNullableWithAggregatesFilter<"User"> | string | null
     zipCode?: StringNullableWithAggregatesFilter<"User"> | string | null
+    isRestaurantHost?: BoolWithAggregatesFilter<"User"> | boolean
+    restaurantId?: IntNullableWithAggregatesFilter<"User"> | number | null
   }
 
   export type RestaurantWhereInput = {
@@ -18126,18 +23267,18 @@ export namespace Prisma {
     phone?: StringNullableFilter<"Restaurant"> | string | null
     email?: StringNullableFilter<"Restaurant"> | string | null
     website?: StringNullableFilter<"Restaurant"> | string | null
-    cuisine?: StringNullableFilter<"Restaurant"> | string | null
+    restaurantType?: StringNullableFilter<"Restaurant"> | string | null
     priceRange?: StringNullableFilter<"Restaurant"> | string | null
     rating?: FloatNullableFilter<"Restaurant"> | number | null
     isActive?: BoolFilter<"Restaurant"> | boolean
     createdAt?: DateTimeFilter<"Restaurant"> | Date | string
     updatedAt?: DateTimeFilter<"Restaurant"> | Date | string
     hostId?: IntFilter<"Restaurant"> | number
-    host?: XOR<UserScalarRelationFilter, UserWhereInput>
-    users?: UserListRelationFilter
     listings?: ListingListRelationFilter
-    images?: RestaurantImageListRelationFilter
     operatingHours?: OperatingHoursListRelationFilter
+    host?: XOR<UserScalarRelationFilter, UserWhereInput>
+    images?: RestaurantImageListRelationFilter
+    users?: UserListRelationFilter
   }
 
   export type RestaurantOrderByWithRelationInput = {
@@ -18152,18 +23293,18 @@ export namespace Prisma {
     phone?: SortOrderInput | SortOrder
     email?: SortOrderInput | SortOrder
     website?: SortOrderInput | SortOrder
-    cuisine?: SortOrderInput | SortOrder
+    restaurantType?: SortOrderInput | SortOrder
     priceRange?: SortOrderInput | SortOrder
     rating?: SortOrderInput | SortOrder
     isActive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     hostId?: SortOrder
-    host?: UserOrderByWithRelationInput
-    users?: UserOrderByRelationAggregateInput
     listings?: ListingOrderByRelationAggregateInput
-    images?: RestaurantImageOrderByRelationAggregateInput
     operatingHours?: OperatingHoursOrderByRelationAggregateInput
+    host?: UserOrderByWithRelationInput
+    images?: RestaurantImageOrderByRelationAggregateInput
+    users?: UserOrderByRelationAggregateInput
   }
 
   export type RestaurantWhereUniqueInput = Prisma.AtLeast<{
@@ -18182,17 +23323,17 @@ export namespace Prisma {
     phone?: StringNullableFilter<"Restaurant"> | string | null
     email?: StringNullableFilter<"Restaurant"> | string | null
     website?: StringNullableFilter<"Restaurant"> | string | null
-    cuisine?: StringNullableFilter<"Restaurant"> | string | null
+    restaurantType?: StringNullableFilter<"Restaurant"> | string | null
     priceRange?: StringNullableFilter<"Restaurant"> | string | null
     rating?: FloatNullableFilter<"Restaurant"> | number | null
     isActive?: BoolFilter<"Restaurant"> | boolean
     createdAt?: DateTimeFilter<"Restaurant"> | Date | string
     updatedAt?: DateTimeFilter<"Restaurant"> | Date | string
-    host?: XOR<UserScalarRelationFilter, UserWhereInput>
-    users?: UserListRelationFilter
     listings?: ListingListRelationFilter
-    images?: RestaurantImageListRelationFilter
     operatingHours?: OperatingHoursListRelationFilter
+    host?: XOR<UserScalarRelationFilter, UserWhereInput>
+    images?: RestaurantImageListRelationFilter
+    users?: UserListRelationFilter
   }, "id" | "hostId">
 
   export type RestaurantOrderByWithAggregationInput = {
@@ -18207,7 +23348,7 @@ export namespace Prisma {
     phone?: SortOrderInput | SortOrder
     email?: SortOrderInput | SortOrder
     website?: SortOrderInput | SortOrder
-    cuisine?: SortOrderInput | SortOrder
+    restaurantType?: SortOrderInput | SortOrder
     priceRange?: SortOrderInput | SortOrder
     rating?: SortOrderInput | SortOrder
     isActive?: SortOrder
@@ -18236,7 +23377,7 @@ export namespace Prisma {
     phone?: StringNullableWithAggregatesFilter<"Restaurant"> | string | null
     email?: StringNullableWithAggregatesFilter<"Restaurant"> | string | null
     website?: StringNullableWithAggregatesFilter<"Restaurant"> | string | null
-    cuisine?: StringNullableWithAggregatesFilter<"Restaurant"> | string | null
+    restaurantType?: StringNullableWithAggregatesFilter<"Restaurant"> | string | null
     priceRange?: StringNullableWithAggregatesFilter<"Restaurant"> | string | null
     rating?: FloatNullableWithAggregatesFilter<"Restaurant"> | number | null
     isActive?: BoolWithAggregatesFilter<"Restaurant"> | boolean
@@ -18259,14 +23400,14 @@ export namespace Prisma {
     isActive?: BoolFilter<"Listing"> | boolean
     createdAt?: DateTimeFilter<"Listing"> | Date | string
     updatedAt?: DateTimeFilter<"Listing"> | Date | string
-    restaurantId?: IntFilter<"Listing"> | number
     hostId?: IntFilter<"Listing"> | number
-    restaurant?: XOR<RestaurantScalarRelationFilter, RestaurantWhereInput>
-    host?: XOR<UserScalarRelationFilter, UserWhereInput>
-    bookings?: BookingListRelationFilter
-    images?: ListingImageListRelationFilter
-    amenities?: ListingAmenityListRelationFilter
+    restaurantId?: IntNullableFilter<"Listing"> | number | null
     availability?: AvailabilityListRelationFilter
+    bookings?: BookingListRelationFilter
+    host?: XOR<UserScalarRelationFilter, UserWhereInput>
+    restaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
+    amenities?: ListingAmenityListRelationFilter
+    images?: ListingImageListRelationFilter
     reviews?: ReviewListRelationFilter
   }
 
@@ -18281,14 +23422,14 @@ export namespace Prisma {
     isActive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    restaurantId?: SortOrder
     hostId?: SortOrder
-    restaurant?: RestaurantOrderByWithRelationInput
-    host?: UserOrderByWithRelationInput
-    bookings?: BookingOrderByRelationAggregateInput
-    images?: ListingImageOrderByRelationAggregateInput
-    amenities?: ListingAmenityOrderByRelationAggregateInput
+    restaurantId?: SortOrderInput | SortOrder
     availability?: AvailabilityOrderByRelationAggregateInput
+    bookings?: BookingOrderByRelationAggregateInput
+    host?: UserOrderByWithRelationInput
+    restaurant?: RestaurantOrderByWithRelationInput
+    amenities?: ListingAmenityOrderByRelationAggregateInput
+    images?: ListingImageOrderByRelationAggregateInput
     reviews?: ReviewOrderByRelationAggregateInput
   }
 
@@ -18306,14 +23447,14 @@ export namespace Prisma {
     isActive?: BoolFilter<"Listing"> | boolean
     createdAt?: DateTimeFilter<"Listing"> | Date | string
     updatedAt?: DateTimeFilter<"Listing"> | Date | string
-    restaurantId?: IntFilter<"Listing"> | number
     hostId?: IntFilter<"Listing"> | number
-    restaurant?: XOR<RestaurantScalarRelationFilter, RestaurantWhereInput>
-    host?: XOR<UserScalarRelationFilter, UserWhereInput>
-    bookings?: BookingListRelationFilter
-    images?: ListingImageListRelationFilter
-    amenities?: ListingAmenityListRelationFilter
+    restaurantId?: IntNullableFilter<"Listing"> | number | null
     availability?: AvailabilityListRelationFilter
+    bookings?: BookingListRelationFilter
+    host?: XOR<UserScalarRelationFilter, UserWhereInput>
+    restaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
+    amenities?: ListingAmenityListRelationFilter
+    images?: ListingImageListRelationFilter
     reviews?: ReviewListRelationFilter
   }, "id">
 
@@ -18328,8 +23469,8 @@ export namespace Prisma {
     isActive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    restaurantId?: SortOrder
     hostId?: SortOrder
+    restaurantId?: SortOrderInput | SortOrder
     _count?: ListingCountOrderByAggregateInput
     _avg?: ListingAvgOrderByAggregateInput
     _max?: ListingMaxOrderByAggregateInput
@@ -18351,8 +23492,8 @@ export namespace Prisma {
     isActive?: BoolWithAggregatesFilter<"Listing"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"Listing"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Listing"> | Date | string
-    restaurantId?: IntWithAggregatesFilter<"Listing"> | number
     hostId?: IntWithAggregatesFilter<"Listing"> | number
+    restaurantId?: IntNullableWithAggregatesFilter<"Listing"> | number | null
   }
 
   export type ListingImageWhereInput = {
@@ -18440,15 +23581,15 @@ export namespace Prisma {
 
   export type AmenityWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    name?: string
     AND?: AmenityWhereInput | AmenityWhereInput[]
     OR?: AmenityWhereInput[]
     NOT?: AmenityWhereInput | AmenityWhereInput[]
+    name?: StringFilter<"Amenity"> | string
     icon?: StringNullableFilter<"Amenity"> | string | null
     category?: StringNullableFilter<"Amenity"> | string | null
     createdAt?: DateTimeFilter<"Amenity"> | Date | string
     listings?: ListingAmenityListRelationFilter
-  }, "id" | "name">
+  }, "id">
 
   export type AmenityOrderByWithAggregationInput = {
     id?: SortOrder
@@ -18481,16 +23622,16 @@ export namespace Prisma {
     id?: IntFilter<"ListingAmenity"> | number
     listingId?: IntFilter<"ListingAmenity"> | number
     amenityId?: IntFilter<"ListingAmenity"> | number
-    listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
     amenity?: XOR<AmenityScalarRelationFilter, AmenityWhereInput>
+    listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
   }
 
   export type ListingAmenityOrderByWithRelationInput = {
     id?: SortOrder
     listingId?: SortOrder
     amenityId?: SortOrder
-    listing?: ListingOrderByWithRelationInput
     amenity?: AmenityOrderByWithRelationInput
+    listing?: ListingOrderByWithRelationInput
   }
 
   export type ListingAmenityWhereUniqueInput = Prisma.AtLeast<{
@@ -18501,8 +23642,8 @@ export namespace Prisma {
     NOT?: ListingAmenityWhereInput | ListingAmenityWhereInput[]
     listingId?: IntFilter<"ListingAmenity"> | number
     amenityId?: IntFilter<"ListingAmenity"> | number
-    listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
     amenity?: XOR<AmenityScalarRelationFilter, AmenityWhereInput>
+    listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
   }, "id" | "listingId_amenityId">
 
   export type ListingAmenityOrderByWithAggregationInput = {
@@ -18552,7 +23693,6 @@ export namespace Prisma {
 
   export type AvailabilityWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    listingId_date_startTime_endTime?: AvailabilityListingIdDateStartTimeEndTimeCompoundUniqueInput
     AND?: AvailabilityWhereInput | AvailabilityWhereInput[]
     OR?: AvailabilityWhereInput[]
     NOT?: AvailabilityWhereInput | AvailabilityWhereInput[]
@@ -18563,7 +23703,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Availability"> | Date | string
     listingId?: IntFilter<"Availability"> | number
     listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
-  }, "id" | "listingId_date_startTime_endTime">
+  }, "id">
 
   export type AvailabilityOrderByWithAggregationInput = {
     id?: SortOrder
@@ -18600,7 +23740,7 @@ export namespace Prisma {
     id?: IntFilter<"Booking"> | number
     startTime?: DateTimeFilter<"Booking"> | Date | string
     endTime?: DateTimeFilter<"Booking"> | Date | string
-    totalPrice?: FloatFilter<"Booking"> | number
+    totalPrice?: FloatNullableFilter<"Booking"> | number | null
     status?: StringFilter<"Booking"> | string
     guestCount?: IntNullableFilter<"Booking"> | number | null
     specialRequests?: StringNullableFilter<"Booking"> | string | null
@@ -18608,17 +23748,17 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Booking"> | Date | string
     listingId?: IntFilter<"Booking"> | number
     guestId?: IntFilter<"Booking"> | number
-    listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
     guest?: XOR<UserScalarRelationFilter, UserWhereInput>
-    review?: XOR<ReviewNullableScalarRelationFilter, ReviewWhereInput> | null
+    listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
     earning?: XOR<EarningNullableScalarRelationFilter, EarningWhereInput> | null
+    review?: XOR<ReviewNullableScalarRelationFilter, ReviewWhereInput> | null
   }
 
   export type BookingOrderByWithRelationInput = {
     id?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrder
-    totalPrice?: SortOrder
+    totalPrice?: SortOrderInput | SortOrder
     status?: SortOrder
     guestCount?: SortOrderInput | SortOrder
     specialRequests?: SortOrderInput | SortOrder
@@ -18626,10 +23766,10 @@ export namespace Prisma {
     updatedAt?: SortOrder
     listingId?: SortOrder
     guestId?: SortOrder
-    listing?: ListingOrderByWithRelationInput
     guest?: UserOrderByWithRelationInput
-    review?: ReviewOrderByWithRelationInput
+    listing?: ListingOrderByWithRelationInput
     earning?: EarningOrderByWithRelationInput
+    review?: ReviewOrderByWithRelationInput
   }
 
   export type BookingWhereUniqueInput = Prisma.AtLeast<{
@@ -18639,7 +23779,7 @@ export namespace Prisma {
     NOT?: BookingWhereInput | BookingWhereInput[]
     startTime?: DateTimeFilter<"Booking"> | Date | string
     endTime?: DateTimeFilter<"Booking"> | Date | string
-    totalPrice?: FloatFilter<"Booking"> | number
+    totalPrice?: FloatNullableFilter<"Booking"> | number | null
     status?: StringFilter<"Booking"> | string
     guestCount?: IntNullableFilter<"Booking"> | number | null
     specialRequests?: StringNullableFilter<"Booking"> | string | null
@@ -18647,17 +23787,17 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Booking"> | Date | string
     listingId?: IntFilter<"Booking"> | number
     guestId?: IntFilter<"Booking"> | number
-    listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
     guest?: XOR<UserScalarRelationFilter, UserWhereInput>
-    review?: XOR<ReviewNullableScalarRelationFilter, ReviewWhereInput> | null
+    listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
     earning?: XOR<EarningNullableScalarRelationFilter, EarningWhereInput> | null
+    review?: XOR<ReviewNullableScalarRelationFilter, ReviewWhereInput> | null
   }, "id">
 
   export type BookingOrderByWithAggregationInput = {
     id?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrder
-    totalPrice?: SortOrder
+    totalPrice?: SortOrderInput | SortOrder
     status?: SortOrder
     guestCount?: SortOrderInput | SortOrder
     specialRequests?: SortOrderInput | SortOrder
@@ -18679,7 +23819,7 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Booking"> | number
     startTime?: DateTimeWithAggregatesFilter<"Booking"> | Date | string
     endTime?: DateTimeWithAggregatesFilter<"Booking"> | Date | string
-    totalPrice?: FloatWithAggregatesFilter<"Booking"> | number
+    totalPrice?: FloatNullableWithAggregatesFilter<"Booking"> | number | null
     status?: StringWithAggregatesFilter<"Booking"> | string
     guestCount?: IntNullableWithAggregatesFilter<"Booking"> | number | null
     specialRequests?: StringNullableWithAggregatesFilter<"Booking"> | string | null
@@ -18700,9 +23840,9 @@ export namespace Prisma {
     listingId?: IntFilter<"Review"> | number
     authorId?: IntFilter<"Review"> | number
     bookingId?: IntFilter<"Review"> | number
-    listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
     author?: XOR<UserScalarRelationFilter, UserWhereInput>
     booking?: XOR<BookingScalarRelationFilter, BookingWhereInput>
+    listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
   }
 
   export type ReviewOrderByWithRelationInput = {
@@ -18713,9 +23853,9 @@ export namespace Prisma {
     listingId?: SortOrder
     authorId?: SortOrder
     bookingId?: SortOrder
-    listing?: ListingOrderByWithRelationInput
     author?: UserOrderByWithRelationInput
     booking?: BookingOrderByWithRelationInput
+    listing?: ListingOrderByWithRelationInput
   }
 
   export type ReviewWhereUniqueInput = Prisma.AtLeast<{
@@ -18729,9 +23869,9 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Review"> | Date | string
     listingId?: IntFilter<"Review"> | number
     authorId?: IntFilter<"Review"> | number
-    listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
     author?: XOR<UserScalarRelationFilter, UserWhereInput>
     booking?: XOR<BookingScalarRelationFilter, BookingWhereInput>
+    listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
   }, "id" | "bookingId">
 
   export type ReviewOrderByWithAggregationInput = {
@@ -18774,8 +23914,8 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Earning"> | Date | string
     hostId?: IntFilter<"Earning"> | number
     bookingId?: IntNullableFilter<"Earning"> | number | null
-    host?: XOR<UserScalarRelationFilter, UserWhereInput>
     booking?: XOR<BookingNullableScalarRelationFilter, BookingWhereInput> | null
+    host?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
   export type EarningOrderByWithRelationInput = {
@@ -18787,8 +23927,8 @@ export namespace Prisma {
     createdAt?: SortOrder
     hostId?: SortOrder
     bookingId?: SortOrderInput | SortOrder
-    host?: UserOrderByWithRelationInput
     booking?: BookingOrderByWithRelationInput
+    host?: UserOrderByWithRelationInput
   }
 
   export type EarningWhereUniqueInput = Prisma.AtLeast<{
@@ -18803,8 +23943,8 @@ export namespace Prisma {
     description?: StringNullableFilter<"Earning"> | string | null
     createdAt?: DateTimeFilter<"Earning"> | Date | string
     hostId?: IntFilter<"Earning"> | number
-    host?: XOR<UserScalarRelationFilter, UserWhereInput>
     booking?: XOR<BookingNullableScalarRelationFilter, BookingWhereInput> | null
+    host?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id" | "bookingId">
 
   export type EarningOrderByWithAggregationInput = {
@@ -18975,8 +24115,8 @@ export namespace Prisma {
     openTime?: StringFilter<"OperatingHours"> | string
     closeTime?: StringFilter<"OperatingHours"> | string
     isClosed?: BoolFilter<"OperatingHours"> | boolean
-    restaurantId?: IntFilter<"OperatingHours"> | number
-    restaurant?: XOR<RestaurantScalarRelationFilter, RestaurantWhereInput>
+    restaurantId?: IntNullableFilter<"OperatingHours"> | number | null
+    restaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
   }
 
   export type OperatingHoursOrderByWithRelationInput = {
@@ -18985,7 +24125,7 @@ export namespace Prisma {
     openTime?: SortOrder
     closeTime?: SortOrder
     isClosed?: SortOrder
-    restaurantId?: SortOrder
+    restaurantId?: SortOrderInput | SortOrder
     restaurant?: RestaurantOrderByWithRelationInput
   }
 
@@ -18999,8 +24139,8 @@ export namespace Prisma {
     openTime?: StringFilter<"OperatingHours"> | string
     closeTime?: StringFilter<"OperatingHours"> | string
     isClosed?: BoolFilter<"OperatingHours"> | boolean
-    restaurantId?: IntFilter<"OperatingHours"> | number
-    restaurant?: XOR<RestaurantScalarRelationFilter, RestaurantWhereInput>
+    restaurantId?: IntNullableFilter<"OperatingHours"> | number | null
+    restaurant?: XOR<RestaurantNullableScalarRelationFilter, RestaurantWhereInput> | null
   }, "id" | "restaurantId_dayOfWeek">
 
   export type OperatingHoursOrderByWithAggregationInput = {
@@ -19009,7 +24149,7 @@ export namespace Prisma {
     openTime?: SortOrder
     closeTime?: SortOrder
     isClosed?: SortOrder
-    restaurantId?: SortOrder
+    restaurantId?: SortOrderInput | SortOrder
     _count?: OperatingHoursCountOrderByAggregateInput
     _avg?: OperatingHoursAvgOrderByAggregateInput
     _max?: OperatingHoursMaxOrderByAggregateInput
@@ -19026,7 +24166,276 @@ export namespace Prisma {
     openTime?: StringWithAggregatesFilter<"OperatingHours"> | string
     closeTime?: StringWithAggregatesFilter<"OperatingHours"> | string
     isClosed?: BoolWithAggregatesFilter<"OperatingHours"> | boolean
-    restaurantId?: IntWithAggregatesFilter<"OperatingHours"> | number
+    restaurantId?: IntNullableWithAggregatesFilter<"OperatingHours"> | number | null
+  }
+
+  export type HostSettingsWhereInput = {
+    AND?: HostSettingsWhereInput | HostSettingsWhereInput[]
+    OR?: HostSettingsWhereInput[]
+    NOT?: HostSettingsWhereInput | HostSettingsWhereInput[]
+    id?: IntFilter<"HostSettings"> | number
+    userId?: IntFilter<"HostSettings"> | number
+    emailBookings?: BoolFilter<"HostSettings"> | boolean
+    emailMessages?: BoolFilter<"HostSettings"> | boolean
+    emailPayouts?: BoolFilter<"HostSettings"> | boolean
+    pushBookings?: BoolFilter<"HostSettings"> | boolean
+    pushMessages?: BoolFilter<"HostSettings"> | boolean
+    pushPayouts?: BoolFilter<"HostSettings"> | boolean
+    companyName?: StringNullableFilter<"HostSettings"> | string | null
+    kraPin?: StringNullableFilter<"HostSettings"> | string | null
+    createdAt?: DateTimeFilter<"HostSettings"> | Date | string
+    updatedAt?: DateTimeFilter<"HostSettings"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }
+
+  export type HostSettingsOrderByWithRelationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    emailBookings?: SortOrder
+    emailMessages?: SortOrder
+    emailPayouts?: SortOrder
+    pushBookings?: SortOrder
+    pushMessages?: SortOrder
+    pushPayouts?: SortOrder
+    companyName?: SortOrderInput | SortOrder
+    kraPin?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    user?: UserOrderByWithRelationInput
+  }
+
+  export type HostSettingsWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    userId?: number
+    AND?: HostSettingsWhereInput | HostSettingsWhereInput[]
+    OR?: HostSettingsWhereInput[]
+    NOT?: HostSettingsWhereInput | HostSettingsWhereInput[]
+    emailBookings?: BoolFilter<"HostSettings"> | boolean
+    emailMessages?: BoolFilter<"HostSettings"> | boolean
+    emailPayouts?: BoolFilter<"HostSettings"> | boolean
+    pushBookings?: BoolFilter<"HostSettings"> | boolean
+    pushMessages?: BoolFilter<"HostSettings"> | boolean
+    pushPayouts?: BoolFilter<"HostSettings"> | boolean
+    companyName?: StringNullableFilter<"HostSettings"> | string | null
+    kraPin?: StringNullableFilter<"HostSettings"> | string | null
+    createdAt?: DateTimeFilter<"HostSettings"> | Date | string
+    updatedAt?: DateTimeFilter<"HostSettings"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }, "id" | "userId">
+
+  export type HostSettingsOrderByWithAggregationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    emailBookings?: SortOrder
+    emailMessages?: SortOrder
+    emailPayouts?: SortOrder
+    pushBookings?: SortOrder
+    pushMessages?: SortOrder
+    pushPayouts?: SortOrder
+    companyName?: SortOrderInput | SortOrder
+    kraPin?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: HostSettingsCountOrderByAggregateInput
+    _avg?: HostSettingsAvgOrderByAggregateInput
+    _max?: HostSettingsMaxOrderByAggregateInput
+    _min?: HostSettingsMinOrderByAggregateInput
+    _sum?: HostSettingsSumOrderByAggregateInput
+  }
+
+  export type HostSettingsScalarWhereWithAggregatesInput = {
+    AND?: HostSettingsScalarWhereWithAggregatesInput | HostSettingsScalarWhereWithAggregatesInput[]
+    OR?: HostSettingsScalarWhereWithAggregatesInput[]
+    NOT?: HostSettingsScalarWhereWithAggregatesInput | HostSettingsScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"HostSettings"> | number
+    userId?: IntWithAggregatesFilter<"HostSettings"> | number
+    emailBookings?: BoolWithAggregatesFilter<"HostSettings"> | boolean
+    emailMessages?: BoolWithAggregatesFilter<"HostSettings"> | boolean
+    emailPayouts?: BoolWithAggregatesFilter<"HostSettings"> | boolean
+    pushBookings?: BoolWithAggregatesFilter<"HostSettings"> | boolean
+    pushMessages?: BoolWithAggregatesFilter<"HostSettings"> | boolean
+    pushPayouts?: BoolWithAggregatesFilter<"HostSettings"> | boolean
+    companyName?: StringNullableWithAggregatesFilter<"HostSettings"> | string | null
+    kraPin?: StringNullableWithAggregatesFilter<"HostSettings"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"HostSettings"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"HostSettings"> | Date | string
+  }
+
+  export type PaymentMethodWhereInput = {
+    AND?: PaymentMethodWhereInput | PaymentMethodWhereInput[]
+    OR?: PaymentMethodWhereInput[]
+    NOT?: PaymentMethodWhereInput | PaymentMethodWhereInput[]
+    id?: IntFilter<"PaymentMethod"> | number
+    userId?: IntFilter<"PaymentMethod"> | number
+    type?: StringFilter<"PaymentMethod"> | string
+    details?: StringFilter<"PaymentMethod"> | string
+    isPrimary?: BoolFilter<"PaymentMethod"> | boolean
+    createdAt?: DateTimeFilter<"PaymentMethod"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }
+
+  export type PaymentMethodOrderByWithRelationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    type?: SortOrder
+    details?: SortOrder
+    isPrimary?: SortOrder
+    createdAt?: SortOrder
+    user?: UserOrderByWithRelationInput
+  }
+
+  export type PaymentMethodWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: PaymentMethodWhereInput | PaymentMethodWhereInput[]
+    OR?: PaymentMethodWhereInput[]
+    NOT?: PaymentMethodWhereInput | PaymentMethodWhereInput[]
+    userId?: IntFilter<"PaymentMethod"> | number
+    type?: StringFilter<"PaymentMethod"> | string
+    details?: StringFilter<"PaymentMethod"> | string
+    isPrimary?: BoolFilter<"PaymentMethod"> | boolean
+    createdAt?: DateTimeFilter<"PaymentMethod"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }, "id">
+
+  export type PaymentMethodOrderByWithAggregationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    type?: SortOrder
+    details?: SortOrder
+    isPrimary?: SortOrder
+    createdAt?: SortOrder
+    _count?: PaymentMethodCountOrderByAggregateInput
+    _avg?: PaymentMethodAvgOrderByAggregateInput
+    _max?: PaymentMethodMaxOrderByAggregateInput
+    _min?: PaymentMethodMinOrderByAggregateInput
+    _sum?: PaymentMethodSumOrderByAggregateInput
+  }
+
+  export type PaymentMethodScalarWhereWithAggregatesInput = {
+    AND?: PaymentMethodScalarWhereWithAggregatesInput | PaymentMethodScalarWhereWithAggregatesInput[]
+    OR?: PaymentMethodScalarWhereWithAggregatesInput[]
+    NOT?: PaymentMethodScalarWhereWithAggregatesInput | PaymentMethodScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"PaymentMethod"> | number
+    userId?: IntWithAggregatesFilter<"PaymentMethod"> | number
+    type?: StringWithAggregatesFilter<"PaymentMethod"> | string
+    details?: StringWithAggregatesFilter<"PaymentMethod"> | string
+    isPrimary?: BoolWithAggregatesFilter<"PaymentMethod"> | boolean
+    createdAt?: DateTimeWithAggregatesFilter<"PaymentMethod"> | Date | string
+  }
+
+  export type ConversationWhereInput = {
+    AND?: ConversationWhereInput | ConversationWhereInput[]
+    OR?: ConversationWhereInput[]
+    NOT?: ConversationWhereInput | ConversationWhereInput[]
+    id?: IntFilter<"Conversation"> | number
+    bookingId?: IntFilter<"Conversation"> | number
+    createdAt?: DateTimeFilter<"Conversation"> | Date | string
+    messages?: MessageListRelationFilter
+  }
+
+  export type ConversationOrderByWithRelationInput = {
+    id?: SortOrder
+    bookingId?: SortOrder
+    createdAt?: SortOrder
+    messages?: MessageOrderByRelationAggregateInput
+  }
+
+  export type ConversationWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    bookingId?: number
+    AND?: ConversationWhereInput | ConversationWhereInput[]
+    OR?: ConversationWhereInput[]
+    NOT?: ConversationWhereInput | ConversationWhereInput[]
+    createdAt?: DateTimeFilter<"Conversation"> | Date | string
+    messages?: MessageListRelationFilter
+  }, "id" | "bookingId">
+
+  export type ConversationOrderByWithAggregationInput = {
+    id?: SortOrder
+    bookingId?: SortOrder
+    createdAt?: SortOrder
+    _count?: ConversationCountOrderByAggregateInput
+    _avg?: ConversationAvgOrderByAggregateInput
+    _max?: ConversationMaxOrderByAggregateInput
+    _min?: ConversationMinOrderByAggregateInput
+    _sum?: ConversationSumOrderByAggregateInput
+  }
+
+  export type ConversationScalarWhereWithAggregatesInput = {
+    AND?: ConversationScalarWhereWithAggregatesInput | ConversationScalarWhereWithAggregatesInput[]
+    OR?: ConversationScalarWhereWithAggregatesInput[]
+    NOT?: ConversationScalarWhereWithAggregatesInput | ConversationScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Conversation"> | number
+    bookingId?: IntWithAggregatesFilter<"Conversation"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"Conversation"> | Date | string
+  }
+
+  export type MessageWhereInput = {
+    AND?: MessageWhereInput | MessageWhereInput[]
+    OR?: MessageWhereInput[]
+    NOT?: MessageWhereInput | MessageWhereInput[]
+    id?: IntFilter<"Message"> | number
+    conversationId?: IntFilter<"Message"> | number
+    senderId?: IntFilter<"Message"> | number
+    receiverId?: IntFilter<"Message"> | number
+    content?: StringFilter<"Message"> | string
+    timestamp?: DateTimeFilter<"Message"> | Date | string
+    conversation?: XOR<ConversationScalarRelationFilter, ConversationWhereInput>
+    receiver?: XOR<UserScalarRelationFilter, UserWhereInput>
+    sender?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }
+
+  export type MessageOrderByWithRelationInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    senderId?: SortOrder
+    receiverId?: SortOrder
+    content?: SortOrder
+    timestamp?: SortOrder
+    conversation?: ConversationOrderByWithRelationInput
+    receiver?: UserOrderByWithRelationInput
+    sender?: UserOrderByWithRelationInput
+  }
+
+  export type MessageWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: MessageWhereInput | MessageWhereInput[]
+    OR?: MessageWhereInput[]
+    NOT?: MessageWhereInput | MessageWhereInput[]
+    conversationId?: IntFilter<"Message"> | number
+    senderId?: IntFilter<"Message"> | number
+    receiverId?: IntFilter<"Message"> | number
+    content?: StringFilter<"Message"> | string
+    timestamp?: DateTimeFilter<"Message"> | Date | string
+    conversation?: XOR<ConversationScalarRelationFilter, ConversationWhereInput>
+    receiver?: XOR<UserScalarRelationFilter, UserWhereInput>
+    sender?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }, "id">
+
+  export type MessageOrderByWithAggregationInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    senderId?: SortOrder
+    receiverId?: SortOrder
+    content?: SortOrder
+    timestamp?: SortOrder
+    _count?: MessageCountOrderByAggregateInput
+    _avg?: MessageAvgOrderByAggregateInput
+    _max?: MessageMaxOrderByAggregateInput
+    _min?: MessageMinOrderByAggregateInput
+    _sum?: MessageSumOrderByAggregateInput
+  }
+
+  export type MessageScalarWhereWithAggregatesInput = {
+    AND?: MessageScalarWhereWithAggregatesInput | MessageScalarWhereWithAggregatesInput[]
+    OR?: MessageScalarWhereWithAggregatesInput[]
+    NOT?: MessageScalarWhereWithAggregatesInput | MessageScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Message"> | number
+    conversationId?: IntWithAggregatesFilter<"Message"> | number
+    senderId?: IntWithAggregatesFilter<"Message"> | number
+    receiverId?: IntWithAggregatesFilter<"Message"> | number
+    content?: StringWithAggregatesFilter<"Message"> | string
+    timestamp?: DateTimeWithAggregatesFilter<"Message"> | Date | string
   }
 
   export type UserCreateInput = {
@@ -19037,7 +24446,6 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -19045,13 +24453,18 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
-    listings?: ListingCreateNestedManyWithoutHostInput
+    isRestaurantHost?: boolean
     bookings?: BookingCreateNestedManyWithoutGuestInput
-    reviews?: ReviewCreateNestedManyWithoutAuthorInput
-    notifications?: NotificationCreateNestedManyWithoutUserInput
     earnings?: EarningCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsCreateNestedOneWithoutUserInput
+    listings?: ListingCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageCreateNestedManyWithoutSenderInput
+    notifications?: NotificationCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    reviews?: ReviewCreateNestedManyWithoutAuthorInput
+    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -19063,8 +24476,6 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -19072,12 +24483,18 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
-    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
+    isRestaurantHost?: boolean
+    restaurantId?: number | null
     bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
-    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
-    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
     earnings?: EarningUncheckedCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsUncheckedCreateNestedOneWithoutUserInput
+    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodUncheckedCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
   }
 
   export type UserUpdateInput = {
@@ -19088,7 +24505,6 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -19096,13 +24512,18 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
-    listings?: ListingUpdateManyWithoutHostNestedInput
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
     bookings?: BookingUpdateManyWithoutGuestNestedInput
-    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
-    notifications?: NotificationUpdateManyWithoutUserNestedInput
     earnings?: EarningUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUpdateOneWithoutUserNestedInput
+    listings?: ListingUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
+    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -19114,8 +24535,6 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -19123,12 +24542,18 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
-    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
     bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
-    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
-    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
     earnings?: EarningUncheckedUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUncheckedUpdateOneWithoutUserNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUncheckedUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -19140,8 +24565,6 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -19149,6 +24572,8 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
+    isRestaurantHost?: boolean
+    restaurantId?: number | null
   }
 
   export type UserUpdateManyMutationInput = {
@@ -19159,7 +24584,6 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -19167,6 +24591,7 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type UserUncheckedUpdateManyInput = {
@@ -19178,8 +24603,6 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -19187,6 +24610,8 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type RestaurantCreateInput = {
@@ -19200,17 +24625,17 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    restaurantType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    host: UserCreateNestedOneWithoutHostedRestaurantInput
-    users?: UserCreateNestedManyWithoutRestaurantInput
     listings?: ListingCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageCreateNestedManyWithoutRestaurantInput
     operatingHours?: OperatingHoursCreateNestedManyWithoutRestaurantInput
+    host: UserCreateNestedOneWithoutHostedRestaurantInput
+    images?: RestaurantImageCreateNestedManyWithoutRestaurantInput
+    users?: UserCreateNestedManyWithoutRestaurantInput
   }
 
   export type RestaurantUncheckedCreateInput = {
@@ -19225,17 +24650,17 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    restaurantType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     hostId: number
-    users?: UserUncheckedCreateNestedManyWithoutRestaurantInput
     listings?: ListingUncheckedCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput
     operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput
+    images?: RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput
+    users?: UserUncheckedCreateNestedManyWithoutRestaurantInput
   }
 
   export type RestaurantUpdateInput = {
@@ -19249,17 +24674,17 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    restaurantType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    host?: UserUpdateOneRequiredWithoutHostedRestaurantNestedInput
-    users?: UserUpdateManyWithoutRestaurantNestedInput
     listings?: ListingUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUpdateManyWithoutRestaurantNestedInput
     operatingHours?: OperatingHoursUpdateManyWithoutRestaurantNestedInput
+    host?: UserUpdateOneRequiredWithoutHostedRestaurantNestedInput
+    images?: RestaurantImageUpdateManyWithoutRestaurantNestedInput
+    users?: UserUpdateManyWithoutRestaurantNestedInput
   }
 
   export type RestaurantUncheckedUpdateInput = {
@@ -19274,17 +24699,17 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    restaurantType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     hostId?: IntFieldUpdateOperationsInput | number
-    users?: UserUncheckedUpdateManyWithoutRestaurantNestedInput
     listings?: ListingUncheckedUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput
     operatingHours?: OperatingHoursUncheckedUpdateManyWithoutRestaurantNestedInput
+    images?: RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput
+    users?: UserUncheckedUpdateManyWithoutRestaurantNestedInput
   }
 
   export type RestaurantCreateManyInput = {
@@ -19299,7 +24724,7 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    restaurantType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
@@ -19319,7 +24744,7 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    restaurantType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
@@ -19339,7 +24764,7 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    restaurantType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
@@ -19358,12 +24783,12 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurant: RestaurantCreateNestedOneWithoutListingsInput
-    host: UserCreateNestedOneWithoutListingsInput
-    bookings?: BookingCreateNestedManyWithoutListingInput
-    images?: ListingImageCreateNestedManyWithoutListingInput
-    amenities?: ListingAmenityCreateNestedManyWithoutListingInput
     availability?: AvailabilityCreateNestedManyWithoutListingInput
+    bookings?: BookingCreateNestedManyWithoutListingInput
+    host: UserCreateNestedOneWithoutListingsInput
+    restaurant?: RestaurantCreateNestedOneWithoutListingsInput
+    amenities?: ListingAmenityCreateNestedManyWithoutListingInput
+    images?: ListingImageCreateNestedManyWithoutListingInput
     reviews?: ReviewCreateNestedManyWithoutListingInput
   }
 
@@ -19378,12 +24803,12 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurantId: number
     hostId: number
-    bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
-    images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
-    amenities?: ListingAmenityUncheckedCreateNestedManyWithoutListingInput
+    restaurantId?: number | null
     availability?: AvailabilityUncheckedCreateNestedManyWithoutListingInput
+    bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
+    amenities?: ListingAmenityUncheckedCreateNestedManyWithoutListingInput
+    images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutListingInput
   }
 
@@ -19397,12 +24822,12 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurant?: RestaurantUpdateOneRequiredWithoutListingsNestedInput
-    host?: UserUpdateOneRequiredWithoutListingsNestedInput
-    bookings?: BookingUpdateManyWithoutListingNestedInput
-    images?: ListingImageUpdateManyWithoutListingNestedInput
-    amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
     availability?: AvailabilityUpdateManyWithoutListingNestedInput
+    bookings?: BookingUpdateManyWithoutListingNestedInput
+    host?: UserUpdateOneRequiredWithoutListingsNestedInput
+    restaurant?: RestaurantUpdateOneWithoutListingsNestedInput
+    amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
+    images?: ListingImageUpdateManyWithoutListingNestedInput
     reviews?: ReviewUpdateManyWithoutListingNestedInput
   }
 
@@ -19417,12 +24842,12 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: IntFieldUpdateOperationsInput | number
     hostId?: IntFieldUpdateOperationsInput | number
-    bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
-    images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
-    amenities?: ListingAmenityUncheckedUpdateManyWithoutListingNestedInput
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
     availability?: AvailabilityUncheckedUpdateManyWithoutListingNestedInput
+    bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
+    amenities?: ListingAmenityUncheckedUpdateManyWithoutListingNestedInput
+    images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutListingNestedInput
   }
 
@@ -19437,8 +24862,8 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurantId: number
     hostId: number
+    restaurantId?: number | null
   }
 
   export type ListingUpdateManyMutationInput = {
@@ -19464,8 +24889,8 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: IntFieldUpdateOperationsInput | number
     hostId?: IntFieldUpdateOperationsInput | number
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type ListingImageCreateInput = {
@@ -19585,8 +25010,8 @@ export namespace Prisma {
   }
 
   export type ListingAmenityCreateInput = {
-    listing: ListingCreateNestedOneWithoutAmenitiesInput
     amenity: AmenityCreateNestedOneWithoutListingsInput
+    listing: ListingCreateNestedOneWithoutAmenitiesInput
   }
 
   export type ListingAmenityUncheckedCreateInput = {
@@ -19596,8 +25021,8 @@ export namespace Prisma {
   }
 
   export type ListingAmenityUpdateInput = {
-    listing?: ListingUpdateOneRequiredWithoutAmenitiesNestedInput
     amenity?: AmenityUpdateOneRequiredWithoutListingsNestedInput
+    listing?: ListingUpdateOneRequiredWithoutAmenitiesNestedInput
   }
 
   export type ListingAmenityUncheckedUpdateInput = {
@@ -19691,23 +25116,23 @@ export namespace Prisma {
   export type BookingCreateInput = {
     startTime: Date | string
     endTime: Date | string
-    totalPrice: number
+    totalPrice?: number | null
     status?: string
     guestCount?: number | null
     specialRequests?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    listing: ListingCreateNestedOneWithoutBookingsInput
     guest: UserCreateNestedOneWithoutBookingsInput
-    review?: ReviewCreateNestedOneWithoutBookingInput
+    listing: ListingCreateNestedOneWithoutBookingsInput
     earning?: EarningCreateNestedOneWithoutBookingInput
+    review?: ReviewCreateNestedOneWithoutBookingInput
   }
 
   export type BookingUncheckedCreateInput = {
     id?: number
     startTime: Date | string
     endTime: Date | string
-    totalPrice: number
+    totalPrice?: number | null
     status?: string
     guestCount?: number | null
     specialRequests?: string | null
@@ -19715,30 +25140,30 @@ export namespace Prisma {
     updatedAt?: Date | string
     listingId: number
     guestId: number
-    review?: ReviewUncheckedCreateNestedOneWithoutBookingInput
     earning?: EarningUncheckedCreateNestedOneWithoutBookingInput
+    review?: ReviewUncheckedCreateNestedOneWithoutBookingInput
   }
 
   export type BookingUpdateInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalPrice?: FloatFieldUpdateOperationsInput | number
+    totalPrice?: NullableFloatFieldUpdateOperationsInput | number | null
     status?: StringFieldUpdateOperationsInput | string
     guestCount?: NullableIntFieldUpdateOperationsInput | number | null
     specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    listing?: ListingUpdateOneRequiredWithoutBookingsNestedInput
     guest?: UserUpdateOneRequiredWithoutBookingsNestedInput
-    review?: ReviewUpdateOneWithoutBookingNestedInput
+    listing?: ListingUpdateOneRequiredWithoutBookingsNestedInput
     earning?: EarningUpdateOneWithoutBookingNestedInput
+    review?: ReviewUpdateOneWithoutBookingNestedInput
   }
 
   export type BookingUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalPrice?: FloatFieldUpdateOperationsInput | number
+    totalPrice?: NullableFloatFieldUpdateOperationsInput | number | null
     status?: StringFieldUpdateOperationsInput | string
     guestCount?: NullableIntFieldUpdateOperationsInput | number | null
     specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
@@ -19746,15 +25171,15 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     listingId?: IntFieldUpdateOperationsInput | number
     guestId?: IntFieldUpdateOperationsInput | number
-    review?: ReviewUncheckedUpdateOneWithoutBookingNestedInput
     earning?: EarningUncheckedUpdateOneWithoutBookingNestedInput
+    review?: ReviewUncheckedUpdateOneWithoutBookingNestedInput
   }
 
   export type BookingCreateManyInput = {
     id?: number
     startTime: Date | string
     endTime: Date | string
-    totalPrice: number
+    totalPrice?: number | null
     status?: string
     guestCount?: number | null
     specialRequests?: string | null
@@ -19767,7 +25192,7 @@ export namespace Prisma {
   export type BookingUpdateManyMutationInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalPrice?: FloatFieldUpdateOperationsInput | number
+    totalPrice?: NullableFloatFieldUpdateOperationsInput | number | null
     status?: StringFieldUpdateOperationsInput | string
     guestCount?: NullableIntFieldUpdateOperationsInput | number | null
     specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
@@ -19779,7 +25204,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalPrice?: FloatFieldUpdateOperationsInput | number
+    totalPrice?: NullableFloatFieldUpdateOperationsInput | number | null
     status?: StringFieldUpdateOperationsInput | string
     guestCount?: NullableIntFieldUpdateOperationsInput | number | null
     specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
@@ -19793,9 +25218,9 @@ export namespace Prisma {
     rating: number
     comment?: string | null
     createdAt?: Date | string
-    listing: ListingCreateNestedOneWithoutReviewsInput
     author: UserCreateNestedOneWithoutReviewsInput
     booking: BookingCreateNestedOneWithoutReviewInput
+    listing: ListingCreateNestedOneWithoutReviewsInput
   }
 
   export type ReviewUncheckedCreateInput = {
@@ -19812,9 +25237,9 @@ export namespace Prisma {
     rating?: IntFieldUpdateOperationsInput | number
     comment?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    listing?: ListingUpdateOneRequiredWithoutReviewsNestedInput
     author?: UserUpdateOneRequiredWithoutReviewsNestedInput
     booking?: BookingUpdateOneRequiredWithoutReviewNestedInput
+    listing?: ListingUpdateOneRequiredWithoutReviewsNestedInput
   }
 
   export type ReviewUncheckedUpdateInput = {
@@ -19859,8 +25284,8 @@ export namespace Prisma {
     status?: string
     description?: string | null
     createdAt?: Date | string
-    host: UserCreateNestedOneWithoutEarningsInput
     booking?: BookingCreateNestedOneWithoutEarningInput
+    host: UserCreateNestedOneWithoutEarningsInput
   }
 
   export type EarningUncheckedCreateInput = {
@@ -19880,8 +25305,8 @@ export namespace Prisma {
     status?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    host?: UserUpdateOneRequiredWithoutEarningsNestedInput
     booking?: BookingUpdateOneWithoutEarningNestedInput
+    host?: UserUpdateOneRequiredWithoutEarningsNestedInput
   }
 
   export type EarningUncheckedUpdateInput = {
@@ -20055,7 +25480,7 @@ export namespace Prisma {
     openTime: string
     closeTime: string
     isClosed?: boolean
-    restaurant: RestaurantCreateNestedOneWithoutOperatingHoursInput
+    restaurant?: RestaurantCreateNestedOneWithoutOperatingHoursInput
   }
 
   export type OperatingHoursUncheckedCreateInput = {
@@ -20064,7 +25489,7 @@ export namespace Prisma {
     openTime: string
     closeTime: string
     isClosed?: boolean
-    restaurantId: number
+    restaurantId?: number | null
   }
 
   export type OperatingHoursUpdateInput = {
@@ -20072,7 +25497,7 @@ export namespace Prisma {
     openTime?: StringFieldUpdateOperationsInput | string
     closeTime?: StringFieldUpdateOperationsInput | string
     isClosed?: BoolFieldUpdateOperationsInput | boolean
-    restaurant?: RestaurantUpdateOneRequiredWithoutOperatingHoursNestedInput
+    restaurant?: RestaurantUpdateOneWithoutOperatingHoursNestedInput
   }
 
   export type OperatingHoursUncheckedUpdateInput = {
@@ -20081,7 +25506,7 @@ export namespace Prisma {
     openTime?: StringFieldUpdateOperationsInput | string
     closeTime?: StringFieldUpdateOperationsInput | string
     isClosed?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: IntFieldUpdateOperationsInput | number
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type OperatingHoursCreateManyInput = {
@@ -20090,7 +25515,7 @@ export namespace Prisma {
     openTime: string
     closeTime: string
     isClosed?: boolean
-    restaurantId: number
+    restaurantId?: number | null
   }
 
   export type OperatingHoursUpdateManyMutationInput = {
@@ -20106,7 +25531,267 @@ export namespace Prisma {
     openTime?: StringFieldUpdateOperationsInput | string
     closeTime?: StringFieldUpdateOperationsInput | string
     isClosed?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: IntFieldUpdateOperationsInput | number
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type HostSettingsCreateInput = {
+    emailBookings?: boolean
+    emailMessages?: boolean
+    emailPayouts?: boolean
+    pushBookings?: boolean
+    pushMessages?: boolean
+    pushPayouts?: boolean
+    companyName?: string | null
+    kraPin?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    user: UserCreateNestedOneWithoutHostSettingsInput
+  }
+
+  export type HostSettingsUncheckedCreateInput = {
+    id?: number
+    userId: number
+    emailBookings?: boolean
+    emailMessages?: boolean
+    emailPayouts?: boolean
+    pushBookings?: boolean
+    pushMessages?: boolean
+    pushPayouts?: boolean
+    companyName?: string | null
+    kraPin?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type HostSettingsUpdateInput = {
+    emailBookings?: BoolFieldUpdateOperationsInput | boolean
+    emailMessages?: BoolFieldUpdateOperationsInput | boolean
+    emailPayouts?: BoolFieldUpdateOperationsInput | boolean
+    pushBookings?: BoolFieldUpdateOperationsInput | boolean
+    pushMessages?: BoolFieldUpdateOperationsInput | boolean
+    pushPayouts?: BoolFieldUpdateOperationsInput | boolean
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    kraPin?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutHostSettingsNestedInput
+  }
+
+  export type HostSettingsUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userId?: IntFieldUpdateOperationsInput | number
+    emailBookings?: BoolFieldUpdateOperationsInput | boolean
+    emailMessages?: BoolFieldUpdateOperationsInput | boolean
+    emailPayouts?: BoolFieldUpdateOperationsInput | boolean
+    pushBookings?: BoolFieldUpdateOperationsInput | boolean
+    pushMessages?: BoolFieldUpdateOperationsInput | boolean
+    pushPayouts?: BoolFieldUpdateOperationsInput | boolean
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    kraPin?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HostSettingsCreateManyInput = {
+    id?: number
+    userId: number
+    emailBookings?: boolean
+    emailMessages?: boolean
+    emailPayouts?: boolean
+    pushBookings?: boolean
+    pushMessages?: boolean
+    pushPayouts?: boolean
+    companyName?: string | null
+    kraPin?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type HostSettingsUpdateManyMutationInput = {
+    emailBookings?: BoolFieldUpdateOperationsInput | boolean
+    emailMessages?: BoolFieldUpdateOperationsInput | boolean
+    emailPayouts?: BoolFieldUpdateOperationsInput | boolean
+    pushBookings?: BoolFieldUpdateOperationsInput | boolean
+    pushMessages?: BoolFieldUpdateOperationsInput | boolean
+    pushPayouts?: BoolFieldUpdateOperationsInput | boolean
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    kraPin?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HostSettingsUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userId?: IntFieldUpdateOperationsInput | number
+    emailBookings?: BoolFieldUpdateOperationsInput | boolean
+    emailMessages?: BoolFieldUpdateOperationsInput | boolean
+    emailPayouts?: BoolFieldUpdateOperationsInput | boolean
+    pushBookings?: BoolFieldUpdateOperationsInput | boolean
+    pushMessages?: BoolFieldUpdateOperationsInput | boolean
+    pushPayouts?: BoolFieldUpdateOperationsInput | boolean
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    kraPin?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PaymentMethodCreateInput = {
+    type: string
+    details: string
+    isPrimary?: boolean
+    createdAt?: Date | string
+    user: UserCreateNestedOneWithoutPaymentMethodsInput
+  }
+
+  export type PaymentMethodUncheckedCreateInput = {
+    id?: number
+    userId: number
+    type: string
+    details: string
+    isPrimary?: boolean
+    createdAt?: Date | string
+  }
+
+  export type PaymentMethodUpdateInput = {
+    type?: StringFieldUpdateOperationsInput | string
+    details?: StringFieldUpdateOperationsInput | string
+    isPrimary?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutPaymentMethodsNestedInput
+  }
+
+  export type PaymentMethodUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userId?: IntFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    details?: StringFieldUpdateOperationsInput | string
+    isPrimary?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PaymentMethodCreateManyInput = {
+    id?: number
+    userId: number
+    type: string
+    details: string
+    isPrimary?: boolean
+    createdAt?: Date | string
+  }
+
+  export type PaymentMethodUpdateManyMutationInput = {
+    type?: StringFieldUpdateOperationsInput | string
+    details?: StringFieldUpdateOperationsInput | string
+    isPrimary?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PaymentMethodUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userId?: IntFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    details?: StringFieldUpdateOperationsInput | string
+    isPrimary?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ConversationCreateInput = {
+    bookingId: number
+    createdAt?: Date | string
+    messages?: MessageCreateNestedManyWithoutConversationInput
+  }
+
+  export type ConversationUncheckedCreateInput = {
+    id?: number
+    bookingId: number
+    createdAt?: Date | string
+    messages?: MessageUncheckedCreateNestedManyWithoutConversationInput
+  }
+
+  export type ConversationUpdateInput = {
+    bookingId?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    messages?: MessageUpdateManyWithoutConversationNestedInput
+  }
+
+  export type ConversationUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    bookingId?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    messages?: MessageUncheckedUpdateManyWithoutConversationNestedInput
+  }
+
+  export type ConversationCreateManyInput = {
+    id?: number
+    bookingId: number
+    createdAt?: Date | string
+  }
+
+  export type ConversationUpdateManyMutationInput = {
+    bookingId?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ConversationUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    bookingId?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MessageCreateInput = {
+    content: string
+    timestamp?: Date | string
+    conversation: ConversationCreateNestedOneWithoutMessagesInput
+    receiver: UserCreateNestedOneWithoutMessagesReceivedInput
+    sender: UserCreateNestedOneWithoutMessagesSentInput
+  }
+
+  export type MessageUncheckedCreateInput = {
+    id?: number
+    conversationId: number
+    senderId: number
+    receiverId: number
+    content: string
+    timestamp?: Date | string
+  }
+
+  export type MessageUpdateInput = {
+    content?: StringFieldUpdateOperationsInput | string
+    timestamp?: DateTimeFieldUpdateOperationsInput | Date | string
+    conversation?: ConversationUpdateOneRequiredWithoutMessagesNestedInput
+    receiver?: UserUpdateOneRequiredWithoutMessagesReceivedNestedInput
+    sender?: UserUpdateOneRequiredWithoutMessagesSentNestedInput
+  }
+
+  export type MessageUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    conversationId?: IntFieldUpdateOperationsInput | number
+    senderId?: IntFieldUpdateOperationsInput | number
+    receiverId?: IntFieldUpdateOperationsInput | number
+    content?: StringFieldUpdateOperationsInput | string
+    timestamp?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MessageCreateManyInput = {
+    id?: number
+    conversationId: number
+    senderId: number
+    receiverId: number
+    content: string
+    timestamp?: Date | string
+  }
+
+  export type MessageUpdateManyMutationInput = {
+    content?: StringFieldUpdateOperationsInput | string
+    timestamp?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MessageUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    conversationId?: IntFieldUpdateOperationsInput | number
+    senderId?: IntFieldUpdateOperationsInput | number
+    receiverId?: IntFieldUpdateOperationsInput | number
+    content?: StringFieldUpdateOperationsInput | string
+    timestamp?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -20177,33 +25862,10 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type RestaurantNullableScalarRelationFilter = {
-    is?: RestaurantWhereInput | null
-    isNot?: RestaurantWhereInput | null
-  }
-
-  export type ListingListRelationFilter = {
-    every?: ListingWhereInput
-    some?: ListingWhereInput
-    none?: ListingWhereInput
-  }
-
   export type BookingListRelationFilter = {
     every?: BookingWhereInput
     some?: BookingWhereInput
     none?: BookingWhereInput
-  }
-
-  export type ReviewListRelationFilter = {
-    every?: ReviewWhereInput
-    some?: ReviewWhereInput
-    none?: ReviewWhereInput
-  }
-
-  export type NotificationListRelationFilter = {
-    every?: NotificationWhereInput
-    some?: NotificationWhereInput
-    none?: NotificationWhereInput
   }
 
   export type EarningListRelationFilter = {
@@ -20212,20 +25874,64 @@ export namespace Prisma {
     none?: EarningWhereInput
   }
 
+  export type HostSettingsNullableScalarRelationFilter = {
+    is?: HostSettingsWhereInput | null
+    isNot?: HostSettingsWhereInput | null
+  }
+
+  export type ListingListRelationFilter = {
+    every?: ListingWhereInput
+    some?: ListingWhereInput
+    none?: ListingWhereInput
+  }
+
+  export type MessageListRelationFilter = {
+    every?: MessageWhereInput
+    some?: MessageWhereInput
+    none?: MessageWhereInput
+  }
+
+  export type NotificationListRelationFilter = {
+    every?: NotificationWhereInput
+    some?: NotificationWhereInput
+    none?: NotificationWhereInput
+  }
+
+  export type PaymentMethodListRelationFilter = {
+    every?: PaymentMethodWhereInput
+    some?: PaymentMethodWhereInput
+    none?: PaymentMethodWhereInput
+  }
+
+  export type RestaurantNullableScalarRelationFilter = {
+    is?: RestaurantWhereInput | null
+    isNot?: RestaurantWhereInput | null
+  }
+
+  export type ReviewListRelationFilter = {
+    every?: ReviewWhereInput
+    some?: ReviewWhereInput
+    none?: ReviewWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
-  }
-
-  export type ListingOrderByRelationAggregateInput = {
-    _count?: SortOrder
   }
 
   export type BookingOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type ReviewOrderByRelationAggregateInput = {
+  export type EarningOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ListingOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type MessageOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -20233,7 +25939,11 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type EarningOrderByRelationAggregateInput = {
+  export type PaymentMethodOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ReviewOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -20246,8 +25956,6 @@ export namespace Prisma {
     role?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    isRestaurantHost?: SortOrder
-    restaurantId?: SortOrder
     profileImage?: SortOrder
     bio?: SortOrder
     address?: SortOrder
@@ -20255,6 +25963,8 @@ export namespace Prisma {
     state?: SortOrder
     country?: SortOrder
     zipCode?: SortOrder
+    isRestaurantHost?: SortOrder
+    restaurantId?: SortOrder
   }
 
   export type UserAvgOrderByAggregateInput = {
@@ -20271,8 +25981,6 @@ export namespace Prisma {
     role?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    isRestaurantHost?: SortOrder
-    restaurantId?: SortOrder
     profileImage?: SortOrder
     bio?: SortOrder
     address?: SortOrder
@@ -20280,6 +25988,8 @@ export namespace Prisma {
     state?: SortOrder
     country?: SortOrder
     zipCode?: SortOrder
+    isRestaurantHost?: SortOrder
+    restaurantId?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
@@ -20291,8 +26001,6 @@ export namespace Prisma {
     role?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    isRestaurantHost?: SortOrder
-    restaurantId?: SortOrder
     profileImage?: SortOrder
     bio?: SortOrder
     address?: SortOrder
@@ -20300,6 +26008,8 @@ export namespace Prisma {
     state?: SortOrder
     country?: SortOrder
     zipCode?: SortOrder
+    isRestaurantHost?: SortOrder
+    restaurantId?: SortOrder
   }
 
   export type UserSumOrderByAggregateInput = {
@@ -20408,15 +26118,15 @@ export namespace Prisma {
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
+  export type OperatingHoursListRelationFilter = {
+    every?: OperatingHoursWhereInput
+    some?: OperatingHoursWhereInput
+    none?: OperatingHoursWhereInput
+  }
+
   export type UserScalarRelationFilter = {
     is?: UserWhereInput
     isNot?: UserWhereInput
-  }
-
-  export type UserListRelationFilter = {
-    every?: UserWhereInput
-    some?: UserWhereInput
-    none?: UserWhereInput
   }
 
   export type RestaurantImageListRelationFilter = {
@@ -20425,13 +26135,13 @@ export namespace Prisma {
     none?: RestaurantImageWhereInput
   }
 
-  export type OperatingHoursListRelationFilter = {
-    every?: OperatingHoursWhereInput
-    some?: OperatingHoursWhereInput
-    none?: OperatingHoursWhereInput
+  export type UserListRelationFilter = {
+    every?: UserWhereInput
+    some?: UserWhereInput
+    none?: UserWhereInput
   }
 
-  export type UserOrderByRelationAggregateInput = {
+  export type OperatingHoursOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -20439,7 +26149,7 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type OperatingHoursOrderByRelationAggregateInput = {
+  export type UserOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -20455,7 +26165,7 @@ export namespace Prisma {
     phone?: SortOrder
     email?: SortOrder
     website?: SortOrder
-    cuisine?: SortOrder
+    restaurantType?: SortOrder
     priceRange?: SortOrder
     rating?: SortOrder
     isActive?: SortOrder
@@ -20482,7 +26192,7 @@ export namespace Prisma {
     phone?: SortOrder
     email?: SortOrder
     website?: SortOrder
-    cuisine?: SortOrder
+    restaurantType?: SortOrder
     priceRange?: SortOrder
     rating?: SortOrder
     isActive?: SortOrder
@@ -20503,7 +26213,7 @@ export namespace Prisma {
     phone?: SortOrder
     email?: SortOrder
     website?: SortOrder
-    cuisine?: SortOrder
+    restaurantType?: SortOrder
     priceRange?: SortOrder
     rating?: SortOrder
     isActive?: SortOrder
@@ -20534,15 +26244,10 @@ export namespace Prisma {
     _max?: NestedFloatNullableFilter<$PrismaModel>
   }
 
-  export type RestaurantScalarRelationFilter = {
-    is?: RestaurantWhereInput
-    isNot?: RestaurantWhereInput
-  }
-
-  export type ListingImageListRelationFilter = {
-    every?: ListingImageWhereInput
-    some?: ListingImageWhereInput
-    none?: ListingImageWhereInput
+  export type AvailabilityListRelationFilter = {
+    every?: AvailabilityWhereInput
+    some?: AvailabilityWhereInput
+    none?: AvailabilityWhereInput
   }
 
   export type ListingAmenityListRelationFilter = {
@@ -20551,13 +26256,13 @@ export namespace Prisma {
     none?: ListingAmenityWhereInput
   }
 
-  export type AvailabilityListRelationFilter = {
-    every?: AvailabilityWhereInput
-    some?: AvailabilityWhereInput
-    none?: AvailabilityWhereInput
+  export type ListingImageListRelationFilter = {
+    every?: ListingImageWhereInput
+    some?: ListingImageWhereInput
+    none?: ListingImageWhereInput
   }
 
-  export type ListingImageOrderByRelationAggregateInput = {
+  export type AvailabilityOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -20565,7 +26270,7 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type AvailabilityOrderByRelationAggregateInput = {
+  export type ListingImageOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -20580,8 +26285,8 @@ export namespace Prisma {
     isActive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    restaurantId?: SortOrder
     hostId?: SortOrder
+    restaurantId?: SortOrder
   }
 
   export type ListingAvgOrderByAggregateInput = {
@@ -20589,8 +26294,8 @@ export namespace Prisma {
     capacity?: SortOrder
     pricePerHour?: SortOrder
     pricePerDay?: SortOrder
-    restaurantId?: SortOrder
     hostId?: SortOrder
+    restaurantId?: SortOrder
   }
 
   export type ListingMaxOrderByAggregateInput = {
@@ -20604,8 +26309,8 @@ export namespace Prisma {
     isActive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    restaurantId?: SortOrder
     hostId?: SortOrder
+    restaurantId?: SortOrder
   }
 
   export type ListingMinOrderByAggregateInput = {
@@ -20619,8 +26324,8 @@ export namespace Prisma {
     isActive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    restaurantId?: SortOrder
     hostId?: SortOrder
+    restaurantId?: SortOrder
   }
 
   export type ListingSumOrderByAggregateInput = {
@@ -20628,8 +26333,8 @@ export namespace Prisma {
     capacity?: SortOrder
     pricePerHour?: SortOrder
     pricePerDay?: SortOrder
-    restaurantId?: SortOrder
     hostId?: SortOrder
+    restaurantId?: SortOrder
   }
 
   export type ListingScalarRelationFilter = {
@@ -20746,13 +26451,6 @@ export namespace Prisma {
     amenityId?: SortOrder
   }
 
-  export type AvailabilityListingIdDateStartTimeEndTimeCompoundUniqueInput = {
-    listingId: number
-    date: Date | string
-    startTime: string
-    endTime: string
-  }
-
   export type AvailabilityCountOrderByAggregateInput = {
     id?: SortOrder
     date?: SortOrder
@@ -20793,25 +26491,14 @@ export namespace Prisma {
     listingId?: SortOrder
   }
 
-  export type FloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
+  export type EarningNullableScalarRelationFilter = {
+    is?: EarningWhereInput | null
+    isNot?: EarningWhereInput | null
   }
 
   export type ReviewNullableScalarRelationFilter = {
     is?: ReviewWhereInput | null
     isNot?: ReviewWhereInput | null
-  }
-
-  export type EarningNullableScalarRelationFilter = {
-    is?: EarningWhereInput | null
-    isNot?: EarningWhereInput | null
   }
 
   export type BookingCountOrderByAggregateInput = {
@@ -20872,22 +26559,6 @@ export namespace Prisma {
     guestId?: SortOrder
   }
 
-  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedFloatFilter<$PrismaModel>
-    _min?: NestedFloatFilter<$PrismaModel>
-    _max?: NestedFloatFilter<$PrismaModel>
-  }
-
   export type BookingScalarRelationFilter = {
     is?: BookingWhereInput
     isNot?: BookingWhereInput
@@ -20937,6 +26608,17 @@ export namespace Prisma {
     listingId?: SortOrder
     authorId?: SortOrder
     bookingId?: SortOrder
+  }
+
+  export type FloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type BookingNullableScalarRelationFilter = {
@@ -20991,6 +26673,22 @@ export namespace Prisma {
     bookingId?: SortOrder
   }
 
+  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
+  }
+
   export type NotificationCountOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
@@ -21029,6 +26727,11 @@ export namespace Prisma {
   export type NotificationSumOrderByAggregateInput = {
     id?: SortOrder
     userId?: SortOrder
+  }
+
+  export type RestaurantScalarRelationFilter = {
+    is?: RestaurantWhereInput
+    isNot?: RestaurantWhereInput
   }
 
   export type RestaurantImageCountOrderByAggregateInput = {
@@ -21112,23 +26815,170 @@ export namespace Prisma {
     restaurantId?: SortOrder
   }
 
-  export type RestaurantCreateNestedOneWithoutUsersInput = {
-    create?: XOR<RestaurantCreateWithoutUsersInput, RestaurantUncheckedCreateWithoutUsersInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutUsersInput
-    connect?: RestaurantWhereUniqueInput
+  export type HostSettingsCountOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    emailBookings?: SortOrder
+    emailMessages?: SortOrder
+    emailPayouts?: SortOrder
+    pushBookings?: SortOrder
+    pushMessages?: SortOrder
+    pushPayouts?: SortOrder
+    companyName?: SortOrder
+    kraPin?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
-  export type RestaurantCreateNestedOneWithoutHostInput = {
-    create?: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutHostInput
-    connect?: RestaurantWhereUniqueInput
+  export type HostSettingsAvgOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
   }
 
-  export type ListingCreateNestedManyWithoutHostInput = {
-    create?: XOR<ListingCreateWithoutHostInput, ListingUncheckedCreateWithoutHostInput> | ListingCreateWithoutHostInput[] | ListingUncheckedCreateWithoutHostInput[]
-    connectOrCreate?: ListingCreateOrConnectWithoutHostInput | ListingCreateOrConnectWithoutHostInput[]
-    createMany?: ListingCreateManyHostInputEnvelope
-    connect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
+  export type HostSettingsMaxOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    emailBookings?: SortOrder
+    emailMessages?: SortOrder
+    emailPayouts?: SortOrder
+    pushBookings?: SortOrder
+    pushMessages?: SortOrder
+    pushPayouts?: SortOrder
+    companyName?: SortOrder
+    kraPin?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type HostSettingsMinOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    emailBookings?: SortOrder
+    emailMessages?: SortOrder
+    emailPayouts?: SortOrder
+    pushBookings?: SortOrder
+    pushMessages?: SortOrder
+    pushPayouts?: SortOrder
+    companyName?: SortOrder
+    kraPin?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type HostSettingsSumOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type PaymentMethodCountOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    type?: SortOrder
+    details?: SortOrder
+    isPrimary?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type PaymentMethodAvgOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type PaymentMethodMaxOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    type?: SortOrder
+    details?: SortOrder
+    isPrimary?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type PaymentMethodMinOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    type?: SortOrder
+    details?: SortOrder
+    isPrimary?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type PaymentMethodSumOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type ConversationCountOrderByAggregateInput = {
+    id?: SortOrder
+    bookingId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type ConversationAvgOrderByAggregateInput = {
+    id?: SortOrder
+    bookingId?: SortOrder
+  }
+
+  export type ConversationMaxOrderByAggregateInput = {
+    id?: SortOrder
+    bookingId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type ConversationMinOrderByAggregateInput = {
+    id?: SortOrder
+    bookingId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type ConversationSumOrderByAggregateInput = {
+    id?: SortOrder
+    bookingId?: SortOrder
+  }
+
+  export type ConversationScalarRelationFilter = {
+    is?: ConversationWhereInput
+    isNot?: ConversationWhereInput
+  }
+
+  export type MessageCountOrderByAggregateInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    senderId?: SortOrder
+    receiverId?: SortOrder
+    content?: SortOrder
+    timestamp?: SortOrder
+  }
+
+  export type MessageAvgOrderByAggregateInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    senderId?: SortOrder
+    receiverId?: SortOrder
+  }
+
+  export type MessageMaxOrderByAggregateInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    senderId?: SortOrder
+    receiverId?: SortOrder
+    content?: SortOrder
+    timestamp?: SortOrder
+  }
+
+  export type MessageMinOrderByAggregateInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    senderId?: SortOrder
+    receiverId?: SortOrder
+    content?: SortOrder
+    timestamp?: SortOrder
+  }
+
+  export type MessageSumOrderByAggregateInput = {
+    id?: SortOrder
+    conversationId?: SortOrder
+    senderId?: SortOrder
+    receiverId?: SortOrder
   }
 
   export type BookingCreateNestedManyWithoutGuestInput = {
@@ -21138,11 +26988,38 @@ export namespace Prisma {
     connect?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
   }
 
-  export type ReviewCreateNestedManyWithoutAuthorInput = {
-    create?: XOR<ReviewCreateWithoutAuthorInput, ReviewUncheckedCreateWithoutAuthorInput> | ReviewCreateWithoutAuthorInput[] | ReviewUncheckedCreateWithoutAuthorInput[]
-    connectOrCreate?: ReviewCreateOrConnectWithoutAuthorInput | ReviewCreateOrConnectWithoutAuthorInput[]
-    createMany?: ReviewCreateManyAuthorInputEnvelope
-    connect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
+  export type EarningCreateNestedManyWithoutHostInput = {
+    create?: XOR<EarningCreateWithoutHostInput, EarningUncheckedCreateWithoutHostInput> | EarningCreateWithoutHostInput[] | EarningUncheckedCreateWithoutHostInput[]
+    connectOrCreate?: EarningCreateOrConnectWithoutHostInput | EarningCreateOrConnectWithoutHostInput[]
+    createMany?: EarningCreateManyHostInputEnvelope
+    connect?: EarningWhereUniqueInput | EarningWhereUniqueInput[]
+  }
+
+  export type HostSettingsCreateNestedOneWithoutUserInput = {
+    create?: XOR<HostSettingsCreateWithoutUserInput, HostSettingsUncheckedCreateWithoutUserInput>
+    connectOrCreate?: HostSettingsCreateOrConnectWithoutUserInput
+    connect?: HostSettingsWhereUniqueInput
+  }
+
+  export type ListingCreateNestedManyWithoutHostInput = {
+    create?: XOR<ListingCreateWithoutHostInput, ListingUncheckedCreateWithoutHostInput> | ListingCreateWithoutHostInput[] | ListingUncheckedCreateWithoutHostInput[]
+    connectOrCreate?: ListingCreateOrConnectWithoutHostInput | ListingCreateOrConnectWithoutHostInput[]
+    createMany?: ListingCreateManyHostInputEnvelope
+    connect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
+  }
+
+  export type MessageCreateNestedManyWithoutReceiverInput = {
+    create?: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput> | MessageCreateWithoutReceiverInput[] | MessageUncheckedCreateWithoutReceiverInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutReceiverInput | MessageCreateOrConnectWithoutReceiverInput[]
+    createMany?: MessageCreateManyReceiverInputEnvelope
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+  }
+
+  export type MessageCreateNestedManyWithoutSenderInput = {
+    create?: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput> | MessageCreateWithoutSenderInput[] | MessageUncheckedCreateWithoutSenderInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutSenderInput | MessageCreateOrConnectWithoutSenderInput[]
+    createMany?: MessageCreateManySenderInputEnvelope
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
   }
 
   export type NotificationCreateNestedManyWithoutUserInput = {
@@ -21152,24 +27029,30 @@ export namespace Prisma {
     connect?: NotificationWhereUniqueInput | NotificationWhereUniqueInput[]
   }
 
-  export type EarningCreateNestedManyWithoutHostInput = {
-    create?: XOR<EarningCreateWithoutHostInput, EarningUncheckedCreateWithoutHostInput> | EarningCreateWithoutHostInput[] | EarningUncheckedCreateWithoutHostInput[]
-    connectOrCreate?: EarningCreateOrConnectWithoutHostInput | EarningCreateOrConnectWithoutHostInput[]
-    createMany?: EarningCreateManyHostInputEnvelope
-    connect?: EarningWhereUniqueInput | EarningWhereUniqueInput[]
+  export type PaymentMethodCreateNestedManyWithoutUserInput = {
+    create?: XOR<PaymentMethodCreateWithoutUserInput, PaymentMethodUncheckedCreateWithoutUserInput> | PaymentMethodCreateWithoutUserInput[] | PaymentMethodUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: PaymentMethodCreateOrConnectWithoutUserInput | PaymentMethodCreateOrConnectWithoutUserInput[]
+    createMany?: PaymentMethodCreateManyUserInputEnvelope
+    connect?: PaymentMethodWhereUniqueInput | PaymentMethodWhereUniqueInput[]
   }
 
-  export type RestaurantUncheckedCreateNestedOneWithoutHostInput = {
+  export type RestaurantCreateNestedOneWithoutHostInput = {
     create?: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
     connectOrCreate?: RestaurantCreateOrConnectWithoutHostInput
     connect?: RestaurantWhereUniqueInput
   }
 
-  export type ListingUncheckedCreateNestedManyWithoutHostInput = {
-    create?: XOR<ListingCreateWithoutHostInput, ListingUncheckedCreateWithoutHostInput> | ListingCreateWithoutHostInput[] | ListingUncheckedCreateWithoutHostInput[]
-    connectOrCreate?: ListingCreateOrConnectWithoutHostInput | ListingCreateOrConnectWithoutHostInput[]
-    createMany?: ListingCreateManyHostInputEnvelope
-    connect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
+  export type ReviewCreateNestedManyWithoutAuthorInput = {
+    create?: XOR<ReviewCreateWithoutAuthorInput, ReviewUncheckedCreateWithoutAuthorInput> | ReviewCreateWithoutAuthorInput[] | ReviewUncheckedCreateWithoutAuthorInput[]
+    connectOrCreate?: ReviewCreateOrConnectWithoutAuthorInput | ReviewCreateOrConnectWithoutAuthorInput[]
+    createMany?: ReviewCreateManyAuthorInputEnvelope
+    connect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
+  }
+
+  export type RestaurantCreateNestedOneWithoutUsersInput = {
+    create?: XOR<RestaurantCreateWithoutUsersInput, RestaurantUncheckedCreateWithoutUsersInput>
+    connectOrCreate?: RestaurantCreateOrConnectWithoutUsersInput
+    connect?: RestaurantWhereUniqueInput
   }
 
   export type BookingUncheckedCreateNestedManyWithoutGuestInput = {
@@ -21179,11 +27062,38 @@ export namespace Prisma {
     connect?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
   }
 
-  export type ReviewUncheckedCreateNestedManyWithoutAuthorInput = {
-    create?: XOR<ReviewCreateWithoutAuthorInput, ReviewUncheckedCreateWithoutAuthorInput> | ReviewCreateWithoutAuthorInput[] | ReviewUncheckedCreateWithoutAuthorInput[]
-    connectOrCreate?: ReviewCreateOrConnectWithoutAuthorInput | ReviewCreateOrConnectWithoutAuthorInput[]
-    createMany?: ReviewCreateManyAuthorInputEnvelope
-    connect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
+  export type EarningUncheckedCreateNestedManyWithoutHostInput = {
+    create?: XOR<EarningCreateWithoutHostInput, EarningUncheckedCreateWithoutHostInput> | EarningCreateWithoutHostInput[] | EarningUncheckedCreateWithoutHostInput[]
+    connectOrCreate?: EarningCreateOrConnectWithoutHostInput | EarningCreateOrConnectWithoutHostInput[]
+    createMany?: EarningCreateManyHostInputEnvelope
+    connect?: EarningWhereUniqueInput | EarningWhereUniqueInput[]
+  }
+
+  export type HostSettingsUncheckedCreateNestedOneWithoutUserInput = {
+    create?: XOR<HostSettingsCreateWithoutUserInput, HostSettingsUncheckedCreateWithoutUserInput>
+    connectOrCreate?: HostSettingsCreateOrConnectWithoutUserInput
+    connect?: HostSettingsWhereUniqueInput
+  }
+
+  export type ListingUncheckedCreateNestedManyWithoutHostInput = {
+    create?: XOR<ListingCreateWithoutHostInput, ListingUncheckedCreateWithoutHostInput> | ListingCreateWithoutHostInput[] | ListingUncheckedCreateWithoutHostInput[]
+    connectOrCreate?: ListingCreateOrConnectWithoutHostInput | ListingCreateOrConnectWithoutHostInput[]
+    createMany?: ListingCreateManyHostInputEnvelope
+    connect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
+  }
+
+  export type MessageUncheckedCreateNestedManyWithoutReceiverInput = {
+    create?: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput> | MessageCreateWithoutReceiverInput[] | MessageUncheckedCreateWithoutReceiverInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutReceiverInput | MessageCreateOrConnectWithoutReceiverInput[]
+    createMany?: MessageCreateManyReceiverInputEnvelope
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+  }
+
+  export type MessageUncheckedCreateNestedManyWithoutSenderInput = {
+    create?: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput> | MessageCreateWithoutSenderInput[] | MessageUncheckedCreateWithoutSenderInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutSenderInput | MessageCreateOrConnectWithoutSenderInput[]
+    createMany?: MessageCreateManySenderInputEnvelope
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
   }
 
   export type NotificationUncheckedCreateNestedManyWithoutUserInput = {
@@ -21193,11 +27103,24 @@ export namespace Prisma {
     connect?: NotificationWhereUniqueInput | NotificationWhereUniqueInput[]
   }
 
-  export type EarningUncheckedCreateNestedManyWithoutHostInput = {
-    create?: XOR<EarningCreateWithoutHostInput, EarningUncheckedCreateWithoutHostInput> | EarningCreateWithoutHostInput[] | EarningUncheckedCreateWithoutHostInput[]
-    connectOrCreate?: EarningCreateOrConnectWithoutHostInput | EarningCreateOrConnectWithoutHostInput[]
-    createMany?: EarningCreateManyHostInputEnvelope
-    connect?: EarningWhereUniqueInput | EarningWhereUniqueInput[]
+  export type PaymentMethodUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<PaymentMethodCreateWithoutUserInput, PaymentMethodUncheckedCreateWithoutUserInput> | PaymentMethodCreateWithoutUserInput[] | PaymentMethodUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: PaymentMethodCreateOrConnectWithoutUserInput | PaymentMethodCreateOrConnectWithoutUserInput[]
+    createMany?: PaymentMethodCreateManyUserInputEnvelope
+    connect?: PaymentMethodWhereUniqueInput | PaymentMethodWhereUniqueInput[]
+  }
+
+  export type RestaurantUncheckedCreateNestedOneWithoutHostInput = {
+    create?: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
+    connectOrCreate?: RestaurantCreateOrConnectWithoutHostInput
+    connect?: RestaurantWhereUniqueInput
+  }
+
+  export type ReviewUncheckedCreateNestedManyWithoutAuthorInput = {
+    create?: XOR<ReviewCreateWithoutAuthorInput, ReviewUncheckedCreateWithoutAuthorInput> | ReviewCreateWithoutAuthorInput[] | ReviewUncheckedCreateWithoutAuthorInput[]
+    connectOrCreate?: ReviewCreateOrConnectWithoutAuthorInput | ReviewCreateOrConnectWithoutAuthorInput[]
+    createMany?: ReviewCreateManyAuthorInputEnvelope
+    connect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -21216,24 +27139,42 @@ export namespace Prisma {
     set?: boolean
   }
 
-  export type RestaurantUpdateOneWithoutUsersNestedInput = {
-    create?: XOR<RestaurantCreateWithoutUsersInput, RestaurantUncheckedCreateWithoutUsersInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutUsersInput
-    upsert?: RestaurantUpsertWithoutUsersInput
-    disconnect?: RestaurantWhereInput | boolean
-    delete?: RestaurantWhereInput | boolean
-    connect?: RestaurantWhereUniqueInput
-    update?: XOR<XOR<RestaurantUpdateToOneWithWhereWithoutUsersInput, RestaurantUpdateWithoutUsersInput>, RestaurantUncheckedUpdateWithoutUsersInput>
+  export type BookingUpdateManyWithoutGuestNestedInput = {
+    create?: XOR<BookingCreateWithoutGuestInput, BookingUncheckedCreateWithoutGuestInput> | BookingCreateWithoutGuestInput[] | BookingUncheckedCreateWithoutGuestInput[]
+    connectOrCreate?: BookingCreateOrConnectWithoutGuestInput | BookingCreateOrConnectWithoutGuestInput[]
+    upsert?: BookingUpsertWithWhereUniqueWithoutGuestInput | BookingUpsertWithWhereUniqueWithoutGuestInput[]
+    createMany?: BookingCreateManyGuestInputEnvelope
+    set?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
+    disconnect?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
+    delete?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
+    connect?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
+    update?: BookingUpdateWithWhereUniqueWithoutGuestInput | BookingUpdateWithWhereUniqueWithoutGuestInput[]
+    updateMany?: BookingUpdateManyWithWhereWithoutGuestInput | BookingUpdateManyWithWhereWithoutGuestInput[]
+    deleteMany?: BookingScalarWhereInput | BookingScalarWhereInput[]
   }
 
-  export type RestaurantUpdateOneWithoutHostNestedInput = {
-    create?: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutHostInput
-    upsert?: RestaurantUpsertWithoutHostInput
-    disconnect?: RestaurantWhereInput | boolean
-    delete?: RestaurantWhereInput | boolean
-    connect?: RestaurantWhereUniqueInput
-    update?: XOR<XOR<RestaurantUpdateToOneWithWhereWithoutHostInput, RestaurantUpdateWithoutHostInput>, RestaurantUncheckedUpdateWithoutHostInput>
+  export type EarningUpdateManyWithoutHostNestedInput = {
+    create?: XOR<EarningCreateWithoutHostInput, EarningUncheckedCreateWithoutHostInput> | EarningCreateWithoutHostInput[] | EarningUncheckedCreateWithoutHostInput[]
+    connectOrCreate?: EarningCreateOrConnectWithoutHostInput | EarningCreateOrConnectWithoutHostInput[]
+    upsert?: EarningUpsertWithWhereUniqueWithoutHostInput | EarningUpsertWithWhereUniqueWithoutHostInput[]
+    createMany?: EarningCreateManyHostInputEnvelope
+    set?: EarningWhereUniqueInput | EarningWhereUniqueInput[]
+    disconnect?: EarningWhereUniqueInput | EarningWhereUniqueInput[]
+    delete?: EarningWhereUniqueInput | EarningWhereUniqueInput[]
+    connect?: EarningWhereUniqueInput | EarningWhereUniqueInput[]
+    update?: EarningUpdateWithWhereUniqueWithoutHostInput | EarningUpdateWithWhereUniqueWithoutHostInput[]
+    updateMany?: EarningUpdateManyWithWhereWithoutHostInput | EarningUpdateManyWithWhereWithoutHostInput[]
+    deleteMany?: EarningScalarWhereInput | EarningScalarWhereInput[]
+  }
+
+  export type HostSettingsUpdateOneWithoutUserNestedInput = {
+    create?: XOR<HostSettingsCreateWithoutUserInput, HostSettingsUncheckedCreateWithoutUserInput>
+    connectOrCreate?: HostSettingsCreateOrConnectWithoutUserInput
+    upsert?: HostSettingsUpsertWithoutUserInput
+    disconnect?: HostSettingsWhereInput | boolean
+    delete?: HostSettingsWhereInput | boolean
+    connect?: HostSettingsWhereUniqueInput
+    update?: XOR<XOR<HostSettingsUpdateToOneWithWhereWithoutUserInput, HostSettingsUpdateWithoutUserInput>, HostSettingsUncheckedUpdateWithoutUserInput>
   }
 
   export type ListingUpdateManyWithoutHostNestedInput = {
@@ -21250,32 +27191,32 @@ export namespace Prisma {
     deleteMany?: ListingScalarWhereInput | ListingScalarWhereInput[]
   }
 
-  export type BookingUpdateManyWithoutGuestNestedInput = {
-    create?: XOR<BookingCreateWithoutGuestInput, BookingUncheckedCreateWithoutGuestInput> | BookingCreateWithoutGuestInput[] | BookingUncheckedCreateWithoutGuestInput[]
-    connectOrCreate?: BookingCreateOrConnectWithoutGuestInput | BookingCreateOrConnectWithoutGuestInput[]
-    upsert?: BookingUpsertWithWhereUniqueWithoutGuestInput | BookingUpsertWithWhereUniqueWithoutGuestInput[]
-    createMany?: BookingCreateManyGuestInputEnvelope
-    set?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
-    disconnect?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
-    delete?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
-    connect?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
-    update?: BookingUpdateWithWhereUniqueWithoutGuestInput | BookingUpdateWithWhereUniqueWithoutGuestInput[]
-    updateMany?: BookingUpdateManyWithWhereWithoutGuestInput | BookingUpdateManyWithWhereWithoutGuestInput[]
-    deleteMany?: BookingScalarWhereInput | BookingScalarWhereInput[]
+  export type MessageUpdateManyWithoutReceiverNestedInput = {
+    create?: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput> | MessageCreateWithoutReceiverInput[] | MessageUncheckedCreateWithoutReceiverInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutReceiverInput | MessageCreateOrConnectWithoutReceiverInput[]
+    upsert?: MessageUpsertWithWhereUniqueWithoutReceiverInput | MessageUpsertWithWhereUniqueWithoutReceiverInput[]
+    createMany?: MessageCreateManyReceiverInputEnvelope
+    set?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    disconnect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    delete?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    update?: MessageUpdateWithWhereUniqueWithoutReceiverInput | MessageUpdateWithWhereUniqueWithoutReceiverInput[]
+    updateMany?: MessageUpdateManyWithWhereWithoutReceiverInput | MessageUpdateManyWithWhereWithoutReceiverInput[]
+    deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
   }
 
-  export type ReviewUpdateManyWithoutAuthorNestedInput = {
-    create?: XOR<ReviewCreateWithoutAuthorInput, ReviewUncheckedCreateWithoutAuthorInput> | ReviewCreateWithoutAuthorInput[] | ReviewUncheckedCreateWithoutAuthorInput[]
-    connectOrCreate?: ReviewCreateOrConnectWithoutAuthorInput | ReviewCreateOrConnectWithoutAuthorInput[]
-    upsert?: ReviewUpsertWithWhereUniqueWithoutAuthorInput | ReviewUpsertWithWhereUniqueWithoutAuthorInput[]
-    createMany?: ReviewCreateManyAuthorInputEnvelope
-    set?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
-    disconnect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
-    delete?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
-    connect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
-    update?: ReviewUpdateWithWhereUniqueWithoutAuthorInput | ReviewUpdateWithWhereUniqueWithoutAuthorInput[]
-    updateMany?: ReviewUpdateManyWithWhereWithoutAuthorInput | ReviewUpdateManyWithWhereWithoutAuthorInput[]
-    deleteMany?: ReviewScalarWhereInput | ReviewScalarWhereInput[]
+  export type MessageUpdateManyWithoutSenderNestedInput = {
+    create?: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput> | MessageCreateWithoutSenderInput[] | MessageUncheckedCreateWithoutSenderInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutSenderInput | MessageCreateOrConnectWithoutSenderInput[]
+    upsert?: MessageUpsertWithWhereUniqueWithoutSenderInput | MessageUpsertWithWhereUniqueWithoutSenderInput[]
+    createMany?: MessageCreateManySenderInputEnvelope
+    set?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    disconnect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    delete?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    update?: MessageUpdateWithWhereUniqueWithoutSenderInput | MessageUpdateWithWhereUniqueWithoutSenderInput[]
+    updateMany?: MessageUpdateManyWithWhereWithoutSenderInput | MessageUpdateManyWithWhereWithoutSenderInput[]
+    deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
   }
 
   export type NotificationUpdateManyWithoutUserNestedInput = {
@@ -21292,18 +27233,52 @@ export namespace Prisma {
     deleteMany?: NotificationScalarWhereInput | NotificationScalarWhereInput[]
   }
 
-  export type EarningUpdateManyWithoutHostNestedInput = {
-    create?: XOR<EarningCreateWithoutHostInput, EarningUncheckedCreateWithoutHostInput> | EarningCreateWithoutHostInput[] | EarningUncheckedCreateWithoutHostInput[]
-    connectOrCreate?: EarningCreateOrConnectWithoutHostInput | EarningCreateOrConnectWithoutHostInput[]
-    upsert?: EarningUpsertWithWhereUniqueWithoutHostInput | EarningUpsertWithWhereUniqueWithoutHostInput[]
-    createMany?: EarningCreateManyHostInputEnvelope
-    set?: EarningWhereUniqueInput | EarningWhereUniqueInput[]
-    disconnect?: EarningWhereUniqueInput | EarningWhereUniqueInput[]
-    delete?: EarningWhereUniqueInput | EarningWhereUniqueInput[]
-    connect?: EarningWhereUniqueInput | EarningWhereUniqueInput[]
-    update?: EarningUpdateWithWhereUniqueWithoutHostInput | EarningUpdateWithWhereUniqueWithoutHostInput[]
-    updateMany?: EarningUpdateManyWithWhereWithoutHostInput | EarningUpdateManyWithWhereWithoutHostInput[]
-    deleteMany?: EarningScalarWhereInput | EarningScalarWhereInput[]
+  export type PaymentMethodUpdateManyWithoutUserNestedInput = {
+    create?: XOR<PaymentMethodCreateWithoutUserInput, PaymentMethodUncheckedCreateWithoutUserInput> | PaymentMethodCreateWithoutUserInput[] | PaymentMethodUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: PaymentMethodCreateOrConnectWithoutUserInput | PaymentMethodCreateOrConnectWithoutUserInput[]
+    upsert?: PaymentMethodUpsertWithWhereUniqueWithoutUserInput | PaymentMethodUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: PaymentMethodCreateManyUserInputEnvelope
+    set?: PaymentMethodWhereUniqueInput | PaymentMethodWhereUniqueInput[]
+    disconnect?: PaymentMethodWhereUniqueInput | PaymentMethodWhereUniqueInput[]
+    delete?: PaymentMethodWhereUniqueInput | PaymentMethodWhereUniqueInput[]
+    connect?: PaymentMethodWhereUniqueInput | PaymentMethodWhereUniqueInput[]
+    update?: PaymentMethodUpdateWithWhereUniqueWithoutUserInput | PaymentMethodUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: PaymentMethodUpdateManyWithWhereWithoutUserInput | PaymentMethodUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: PaymentMethodScalarWhereInput | PaymentMethodScalarWhereInput[]
+  }
+
+  export type RestaurantUpdateOneWithoutHostNestedInput = {
+    create?: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
+    connectOrCreate?: RestaurantCreateOrConnectWithoutHostInput
+    upsert?: RestaurantUpsertWithoutHostInput
+    disconnect?: RestaurantWhereInput | boolean
+    delete?: RestaurantWhereInput | boolean
+    connect?: RestaurantWhereUniqueInput
+    update?: XOR<XOR<RestaurantUpdateToOneWithWhereWithoutHostInput, RestaurantUpdateWithoutHostInput>, RestaurantUncheckedUpdateWithoutHostInput>
+  }
+
+  export type ReviewUpdateManyWithoutAuthorNestedInput = {
+    create?: XOR<ReviewCreateWithoutAuthorInput, ReviewUncheckedCreateWithoutAuthorInput> | ReviewCreateWithoutAuthorInput[] | ReviewUncheckedCreateWithoutAuthorInput[]
+    connectOrCreate?: ReviewCreateOrConnectWithoutAuthorInput | ReviewCreateOrConnectWithoutAuthorInput[]
+    upsert?: ReviewUpsertWithWhereUniqueWithoutAuthorInput | ReviewUpsertWithWhereUniqueWithoutAuthorInput[]
+    createMany?: ReviewCreateManyAuthorInputEnvelope
+    set?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
+    disconnect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
+    delete?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
+    connect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
+    update?: ReviewUpdateWithWhereUniqueWithoutAuthorInput | ReviewUpdateWithWhereUniqueWithoutAuthorInput[]
+    updateMany?: ReviewUpdateManyWithWhereWithoutAuthorInput | ReviewUpdateManyWithWhereWithoutAuthorInput[]
+    deleteMany?: ReviewScalarWhereInput | ReviewScalarWhereInput[]
+  }
+
+  export type RestaurantUpdateOneWithoutUsersNestedInput = {
+    create?: XOR<RestaurantCreateWithoutUsersInput, RestaurantUncheckedCreateWithoutUsersInput>
+    connectOrCreate?: RestaurantCreateOrConnectWithoutUsersInput
+    upsert?: RestaurantUpsertWithoutUsersInput
+    disconnect?: RestaurantWhereInput | boolean
+    delete?: RestaurantWhereInput | boolean
+    connect?: RestaurantWhereUniqueInput
+    update?: XOR<XOR<RestaurantUpdateToOneWithWhereWithoutUsersInput, RestaurantUpdateWithoutUsersInput>, RestaurantUncheckedUpdateWithoutUsersInput>
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -21322,30 +27297,6 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type RestaurantUncheckedUpdateOneWithoutHostNestedInput = {
-    create?: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutHostInput
-    upsert?: RestaurantUpsertWithoutHostInput
-    disconnect?: RestaurantWhereInput | boolean
-    delete?: RestaurantWhereInput | boolean
-    connect?: RestaurantWhereUniqueInput
-    update?: XOR<XOR<RestaurantUpdateToOneWithWhereWithoutHostInput, RestaurantUpdateWithoutHostInput>, RestaurantUncheckedUpdateWithoutHostInput>
-  }
-
-  export type ListingUncheckedUpdateManyWithoutHostNestedInput = {
-    create?: XOR<ListingCreateWithoutHostInput, ListingUncheckedCreateWithoutHostInput> | ListingCreateWithoutHostInput[] | ListingUncheckedCreateWithoutHostInput[]
-    connectOrCreate?: ListingCreateOrConnectWithoutHostInput | ListingCreateOrConnectWithoutHostInput[]
-    upsert?: ListingUpsertWithWhereUniqueWithoutHostInput | ListingUpsertWithWhereUniqueWithoutHostInput[]
-    createMany?: ListingCreateManyHostInputEnvelope
-    set?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
-    disconnect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
-    delete?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
-    connect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
-    update?: ListingUpdateWithWhereUniqueWithoutHostInput | ListingUpdateWithWhereUniqueWithoutHostInput[]
-    updateMany?: ListingUpdateManyWithWhereWithoutHostInput | ListingUpdateManyWithWhereWithoutHostInput[]
-    deleteMany?: ListingScalarWhereInput | ListingScalarWhereInput[]
-  }
-
   export type BookingUncheckedUpdateManyWithoutGuestNestedInput = {
     create?: XOR<BookingCreateWithoutGuestInput, BookingUncheckedCreateWithoutGuestInput> | BookingCreateWithoutGuestInput[] | BookingUncheckedCreateWithoutGuestInput[]
     connectOrCreate?: BookingCreateOrConnectWithoutGuestInput | BookingCreateOrConnectWithoutGuestInput[]
@@ -21358,34 +27309,6 @@ export namespace Prisma {
     update?: BookingUpdateWithWhereUniqueWithoutGuestInput | BookingUpdateWithWhereUniqueWithoutGuestInput[]
     updateMany?: BookingUpdateManyWithWhereWithoutGuestInput | BookingUpdateManyWithWhereWithoutGuestInput[]
     deleteMany?: BookingScalarWhereInput | BookingScalarWhereInput[]
-  }
-
-  export type ReviewUncheckedUpdateManyWithoutAuthorNestedInput = {
-    create?: XOR<ReviewCreateWithoutAuthorInput, ReviewUncheckedCreateWithoutAuthorInput> | ReviewCreateWithoutAuthorInput[] | ReviewUncheckedCreateWithoutAuthorInput[]
-    connectOrCreate?: ReviewCreateOrConnectWithoutAuthorInput | ReviewCreateOrConnectWithoutAuthorInput[]
-    upsert?: ReviewUpsertWithWhereUniqueWithoutAuthorInput | ReviewUpsertWithWhereUniqueWithoutAuthorInput[]
-    createMany?: ReviewCreateManyAuthorInputEnvelope
-    set?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
-    disconnect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
-    delete?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
-    connect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
-    update?: ReviewUpdateWithWhereUniqueWithoutAuthorInput | ReviewUpdateWithWhereUniqueWithoutAuthorInput[]
-    updateMany?: ReviewUpdateManyWithWhereWithoutAuthorInput | ReviewUpdateManyWithWhereWithoutAuthorInput[]
-    deleteMany?: ReviewScalarWhereInput | ReviewScalarWhereInput[]
-  }
-
-  export type NotificationUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<NotificationCreateWithoutUserInput, NotificationUncheckedCreateWithoutUserInput> | NotificationCreateWithoutUserInput[] | NotificationUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: NotificationCreateOrConnectWithoutUserInput | NotificationCreateOrConnectWithoutUserInput[]
-    upsert?: NotificationUpsertWithWhereUniqueWithoutUserInput | NotificationUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: NotificationCreateManyUserInputEnvelope
-    set?: NotificationWhereUniqueInput | NotificationWhereUniqueInput[]
-    disconnect?: NotificationWhereUniqueInput | NotificationWhereUniqueInput[]
-    delete?: NotificationWhereUniqueInput | NotificationWhereUniqueInput[]
-    connect?: NotificationWhereUniqueInput | NotificationWhereUniqueInput[]
-    update?: NotificationUpdateWithWhereUniqueWithoutUserInput | NotificationUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: NotificationUpdateManyWithWhereWithoutUserInput | NotificationUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: NotificationScalarWhereInput | NotificationScalarWhereInput[]
   }
 
   export type EarningUncheckedUpdateManyWithoutHostNestedInput = {
@@ -21402,17 +27325,108 @@ export namespace Prisma {
     deleteMany?: EarningScalarWhereInput | EarningScalarWhereInput[]
   }
 
-  export type UserCreateNestedOneWithoutHostedRestaurantInput = {
-    create?: XOR<UserCreateWithoutHostedRestaurantInput, UserUncheckedCreateWithoutHostedRestaurantInput>
-    connectOrCreate?: UserCreateOrConnectWithoutHostedRestaurantInput
-    connect?: UserWhereUniqueInput
+  export type HostSettingsUncheckedUpdateOneWithoutUserNestedInput = {
+    create?: XOR<HostSettingsCreateWithoutUserInput, HostSettingsUncheckedCreateWithoutUserInput>
+    connectOrCreate?: HostSettingsCreateOrConnectWithoutUserInput
+    upsert?: HostSettingsUpsertWithoutUserInput
+    disconnect?: HostSettingsWhereInput | boolean
+    delete?: HostSettingsWhereInput | boolean
+    connect?: HostSettingsWhereUniqueInput
+    update?: XOR<XOR<HostSettingsUpdateToOneWithWhereWithoutUserInput, HostSettingsUpdateWithoutUserInput>, HostSettingsUncheckedUpdateWithoutUserInput>
   }
 
-  export type UserCreateNestedManyWithoutRestaurantInput = {
-    create?: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput> | UserCreateWithoutRestaurantInput[] | UserUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: UserCreateOrConnectWithoutRestaurantInput | UserCreateOrConnectWithoutRestaurantInput[]
-    createMany?: UserCreateManyRestaurantInputEnvelope
-    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+  export type ListingUncheckedUpdateManyWithoutHostNestedInput = {
+    create?: XOR<ListingCreateWithoutHostInput, ListingUncheckedCreateWithoutHostInput> | ListingCreateWithoutHostInput[] | ListingUncheckedCreateWithoutHostInput[]
+    connectOrCreate?: ListingCreateOrConnectWithoutHostInput | ListingCreateOrConnectWithoutHostInput[]
+    upsert?: ListingUpsertWithWhereUniqueWithoutHostInput | ListingUpsertWithWhereUniqueWithoutHostInput[]
+    createMany?: ListingCreateManyHostInputEnvelope
+    set?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
+    disconnect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
+    delete?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
+    connect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
+    update?: ListingUpdateWithWhereUniqueWithoutHostInput | ListingUpdateWithWhereUniqueWithoutHostInput[]
+    updateMany?: ListingUpdateManyWithWhereWithoutHostInput | ListingUpdateManyWithWhereWithoutHostInput[]
+    deleteMany?: ListingScalarWhereInput | ListingScalarWhereInput[]
+  }
+
+  export type MessageUncheckedUpdateManyWithoutReceiverNestedInput = {
+    create?: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput> | MessageCreateWithoutReceiverInput[] | MessageUncheckedCreateWithoutReceiverInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutReceiverInput | MessageCreateOrConnectWithoutReceiverInput[]
+    upsert?: MessageUpsertWithWhereUniqueWithoutReceiverInput | MessageUpsertWithWhereUniqueWithoutReceiverInput[]
+    createMany?: MessageCreateManyReceiverInputEnvelope
+    set?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    disconnect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    delete?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    update?: MessageUpdateWithWhereUniqueWithoutReceiverInput | MessageUpdateWithWhereUniqueWithoutReceiverInput[]
+    updateMany?: MessageUpdateManyWithWhereWithoutReceiverInput | MessageUpdateManyWithWhereWithoutReceiverInput[]
+    deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
+  }
+
+  export type MessageUncheckedUpdateManyWithoutSenderNestedInput = {
+    create?: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput> | MessageCreateWithoutSenderInput[] | MessageUncheckedCreateWithoutSenderInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutSenderInput | MessageCreateOrConnectWithoutSenderInput[]
+    upsert?: MessageUpsertWithWhereUniqueWithoutSenderInput | MessageUpsertWithWhereUniqueWithoutSenderInput[]
+    createMany?: MessageCreateManySenderInputEnvelope
+    set?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    disconnect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    delete?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    update?: MessageUpdateWithWhereUniqueWithoutSenderInput | MessageUpdateWithWhereUniqueWithoutSenderInput[]
+    updateMany?: MessageUpdateManyWithWhereWithoutSenderInput | MessageUpdateManyWithWhereWithoutSenderInput[]
+    deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
+  }
+
+  export type NotificationUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<NotificationCreateWithoutUserInput, NotificationUncheckedCreateWithoutUserInput> | NotificationCreateWithoutUserInput[] | NotificationUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: NotificationCreateOrConnectWithoutUserInput | NotificationCreateOrConnectWithoutUserInput[]
+    upsert?: NotificationUpsertWithWhereUniqueWithoutUserInput | NotificationUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: NotificationCreateManyUserInputEnvelope
+    set?: NotificationWhereUniqueInput | NotificationWhereUniqueInput[]
+    disconnect?: NotificationWhereUniqueInput | NotificationWhereUniqueInput[]
+    delete?: NotificationWhereUniqueInput | NotificationWhereUniqueInput[]
+    connect?: NotificationWhereUniqueInput | NotificationWhereUniqueInput[]
+    update?: NotificationUpdateWithWhereUniqueWithoutUserInput | NotificationUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: NotificationUpdateManyWithWhereWithoutUserInput | NotificationUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: NotificationScalarWhereInput | NotificationScalarWhereInput[]
+  }
+
+  export type PaymentMethodUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<PaymentMethodCreateWithoutUserInput, PaymentMethodUncheckedCreateWithoutUserInput> | PaymentMethodCreateWithoutUserInput[] | PaymentMethodUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: PaymentMethodCreateOrConnectWithoutUserInput | PaymentMethodCreateOrConnectWithoutUserInput[]
+    upsert?: PaymentMethodUpsertWithWhereUniqueWithoutUserInput | PaymentMethodUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: PaymentMethodCreateManyUserInputEnvelope
+    set?: PaymentMethodWhereUniqueInput | PaymentMethodWhereUniqueInput[]
+    disconnect?: PaymentMethodWhereUniqueInput | PaymentMethodWhereUniqueInput[]
+    delete?: PaymentMethodWhereUniqueInput | PaymentMethodWhereUniqueInput[]
+    connect?: PaymentMethodWhereUniqueInput | PaymentMethodWhereUniqueInput[]
+    update?: PaymentMethodUpdateWithWhereUniqueWithoutUserInput | PaymentMethodUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: PaymentMethodUpdateManyWithWhereWithoutUserInput | PaymentMethodUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: PaymentMethodScalarWhereInput | PaymentMethodScalarWhereInput[]
+  }
+
+  export type RestaurantUncheckedUpdateOneWithoutHostNestedInput = {
+    create?: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
+    connectOrCreate?: RestaurantCreateOrConnectWithoutHostInput
+    upsert?: RestaurantUpsertWithoutHostInput
+    disconnect?: RestaurantWhereInput | boolean
+    delete?: RestaurantWhereInput | boolean
+    connect?: RestaurantWhereUniqueInput
+    update?: XOR<XOR<RestaurantUpdateToOneWithWhereWithoutHostInput, RestaurantUpdateWithoutHostInput>, RestaurantUncheckedUpdateWithoutHostInput>
+  }
+
+  export type ReviewUncheckedUpdateManyWithoutAuthorNestedInput = {
+    create?: XOR<ReviewCreateWithoutAuthorInput, ReviewUncheckedCreateWithoutAuthorInput> | ReviewCreateWithoutAuthorInput[] | ReviewUncheckedCreateWithoutAuthorInput[]
+    connectOrCreate?: ReviewCreateOrConnectWithoutAuthorInput | ReviewCreateOrConnectWithoutAuthorInput[]
+    upsert?: ReviewUpsertWithWhereUniqueWithoutAuthorInput | ReviewUpsertWithWhereUniqueWithoutAuthorInput[]
+    createMany?: ReviewCreateManyAuthorInputEnvelope
+    set?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
+    disconnect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
+    delete?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
+    connect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
+    update?: ReviewUpdateWithWhereUniqueWithoutAuthorInput | ReviewUpdateWithWhereUniqueWithoutAuthorInput[]
+    updateMany?: ReviewUpdateManyWithWhereWithoutAuthorInput | ReviewUpdateManyWithWhereWithoutAuthorInput[]
+    deleteMany?: ReviewScalarWhereInput | ReviewScalarWhereInput[]
   }
 
   export type ListingCreateNestedManyWithoutRestaurantInput = {
@@ -21422,13 +27436,6 @@ export namespace Prisma {
     connect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
   }
 
-  export type RestaurantImageCreateNestedManyWithoutRestaurantInput = {
-    create?: XOR<RestaurantImageCreateWithoutRestaurantInput, RestaurantImageUncheckedCreateWithoutRestaurantInput> | RestaurantImageCreateWithoutRestaurantInput[] | RestaurantImageUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: RestaurantImageCreateOrConnectWithoutRestaurantInput | RestaurantImageCreateOrConnectWithoutRestaurantInput[]
-    createMany?: RestaurantImageCreateManyRestaurantInputEnvelope
-    connect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-  }
-
   export type OperatingHoursCreateNestedManyWithoutRestaurantInput = {
     create?: XOR<OperatingHoursCreateWithoutRestaurantInput, OperatingHoursUncheckedCreateWithoutRestaurantInput> | OperatingHoursCreateWithoutRestaurantInput[] | OperatingHoursUncheckedCreateWithoutRestaurantInput[]
     connectOrCreate?: OperatingHoursCreateOrConnectWithoutRestaurantInput | OperatingHoursCreateOrConnectWithoutRestaurantInput[]
@@ -21436,7 +27443,20 @@ export namespace Prisma {
     connect?: OperatingHoursWhereUniqueInput | OperatingHoursWhereUniqueInput[]
   }
 
-  export type UserUncheckedCreateNestedManyWithoutRestaurantInput = {
+  export type UserCreateNestedOneWithoutHostedRestaurantInput = {
+    create?: XOR<UserCreateWithoutHostedRestaurantInput, UserUncheckedCreateWithoutHostedRestaurantInput>
+    connectOrCreate?: UserCreateOrConnectWithoutHostedRestaurantInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type RestaurantImageCreateNestedManyWithoutRestaurantInput = {
+    create?: XOR<RestaurantImageCreateWithoutRestaurantInput, RestaurantImageUncheckedCreateWithoutRestaurantInput> | RestaurantImageCreateWithoutRestaurantInput[] | RestaurantImageUncheckedCreateWithoutRestaurantInput[]
+    connectOrCreate?: RestaurantImageCreateOrConnectWithoutRestaurantInput | RestaurantImageCreateOrConnectWithoutRestaurantInput[]
+    createMany?: RestaurantImageCreateManyRestaurantInputEnvelope
+    connect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
+  }
+
+  export type UserCreateNestedManyWithoutRestaurantInput = {
     create?: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput> | UserCreateWithoutRestaurantInput[] | UserUncheckedCreateWithoutRestaurantInput[]
     connectOrCreate?: UserCreateOrConnectWithoutRestaurantInput | UserCreateOrConnectWithoutRestaurantInput[]
     createMany?: UserCreateManyRestaurantInputEnvelope
@@ -21450,6 +27470,13 @@ export namespace Prisma {
     connect?: ListingWhereUniqueInput | ListingWhereUniqueInput[]
   }
 
+  export type OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput = {
+    create?: XOR<OperatingHoursCreateWithoutRestaurantInput, OperatingHoursUncheckedCreateWithoutRestaurantInput> | OperatingHoursCreateWithoutRestaurantInput[] | OperatingHoursUncheckedCreateWithoutRestaurantInput[]
+    connectOrCreate?: OperatingHoursCreateOrConnectWithoutRestaurantInput | OperatingHoursCreateOrConnectWithoutRestaurantInput[]
+    createMany?: OperatingHoursCreateManyRestaurantInputEnvelope
+    connect?: OperatingHoursWhereUniqueInput | OperatingHoursWhereUniqueInput[]
+  }
+
   export type RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput = {
     create?: XOR<RestaurantImageCreateWithoutRestaurantInput, RestaurantImageUncheckedCreateWithoutRestaurantInput> | RestaurantImageCreateWithoutRestaurantInput[] | RestaurantImageUncheckedCreateWithoutRestaurantInput[]
     connectOrCreate?: RestaurantImageCreateOrConnectWithoutRestaurantInput | RestaurantImageCreateOrConnectWithoutRestaurantInput[]
@@ -21457,11 +27484,11 @@ export namespace Prisma {
     connect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
   }
 
-  export type OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput = {
-    create?: XOR<OperatingHoursCreateWithoutRestaurantInput, OperatingHoursUncheckedCreateWithoutRestaurantInput> | OperatingHoursCreateWithoutRestaurantInput[] | OperatingHoursUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: OperatingHoursCreateOrConnectWithoutRestaurantInput | OperatingHoursCreateOrConnectWithoutRestaurantInput[]
-    createMany?: OperatingHoursCreateManyRestaurantInputEnvelope
-    connect?: OperatingHoursWhereUniqueInput | OperatingHoursWhereUniqueInput[]
+  export type UserUncheckedCreateNestedManyWithoutRestaurantInput = {
+    create?: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput> | UserCreateWithoutRestaurantInput[] | UserUncheckedCreateWithoutRestaurantInput[]
+    connectOrCreate?: UserCreateOrConnectWithoutRestaurantInput | UserCreateOrConnectWithoutRestaurantInput[]
+    createMany?: UserCreateManyRestaurantInputEnvelope
+    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
   }
 
   export type NullableFloatFieldUpdateOperationsInput = {
@@ -21470,28 +27497,6 @@ export namespace Prisma {
     decrement?: number
     multiply?: number
     divide?: number
-  }
-
-  export type UserUpdateOneRequiredWithoutHostedRestaurantNestedInput = {
-    create?: XOR<UserCreateWithoutHostedRestaurantInput, UserUncheckedCreateWithoutHostedRestaurantInput>
-    connectOrCreate?: UserCreateOrConnectWithoutHostedRestaurantInput
-    upsert?: UserUpsertWithoutHostedRestaurantInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutHostedRestaurantInput, UserUpdateWithoutHostedRestaurantInput>, UserUncheckedUpdateWithoutHostedRestaurantInput>
-  }
-
-  export type UserUpdateManyWithoutRestaurantNestedInput = {
-    create?: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput> | UserCreateWithoutRestaurantInput[] | UserUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: UserCreateOrConnectWithoutRestaurantInput | UserCreateOrConnectWithoutRestaurantInput[]
-    upsert?: UserUpsertWithWhereUniqueWithoutRestaurantInput | UserUpsertWithWhereUniqueWithoutRestaurantInput[]
-    createMany?: UserCreateManyRestaurantInputEnvelope
-    set?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    disconnect?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    delete?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
-    update?: UserUpdateWithWhereUniqueWithoutRestaurantInput | UserUpdateWithWhereUniqueWithoutRestaurantInput[]
-    updateMany?: UserUpdateManyWithWhereWithoutRestaurantInput | UserUpdateManyWithWhereWithoutRestaurantInput[]
-    deleteMany?: UserScalarWhereInput | UserScalarWhereInput[]
   }
 
   export type ListingUpdateManyWithoutRestaurantNestedInput = {
@@ -21508,20 +27513,6 @@ export namespace Prisma {
     deleteMany?: ListingScalarWhereInput | ListingScalarWhereInput[]
   }
 
-  export type RestaurantImageUpdateManyWithoutRestaurantNestedInput = {
-    create?: XOR<RestaurantImageCreateWithoutRestaurantInput, RestaurantImageUncheckedCreateWithoutRestaurantInput> | RestaurantImageCreateWithoutRestaurantInput[] | RestaurantImageUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: RestaurantImageCreateOrConnectWithoutRestaurantInput | RestaurantImageCreateOrConnectWithoutRestaurantInput[]
-    upsert?: RestaurantImageUpsertWithWhereUniqueWithoutRestaurantInput | RestaurantImageUpsertWithWhereUniqueWithoutRestaurantInput[]
-    createMany?: RestaurantImageCreateManyRestaurantInputEnvelope
-    set?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    disconnect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    delete?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    connect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    update?: RestaurantImageUpdateWithWhereUniqueWithoutRestaurantInput | RestaurantImageUpdateWithWhereUniqueWithoutRestaurantInput[]
-    updateMany?: RestaurantImageUpdateManyWithWhereWithoutRestaurantInput | RestaurantImageUpdateManyWithWhereWithoutRestaurantInput[]
-    deleteMany?: RestaurantImageScalarWhereInput | RestaurantImageScalarWhereInput[]
-  }
-
   export type OperatingHoursUpdateManyWithoutRestaurantNestedInput = {
     create?: XOR<OperatingHoursCreateWithoutRestaurantInput, OperatingHoursUncheckedCreateWithoutRestaurantInput> | OperatingHoursCreateWithoutRestaurantInput[] | OperatingHoursUncheckedCreateWithoutRestaurantInput[]
     connectOrCreate?: OperatingHoursCreateOrConnectWithoutRestaurantInput | OperatingHoursCreateOrConnectWithoutRestaurantInput[]
@@ -21536,7 +27527,29 @@ export namespace Prisma {
     deleteMany?: OperatingHoursScalarWhereInput | OperatingHoursScalarWhereInput[]
   }
 
-  export type UserUncheckedUpdateManyWithoutRestaurantNestedInput = {
+  export type UserUpdateOneRequiredWithoutHostedRestaurantNestedInput = {
+    create?: XOR<UserCreateWithoutHostedRestaurantInput, UserUncheckedCreateWithoutHostedRestaurantInput>
+    connectOrCreate?: UserCreateOrConnectWithoutHostedRestaurantInput
+    upsert?: UserUpsertWithoutHostedRestaurantInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutHostedRestaurantInput, UserUpdateWithoutHostedRestaurantInput>, UserUncheckedUpdateWithoutHostedRestaurantInput>
+  }
+
+  export type RestaurantImageUpdateManyWithoutRestaurantNestedInput = {
+    create?: XOR<RestaurantImageCreateWithoutRestaurantInput, RestaurantImageUncheckedCreateWithoutRestaurantInput> | RestaurantImageCreateWithoutRestaurantInput[] | RestaurantImageUncheckedCreateWithoutRestaurantInput[]
+    connectOrCreate?: RestaurantImageCreateOrConnectWithoutRestaurantInput | RestaurantImageCreateOrConnectWithoutRestaurantInput[]
+    upsert?: RestaurantImageUpsertWithWhereUniqueWithoutRestaurantInput | RestaurantImageUpsertWithWhereUniqueWithoutRestaurantInput[]
+    createMany?: RestaurantImageCreateManyRestaurantInputEnvelope
+    set?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
+    disconnect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
+    delete?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
+    connect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
+    update?: RestaurantImageUpdateWithWhereUniqueWithoutRestaurantInput | RestaurantImageUpdateWithWhereUniqueWithoutRestaurantInput[]
+    updateMany?: RestaurantImageUpdateManyWithWhereWithoutRestaurantInput | RestaurantImageUpdateManyWithWhereWithoutRestaurantInput[]
+    deleteMany?: RestaurantImageScalarWhereInput | RestaurantImageScalarWhereInput[]
+  }
+
+  export type UserUpdateManyWithoutRestaurantNestedInput = {
     create?: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput> | UserCreateWithoutRestaurantInput[] | UserUncheckedCreateWithoutRestaurantInput[]
     connectOrCreate?: UserCreateOrConnectWithoutRestaurantInput | UserCreateOrConnectWithoutRestaurantInput[]
     upsert?: UserUpsertWithWhereUniqueWithoutRestaurantInput | UserUpsertWithWhereUniqueWithoutRestaurantInput[]
@@ -21564,20 +27577,6 @@ export namespace Prisma {
     deleteMany?: ListingScalarWhereInput | ListingScalarWhereInput[]
   }
 
-  export type RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput = {
-    create?: XOR<RestaurantImageCreateWithoutRestaurantInput, RestaurantImageUncheckedCreateWithoutRestaurantInput> | RestaurantImageCreateWithoutRestaurantInput[] | RestaurantImageUncheckedCreateWithoutRestaurantInput[]
-    connectOrCreate?: RestaurantImageCreateOrConnectWithoutRestaurantInput | RestaurantImageCreateOrConnectWithoutRestaurantInput[]
-    upsert?: RestaurantImageUpsertWithWhereUniqueWithoutRestaurantInput | RestaurantImageUpsertWithWhereUniqueWithoutRestaurantInput[]
-    createMany?: RestaurantImageCreateManyRestaurantInputEnvelope
-    set?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    disconnect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    delete?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    connect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
-    update?: RestaurantImageUpdateWithWhereUniqueWithoutRestaurantInput | RestaurantImageUpdateWithWhereUniqueWithoutRestaurantInput[]
-    updateMany?: RestaurantImageUpdateManyWithWhereWithoutRestaurantInput | RestaurantImageUpdateManyWithWhereWithoutRestaurantInput[]
-    deleteMany?: RestaurantImageScalarWhereInput | RestaurantImageScalarWhereInput[]
-  }
-
   export type OperatingHoursUncheckedUpdateManyWithoutRestaurantNestedInput = {
     create?: XOR<OperatingHoursCreateWithoutRestaurantInput, OperatingHoursUncheckedCreateWithoutRestaurantInput> | OperatingHoursCreateWithoutRestaurantInput[] | OperatingHoursUncheckedCreateWithoutRestaurantInput[]
     connectOrCreate?: OperatingHoursCreateOrConnectWithoutRestaurantInput | OperatingHoursCreateOrConnectWithoutRestaurantInput[]
@@ -21592,37 +27591,32 @@ export namespace Prisma {
     deleteMany?: OperatingHoursScalarWhereInput | OperatingHoursScalarWhereInput[]
   }
 
-  export type RestaurantCreateNestedOneWithoutListingsInput = {
-    create?: XOR<RestaurantCreateWithoutListingsInput, RestaurantUncheckedCreateWithoutListingsInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutListingsInput
-    connect?: RestaurantWhereUniqueInput
+  export type RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput = {
+    create?: XOR<RestaurantImageCreateWithoutRestaurantInput, RestaurantImageUncheckedCreateWithoutRestaurantInput> | RestaurantImageCreateWithoutRestaurantInput[] | RestaurantImageUncheckedCreateWithoutRestaurantInput[]
+    connectOrCreate?: RestaurantImageCreateOrConnectWithoutRestaurantInput | RestaurantImageCreateOrConnectWithoutRestaurantInput[]
+    upsert?: RestaurantImageUpsertWithWhereUniqueWithoutRestaurantInput | RestaurantImageUpsertWithWhereUniqueWithoutRestaurantInput[]
+    createMany?: RestaurantImageCreateManyRestaurantInputEnvelope
+    set?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
+    disconnect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
+    delete?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
+    connect?: RestaurantImageWhereUniqueInput | RestaurantImageWhereUniqueInput[]
+    update?: RestaurantImageUpdateWithWhereUniqueWithoutRestaurantInput | RestaurantImageUpdateWithWhereUniqueWithoutRestaurantInput[]
+    updateMany?: RestaurantImageUpdateManyWithWhereWithoutRestaurantInput | RestaurantImageUpdateManyWithWhereWithoutRestaurantInput[]
+    deleteMany?: RestaurantImageScalarWhereInput | RestaurantImageScalarWhereInput[]
   }
 
-  export type UserCreateNestedOneWithoutListingsInput = {
-    create?: XOR<UserCreateWithoutListingsInput, UserUncheckedCreateWithoutListingsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutListingsInput
-    connect?: UserWhereUniqueInput
-  }
-
-  export type BookingCreateNestedManyWithoutListingInput = {
-    create?: XOR<BookingCreateWithoutListingInput, BookingUncheckedCreateWithoutListingInput> | BookingCreateWithoutListingInput[] | BookingUncheckedCreateWithoutListingInput[]
-    connectOrCreate?: BookingCreateOrConnectWithoutListingInput | BookingCreateOrConnectWithoutListingInput[]
-    createMany?: BookingCreateManyListingInputEnvelope
-    connect?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
-  }
-
-  export type ListingImageCreateNestedManyWithoutListingInput = {
-    create?: XOR<ListingImageCreateWithoutListingInput, ListingImageUncheckedCreateWithoutListingInput> | ListingImageCreateWithoutListingInput[] | ListingImageUncheckedCreateWithoutListingInput[]
-    connectOrCreate?: ListingImageCreateOrConnectWithoutListingInput | ListingImageCreateOrConnectWithoutListingInput[]
-    createMany?: ListingImageCreateManyListingInputEnvelope
-    connect?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
-  }
-
-  export type ListingAmenityCreateNestedManyWithoutListingInput = {
-    create?: XOR<ListingAmenityCreateWithoutListingInput, ListingAmenityUncheckedCreateWithoutListingInput> | ListingAmenityCreateWithoutListingInput[] | ListingAmenityUncheckedCreateWithoutListingInput[]
-    connectOrCreate?: ListingAmenityCreateOrConnectWithoutListingInput | ListingAmenityCreateOrConnectWithoutListingInput[]
-    createMany?: ListingAmenityCreateManyListingInputEnvelope
-    connect?: ListingAmenityWhereUniqueInput | ListingAmenityWhereUniqueInput[]
+  export type UserUncheckedUpdateManyWithoutRestaurantNestedInput = {
+    create?: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput> | UserCreateWithoutRestaurantInput[] | UserUncheckedCreateWithoutRestaurantInput[]
+    connectOrCreate?: UserCreateOrConnectWithoutRestaurantInput | UserCreateOrConnectWithoutRestaurantInput[]
+    upsert?: UserUpsertWithWhereUniqueWithoutRestaurantInput | UserUpsertWithWhereUniqueWithoutRestaurantInput[]
+    createMany?: UserCreateManyRestaurantInputEnvelope
+    set?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    disconnect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    delete?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    update?: UserUpdateWithWhereUniqueWithoutRestaurantInput | UserUpdateWithWhereUniqueWithoutRestaurantInput[]
+    updateMany?: UserUpdateManyWithWhereWithoutRestaurantInput | UserUpdateManyWithWhereWithoutRestaurantInput[]
+    deleteMany?: UserScalarWhereInput | UserScalarWhereInput[]
   }
 
   export type AvailabilityCreateNestedManyWithoutListingInput = {
@@ -21632,32 +27626,44 @@ export namespace Prisma {
     connect?: AvailabilityWhereUniqueInput | AvailabilityWhereUniqueInput[]
   }
 
-  export type ReviewCreateNestedManyWithoutListingInput = {
-    create?: XOR<ReviewCreateWithoutListingInput, ReviewUncheckedCreateWithoutListingInput> | ReviewCreateWithoutListingInput[] | ReviewUncheckedCreateWithoutListingInput[]
-    connectOrCreate?: ReviewCreateOrConnectWithoutListingInput | ReviewCreateOrConnectWithoutListingInput[]
-    createMany?: ReviewCreateManyListingInputEnvelope
-    connect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
-  }
-
-  export type BookingUncheckedCreateNestedManyWithoutListingInput = {
+  export type BookingCreateNestedManyWithoutListingInput = {
     create?: XOR<BookingCreateWithoutListingInput, BookingUncheckedCreateWithoutListingInput> | BookingCreateWithoutListingInput[] | BookingUncheckedCreateWithoutListingInput[]
     connectOrCreate?: BookingCreateOrConnectWithoutListingInput | BookingCreateOrConnectWithoutListingInput[]
     createMany?: BookingCreateManyListingInputEnvelope
     connect?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
   }
 
-  export type ListingImageUncheckedCreateNestedManyWithoutListingInput = {
+  export type UserCreateNestedOneWithoutListingsInput = {
+    create?: XOR<UserCreateWithoutListingsInput, UserUncheckedCreateWithoutListingsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutListingsInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type RestaurantCreateNestedOneWithoutListingsInput = {
+    create?: XOR<RestaurantCreateWithoutListingsInput, RestaurantUncheckedCreateWithoutListingsInput>
+    connectOrCreate?: RestaurantCreateOrConnectWithoutListingsInput
+    connect?: RestaurantWhereUniqueInput
+  }
+
+  export type ListingAmenityCreateNestedManyWithoutListingInput = {
+    create?: XOR<ListingAmenityCreateWithoutListingInput, ListingAmenityUncheckedCreateWithoutListingInput> | ListingAmenityCreateWithoutListingInput[] | ListingAmenityUncheckedCreateWithoutListingInput[]
+    connectOrCreate?: ListingAmenityCreateOrConnectWithoutListingInput | ListingAmenityCreateOrConnectWithoutListingInput[]
+    createMany?: ListingAmenityCreateManyListingInputEnvelope
+    connect?: ListingAmenityWhereUniqueInput | ListingAmenityWhereUniqueInput[]
+  }
+
+  export type ListingImageCreateNestedManyWithoutListingInput = {
     create?: XOR<ListingImageCreateWithoutListingInput, ListingImageUncheckedCreateWithoutListingInput> | ListingImageCreateWithoutListingInput[] | ListingImageUncheckedCreateWithoutListingInput[]
     connectOrCreate?: ListingImageCreateOrConnectWithoutListingInput | ListingImageCreateOrConnectWithoutListingInput[]
     createMany?: ListingImageCreateManyListingInputEnvelope
     connect?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
   }
 
-  export type ListingAmenityUncheckedCreateNestedManyWithoutListingInput = {
-    create?: XOR<ListingAmenityCreateWithoutListingInput, ListingAmenityUncheckedCreateWithoutListingInput> | ListingAmenityCreateWithoutListingInput[] | ListingAmenityUncheckedCreateWithoutListingInput[]
-    connectOrCreate?: ListingAmenityCreateOrConnectWithoutListingInput | ListingAmenityCreateOrConnectWithoutListingInput[]
-    createMany?: ListingAmenityCreateManyListingInputEnvelope
-    connect?: ListingAmenityWhereUniqueInput | ListingAmenityWhereUniqueInput[]
+  export type ReviewCreateNestedManyWithoutListingInput = {
+    create?: XOR<ReviewCreateWithoutListingInput, ReviewUncheckedCreateWithoutListingInput> | ReviewCreateWithoutListingInput[] | ReviewUncheckedCreateWithoutListingInput[]
+    connectOrCreate?: ReviewCreateOrConnectWithoutListingInput | ReviewCreateOrConnectWithoutListingInput[]
+    createMany?: ReviewCreateManyListingInputEnvelope
+    connect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
   }
 
   export type AvailabilityUncheckedCreateNestedManyWithoutListingInput = {
@@ -21667,69 +27673,32 @@ export namespace Prisma {
     connect?: AvailabilityWhereUniqueInput | AvailabilityWhereUniqueInput[]
   }
 
+  export type BookingUncheckedCreateNestedManyWithoutListingInput = {
+    create?: XOR<BookingCreateWithoutListingInput, BookingUncheckedCreateWithoutListingInput> | BookingCreateWithoutListingInput[] | BookingUncheckedCreateWithoutListingInput[]
+    connectOrCreate?: BookingCreateOrConnectWithoutListingInput | BookingCreateOrConnectWithoutListingInput[]
+    createMany?: BookingCreateManyListingInputEnvelope
+    connect?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
+  }
+
+  export type ListingAmenityUncheckedCreateNestedManyWithoutListingInput = {
+    create?: XOR<ListingAmenityCreateWithoutListingInput, ListingAmenityUncheckedCreateWithoutListingInput> | ListingAmenityCreateWithoutListingInput[] | ListingAmenityUncheckedCreateWithoutListingInput[]
+    connectOrCreate?: ListingAmenityCreateOrConnectWithoutListingInput | ListingAmenityCreateOrConnectWithoutListingInput[]
+    createMany?: ListingAmenityCreateManyListingInputEnvelope
+    connect?: ListingAmenityWhereUniqueInput | ListingAmenityWhereUniqueInput[]
+  }
+
+  export type ListingImageUncheckedCreateNestedManyWithoutListingInput = {
+    create?: XOR<ListingImageCreateWithoutListingInput, ListingImageUncheckedCreateWithoutListingInput> | ListingImageCreateWithoutListingInput[] | ListingImageUncheckedCreateWithoutListingInput[]
+    connectOrCreate?: ListingImageCreateOrConnectWithoutListingInput | ListingImageCreateOrConnectWithoutListingInput[]
+    createMany?: ListingImageCreateManyListingInputEnvelope
+    connect?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
+  }
+
   export type ReviewUncheckedCreateNestedManyWithoutListingInput = {
     create?: XOR<ReviewCreateWithoutListingInput, ReviewUncheckedCreateWithoutListingInput> | ReviewCreateWithoutListingInput[] | ReviewUncheckedCreateWithoutListingInput[]
     connectOrCreate?: ReviewCreateOrConnectWithoutListingInput | ReviewCreateOrConnectWithoutListingInput[]
     createMany?: ReviewCreateManyListingInputEnvelope
     connect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
-  }
-
-  export type RestaurantUpdateOneRequiredWithoutListingsNestedInput = {
-    create?: XOR<RestaurantCreateWithoutListingsInput, RestaurantUncheckedCreateWithoutListingsInput>
-    connectOrCreate?: RestaurantCreateOrConnectWithoutListingsInput
-    upsert?: RestaurantUpsertWithoutListingsInput
-    connect?: RestaurantWhereUniqueInput
-    update?: XOR<XOR<RestaurantUpdateToOneWithWhereWithoutListingsInput, RestaurantUpdateWithoutListingsInput>, RestaurantUncheckedUpdateWithoutListingsInput>
-  }
-
-  export type UserUpdateOneRequiredWithoutListingsNestedInput = {
-    create?: XOR<UserCreateWithoutListingsInput, UserUncheckedCreateWithoutListingsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutListingsInput
-    upsert?: UserUpsertWithoutListingsInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutListingsInput, UserUpdateWithoutListingsInput>, UserUncheckedUpdateWithoutListingsInput>
-  }
-
-  export type BookingUpdateManyWithoutListingNestedInput = {
-    create?: XOR<BookingCreateWithoutListingInput, BookingUncheckedCreateWithoutListingInput> | BookingCreateWithoutListingInput[] | BookingUncheckedCreateWithoutListingInput[]
-    connectOrCreate?: BookingCreateOrConnectWithoutListingInput | BookingCreateOrConnectWithoutListingInput[]
-    upsert?: BookingUpsertWithWhereUniqueWithoutListingInput | BookingUpsertWithWhereUniqueWithoutListingInput[]
-    createMany?: BookingCreateManyListingInputEnvelope
-    set?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
-    disconnect?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
-    delete?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
-    connect?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
-    update?: BookingUpdateWithWhereUniqueWithoutListingInput | BookingUpdateWithWhereUniqueWithoutListingInput[]
-    updateMany?: BookingUpdateManyWithWhereWithoutListingInput | BookingUpdateManyWithWhereWithoutListingInput[]
-    deleteMany?: BookingScalarWhereInput | BookingScalarWhereInput[]
-  }
-
-  export type ListingImageUpdateManyWithoutListingNestedInput = {
-    create?: XOR<ListingImageCreateWithoutListingInput, ListingImageUncheckedCreateWithoutListingInput> | ListingImageCreateWithoutListingInput[] | ListingImageUncheckedCreateWithoutListingInput[]
-    connectOrCreate?: ListingImageCreateOrConnectWithoutListingInput | ListingImageCreateOrConnectWithoutListingInput[]
-    upsert?: ListingImageUpsertWithWhereUniqueWithoutListingInput | ListingImageUpsertWithWhereUniqueWithoutListingInput[]
-    createMany?: ListingImageCreateManyListingInputEnvelope
-    set?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
-    disconnect?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
-    delete?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
-    connect?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
-    update?: ListingImageUpdateWithWhereUniqueWithoutListingInput | ListingImageUpdateWithWhereUniqueWithoutListingInput[]
-    updateMany?: ListingImageUpdateManyWithWhereWithoutListingInput | ListingImageUpdateManyWithWhereWithoutListingInput[]
-    deleteMany?: ListingImageScalarWhereInput | ListingImageScalarWhereInput[]
-  }
-
-  export type ListingAmenityUpdateManyWithoutListingNestedInput = {
-    create?: XOR<ListingAmenityCreateWithoutListingInput, ListingAmenityUncheckedCreateWithoutListingInput> | ListingAmenityCreateWithoutListingInput[] | ListingAmenityUncheckedCreateWithoutListingInput[]
-    connectOrCreate?: ListingAmenityCreateOrConnectWithoutListingInput | ListingAmenityCreateOrConnectWithoutListingInput[]
-    upsert?: ListingAmenityUpsertWithWhereUniqueWithoutListingInput | ListingAmenityUpsertWithWhereUniqueWithoutListingInput[]
-    createMany?: ListingAmenityCreateManyListingInputEnvelope
-    set?: ListingAmenityWhereUniqueInput | ListingAmenityWhereUniqueInput[]
-    disconnect?: ListingAmenityWhereUniqueInput | ListingAmenityWhereUniqueInput[]
-    delete?: ListingAmenityWhereUniqueInput | ListingAmenityWhereUniqueInput[]
-    connect?: ListingAmenityWhereUniqueInput | ListingAmenityWhereUniqueInput[]
-    update?: ListingAmenityUpdateWithWhereUniqueWithoutListingInput | ListingAmenityUpdateWithWhereUniqueWithoutListingInput[]
-    updateMany?: ListingAmenityUpdateManyWithWhereWithoutListingInput | ListingAmenityUpdateManyWithWhereWithoutListingInput[]
-    deleteMany?: ListingAmenityScalarWhereInput | ListingAmenityScalarWhereInput[]
   }
 
   export type AvailabilityUpdateManyWithoutListingNestedInput = {
@@ -21746,6 +27715,66 @@ export namespace Prisma {
     deleteMany?: AvailabilityScalarWhereInput | AvailabilityScalarWhereInput[]
   }
 
+  export type BookingUpdateManyWithoutListingNestedInput = {
+    create?: XOR<BookingCreateWithoutListingInput, BookingUncheckedCreateWithoutListingInput> | BookingCreateWithoutListingInput[] | BookingUncheckedCreateWithoutListingInput[]
+    connectOrCreate?: BookingCreateOrConnectWithoutListingInput | BookingCreateOrConnectWithoutListingInput[]
+    upsert?: BookingUpsertWithWhereUniqueWithoutListingInput | BookingUpsertWithWhereUniqueWithoutListingInput[]
+    createMany?: BookingCreateManyListingInputEnvelope
+    set?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
+    disconnect?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
+    delete?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
+    connect?: BookingWhereUniqueInput | BookingWhereUniqueInput[]
+    update?: BookingUpdateWithWhereUniqueWithoutListingInput | BookingUpdateWithWhereUniqueWithoutListingInput[]
+    updateMany?: BookingUpdateManyWithWhereWithoutListingInput | BookingUpdateManyWithWhereWithoutListingInput[]
+    deleteMany?: BookingScalarWhereInput | BookingScalarWhereInput[]
+  }
+
+  export type UserUpdateOneRequiredWithoutListingsNestedInput = {
+    create?: XOR<UserCreateWithoutListingsInput, UserUncheckedCreateWithoutListingsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutListingsInput
+    upsert?: UserUpsertWithoutListingsInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutListingsInput, UserUpdateWithoutListingsInput>, UserUncheckedUpdateWithoutListingsInput>
+  }
+
+  export type RestaurantUpdateOneWithoutListingsNestedInput = {
+    create?: XOR<RestaurantCreateWithoutListingsInput, RestaurantUncheckedCreateWithoutListingsInput>
+    connectOrCreate?: RestaurantCreateOrConnectWithoutListingsInput
+    upsert?: RestaurantUpsertWithoutListingsInput
+    disconnect?: RestaurantWhereInput | boolean
+    delete?: RestaurantWhereInput | boolean
+    connect?: RestaurantWhereUniqueInput
+    update?: XOR<XOR<RestaurantUpdateToOneWithWhereWithoutListingsInput, RestaurantUpdateWithoutListingsInput>, RestaurantUncheckedUpdateWithoutListingsInput>
+  }
+
+  export type ListingAmenityUpdateManyWithoutListingNestedInput = {
+    create?: XOR<ListingAmenityCreateWithoutListingInput, ListingAmenityUncheckedCreateWithoutListingInput> | ListingAmenityCreateWithoutListingInput[] | ListingAmenityUncheckedCreateWithoutListingInput[]
+    connectOrCreate?: ListingAmenityCreateOrConnectWithoutListingInput | ListingAmenityCreateOrConnectWithoutListingInput[]
+    upsert?: ListingAmenityUpsertWithWhereUniqueWithoutListingInput | ListingAmenityUpsertWithWhereUniqueWithoutListingInput[]
+    createMany?: ListingAmenityCreateManyListingInputEnvelope
+    set?: ListingAmenityWhereUniqueInput | ListingAmenityWhereUniqueInput[]
+    disconnect?: ListingAmenityWhereUniqueInput | ListingAmenityWhereUniqueInput[]
+    delete?: ListingAmenityWhereUniqueInput | ListingAmenityWhereUniqueInput[]
+    connect?: ListingAmenityWhereUniqueInput | ListingAmenityWhereUniqueInput[]
+    update?: ListingAmenityUpdateWithWhereUniqueWithoutListingInput | ListingAmenityUpdateWithWhereUniqueWithoutListingInput[]
+    updateMany?: ListingAmenityUpdateManyWithWhereWithoutListingInput | ListingAmenityUpdateManyWithWhereWithoutListingInput[]
+    deleteMany?: ListingAmenityScalarWhereInput | ListingAmenityScalarWhereInput[]
+  }
+
+  export type ListingImageUpdateManyWithoutListingNestedInput = {
+    create?: XOR<ListingImageCreateWithoutListingInput, ListingImageUncheckedCreateWithoutListingInput> | ListingImageCreateWithoutListingInput[] | ListingImageUncheckedCreateWithoutListingInput[]
+    connectOrCreate?: ListingImageCreateOrConnectWithoutListingInput | ListingImageCreateOrConnectWithoutListingInput[]
+    upsert?: ListingImageUpsertWithWhereUniqueWithoutListingInput | ListingImageUpsertWithWhereUniqueWithoutListingInput[]
+    createMany?: ListingImageCreateManyListingInputEnvelope
+    set?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
+    disconnect?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
+    delete?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
+    connect?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
+    update?: ListingImageUpdateWithWhereUniqueWithoutListingInput | ListingImageUpdateWithWhereUniqueWithoutListingInput[]
+    updateMany?: ListingImageUpdateManyWithWhereWithoutListingInput | ListingImageUpdateManyWithWhereWithoutListingInput[]
+    deleteMany?: ListingImageScalarWhereInput | ListingImageScalarWhereInput[]
+  }
+
   export type ReviewUpdateManyWithoutListingNestedInput = {
     create?: XOR<ReviewCreateWithoutListingInput, ReviewUncheckedCreateWithoutListingInput> | ReviewCreateWithoutListingInput[] | ReviewUncheckedCreateWithoutListingInput[]
     connectOrCreate?: ReviewCreateOrConnectWithoutListingInput | ReviewCreateOrConnectWithoutListingInput[]
@@ -21758,6 +27787,20 @@ export namespace Prisma {
     update?: ReviewUpdateWithWhereUniqueWithoutListingInput | ReviewUpdateWithWhereUniqueWithoutListingInput[]
     updateMany?: ReviewUpdateManyWithWhereWithoutListingInput | ReviewUpdateManyWithWhereWithoutListingInput[]
     deleteMany?: ReviewScalarWhereInput | ReviewScalarWhereInput[]
+  }
+
+  export type AvailabilityUncheckedUpdateManyWithoutListingNestedInput = {
+    create?: XOR<AvailabilityCreateWithoutListingInput, AvailabilityUncheckedCreateWithoutListingInput> | AvailabilityCreateWithoutListingInput[] | AvailabilityUncheckedCreateWithoutListingInput[]
+    connectOrCreate?: AvailabilityCreateOrConnectWithoutListingInput | AvailabilityCreateOrConnectWithoutListingInput[]
+    upsert?: AvailabilityUpsertWithWhereUniqueWithoutListingInput | AvailabilityUpsertWithWhereUniqueWithoutListingInput[]
+    createMany?: AvailabilityCreateManyListingInputEnvelope
+    set?: AvailabilityWhereUniqueInput | AvailabilityWhereUniqueInput[]
+    disconnect?: AvailabilityWhereUniqueInput | AvailabilityWhereUniqueInput[]
+    delete?: AvailabilityWhereUniqueInput | AvailabilityWhereUniqueInput[]
+    connect?: AvailabilityWhereUniqueInput | AvailabilityWhereUniqueInput[]
+    update?: AvailabilityUpdateWithWhereUniqueWithoutListingInput | AvailabilityUpdateWithWhereUniqueWithoutListingInput[]
+    updateMany?: AvailabilityUpdateManyWithWhereWithoutListingInput | AvailabilityUpdateManyWithWhereWithoutListingInput[]
+    deleteMany?: AvailabilityScalarWhereInput | AvailabilityScalarWhereInput[]
   }
 
   export type BookingUncheckedUpdateManyWithoutListingNestedInput = {
@@ -21774,20 +27817,6 @@ export namespace Prisma {
     deleteMany?: BookingScalarWhereInput | BookingScalarWhereInput[]
   }
 
-  export type ListingImageUncheckedUpdateManyWithoutListingNestedInput = {
-    create?: XOR<ListingImageCreateWithoutListingInput, ListingImageUncheckedCreateWithoutListingInput> | ListingImageCreateWithoutListingInput[] | ListingImageUncheckedCreateWithoutListingInput[]
-    connectOrCreate?: ListingImageCreateOrConnectWithoutListingInput | ListingImageCreateOrConnectWithoutListingInput[]
-    upsert?: ListingImageUpsertWithWhereUniqueWithoutListingInput | ListingImageUpsertWithWhereUniqueWithoutListingInput[]
-    createMany?: ListingImageCreateManyListingInputEnvelope
-    set?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
-    disconnect?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
-    delete?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
-    connect?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
-    update?: ListingImageUpdateWithWhereUniqueWithoutListingInput | ListingImageUpdateWithWhereUniqueWithoutListingInput[]
-    updateMany?: ListingImageUpdateManyWithWhereWithoutListingInput | ListingImageUpdateManyWithWhereWithoutListingInput[]
-    deleteMany?: ListingImageScalarWhereInput | ListingImageScalarWhereInput[]
-  }
-
   export type ListingAmenityUncheckedUpdateManyWithoutListingNestedInput = {
     create?: XOR<ListingAmenityCreateWithoutListingInput, ListingAmenityUncheckedCreateWithoutListingInput> | ListingAmenityCreateWithoutListingInput[] | ListingAmenityUncheckedCreateWithoutListingInput[]
     connectOrCreate?: ListingAmenityCreateOrConnectWithoutListingInput | ListingAmenityCreateOrConnectWithoutListingInput[]
@@ -21802,18 +27831,18 @@ export namespace Prisma {
     deleteMany?: ListingAmenityScalarWhereInput | ListingAmenityScalarWhereInput[]
   }
 
-  export type AvailabilityUncheckedUpdateManyWithoutListingNestedInput = {
-    create?: XOR<AvailabilityCreateWithoutListingInput, AvailabilityUncheckedCreateWithoutListingInput> | AvailabilityCreateWithoutListingInput[] | AvailabilityUncheckedCreateWithoutListingInput[]
-    connectOrCreate?: AvailabilityCreateOrConnectWithoutListingInput | AvailabilityCreateOrConnectWithoutListingInput[]
-    upsert?: AvailabilityUpsertWithWhereUniqueWithoutListingInput | AvailabilityUpsertWithWhereUniqueWithoutListingInput[]
-    createMany?: AvailabilityCreateManyListingInputEnvelope
-    set?: AvailabilityWhereUniqueInput | AvailabilityWhereUniqueInput[]
-    disconnect?: AvailabilityWhereUniqueInput | AvailabilityWhereUniqueInput[]
-    delete?: AvailabilityWhereUniqueInput | AvailabilityWhereUniqueInput[]
-    connect?: AvailabilityWhereUniqueInput | AvailabilityWhereUniqueInput[]
-    update?: AvailabilityUpdateWithWhereUniqueWithoutListingInput | AvailabilityUpdateWithWhereUniqueWithoutListingInput[]
-    updateMany?: AvailabilityUpdateManyWithWhereWithoutListingInput | AvailabilityUpdateManyWithWhereWithoutListingInput[]
-    deleteMany?: AvailabilityScalarWhereInput | AvailabilityScalarWhereInput[]
+  export type ListingImageUncheckedUpdateManyWithoutListingNestedInput = {
+    create?: XOR<ListingImageCreateWithoutListingInput, ListingImageUncheckedCreateWithoutListingInput> | ListingImageCreateWithoutListingInput[] | ListingImageUncheckedCreateWithoutListingInput[]
+    connectOrCreate?: ListingImageCreateOrConnectWithoutListingInput | ListingImageCreateOrConnectWithoutListingInput[]
+    upsert?: ListingImageUpsertWithWhereUniqueWithoutListingInput | ListingImageUpsertWithWhereUniqueWithoutListingInput[]
+    createMany?: ListingImageCreateManyListingInputEnvelope
+    set?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
+    disconnect?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
+    delete?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
+    connect?: ListingImageWhereUniqueInput | ListingImageWhereUniqueInput[]
+    update?: ListingImageUpdateWithWhereUniqueWithoutListingInput | ListingImageUpdateWithWhereUniqueWithoutListingInput[]
+    updateMany?: ListingImageUpdateManyWithWhereWithoutListingInput | ListingImageUpdateManyWithWhereWithoutListingInput[]
+    deleteMany?: ListingImageScalarWhereInput | ListingImageScalarWhereInput[]
   }
 
   export type ReviewUncheckedUpdateManyWithoutListingNestedInput = {
@@ -21886,24 +27915,16 @@ export namespace Prisma {
     deleteMany?: ListingAmenityScalarWhereInput | ListingAmenityScalarWhereInput[]
   }
 
-  export type ListingCreateNestedOneWithoutAmenitiesInput = {
-    create?: XOR<ListingCreateWithoutAmenitiesInput, ListingUncheckedCreateWithoutAmenitiesInput>
-    connectOrCreate?: ListingCreateOrConnectWithoutAmenitiesInput
-    connect?: ListingWhereUniqueInput
-  }
-
   export type AmenityCreateNestedOneWithoutListingsInput = {
     create?: XOR<AmenityCreateWithoutListingsInput, AmenityUncheckedCreateWithoutListingsInput>
     connectOrCreate?: AmenityCreateOrConnectWithoutListingsInput
     connect?: AmenityWhereUniqueInput
   }
 
-  export type ListingUpdateOneRequiredWithoutAmenitiesNestedInput = {
+  export type ListingCreateNestedOneWithoutAmenitiesInput = {
     create?: XOR<ListingCreateWithoutAmenitiesInput, ListingUncheckedCreateWithoutAmenitiesInput>
     connectOrCreate?: ListingCreateOrConnectWithoutAmenitiesInput
-    upsert?: ListingUpsertWithoutAmenitiesInput
     connect?: ListingWhereUniqueInput
-    update?: XOR<XOR<ListingUpdateToOneWithWhereWithoutAmenitiesInput, ListingUpdateWithoutAmenitiesInput>, ListingUncheckedUpdateWithoutAmenitiesInput>
   }
 
   export type AmenityUpdateOneRequiredWithoutListingsNestedInput = {
@@ -21912,6 +27933,14 @@ export namespace Prisma {
     upsert?: AmenityUpsertWithoutListingsInput
     connect?: AmenityWhereUniqueInput
     update?: XOR<XOR<AmenityUpdateToOneWithWhereWithoutListingsInput, AmenityUpdateWithoutListingsInput>, AmenityUncheckedUpdateWithoutListingsInput>
+  }
+
+  export type ListingUpdateOneRequiredWithoutAmenitiesNestedInput = {
+    create?: XOR<ListingCreateWithoutAmenitiesInput, ListingUncheckedCreateWithoutAmenitiesInput>
+    connectOrCreate?: ListingCreateOrConnectWithoutAmenitiesInput
+    upsert?: ListingUpsertWithoutAmenitiesInput
+    connect?: ListingWhereUniqueInput
+    update?: XOR<XOR<ListingUpdateToOneWithWhereWithoutAmenitiesInput, ListingUpdateWithoutAmenitiesInput>, ListingUncheckedUpdateWithoutAmenitiesInput>
   }
 
   export type ListingCreateNestedOneWithoutAvailabilityInput = {
@@ -21928,22 +27957,16 @@ export namespace Prisma {
     update?: XOR<XOR<ListingUpdateToOneWithWhereWithoutAvailabilityInput, ListingUpdateWithoutAvailabilityInput>, ListingUncheckedUpdateWithoutAvailabilityInput>
   }
 
-  export type ListingCreateNestedOneWithoutBookingsInput = {
-    create?: XOR<ListingCreateWithoutBookingsInput, ListingUncheckedCreateWithoutBookingsInput>
-    connectOrCreate?: ListingCreateOrConnectWithoutBookingsInput
-    connect?: ListingWhereUniqueInput
-  }
-
   export type UserCreateNestedOneWithoutBookingsInput = {
     create?: XOR<UserCreateWithoutBookingsInput, UserUncheckedCreateWithoutBookingsInput>
     connectOrCreate?: UserCreateOrConnectWithoutBookingsInput
     connect?: UserWhereUniqueInput
   }
 
-  export type ReviewCreateNestedOneWithoutBookingInput = {
-    create?: XOR<ReviewCreateWithoutBookingInput, ReviewUncheckedCreateWithoutBookingInput>
-    connectOrCreate?: ReviewCreateOrConnectWithoutBookingInput
-    connect?: ReviewWhereUniqueInput
+  export type ListingCreateNestedOneWithoutBookingsInput = {
+    create?: XOR<ListingCreateWithoutBookingsInput, ListingUncheckedCreateWithoutBookingsInput>
+    connectOrCreate?: ListingCreateOrConnectWithoutBookingsInput
+    connect?: ListingWhereUniqueInput
   }
 
   export type EarningCreateNestedOneWithoutBookingInput = {
@@ -21952,7 +27975,7 @@ export namespace Prisma {
     connect?: EarningWhereUniqueInput
   }
 
-  export type ReviewUncheckedCreateNestedOneWithoutBookingInput = {
+  export type ReviewCreateNestedOneWithoutBookingInput = {
     create?: XOR<ReviewCreateWithoutBookingInput, ReviewUncheckedCreateWithoutBookingInput>
     connectOrCreate?: ReviewCreateOrConnectWithoutBookingInput
     connect?: ReviewWhereUniqueInput
@@ -21964,20 +27987,10 @@ export namespace Prisma {
     connect?: EarningWhereUniqueInput
   }
 
-  export type FloatFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type ListingUpdateOneRequiredWithoutBookingsNestedInput = {
-    create?: XOR<ListingCreateWithoutBookingsInput, ListingUncheckedCreateWithoutBookingsInput>
-    connectOrCreate?: ListingCreateOrConnectWithoutBookingsInput
-    upsert?: ListingUpsertWithoutBookingsInput
-    connect?: ListingWhereUniqueInput
-    update?: XOR<XOR<ListingUpdateToOneWithWhereWithoutBookingsInput, ListingUpdateWithoutBookingsInput>, ListingUncheckedUpdateWithoutBookingsInput>
+  export type ReviewUncheckedCreateNestedOneWithoutBookingInput = {
+    create?: XOR<ReviewCreateWithoutBookingInput, ReviewUncheckedCreateWithoutBookingInput>
+    connectOrCreate?: ReviewCreateOrConnectWithoutBookingInput
+    connect?: ReviewWhereUniqueInput
   }
 
   export type UserUpdateOneRequiredWithoutBookingsNestedInput = {
@@ -21988,14 +28001,12 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutBookingsInput, UserUpdateWithoutBookingsInput>, UserUncheckedUpdateWithoutBookingsInput>
   }
 
-  export type ReviewUpdateOneWithoutBookingNestedInput = {
-    create?: XOR<ReviewCreateWithoutBookingInput, ReviewUncheckedCreateWithoutBookingInput>
-    connectOrCreate?: ReviewCreateOrConnectWithoutBookingInput
-    upsert?: ReviewUpsertWithoutBookingInput
-    disconnect?: ReviewWhereInput | boolean
-    delete?: ReviewWhereInput | boolean
-    connect?: ReviewWhereUniqueInput
-    update?: XOR<XOR<ReviewUpdateToOneWithWhereWithoutBookingInput, ReviewUpdateWithoutBookingInput>, ReviewUncheckedUpdateWithoutBookingInput>
+  export type ListingUpdateOneRequiredWithoutBookingsNestedInput = {
+    create?: XOR<ListingCreateWithoutBookingsInput, ListingUncheckedCreateWithoutBookingsInput>
+    connectOrCreate?: ListingCreateOrConnectWithoutBookingsInput
+    upsert?: ListingUpsertWithoutBookingsInput
+    connect?: ListingWhereUniqueInput
+    update?: XOR<XOR<ListingUpdateToOneWithWhereWithoutBookingsInput, ListingUpdateWithoutBookingsInput>, ListingUncheckedUpdateWithoutBookingsInput>
   }
 
   export type EarningUpdateOneWithoutBookingNestedInput = {
@@ -22008,7 +28019,7 @@ export namespace Prisma {
     update?: XOR<XOR<EarningUpdateToOneWithWhereWithoutBookingInput, EarningUpdateWithoutBookingInput>, EarningUncheckedUpdateWithoutBookingInput>
   }
 
-  export type ReviewUncheckedUpdateOneWithoutBookingNestedInput = {
+  export type ReviewUpdateOneWithoutBookingNestedInput = {
     create?: XOR<ReviewCreateWithoutBookingInput, ReviewUncheckedCreateWithoutBookingInput>
     connectOrCreate?: ReviewCreateOrConnectWithoutBookingInput
     upsert?: ReviewUpsertWithoutBookingInput
@@ -22028,10 +28039,14 @@ export namespace Prisma {
     update?: XOR<XOR<EarningUpdateToOneWithWhereWithoutBookingInput, EarningUpdateWithoutBookingInput>, EarningUncheckedUpdateWithoutBookingInput>
   }
 
-  export type ListingCreateNestedOneWithoutReviewsInput = {
-    create?: XOR<ListingCreateWithoutReviewsInput, ListingUncheckedCreateWithoutReviewsInput>
-    connectOrCreate?: ListingCreateOrConnectWithoutReviewsInput
-    connect?: ListingWhereUniqueInput
+  export type ReviewUncheckedUpdateOneWithoutBookingNestedInput = {
+    create?: XOR<ReviewCreateWithoutBookingInput, ReviewUncheckedCreateWithoutBookingInput>
+    connectOrCreate?: ReviewCreateOrConnectWithoutBookingInput
+    upsert?: ReviewUpsertWithoutBookingInput
+    disconnect?: ReviewWhereInput | boolean
+    delete?: ReviewWhereInput | boolean
+    connect?: ReviewWhereUniqueInput
+    update?: XOR<XOR<ReviewUpdateToOneWithWhereWithoutBookingInput, ReviewUpdateWithoutBookingInput>, ReviewUncheckedUpdateWithoutBookingInput>
   }
 
   export type UserCreateNestedOneWithoutReviewsInput = {
@@ -22046,12 +28061,10 @@ export namespace Prisma {
     connect?: BookingWhereUniqueInput
   }
 
-  export type ListingUpdateOneRequiredWithoutReviewsNestedInput = {
+  export type ListingCreateNestedOneWithoutReviewsInput = {
     create?: XOR<ListingCreateWithoutReviewsInput, ListingUncheckedCreateWithoutReviewsInput>
     connectOrCreate?: ListingCreateOrConnectWithoutReviewsInput
-    upsert?: ListingUpsertWithoutReviewsInput
     connect?: ListingWhereUniqueInput
-    update?: XOR<XOR<ListingUpdateToOneWithWhereWithoutReviewsInput, ListingUpdateWithoutReviewsInput>, ListingUncheckedUpdateWithoutReviewsInput>
   }
 
   export type UserUpdateOneRequiredWithoutReviewsNestedInput = {
@@ -22070,10 +28083,12 @@ export namespace Prisma {
     update?: XOR<XOR<BookingUpdateToOneWithWhereWithoutReviewInput, BookingUpdateWithoutReviewInput>, BookingUncheckedUpdateWithoutReviewInput>
   }
 
-  export type UserCreateNestedOneWithoutEarningsInput = {
-    create?: XOR<UserCreateWithoutEarningsInput, UserUncheckedCreateWithoutEarningsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutEarningsInput
-    connect?: UserWhereUniqueInput
+  export type ListingUpdateOneRequiredWithoutReviewsNestedInput = {
+    create?: XOR<ListingCreateWithoutReviewsInput, ListingUncheckedCreateWithoutReviewsInput>
+    connectOrCreate?: ListingCreateOrConnectWithoutReviewsInput
+    upsert?: ListingUpsertWithoutReviewsInput
+    connect?: ListingWhereUniqueInput
+    update?: XOR<XOR<ListingUpdateToOneWithWhereWithoutReviewsInput, ListingUpdateWithoutReviewsInput>, ListingUncheckedUpdateWithoutReviewsInput>
   }
 
   export type BookingCreateNestedOneWithoutEarningInput = {
@@ -22082,12 +28097,18 @@ export namespace Prisma {
     connect?: BookingWhereUniqueInput
   }
 
-  export type UserUpdateOneRequiredWithoutEarningsNestedInput = {
+  export type UserCreateNestedOneWithoutEarningsInput = {
     create?: XOR<UserCreateWithoutEarningsInput, UserUncheckedCreateWithoutEarningsInput>
     connectOrCreate?: UserCreateOrConnectWithoutEarningsInput
-    upsert?: UserUpsertWithoutEarningsInput
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutEarningsInput, UserUpdateWithoutEarningsInput>, UserUncheckedUpdateWithoutEarningsInput>
+  }
+
+  export type FloatFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type BookingUpdateOneWithoutEarningNestedInput = {
@@ -22098,6 +28119,14 @@ export namespace Prisma {
     delete?: BookingWhereInput | boolean
     connect?: BookingWhereUniqueInput
     update?: XOR<XOR<BookingUpdateToOneWithWhereWithoutEarningInput, BookingUpdateWithoutEarningInput>, BookingUncheckedUpdateWithoutEarningInput>
+  }
+
+  export type UserUpdateOneRequiredWithoutEarningsNestedInput = {
+    create?: XOR<UserCreateWithoutEarningsInput, UserUncheckedCreateWithoutEarningsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutEarningsInput
+    upsert?: UserUpsertWithoutEarningsInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutEarningsInput, UserUpdateWithoutEarningsInput>, UserUncheckedUpdateWithoutEarningsInput>
   }
 
   export type UserCreateNestedOneWithoutNotificationsInput = {
@@ -22134,12 +28163,126 @@ export namespace Prisma {
     connect?: RestaurantWhereUniqueInput
   }
 
-  export type RestaurantUpdateOneRequiredWithoutOperatingHoursNestedInput = {
+  export type RestaurantUpdateOneWithoutOperatingHoursNestedInput = {
     create?: XOR<RestaurantCreateWithoutOperatingHoursInput, RestaurantUncheckedCreateWithoutOperatingHoursInput>
     connectOrCreate?: RestaurantCreateOrConnectWithoutOperatingHoursInput
     upsert?: RestaurantUpsertWithoutOperatingHoursInput
+    disconnect?: RestaurantWhereInput | boolean
+    delete?: RestaurantWhereInput | boolean
     connect?: RestaurantWhereUniqueInput
     update?: XOR<XOR<RestaurantUpdateToOneWithWhereWithoutOperatingHoursInput, RestaurantUpdateWithoutOperatingHoursInput>, RestaurantUncheckedUpdateWithoutOperatingHoursInput>
+  }
+
+  export type UserCreateNestedOneWithoutHostSettingsInput = {
+    create?: XOR<UserCreateWithoutHostSettingsInput, UserUncheckedCreateWithoutHostSettingsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutHostSettingsInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type UserUpdateOneRequiredWithoutHostSettingsNestedInput = {
+    create?: XOR<UserCreateWithoutHostSettingsInput, UserUncheckedCreateWithoutHostSettingsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutHostSettingsInput
+    upsert?: UserUpsertWithoutHostSettingsInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutHostSettingsInput, UserUpdateWithoutHostSettingsInput>, UserUncheckedUpdateWithoutHostSettingsInput>
+  }
+
+  export type UserCreateNestedOneWithoutPaymentMethodsInput = {
+    create?: XOR<UserCreateWithoutPaymentMethodsInput, UserUncheckedCreateWithoutPaymentMethodsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutPaymentMethodsInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type UserUpdateOneRequiredWithoutPaymentMethodsNestedInput = {
+    create?: XOR<UserCreateWithoutPaymentMethodsInput, UserUncheckedCreateWithoutPaymentMethodsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutPaymentMethodsInput
+    upsert?: UserUpsertWithoutPaymentMethodsInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutPaymentMethodsInput, UserUpdateWithoutPaymentMethodsInput>, UserUncheckedUpdateWithoutPaymentMethodsInput>
+  }
+
+  export type MessageCreateNestedManyWithoutConversationInput = {
+    create?: XOR<MessageCreateWithoutConversationInput, MessageUncheckedCreateWithoutConversationInput> | MessageCreateWithoutConversationInput[] | MessageUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutConversationInput | MessageCreateOrConnectWithoutConversationInput[]
+    createMany?: MessageCreateManyConversationInputEnvelope
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+  }
+
+  export type MessageUncheckedCreateNestedManyWithoutConversationInput = {
+    create?: XOR<MessageCreateWithoutConversationInput, MessageUncheckedCreateWithoutConversationInput> | MessageCreateWithoutConversationInput[] | MessageUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutConversationInput | MessageCreateOrConnectWithoutConversationInput[]
+    createMany?: MessageCreateManyConversationInputEnvelope
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+  }
+
+  export type MessageUpdateManyWithoutConversationNestedInput = {
+    create?: XOR<MessageCreateWithoutConversationInput, MessageUncheckedCreateWithoutConversationInput> | MessageCreateWithoutConversationInput[] | MessageUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutConversationInput | MessageCreateOrConnectWithoutConversationInput[]
+    upsert?: MessageUpsertWithWhereUniqueWithoutConversationInput | MessageUpsertWithWhereUniqueWithoutConversationInput[]
+    createMany?: MessageCreateManyConversationInputEnvelope
+    set?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    disconnect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    delete?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    update?: MessageUpdateWithWhereUniqueWithoutConversationInput | MessageUpdateWithWhereUniqueWithoutConversationInput[]
+    updateMany?: MessageUpdateManyWithWhereWithoutConversationInput | MessageUpdateManyWithWhereWithoutConversationInput[]
+    deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
+  }
+
+  export type MessageUncheckedUpdateManyWithoutConversationNestedInput = {
+    create?: XOR<MessageCreateWithoutConversationInput, MessageUncheckedCreateWithoutConversationInput> | MessageCreateWithoutConversationInput[] | MessageUncheckedCreateWithoutConversationInput[]
+    connectOrCreate?: MessageCreateOrConnectWithoutConversationInput | MessageCreateOrConnectWithoutConversationInput[]
+    upsert?: MessageUpsertWithWhereUniqueWithoutConversationInput | MessageUpsertWithWhereUniqueWithoutConversationInput[]
+    createMany?: MessageCreateManyConversationInputEnvelope
+    set?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    disconnect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    delete?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    connect?: MessageWhereUniqueInput | MessageWhereUniqueInput[]
+    update?: MessageUpdateWithWhereUniqueWithoutConversationInput | MessageUpdateWithWhereUniqueWithoutConversationInput[]
+    updateMany?: MessageUpdateManyWithWhereWithoutConversationInput | MessageUpdateManyWithWhereWithoutConversationInput[]
+    deleteMany?: MessageScalarWhereInput | MessageScalarWhereInput[]
+  }
+
+  export type ConversationCreateNestedOneWithoutMessagesInput = {
+    create?: XOR<ConversationCreateWithoutMessagesInput, ConversationUncheckedCreateWithoutMessagesInput>
+    connectOrCreate?: ConversationCreateOrConnectWithoutMessagesInput
+    connect?: ConversationWhereUniqueInput
+  }
+
+  export type UserCreateNestedOneWithoutMessagesReceivedInput = {
+    create?: XOR<UserCreateWithoutMessagesReceivedInput, UserUncheckedCreateWithoutMessagesReceivedInput>
+    connectOrCreate?: UserCreateOrConnectWithoutMessagesReceivedInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type UserCreateNestedOneWithoutMessagesSentInput = {
+    create?: XOR<UserCreateWithoutMessagesSentInput, UserUncheckedCreateWithoutMessagesSentInput>
+    connectOrCreate?: UserCreateOrConnectWithoutMessagesSentInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type ConversationUpdateOneRequiredWithoutMessagesNestedInput = {
+    create?: XOR<ConversationCreateWithoutMessagesInput, ConversationUncheckedCreateWithoutMessagesInput>
+    connectOrCreate?: ConversationCreateOrConnectWithoutMessagesInput
+    upsert?: ConversationUpsertWithoutMessagesInput
+    connect?: ConversationWhereUniqueInput
+    update?: XOR<XOR<ConversationUpdateToOneWithWhereWithoutMessagesInput, ConversationUpdateWithoutMessagesInput>, ConversationUncheckedUpdateWithoutMessagesInput>
+  }
+
+  export type UserUpdateOneRequiredWithoutMessagesReceivedNestedInput = {
+    create?: XOR<UserCreateWithoutMessagesReceivedInput, UserUncheckedCreateWithoutMessagesReceivedInput>
+    connectOrCreate?: UserCreateOrConnectWithoutMessagesReceivedInput
+    upsert?: UserUpsertWithoutMessagesReceivedInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutMessagesReceivedInput, UserUpdateWithoutMessagesReceivedInput>, UserUncheckedUpdateWithoutMessagesReceivedInput>
+  }
+
+  export type UserUpdateOneRequiredWithoutMessagesSentNestedInput = {
+    create?: XOR<UserCreateWithoutMessagesSentInput, UserUncheckedCreateWithoutMessagesSentInput>
+    connectOrCreate?: UserCreateOrConnectWithoutMessagesSentInput
+    upsert?: UserUpsertWithoutMessagesSentInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutMessagesSentInput, UserUpdateWithoutMessagesSentInput>, UserUncheckedUpdateWithoutMessagesSentInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -22350,184 +28493,33 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type RestaurantCreateWithoutUsersInput = {
-    name: string
-    description?: string | null
-    address: string
-    city: string
-    state: string
-    country: string
-    zipCode: string
-    phone?: string | null
-    email?: string | null
-    website?: string | null
-    cuisine?: string | null
-    priceRange?: string | null
-    rating?: number | null
-    isActive?: boolean
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    host: UserCreateNestedOneWithoutHostedRestaurantInput
-    listings?: ListingCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursCreateNestedManyWithoutRestaurantInput
-  }
-
-  export type RestaurantUncheckedCreateWithoutUsersInput = {
-    id?: number
-    name: string
-    description?: string | null
-    address: string
-    city: string
-    state: string
-    country: string
-    zipCode: string
-    phone?: string | null
-    email?: string | null
-    website?: string | null
-    cuisine?: string | null
-    priceRange?: string | null
-    rating?: number | null
-    isActive?: boolean
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    hostId: number
-    listings?: ListingUncheckedCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput
-  }
-
-  export type RestaurantCreateOrConnectWithoutUsersInput = {
-    where: RestaurantWhereUniqueInput
-    create: XOR<RestaurantCreateWithoutUsersInput, RestaurantUncheckedCreateWithoutUsersInput>
-  }
-
-  export type RestaurantCreateWithoutHostInput = {
-    name: string
-    description?: string | null
-    address: string
-    city: string
-    state: string
-    country: string
-    zipCode: string
-    phone?: string | null
-    email?: string | null
-    website?: string | null
-    cuisine?: string | null
-    priceRange?: string | null
-    rating?: number | null
-    isActive?: boolean
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    users?: UserCreateNestedManyWithoutRestaurantInput
-    listings?: ListingCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursCreateNestedManyWithoutRestaurantInput
-  }
-
-  export type RestaurantUncheckedCreateWithoutHostInput = {
-    id?: number
-    name: string
-    description?: string | null
-    address: string
-    city: string
-    state: string
-    country: string
-    zipCode: string
-    phone?: string | null
-    email?: string | null
-    website?: string | null
-    cuisine?: string | null
-    priceRange?: string | null
-    rating?: number | null
-    isActive?: boolean
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    users?: UserUncheckedCreateNestedManyWithoutRestaurantInput
-    listings?: ListingUncheckedCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput
-  }
-
-  export type RestaurantCreateOrConnectWithoutHostInput = {
-    where: RestaurantWhereUniqueInput
-    create: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
-  }
-
-  export type ListingCreateWithoutHostInput = {
-    title: string
-    description?: string | null
-    type: string
-    capacity?: number | null
-    pricePerHour?: number | null
-    pricePerDay?: number | null
-    isActive?: boolean
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    restaurant: RestaurantCreateNestedOneWithoutListingsInput
-    bookings?: BookingCreateNestedManyWithoutListingInput
-    images?: ListingImageCreateNestedManyWithoutListingInput
-    amenities?: ListingAmenityCreateNestedManyWithoutListingInput
-    availability?: AvailabilityCreateNestedManyWithoutListingInput
-    reviews?: ReviewCreateNestedManyWithoutListingInput
-  }
-
-  export type ListingUncheckedCreateWithoutHostInput = {
-    id?: number
-    title: string
-    description?: string | null
-    type: string
-    capacity?: number | null
-    pricePerHour?: number | null
-    pricePerDay?: number | null
-    isActive?: boolean
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    restaurantId: number
-    bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
-    images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
-    amenities?: ListingAmenityUncheckedCreateNestedManyWithoutListingInput
-    availability?: AvailabilityUncheckedCreateNestedManyWithoutListingInput
-    reviews?: ReviewUncheckedCreateNestedManyWithoutListingInput
-  }
-
-  export type ListingCreateOrConnectWithoutHostInput = {
-    where: ListingWhereUniqueInput
-    create: XOR<ListingCreateWithoutHostInput, ListingUncheckedCreateWithoutHostInput>
-  }
-
-  export type ListingCreateManyHostInputEnvelope = {
-    data: ListingCreateManyHostInput | ListingCreateManyHostInput[]
-    skipDuplicates?: boolean
-  }
-
   export type BookingCreateWithoutGuestInput = {
     startTime: Date | string
     endTime: Date | string
-    totalPrice: number
+    totalPrice?: number | null
     status?: string
     guestCount?: number | null
     specialRequests?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     listing: ListingCreateNestedOneWithoutBookingsInput
-    review?: ReviewCreateNestedOneWithoutBookingInput
     earning?: EarningCreateNestedOneWithoutBookingInput
+    review?: ReviewCreateNestedOneWithoutBookingInput
   }
 
   export type BookingUncheckedCreateWithoutGuestInput = {
     id?: number
     startTime: Date | string
     endTime: Date | string
-    totalPrice: number
+    totalPrice?: number | null
     status?: string
     guestCount?: number | null
     specialRequests?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     listingId: number
-    review?: ReviewUncheckedCreateNestedOneWithoutBookingInput
     earning?: EarningUncheckedCreateNestedOneWithoutBookingInput
+    review?: ReviewUncheckedCreateNestedOneWithoutBookingInput
   }
 
   export type BookingCreateOrConnectWithoutGuestInput = {
@@ -22537,60 +28529,6 @@ export namespace Prisma {
 
   export type BookingCreateManyGuestInputEnvelope = {
     data: BookingCreateManyGuestInput | BookingCreateManyGuestInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ReviewCreateWithoutAuthorInput = {
-    rating: number
-    comment?: string | null
-    createdAt?: Date | string
-    listing: ListingCreateNestedOneWithoutReviewsInput
-    booking: BookingCreateNestedOneWithoutReviewInput
-  }
-
-  export type ReviewUncheckedCreateWithoutAuthorInput = {
-    id?: number
-    rating: number
-    comment?: string | null
-    createdAt?: Date | string
-    listingId: number
-    bookingId: number
-  }
-
-  export type ReviewCreateOrConnectWithoutAuthorInput = {
-    where: ReviewWhereUniqueInput
-    create: XOR<ReviewCreateWithoutAuthorInput, ReviewUncheckedCreateWithoutAuthorInput>
-  }
-
-  export type ReviewCreateManyAuthorInputEnvelope = {
-    data: ReviewCreateManyAuthorInput | ReviewCreateManyAuthorInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type NotificationCreateWithoutUserInput = {
-    title: string
-    message: string
-    type: string
-    isRead?: boolean
-    createdAt?: Date | string
-  }
-
-  export type NotificationUncheckedCreateWithoutUserInput = {
-    id?: number
-    title: string
-    message: string
-    type: string
-    isRead?: boolean
-    createdAt?: Date | string
-  }
-
-  export type NotificationCreateOrConnectWithoutUserInput = {
-    where: NotificationWhereUniqueInput
-    create: XOR<NotificationCreateWithoutUserInput, NotificationUncheckedCreateWithoutUserInput>
-  }
-
-  export type NotificationCreateManyUserInputEnvelope = {
-    data: NotificationCreateManyUserInput | NotificationCreateManyUserInput[]
     skipDuplicates?: boolean
   }
 
@@ -22623,154 +28561,316 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type RestaurantUpsertWithoutUsersInput = {
-    update: XOR<RestaurantUpdateWithoutUsersInput, RestaurantUncheckedUpdateWithoutUsersInput>
-    create: XOR<RestaurantCreateWithoutUsersInput, RestaurantUncheckedCreateWithoutUsersInput>
-    where?: RestaurantWhereInput
+  export type HostSettingsCreateWithoutUserInput = {
+    emailBookings?: boolean
+    emailMessages?: boolean
+    emailPayouts?: boolean
+    pushBookings?: boolean
+    pushMessages?: boolean
+    pushPayouts?: boolean
+    companyName?: string | null
+    kraPin?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
-  export type RestaurantUpdateToOneWithWhereWithoutUsersInput = {
-    where?: RestaurantWhereInput
-    data: XOR<RestaurantUpdateWithoutUsersInput, RestaurantUncheckedUpdateWithoutUsersInput>
+  export type HostSettingsUncheckedCreateWithoutUserInput = {
+    id?: number
+    emailBookings?: boolean
+    emailMessages?: boolean
+    emailPayouts?: boolean
+    pushBookings?: boolean
+    pushMessages?: boolean
+    pushPayouts?: boolean
+    companyName?: string | null
+    kraPin?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
-  export type RestaurantUpdateWithoutUsersInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    address?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    state?: StringFieldUpdateOperationsInput | string
-    country?: StringFieldUpdateOperationsInput | string
-    zipCode?: StringFieldUpdateOperationsInput | string
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
-    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
-    rating?: NullableFloatFieldUpdateOperationsInput | number | null
-    isActive?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    host?: UserUpdateOneRequiredWithoutHostedRestaurantNestedInput
-    listings?: ListingUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUpdateManyWithoutRestaurantNestedInput
+  export type HostSettingsCreateOrConnectWithoutUserInput = {
+    where: HostSettingsWhereUniqueInput
+    create: XOR<HostSettingsCreateWithoutUserInput, HostSettingsUncheckedCreateWithoutUserInput>
   }
 
-  export type RestaurantUncheckedUpdateWithoutUsersInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    address?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    state?: StringFieldUpdateOperationsInput | string
-    country?: StringFieldUpdateOperationsInput | string
-    zipCode?: StringFieldUpdateOperationsInput | string
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
-    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
-    rating?: NullableFloatFieldUpdateOperationsInput | number | null
-    isActive?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    hostId?: IntFieldUpdateOperationsInput | number
-    listings?: ListingUncheckedUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutRestaurantNestedInput
+  export type ListingCreateWithoutHostInput = {
+    title: string
+    description?: string | null
+    type: string
+    capacity?: number | null
+    pricePerHour?: number | null
+    pricePerDay?: number | null
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    availability?: AvailabilityCreateNestedManyWithoutListingInput
+    bookings?: BookingCreateNestedManyWithoutListingInput
+    restaurant?: RestaurantCreateNestedOneWithoutListingsInput
+    amenities?: ListingAmenityCreateNestedManyWithoutListingInput
+    images?: ListingImageCreateNestedManyWithoutListingInput
+    reviews?: ReviewCreateNestedManyWithoutListingInput
   }
 
-  export type RestaurantUpsertWithoutHostInput = {
-    update: XOR<RestaurantUpdateWithoutHostInput, RestaurantUncheckedUpdateWithoutHostInput>
-    create: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
-    where?: RestaurantWhereInput
+  export type ListingUncheckedCreateWithoutHostInput = {
+    id?: number
+    title: string
+    description?: string | null
+    type: string
+    capacity?: number | null
+    pricePerHour?: number | null
+    pricePerDay?: number | null
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    restaurantId?: number | null
+    availability?: AvailabilityUncheckedCreateNestedManyWithoutListingInput
+    bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
+    amenities?: ListingAmenityUncheckedCreateNestedManyWithoutListingInput
+    images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
+    reviews?: ReviewUncheckedCreateNestedManyWithoutListingInput
   }
 
-  export type RestaurantUpdateToOneWithWhereWithoutHostInput = {
-    where?: RestaurantWhereInput
-    data: XOR<RestaurantUpdateWithoutHostInput, RestaurantUncheckedUpdateWithoutHostInput>
-  }
-
-  export type RestaurantUpdateWithoutHostInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    address?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    state?: StringFieldUpdateOperationsInput | string
-    country?: StringFieldUpdateOperationsInput | string
-    zipCode?: StringFieldUpdateOperationsInput | string
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
-    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
-    rating?: NullableFloatFieldUpdateOperationsInput | number | null
-    isActive?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    users?: UserUpdateManyWithoutRestaurantNestedInput
-    listings?: ListingUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUpdateManyWithoutRestaurantNestedInput
-  }
-
-  export type RestaurantUncheckedUpdateWithoutHostInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    address?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    state?: StringFieldUpdateOperationsInput | string
-    country?: StringFieldUpdateOperationsInput | string
-    zipCode?: StringFieldUpdateOperationsInput | string
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
-    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
-    rating?: NullableFloatFieldUpdateOperationsInput | number | null
-    isActive?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    users?: UserUncheckedUpdateManyWithoutRestaurantNestedInput
-    listings?: ListingUncheckedUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutRestaurantNestedInput
-  }
-
-  export type ListingUpsertWithWhereUniqueWithoutHostInput = {
+  export type ListingCreateOrConnectWithoutHostInput = {
     where: ListingWhereUniqueInput
-    update: XOR<ListingUpdateWithoutHostInput, ListingUncheckedUpdateWithoutHostInput>
     create: XOR<ListingCreateWithoutHostInput, ListingUncheckedCreateWithoutHostInput>
   }
 
-  export type ListingUpdateWithWhereUniqueWithoutHostInput = {
-    where: ListingWhereUniqueInput
-    data: XOR<ListingUpdateWithoutHostInput, ListingUncheckedUpdateWithoutHostInput>
+  export type ListingCreateManyHostInputEnvelope = {
+    data: ListingCreateManyHostInput | ListingCreateManyHostInput[]
+    skipDuplicates?: boolean
   }
 
-  export type ListingUpdateManyWithWhereWithoutHostInput = {
-    where: ListingScalarWhereInput
-    data: XOR<ListingUpdateManyMutationInput, ListingUncheckedUpdateManyWithoutHostInput>
+  export type MessageCreateWithoutReceiverInput = {
+    content: string
+    timestamp?: Date | string
+    conversation: ConversationCreateNestedOneWithoutMessagesInput
+    sender: UserCreateNestedOneWithoutMessagesSentInput
   }
 
-  export type ListingScalarWhereInput = {
-    AND?: ListingScalarWhereInput | ListingScalarWhereInput[]
-    OR?: ListingScalarWhereInput[]
-    NOT?: ListingScalarWhereInput | ListingScalarWhereInput[]
-    id?: IntFilter<"Listing"> | number
-    title?: StringFilter<"Listing"> | string
-    description?: StringNullableFilter<"Listing"> | string | null
-    type?: StringFilter<"Listing"> | string
-    capacity?: IntNullableFilter<"Listing"> | number | null
-    pricePerHour?: FloatNullableFilter<"Listing"> | number | null
-    pricePerDay?: FloatNullableFilter<"Listing"> | number | null
-    isActive?: BoolFilter<"Listing"> | boolean
-    createdAt?: DateTimeFilter<"Listing"> | Date | string
-    updatedAt?: DateTimeFilter<"Listing"> | Date | string
-    restaurantId?: IntFilter<"Listing"> | number
-    hostId?: IntFilter<"Listing"> | number
+  export type MessageUncheckedCreateWithoutReceiverInput = {
+    id?: number
+    conversationId: number
+    senderId: number
+    content: string
+    timestamp?: Date | string
+  }
+
+  export type MessageCreateOrConnectWithoutReceiverInput = {
+    where: MessageWhereUniqueInput
+    create: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput>
+  }
+
+  export type MessageCreateManyReceiverInputEnvelope = {
+    data: MessageCreateManyReceiverInput | MessageCreateManyReceiverInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type MessageCreateWithoutSenderInput = {
+    content: string
+    timestamp?: Date | string
+    conversation: ConversationCreateNestedOneWithoutMessagesInput
+    receiver: UserCreateNestedOneWithoutMessagesReceivedInput
+  }
+
+  export type MessageUncheckedCreateWithoutSenderInput = {
+    id?: number
+    conversationId: number
+    receiverId: number
+    content: string
+    timestamp?: Date | string
+  }
+
+  export type MessageCreateOrConnectWithoutSenderInput = {
+    where: MessageWhereUniqueInput
+    create: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput>
+  }
+
+  export type MessageCreateManySenderInputEnvelope = {
+    data: MessageCreateManySenderInput | MessageCreateManySenderInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type NotificationCreateWithoutUserInput = {
+    title: string
+    message: string
+    type: string
+    isRead?: boolean
+    createdAt?: Date | string
+  }
+
+  export type NotificationUncheckedCreateWithoutUserInput = {
+    id?: number
+    title: string
+    message: string
+    type: string
+    isRead?: boolean
+    createdAt?: Date | string
+  }
+
+  export type NotificationCreateOrConnectWithoutUserInput = {
+    where: NotificationWhereUniqueInput
+    create: XOR<NotificationCreateWithoutUserInput, NotificationUncheckedCreateWithoutUserInput>
+  }
+
+  export type NotificationCreateManyUserInputEnvelope = {
+    data: NotificationCreateManyUserInput | NotificationCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type PaymentMethodCreateWithoutUserInput = {
+    type: string
+    details: string
+    isPrimary?: boolean
+    createdAt?: Date | string
+  }
+
+  export type PaymentMethodUncheckedCreateWithoutUserInput = {
+    id?: number
+    type: string
+    details: string
+    isPrimary?: boolean
+    createdAt?: Date | string
+  }
+
+  export type PaymentMethodCreateOrConnectWithoutUserInput = {
+    where: PaymentMethodWhereUniqueInput
+    create: XOR<PaymentMethodCreateWithoutUserInput, PaymentMethodUncheckedCreateWithoutUserInput>
+  }
+
+  export type PaymentMethodCreateManyUserInputEnvelope = {
+    data: PaymentMethodCreateManyUserInput | PaymentMethodCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type RestaurantCreateWithoutHostInput = {
+    name: string
+    description?: string | null
+    address: string
+    city: string
+    state: string
+    country: string
+    zipCode: string
+    phone?: string | null
+    email?: string | null
+    website?: string | null
+    restaurantType?: string | null
+    priceRange?: string | null
+    rating?: number | null
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    listings?: ListingCreateNestedManyWithoutRestaurantInput
+    operatingHours?: OperatingHoursCreateNestedManyWithoutRestaurantInput
+    images?: RestaurantImageCreateNestedManyWithoutRestaurantInput
+    users?: UserCreateNestedManyWithoutRestaurantInput
+  }
+
+  export type RestaurantUncheckedCreateWithoutHostInput = {
+    id?: number
+    name: string
+    description?: string | null
+    address: string
+    city: string
+    state: string
+    country: string
+    zipCode: string
+    phone?: string | null
+    email?: string | null
+    website?: string | null
+    restaurantType?: string | null
+    priceRange?: string | null
+    rating?: number | null
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    listings?: ListingUncheckedCreateNestedManyWithoutRestaurantInput
+    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput
+    images?: RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput
+    users?: UserUncheckedCreateNestedManyWithoutRestaurantInput
+  }
+
+  export type RestaurantCreateOrConnectWithoutHostInput = {
+    where: RestaurantWhereUniqueInput
+    create: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
+  }
+
+  export type ReviewCreateWithoutAuthorInput = {
+    rating: number
+    comment?: string | null
+    createdAt?: Date | string
+    booking: BookingCreateNestedOneWithoutReviewInput
+    listing: ListingCreateNestedOneWithoutReviewsInput
+  }
+
+  export type ReviewUncheckedCreateWithoutAuthorInput = {
+    id?: number
+    rating: number
+    comment?: string | null
+    createdAt?: Date | string
+    listingId: number
+    bookingId: number
+  }
+
+  export type ReviewCreateOrConnectWithoutAuthorInput = {
+    where: ReviewWhereUniqueInput
+    create: XOR<ReviewCreateWithoutAuthorInput, ReviewUncheckedCreateWithoutAuthorInput>
+  }
+
+  export type ReviewCreateManyAuthorInputEnvelope = {
+    data: ReviewCreateManyAuthorInput | ReviewCreateManyAuthorInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type RestaurantCreateWithoutUsersInput = {
+    name: string
+    description?: string | null
+    address: string
+    city: string
+    state: string
+    country: string
+    zipCode: string
+    phone?: string | null
+    email?: string | null
+    website?: string | null
+    restaurantType?: string | null
+    priceRange?: string | null
+    rating?: number | null
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    listings?: ListingCreateNestedManyWithoutRestaurantInput
+    operatingHours?: OperatingHoursCreateNestedManyWithoutRestaurantInput
+    host: UserCreateNestedOneWithoutHostedRestaurantInput
+    images?: RestaurantImageCreateNestedManyWithoutRestaurantInput
+  }
+
+  export type RestaurantUncheckedCreateWithoutUsersInput = {
+    id?: number
+    name: string
+    description?: string | null
+    address: string
+    city: string
+    state: string
+    country: string
+    zipCode: string
+    phone?: string | null
+    email?: string | null
+    website?: string | null
+    restaurantType?: string | null
+    priceRange?: string | null
+    rating?: number | null
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    hostId: number
+    listings?: ListingUncheckedCreateNestedManyWithoutRestaurantInput
+    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput
+    images?: RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput
+  }
+
+  export type RestaurantCreateOrConnectWithoutUsersInput = {
+    where: RestaurantWhereUniqueInput
+    create: XOR<RestaurantCreateWithoutUsersInput, RestaurantUncheckedCreateWithoutUsersInput>
   }
 
   export type BookingUpsertWithWhereUniqueWithoutGuestInput = {
@@ -22796,7 +28896,7 @@ export namespace Prisma {
     id?: IntFilter<"Booking"> | number
     startTime?: DateTimeFilter<"Booking"> | Date | string
     endTime?: DateTimeFilter<"Booking"> | Date | string
-    totalPrice?: FloatFilter<"Booking"> | number
+    totalPrice?: FloatNullableFilter<"Booking"> | number | null
     status?: StringFilter<"Booking"> | string
     guestCount?: IntNullableFilter<"Booking"> | number | null
     specialRequests?: StringNullableFilter<"Booking"> | string | null
@@ -22804,64 +28904,6 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Booking"> | Date | string
     listingId?: IntFilter<"Booking"> | number
     guestId?: IntFilter<"Booking"> | number
-  }
-
-  export type ReviewUpsertWithWhereUniqueWithoutAuthorInput = {
-    where: ReviewWhereUniqueInput
-    update: XOR<ReviewUpdateWithoutAuthorInput, ReviewUncheckedUpdateWithoutAuthorInput>
-    create: XOR<ReviewCreateWithoutAuthorInput, ReviewUncheckedCreateWithoutAuthorInput>
-  }
-
-  export type ReviewUpdateWithWhereUniqueWithoutAuthorInput = {
-    where: ReviewWhereUniqueInput
-    data: XOR<ReviewUpdateWithoutAuthorInput, ReviewUncheckedUpdateWithoutAuthorInput>
-  }
-
-  export type ReviewUpdateManyWithWhereWithoutAuthorInput = {
-    where: ReviewScalarWhereInput
-    data: XOR<ReviewUpdateManyMutationInput, ReviewUncheckedUpdateManyWithoutAuthorInput>
-  }
-
-  export type ReviewScalarWhereInput = {
-    AND?: ReviewScalarWhereInput | ReviewScalarWhereInput[]
-    OR?: ReviewScalarWhereInput[]
-    NOT?: ReviewScalarWhereInput | ReviewScalarWhereInput[]
-    id?: IntFilter<"Review"> | number
-    rating?: IntFilter<"Review"> | number
-    comment?: StringNullableFilter<"Review"> | string | null
-    createdAt?: DateTimeFilter<"Review"> | Date | string
-    listingId?: IntFilter<"Review"> | number
-    authorId?: IntFilter<"Review"> | number
-    bookingId?: IntFilter<"Review"> | number
-  }
-
-  export type NotificationUpsertWithWhereUniqueWithoutUserInput = {
-    where: NotificationWhereUniqueInput
-    update: XOR<NotificationUpdateWithoutUserInput, NotificationUncheckedUpdateWithoutUserInput>
-    create: XOR<NotificationCreateWithoutUserInput, NotificationUncheckedCreateWithoutUserInput>
-  }
-
-  export type NotificationUpdateWithWhereUniqueWithoutUserInput = {
-    where: NotificationWhereUniqueInput
-    data: XOR<NotificationUpdateWithoutUserInput, NotificationUncheckedUpdateWithoutUserInput>
-  }
-
-  export type NotificationUpdateManyWithWhereWithoutUserInput = {
-    where: NotificationScalarWhereInput
-    data: XOR<NotificationUpdateManyMutationInput, NotificationUncheckedUpdateManyWithoutUserInput>
-  }
-
-  export type NotificationScalarWhereInput = {
-    AND?: NotificationScalarWhereInput | NotificationScalarWhereInput[]
-    OR?: NotificationScalarWhereInput[]
-    NOT?: NotificationScalarWhereInput | NotificationScalarWhereInput[]
-    id?: IntFilter<"Notification"> | number
-    title?: StringFilter<"Notification"> | string
-    message?: StringFilter<"Notification"> | string
-    type?: StringFilter<"Notification"> | string
-    isRead?: BoolFilter<"Notification"> | boolean
-    createdAt?: DateTimeFilter<"Notification"> | Date | string
-    userId?: IntFilter<"Notification"> | number
   }
 
   export type EarningUpsertWithWhereUniqueWithoutHostInput = {
@@ -22894,117 +28936,322 @@ export namespace Prisma {
     bookingId?: IntNullableFilter<"Earning"> | number | null
   }
 
-  export type UserCreateWithoutHostedRestaurantInput = {
-    email: string
-    phone?: string | null
-    password: string
-    name: string
-    role?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    profileImage?: string | null
-    bio?: string | null
-    address?: string | null
-    city?: string | null
-    state?: string | null
-    country?: string | null
-    zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    listings?: ListingCreateNestedManyWithoutHostInput
-    bookings?: BookingCreateNestedManyWithoutGuestInput
-    reviews?: ReviewCreateNestedManyWithoutAuthorInput
-    notifications?: NotificationCreateNestedManyWithoutUserInput
-    earnings?: EarningCreateNestedManyWithoutHostInput
+  export type HostSettingsUpsertWithoutUserInput = {
+    update: XOR<HostSettingsUpdateWithoutUserInput, HostSettingsUncheckedUpdateWithoutUserInput>
+    create: XOR<HostSettingsCreateWithoutUserInput, HostSettingsUncheckedCreateWithoutUserInput>
+    where?: HostSettingsWhereInput
   }
 
-  export type UserUncheckedCreateWithoutHostedRestaurantInput = {
-    id?: number
-    email: string
-    phone?: string | null
-    password: string
-    name: string
-    role?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
-    profileImage?: string | null
-    bio?: string | null
-    address?: string | null
-    city?: string | null
-    state?: string | null
-    country?: string | null
-    zipCode?: string | null
-    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
-    bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
-    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
-    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
-    earnings?: EarningUncheckedCreateNestedManyWithoutHostInput
+  export type HostSettingsUpdateToOneWithWhereWithoutUserInput = {
+    where?: HostSettingsWhereInput
+    data: XOR<HostSettingsUpdateWithoutUserInput, HostSettingsUncheckedUpdateWithoutUserInput>
   }
 
-  export type UserCreateOrConnectWithoutHostedRestaurantInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutHostedRestaurantInput, UserUncheckedCreateWithoutHostedRestaurantInput>
+  export type HostSettingsUpdateWithoutUserInput = {
+    emailBookings?: BoolFieldUpdateOperationsInput | boolean
+    emailMessages?: BoolFieldUpdateOperationsInput | boolean
+    emailPayouts?: BoolFieldUpdateOperationsInput | boolean
+    pushBookings?: BoolFieldUpdateOperationsInput | boolean
+    pushMessages?: BoolFieldUpdateOperationsInput | boolean
+    pushPayouts?: BoolFieldUpdateOperationsInput | boolean
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    kraPin?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type UserCreateWithoutRestaurantInput = {
-    email: string
-    phone?: string | null
-    password: string
-    name: string
-    role?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    profileImage?: string | null
-    bio?: string | null
-    address?: string | null
-    city?: string | null
-    state?: string | null
-    country?: string | null
-    zipCode?: string | null
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
-    listings?: ListingCreateNestedManyWithoutHostInput
-    bookings?: BookingCreateNestedManyWithoutGuestInput
-    reviews?: ReviewCreateNestedManyWithoutAuthorInput
-    notifications?: NotificationCreateNestedManyWithoutUserInput
-    earnings?: EarningCreateNestedManyWithoutHostInput
+  export type HostSettingsUncheckedUpdateWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    emailBookings?: BoolFieldUpdateOperationsInput | boolean
+    emailMessages?: BoolFieldUpdateOperationsInput | boolean
+    emailPayouts?: BoolFieldUpdateOperationsInput | boolean
+    pushBookings?: BoolFieldUpdateOperationsInput | boolean
+    pushMessages?: BoolFieldUpdateOperationsInput | boolean
+    pushPayouts?: BoolFieldUpdateOperationsInput | boolean
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    kraPin?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type UserUncheckedCreateWithoutRestaurantInput = {
-    id?: number
-    email: string
-    phone?: string | null
-    password: string
-    name: string
-    role?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    profileImage?: string | null
-    bio?: string | null
-    address?: string | null
-    city?: string | null
-    state?: string | null
-    country?: string | null
-    zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
-    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
-    bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
-    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
-    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
-    earnings?: EarningUncheckedCreateNestedManyWithoutHostInput
+  export type ListingUpsertWithWhereUniqueWithoutHostInput = {
+    where: ListingWhereUniqueInput
+    update: XOR<ListingUpdateWithoutHostInput, ListingUncheckedUpdateWithoutHostInput>
+    create: XOR<ListingCreateWithoutHostInput, ListingUncheckedCreateWithoutHostInput>
   }
 
-  export type UserCreateOrConnectWithoutRestaurantInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput>
+  export type ListingUpdateWithWhereUniqueWithoutHostInput = {
+    where: ListingWhereUniqueInput
+    data: XOR<ListingUpdateWithoutHostInput, ListingUncheckedUpdateWithoutHostInput>
   }
 
-  export type UserCreateManyRestaurantInputEnvelope = {
-    data: UserCreateManyRestaurantInput | UserCreateManyRestaurantInput[]
-    skipDuplicates?: boolean
+  export type ListingUpdateManyWithWhereWithoutHostInput = {
+    where: ListingScalarWhereInput
+    data: XOR<ListingUpdateManyMutationInput, ListingUncheckedUpdateManyWithoutHostInput>
+  }
+
+  export type ListingScalarWhereInput = {
+    AND?: ListingScalarWhereInput | ListingScalarWhereInput[]
+    OR?: ListingScalarWhereInput[]
+    NOT?: ListingScalarWhereInput | ListingScalarWhereInput[]
+    id?: IntFilter<"Listing"> | number
+    title?: StringFilter<"Listing"> | string
+    description?: StringNullableFilter<"Listing"> | string | null
+    type?: StringFilter<"Listing"> | string
+    capacity?: IntNullableFilter<"Listing"> | number | null
+    pricePerHour?: FloatNullableFilter<"Listing"> | number | null
+    pricePerDay?: FloatNullableFilter<"Listing"> | number | null
+    isActive?: BoolFilter<"Listing"> | boolean
+    createdAt?: DateTimeFilter<"Listing"> | Date | string
+    updatedAt?: DateTimeFilter<"Listing"> | Date | string
+    hostId?: IntFilter<"Listing"> | number
+    restaurantId?: IntNullableFilter<"Listing"> | number | null
+  }
+
+  export type MessageUpsertWithWhereUniqueWithoutReceiverInput = {
+    where: MessageWhereUniqueInput
+    update: XOR<MessageUpdateWithoutReceiverInput, MessageUncheckedUpdateWithoutReceiverInput>
+    create: XOR<MessageCreateWithoutReceiverInput, MessageUncheckedCreateWithoutReceiverInput>
+  }
+
+  export type MessageUpdateWithWhereUniqueWithoutReceiverInput = {
+    where: MessageWhereUniqueInput
+    data: XOR<MessageUpdateWithoutReceiverInput, MessageUncheckedUpdateWithoutReceiverInput>
+  }
+
+  export type MessageUpdateManyWithWhereWithoutReceiverInput = {
+    where: MessageScalarWhereInput
+    data: XOR<MessageUpdateManyMutationInput, MessageUncheckedUpdateManyWithoutReceiverInput>
+  }
+
+  export type MessageScalarWhereInput = {
+    AND?: MessageScalarWhereInput | MessageScalarWhereInput[]
+    OR?: MessageScalarWhereInput[]
+    NOT?: MessageScalarWhereInput | MessageScalarWhereInput[]
+    id?: IntFilter<"Message"> | number
+    conversationId?: IntFilter<"Message"> | number
+    senderId?: IntFilter<"Message"> | number
+    receiverId?: IntFilter<"Message"> | number
+    content?: StringFilter<"Message"> | string
+    timestamp?: DateTimeFilter<"Message"> | Date | string
+  }
+
+  export type MessageUpsertWithWhereUniqueWithoutSenderInput = {
+    where: MessageWhereUniqueInput
+    update: XOR<MessageUpdateWithoutSenderInput, MessageUncheckedUpdateWithoutSenderInput>
+    create: XOR<MessageCreateWithoutSenderInput, MessageUncheckedCreateWithoutSenderInput>
+  }
+
+  export type MessageUpdateWithWhereUniqueWithoutSenderInput = {
+    where: MessageWhereUniqueInput
+    data: XOR<MessageUpdateWithoutSenderInput, MessageUncheckedUpdateWithoutSenderInput>
+  }
+
+  export type MessageUpdateManyWithWhereWithoutSenderInput = {
+    where: MessageScalarWhereInput
+    data: XOR<MessageUpdateManyMutationInput, MessageUncheckedUpdateManyWithoutSenderInput>
+  }
+
+  export type NotificationUpsertWithWhereUniqueWithoutUserInput = {
+    where: NotificationWhereUniqueInput
+    update: XOR<NotificationUpdateWithoutUserInput, NotificationUncheckedUpdateWithoutUserInput>
+    create: XOR<NotificationCreateWithoutUserInput, NotificationUncheckedCreateWithoutUserInput>
+  }
+
+  export type NotificationUpdateWithWhereUniqueWithoutUserInput = {
+    where: NotificationWhereUniqueInput
+    data: XOR<NotificationUpdateWithoutUserInput, NotificationUncheckedUpdateWithoutUserInput>
+  }
+
+  export type NotificationUpdateManyWithWhereWithoutUserInput = {
+    where: NotificationScalarWhereInput
+    data: XOR<NotificationUpdateManyMutationInput, NotificationUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type NotificationScalarWhereInput = {
+    AND?: NotificationScalarWhereInput | NotificationScalarWhereInput[]
+    OR?: NotificationScalarWhereInput[]
+    NOT?: NotificationScalarWhereInput | NotificationScalarWhereInput[]
+    id?: IntFilter<"Notification"> | number
+    title?: StringFilter<"Notification"> | string
+    message?: StringFilter<"Notification"> | string
+    type?: StringFilter<"Notification"> | string
+    isRead?: BoolFilter<"Notification"> | boolean
+    createdAt?: DateTimeFilter<"Notification"> | Date | string
+    userId?: IntFilter<"Notification"> | number
+  }
+
+  export type PaymentMethodUpsertWithWhereUniqueWithoutUserInput = {
+    where: PaymentMethodWhereUniqueInput
+    update: XOR<PaymentMethodUpdateWithoutUserInput, PaymentMethodUncheckedUpdateWithoutUserInput>
+    create: XOR<PaymentMethodCreateWithoutUserInput, PaymentMethodUncheckedCreateWithoutUserInput>
+  }
+
+  export type PaymentMethodUpdateWithWhereUniqueWithoutUserInput = {
+    where: PaymentMethodWhereUniqueInput
+    data: XOR<PaymentMethodUpdateWithoutUserInput, PaymentMethodUncheckedUpdateWithoutUserInput>
+  }
+
+  export type PaymentMethodUpdateManyWithWhereWithoutUserInput = {
+    where: PaymentMethodScalarWhereInput
+    data: XOR<PaymentMethodUpdateManyMutationInput, PaymentMethodUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type PaymentMethodScalarWhereInput = {
+    AND?: PaymentMethodScalarWhereInput | PaymentMethodScalarWhereInput[]
+    OR?: PaymentMethodScalarWhereInput[]
+    NOT?: PaymentMethodScalarWhereInput | PaymentMethodScalarWhereInput[]
+    id?: IntFilter<"PaymentMethod"> | number
+    userId?: IntFilter<"PaymentMethod"> | number
+    type?: StringFilter<"PaymentMethod"> | string
+    details?: StringFilter<"PaymentMethod"> | string
+    isPrimary?: BoolFilter<"PaymentMethod"> | boolean
+    createdAt?: DateTimeFilter<"PaymentMethod"> | Date | string
+  }
+
+  export type RestaurantUpsertWithoutHostInput = {
+    update: XOR<RestaurantUpdateWithoutHostInput, RestaurantUncheckedUpdateWithoutHostInput>
+    create: XOR<RestaurantCreateWithoutHostInput, RestaurantUncheckedCreateWithoutHostInput>
+    where?: RestaurantWhereInput
+  }
+
+  export type RestaurantUpdateToOneWithWhereWithoutHostInput = {
+    where?: RestaurantWhereInput
+    data: XOR<RestaurantUpdateWithoutHostInput, RestaurantUncheckedUpdateWithoutHostInput>
+  }
+
+  export type RestaurantUpdateWithoutHostInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    state?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    zipCode?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    restaurantType?: NullableStringFieldUpdateOperationsInput | string | null
+    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    listings?: ListingUpdateManyWithoutRestaurantNestedInput
+    operatingHours?: OperatingHoursUpdateManyWithoutRestaurantNestedInput
+    images?: RestaurantImageUpdateManyWithoutRestaurantNestedInput
+    users?: UserUpdateManyWithoutRestaurantNestedInput
+  }
+
+  export type RestaurantUncheckedUpdateWithoutHostInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    state?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    zipCode?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    restaurantType?: NullableStringFieldUpdateOperationsInput | string | null
+    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    listings?: ListingUncheckedUpdateManyWithoutRestaurantNestedInput
+    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutRestaurantNestedInput
+    images?: RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput
+    users?: UserUncheckedUpdateManyWithoutRestaurantNestedInput
+  }
+
+  export type ReviewUpsertWithWhereUniqueWithoutAuthorInput = {
+    where: ReviewWhereUniqueInput
+    update: XOR<ReviewUpdateWithoutAuthorInput, ReviewUncheckedUpdateWithoutAuthorInput>
+    create: XOR<ReviewCreateWithoutAuthorInput, ReviewUncheckedCreateWithoutAuthorInput>
+  }
+
+  export type ReviewUpdateWithWhereUniqueWithoutAuthorInput = {
+    where: ReviewWhereUniqueInput
+    data: XOR<ReviewUpdateWithoutAuthorInput, ReviewUncheckedUpdateWithoutAuthorInput>
+  }
+
+  export type ReviewUpdateManyWithWhereWithoutAuthorInput = {
+    where: ReviewScalarWhereInput
+    data: XOR<ReviewUpdateManyMutationInput, ReviewUncheckedUpdateManyWithoutAuthorInput>
+  }
+
+  export type ReviewScalarWhereInput = {
+    AND?: ReviewScalarWhereInput | ReviewScalarWhereInput[]
+    OR?: ReviewScalarWhereInput[]
+    NOT?: ReviewScalarWhereInput | ReviewScalarWhereInput[]
+    id?: IntFilter<"Review"> | number
+    rating?: IntFilter<"Review"> | number
+    comment?: StringNullableFilter<"Review"> | string | null
+    createdAt?: DateTimeFilter<"Review"> | Date | string
+    listingId?: IntFilter<"Review"> | number
+    authorId?: IntFilter<"Review"> | number
+    bookingId?: IntFilter<"Review"> | number
+  }
+
+  export type RestaurantUpsertWithoutUsersInput = {
+    update: XOR<RestaurantUpdateWithoutUsersInput, RestaurantUncheckedUpdateWithoutUsersInput>
+    create: XOR<RestaurantCreateWithoutUsersInput, RestaurantUncheckedCreateWithoutUsersInput>
+    where?: RestaurantWhereInput
+  }
+
+  export type RestaurantUpdateToOneWithWhereWithoutUsersInput = {
+    where?: RestaurantWhereInput
+    data: XOR<RestaurantUpdateWithoutUsersInput, RestaurantUncheckedUpdateWithoutUsersInput>
+  }
+
+  export type RestaurantUpdateWithoutUsersInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    state?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    zipCode?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    restaurantType?: NullableStringFieldUpdateOperationsInput | string | null
+    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    listings?: ListingUpdateManyWithoutRestaurantNestedInput
+    operatingHours?: OperatingHoursUpdateManyWithoutRestaurantNestedInput
+    host?: UserUpdateOneRequiredWithoutHostedRestaurantNestedInput
+    images?: RestaurantImageUpdateManyWithoutRestaurantNestedInput
+  }
+
+  export type RestaurantUncheckedUpdateWithoutUsersInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    state?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    zipCode?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    restaurantType?: NullableStringFieldUpdateOperationsInput | string | null
+    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    hostId?: IntFieldUpdateOperationsInput | number
+    listings?: ListingUncheckedUpdateManyWithoutRestaurantNestedInput
+    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutRestaurantNestedInput
+    images?: RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput
   }
 
   export type ListingCreateWithoutRestaurantInput = {
@@ -23017,11 +29264,11 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    host: UserCreateNestedOneWithoutListingsInput
-    bookings?: BookingCreateNestedManyWithoutListingInput
-    images?: ListingImageCreateNestedManyWithoutListingInput
-    amenities?: ListingAmenityCreateNestedManyWithoutListingInput
     availability?: AvailabilityCreateNestedManyWithoutListingInput
+    bookings?: BookingCreateNestedManyWithoutListingInput
+    host: UserCreateNestedOneWithoutListingsInput
+    amenities?: ListingAmenityCreateNestedManyWithoutListingInput
+    images?: ListingImageCreateNestedManyWithoutListingInput
     reviews?: ReviewCreateNestedManyWithoutListingInput
   }
 
@@ -23037,10 +29284,10 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     hostId: number
-    bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
-    images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
-    amenities?: ListingAmenityUncheckedCreateNestedManyWithoutListingInput
     availability?: AvailabilityUncheckedCreateNestedManyWithoutListingInput
+    bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
+    amenities?: ListingAmenityUncheckedCreateNestedManyWithoutListingInput
+    images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutListingInput
   }
 
@@ -23051,31 +29298,6 @@ export namespace Prisma {
 
   export type ListingCreateManyRestaurantInputEnvelope = {
     data: ListingCreateManyRestaurantInput | ListingCreateManyRestaurantInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type RestaurantImageCreateWithoutRestaurantInput = {
-    url: string
-    caption?: string | null
-    isPrimary?: boolean
-    createdAt?: Date | string
-  }
-
-  export type RestaurantImageUncheckedCreateWithoutRestaurantInput = {
-    id?: number
-    url: string
-    caption?: string | null
-    isPrimary?: boolean
-    createdAt?: Date | string
-  }
-
-  export type RestaurantImageCreateOrConnectWithoutRestaurantInput = {
-    where: RestaurantImageWhereUniqueInput
-    create: XOR<RestaurantImageCreateWithoutRestaurantInput, RestaurantImageUncheckedCreateWithoutRestaurantInput>
-  }
-
-  export type RestaurantImageCreateManyRestaurantInputEnvelope = {
-    data: RestaurantImageCreateManyRestaurantInput | RestaurantImageCreateManyRestaurantInput[]
     skipDuplicates?: boolean
   }
 
@@ -23104,6 +29326,204 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type UserCreateWithoutHostedRestaurantInput = {
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    bookings?: BookingCreateNestedManyWithoutGuestInput
+    earnings?: EarningCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsCreateNestedOneWithoutUserInput
+    listings?: ListingCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageCreateNestedManyWithoutSenderInput
+    notifications?: NotificationCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodCreateNestedManyWithoutUserInput
+    reviews?: ReviewCreateNestedManyWithoutAuthorInput
+    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
+  }
+
+  export type UserUncheckedCreateWithoutHostedRestaurantInput = {
+    id?: number
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    restaurantId?: number | null
+    bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
+    earnings?: EarningUncheckedCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsUncheckedCreateNestedOneWithoutUserInput
+    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodUncheckedCreateNestedManyWithoutUserInput
+    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
+  }
+
+  export type UserCreateOrConnectWithoutHostedRestaurantInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutHostedRestaurantInput, UserUncheckedCreateWithoutHostedRestaurantInput>
+  }
+
+  export type RestaurantImageCreateWithoutRestaurantInput = {
+    url: string
+    caption?: string | null
+    isPrimary?: boolean
+    createdAt?: Date | string
+  }
+
+  export type RestaurantImageUncheckedCreateWithoutRestaurantInput = {
+    id?: number
+    url: string
+    caption?: string | null
+    isPrimary?: boolean
+    createdAt?: Date | string
+  }
+
+  export type RestaurantImageCreateOrConnectWithoutRestaurantInput = {
+    where: RestaurantImageWhereUniqueInput
+    create: XOR<RestaurantImageCreateWithoutRestaurantInput, RestaurantImageUncheckedCreateWithoutRestaurantInput>
+  }
+
+  export type RestaurantImageCreateManyRestaurantInputEnvelope = {
+    data: RestaurantImageCreateManyRestaurantInput | RestaurantImageCreateManyRestaurantInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type UserCreateWithoutRestaurantInput = {
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    bookings?: BookingCreateNestedManyWithoutGuestInput
+    earnings?: EarningCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsCreateNestedOneWithoutUserInput
+    listings?: ListingCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageCreateNestedManyWithoutSenderInput
+    notifications?: NotificationCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    reviews?: ReviewCreateNestedManyWithoutAuthorInput
+  }
+
+  export type UserUncheckedCreateWithoutRestaurantInput = {
+    id?: number
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
+    earnings?: EarningUncheckedCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsUncheckedCreateNestedOneWithoutUserInput
+    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodUncheckedCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
+  }
+
+  export type UserCreateOrConnectWithoutRestaurantInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput>
+  }
+
+  export type UserCreateManyRestaurantInputEnvelope = {
+    data: UserCreateManyRestaurantInput | UserCreateManyRestaurantInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ListingUpsertWithWhereUniqueWithoutRestaurantInput = {
+    where: ListingWhereUniqueInput
+    update: XOR<ListingUpdateWithoutRestaurantInput, ListingUncheckedUpdateWithoutRestaurantInput>
+    create: XOR<ListingCreateWithoutRestaurantInput, ListingUncheckedCreateWithoutRestaurantInput>
+  }
+
+  export type ListingUpdateWithWhereUniqueWithoutRestaurantInput = {
+    where: ListingWhereUniqueInput
+    data: XOR<ListingUpdateWithoutRestaurantInput, ListingUncheckedUpdateWithoutRestaurantInput>
+  }
+
+  export type ListingUpdateManyWithWhereWithoutRestaurantInput = {
+    where: ListingScalarWhereInput
+    data: XOR<ListingUpdateManyMutationInput, ListingUncheckedUpdateManyWithoutRestaurantInput>
+  }
+
+  export type OperatingHoursUpsertWithWhereUniqueWithoutRestaurantInput = {
+    where: OperatingHoursWhereUniqueInput
+    update: XOR<OperatingHoursUpdateWithoutRestaurantInput, OperatingHoursUncheckedUpdateWithoutRestaurantInput>
+    create: XOR<OperatingHoursCreateWithoutRestaurantInput, OperatingHoursUncheckedCreateWithoutRestaurantInput>
+  }
+
+  export type OperatingHoursUpdateWithWhereUniqueWithoutRestaurantInput = {
+    where: OperatingHoursWhereUniqueInput
+    data: XOR<OperatingHoursUpdateWithoutRestaurantInput, OperatingHoursUncheckedUpdateWithoutRestaurantInput>
+  }
+
+  export type OperatingHoursUpdateManyWithWhereWithoutRestaurantInput = {
+    where: OperatingHoursScalarWhereInput
+    data: XOR<OperatingHoursUpdateManyMutationInput, OperatingHoursUncheckedUpdateManyWithoutRestaurantInput>
+  }
+
+  export type OperatingHoursScalarWhereInput = {
+    AND?: OperatingHoursScalarWhereInput | OperatingHoursScalarWhereInput[]
+    OR?: OperatingHoursScalarWhereInput[]
+    NOT?: OperatingHoursScalarWhereInput | OperatingHoursScalarWhereInput[]
+    id?: IntFilter<"OperatingHours"> | number
+    dayOfWeek?: IntFilter<"OperatingHours"> | number
+    openTime?: StringFilter<"OperatingHours"> | string
+    closeTime?: StringFilter<"OperatingHours"> | string
+    isClosed?: BoolFilter<"OperatingHours"> | boolean
+    restaurantId?: IntNullableFilter<"OperatingHours"> | number | null
+  }
+
   export type UserUpsertWithoutHostedRestaurantInput = {
     update: XOR<UserUpdateWithoutHostedRestaurantInput, UserUncheckedUpdateWithoutHostedRestaurantInput>
     create: XOR<UserCreateWithoutHostedRestaurantInput, UserUncheckedCreateWithoutHostedRestaurantInput>
@@ -23123,7 +29543,6 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -23131,12 +29550,17 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    listings?: ListingUpdateManyWithoutHostNestedInput
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
     bookings?: BookingUpdateManyWithoutGuestNestedInput
-    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
-    notifications?: NotificationUpdateManyWithoutUserNestedInput
     earnings?: EarningUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUpdateOneWithoutUserNestedInput
+    listings?: ListingUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUpdateManyWithoutUserNestedInput
+    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
+    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
   }
 
   export type UserUncheckedUpdateWithoutHostedRestaurantInput = {
@@ -23148,8 +29572,6 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -23157,66 +29579,17 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
     bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
-    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
-    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
     earnings?: EarningUncheckedUpdateManyWithoutHostNestedInput
-  }
-
-  export type UserUpsertWithWhereUniqueWithoutRestaurantInput = {
-    where: UserWhereUniqueInput
-    update: XOR<UserUpdateWithoutRestaurantInput, UserUncheckedUpdateWithoutRestaurantInput>
-    create: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput>
-  }
-
-  export type UserUpdateWithWhereUniqueWithoutRestaurantInput = {
-    where: UserWhereUniqueInput
-    data: XOR<UserUpdateWithoutRestaurantInput, UserUncheckedUpdateWithoutRestaurantInput>
-  }
-
-  export type UserUpdateManyWithWhereWithoutRestaurantInput = {
-    where: UserScalarWhereInput
-    data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyWithoutRestaurantInput>
-  }
-
-  export type UserScalarWhereInput = {
-    AND?: UserScalarWhereInput | UserScalarWhereInput[]
-    OR?: UserScalarWhereInput[]
-    NOT?: UserScalarWhereInput | UserScalarWhereInput[]
-    id?: IntFilter<"User"> | number
-    email?: StringFilter<"User"> | string
-    phone?: StringNullableFilter<"User"> | string | null
-    password?: StringFilter<"User"> | string
-    name?: StringFilter<"User"> | string
-    role?: StringFilter<"User"> | string
-    createdAt?: DateTimeFilter<"User"> | Date | string
-    updatedAt?: DateTimeFilter<"User"> | Date | string
-    isRestaurantHost?: BoolFilter<"User"> | boolean
-    restaurantId?: IntNullableFilter<"User"> | number | null
-    profileImage?: StringNullableFilter<"User"> | string | null
-    bio?: StringNullableFilter<"User"> | string | null
-    address?: StringNullableFilter<"User"> | string | null
-    city?: StringNullableFilter<"User"> | string | null
-    state?: StringNullableFilter<"User"> | string | null
-    country?: StringNullableFilter<"User"> | string | null
-    zipCode?: StringNullableFilter<"User"> | string | null
-  }
-
-  export type ListingUpsertWithWhereUniqueWithoutRestaurantInput = {
-    where: ListingWhereUniqueInput
-    update: XOR<ListingUpdateWithoutRestaurantInput, ListingUncheckedUpdateWithoutRestaurantInput>
-    create: XOR<ListingCreateWithoutRestaurantInput, ListingUncheckedCreateWithoutRestaurantInput>
-  }
-
-  export type ListingUpdateWithWhereUniqueWithoutRestaurantInput = {
-    where: ListingWhereUniqueInput
-    data: XOR<ListingUpdateWithoutRestaurantInput, ListingUncheckedUpdateWithoutRestaurantInput>
-  }
-
-  export type ListingUpdateManyWithWhereWithoutRestaurantInput = {
-    where: ListingScalarWhereInput
-    data: XOR<ListingUpdateManyMutationInput, ListingUncheckedUpdateManyWithoutRestaurantInput>
+    hostSettings?: HostSettingsUncheckedUpdateOneWithoutUserNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUncheckedUpdateManyWithoutUserNestedInput
+    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
   }
 
   export type RestaurantImageUpsertWithWhereUniqueWithoutRestaurantInput = {
@@ -23247,221 +29620,43 @@ export namespace Prisma {
     restaurantId?: IntFilter<"RestaurantImage"> | number
   }
 
-  export type OperatingHoursUpsertWithWhereUniqueWithoutRestaurantInput = {
-    where: OperatingHoursWhereUniqueInput
-    update: XOR<OperatingHoursUpdateWithoutRestaurantInput, OperatingHoursUncheckedUpdateWithoutRestaurantInput>
-    create: XOR<OperatingHoursCreateWithoutRestaurantInput, OperatingHoursUncheckedCreateWithoutRestaurantInput>
-  }
-
-  export type OperatingHoursUpdateWithWhereUniqueWithoutRestaurantInput = {
-    where: OperatingHoursWhereUniqueInput
-    data: XOR<OperatingHoursUpdateWithoutRestaurantInput, OperatingHoursUncheckedUpdateWithoutRestaurantInput>
-  }
-
-  export type OperatingHoursUpdateManyWithWhereWithoutRestaurantInput = {
-    where: OperatingHoursScalarWhereInput
-    data: XOR<OperatingHoursUpdateManyMutationInput, OperatingHoursUncheckedUpdateManyWithoutRestaurantInput>
-  }
-
-  export type OperatingHoursScalarWhereInput = {
-    AND?: OperatingHoursScalarWhereInput | OperatingHoursScalarWhereInput[]
-    OR?: OperatingHoursScalarWhereInput[]
-    NOT?: OperatingHoursScalarWhereInput | OperatingHoursScalarWhereInput[]
-    id?: IntFilter<"OperatingHours"> | number
-    dayOfWeek?: IntFilter<"OperatingHours"> | number
-    openTime?: StringFilter<"OperatingHours"> | string
-    closeTime?: StringFilter<"OperatingHours"> | string
-    isClosed?: BoolFilter<"OperatingHours"> | boolean
-    restaurantId?: IntFilter<"OperatingHours"> | number
-  }
-
-  export type RestaurantCreateWithoutListingsInput = {
-    name: string
-    description?: string | null
-    address: string
-    city: string
-    state: string
-    country: string
-    zipCode: string
-    phone?: string | null
-    email?: string | null
-    website?: string | null
-    cuisine?: string | null
-    priceRange?: string | null
-    rating?: number | null
-    isActive?: boolean
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    host: UserCreateNestedOneWithoutHostedRestaurantInput
-    users?: UserCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursCreateNestedManyWithoutRestaurantInput
-  }
-
-  export type RestaurantUncheckedCreateWithoutListingsInput = {
-    id?: number
-    name: string
-    description?: string | null
-    address: string
-    city: string
-    state: string
-    country: string
-    zipCode: string
-    phone?: string | null
-    email?: string | null
-    website?: string | null
-    cuisine?: string | null
-    priceRange?: string | null
-    rating?: number | null
-    isActive?: boolean
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    hostId: number
-    users?: UserUncheckedCreateNestedManyWithoutRestaurantInput
-    images?: RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput
-    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput
-  }
-
-  export type RestaurantCreateOrConnectWithoutListingsInput = {
-    where: RestaurantWhereUniqueInput
-    create: XOR<RestaurantCreateWithoutListingsInput, RestaurantUncheckedCreateWithoutListingsInput>
-  }
-
-  export type UserCreateWithoutListingsInput = {
-    email: string
-    phone?: string | null
-    password: string
-    name: string
-    role?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    profileImage?: string | null
-    bio?: string | null
-    address?: string | null
-    city?: string | null
-    state?: string | null
-    country?: string | null
-    zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
-    bookings?: BookingCreateNestedManyWithoutGuestInput
-    reviews?: ReviewCreateNestedManyWithoutAuthorInput
-    notifications?: NotificationCreateNestedManyWithoutUserInput
-    earnings?: EarningCreateNestedManyWithoutHostInput
-  }
-
-  export type UserUncheckedCreateWithoutListingsInput = {
-    id?: number
-    email: string
-    phone?: string | null
-    password: string
-    name: string
-    role?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
-    profileImage?: string | null
-    bio?: string | null
-    address?: string | null
-    city?: string | null
-    state?: string | null
-    country?: string | null
-    zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
-    bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
-    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
-    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
-    earnings?: EarningUncheckedCreateNestedManyWithoutHostInput
-  }
-
-  export type UserCreateOrConnectWithoutListingsInput = {
+  export type UserUpsertWithWhereUniqueWithoutRestaurantInput = {
     where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutListingsInput, UserUncheckedCreateWithoutListingsInput>
+    update: XOR<UserUpdateWithoutRestaurantInput, UserUncheckedUpdateWithoutRestaurantInput>
+    create: XOR<UserCreateWithoutRestaurantInput, UserUncheckedCreateWithoutRestaurantInput>
   }
 
-  export type BookingCreateWithoutListingInput = {
-    startTime: Date | string
-    endTime: Date | string
-    totalPrice: number
-    status?: string
-    guestCount?: number | null
-    specialRequests?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    guest: UserCreateNestedOneWithoutBookingsInput
-    review?: ReviewCreateNestedOneWithoutBookingInput
-    earning?: EarningCreateNestedOneWithoutBookingInput
+  export type UserUpdateWithWhereUniqueWithoutRestaurantInput = {
+    where: UserWhereUniqueInput
+    data: XOR<UserUpdateWithoutRestaurantInput, UserUncheckedUpdateWithoutRestaurantInput>
   }
 
-  export type BookingUncheckedCreateWithoutListingInput = {
-    id?: number
-    startTime: Date | string
-    endTime: Date | string
-    totalPrice: number
-    status?: string
-    guestCount?: number | null
-    specialRequests?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    guestId: number
-    review?: ReviewUncheckedCreateNestedOneWithoutBookingInput
-    earning?: EarningUncheckedCreateNestedOneWithoutBookingInput
+  export type UserUpdateManyWithWhereWithoutRestaurantInput = {
+    where: UserScalarWhereInput
+    data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyWithoutRestaurantInput>
   }
 
-  export type BookingCreateOrConnectWithoutListingInput = {
-    where: BookingWhereUniqueInput
-    create: XOR<BookingCreateWithoutListingInput, BookingUncheckedCreateWithoutListingInput>
-  }
-
-  export type BookingCreateManyListingInputEnvelope = {
-    data: BookingCreateManyListingInput | BookingCreateManyListingInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ListingImageCreateWithoutListingInput = {
-    url: string
-    caption?: string | null
-    isPrimary?: boolean
-    createdAt?: Date | string
-  }
-
-  export type ListingImageUncheckedCreateWithoutListingInput = {
-    id?: number
-    url: string
-    caption?: string | null
-    isPrimary?: boolean
-    createdAt?: Date | string
-  }
-
-  export type ListingImageCreateOrConnectWithoutListingInput = {
-    where: ListingImageWhereUniqueInput
-    create: XOR<ListingImageCreateWithoutListingInput, ListingImageUncheckedCreateWithoutListingInput>
-  }
-
-  export type ListingImageCreateManyListingInputEnvelope = {
-    data: ListingImageCreateManyListingInput | ListingImageCreateManyListingInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ListingAmenityCreateWithoutListingInput = {
-    amenity: AmenityCreateNestedOneWithoutListingsInput
-  }
-
-  export type ListingAmenityUncheckedCreateWithoutListingInput = {
-    id?: number
-    amenityId: number
-  }
-
-  export type ListingAmenityCreateOrConnectWithoutListingInput = {
-    where: ListingAmenityWhereUniqueInput
-    create: XOR<ListingAmenityCreateWithoutListingInput, ListingAmenityUncheckedCreateWithoutListingInput>
-  }
-
-  export type ListingAmenityCreateManyListingInputEnvelope = {
-    data: ListingAmenityCreateManyListingInput | ListingAmenityCreateManyListingInput[]
-    skipDuplicates?: boolean
+  export type UserScalarWhereInput = {
+    AND?: UserScalarWhereInput | UserScalarWhereInput[]
+    OR?: UserScalarWhereInput[]
+    NOT?: UserScalarWhereInput | UserScalarWhereInput[]
+    id?: IntFilter<"User"> | number
+    email?: StringFilter<"User"> | string
+    phone?: StringNullableFilter<"User"> | string | null
+    password?: StringFilter<"User"> | string
+    name?: StringFilter<"User"> | string
+    role?: StringFilter<"User"> | string
+    createdAt?: DateTimeFilter<"User"> | Date | string
+    updatedAt?: DateTimeFilter<"User"> | Date | string
+    profileImage?: StringNullableFilter<"User"> | string | null
+    bio?: StringNullableFilter<"User"> | string | null
+    address?: StringNullableFilter<"User"> | string | null
+    city?: StringNullableFilter<"User"> | string | null
+    state?: StringNullableFilter<"User"> | string | null
+    country?: StringNullableFilter<"User"> | string | null
+    zipCode?: StringNullableFilter<"User"> | string | null
+    isRestaurantHost?: BoolFilter<"User"> | boolean
+    restaurantId?: IntNullableFilter<"User"> | number | null
   }
 
   export type AvailabilityCreateWithoutListingInput = {
@@ -23491,6 +29686,203 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type BookingCreateWithoutListingInput = {
+    startTime: Date | string
+    endTime: Date | string
+    totalPrice?: number | null
+    status?: string
+    guestCount?: number | null
+    specialRequests?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    guest: UserCreateNestedOneWithoutBookingsInput
+    earning?: EarningCreateNestedOneWithoutBookingInput
+    review?: ReviewCreateNestedOneWithoutBookingInput
+  }
+
+  export type BookingUncheckedCreateWithoutListingInput = {
+    id?: number
+    startTime: Date | string
+    endTime: Date | string
+    totalPrice?: number | null
+    status?: string
+    guestCount?: number | null
+    specialRequests?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    guestId: number
+    earning?: EarningUncheckedCreateNestedOneWithoutBookingInput
+    review?: ReviewUncheckedCreateNestedOneWithoutBookingInput
+  }
+
+  export type BookingCreateOrConnectWithoutListingInput = {
+    where: BookingWhereUniqueInput
+    create: XOR<BookingCreateWithoutListingInput, BookingUncheckedCreateWithoutListingInput>
+  }
+
+  export type BookingCreateManyListingInputEnvelope = {
+    data: BookingCreateManyListingInput | BookingCreateManyListingInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type UserCreateWithoutListingsInput = {
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    bookings?: BookingCreateNestedManyWithoutGuestInput
+    earnings?: EarningCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsCreateNestedOneWithoutUserInput
+    messagesReceived?: MessageCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageCreateNestedManyWithoutSenderInput
+    notifications?: NotificationCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    reviews?: ReviewCreateNestedManyWithoutAuthorInput
+    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
+  }
+
+  export type UserUncheckedCreateWithoutListingsInput = {
+    id?: number
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    restaurantId?: number | null
+    bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
+    earnings?: EarningUncheckedCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsUncheckedCreateNestedOneWithoutUserInput
+    messagesReceived?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodUncheckedCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
+  }
+
+  export type UserCreateOrConnectWithoutListingsInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutListingsInput, UserUncheckedCreateWithoutListingsInput>
+  }
+
+  export type RestaurantCreateWithoutListingsInput = {
+    name: string
+    description?: string | null
+    address: string
+    city: string
+    state: string
+    country: string
+    zipCode: string
+    phone?: string | null
+    email?: string | null
+    website?: string | null
+    restaurantType?: string | null
+    priceRange?: string | null
+    rating?: number | null
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    operatingHours?: OperatingHoursCreateNestedManyWithoutRestaurantInput
+    host: UserCreateNestedOneWithoutHostedRestaurantInput
+    images?: RestaurantImageCreateNestedManyWithoutRestaurantInput
+    users?: UserCreateNestedManyWithoutRestaurantInput
+  }
+
+  export type RestaurantUncheckedCreateWithoutListingsInput = {
+    id?: number
+    name: string
+    description?: string | null
+    address: string
+    city: string
+    state: string
+    country: string
+    zipCode: string
+    phone?: string | null
+    email?: string | null
+    website?: string | null
+    restaurantType?: string | null
+    priceRange?: string | null
+    rating?: number | null
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    hostId: number
+    operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput
+    images?: RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput
+    users?: UserUncheckedCreateNestedManyWithoutRestaurantInput
+  }
+
+  export type RestaurantCreateOrConnectWithoutListingsInput = {
+    where: RestaurantWhereUniqueInput
+    create: XOR<RestaurantCreateWithoutListingsInput, RestaurantUncheckedCreateWithoutListingsInput>
+  }
+
+  export type ListingAmenityCreateWithoutListingInput = {
+    amenity: AmenityCreateNestedOneWithoutListingsInput
+  }
+
+  export type ListingAmenityUncheckedCreateWithoutListingInput = {
+    id?: number
+    amenityId: number
+  }
+
+  export type ListingAmenityCreateOrConnectWithoutListingInput = {
+    where: ListingAmenityWhereUniqueInput
+    create: XOR<ListingAmenityCreateWithoutListingInput, ListingAmenityUncheckedCreateWithoutListingInput>
+  }
+
+  export type ListingAmenityCreateManyListingInputEnvelope = {
+    data: ListingAmenityCreateManyListingInput | ListingAmenityCreateManyListingInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ListingImageCreateWithoutListingInput = {
+    url: string
+    caption?: string | null
+    isPrimary?: boolean
+    createdAt?: Date | string
+  }
+
+  export type ListingImageUncheckedCreateWithoutListingInput = {
+    id?: number
+    url: string
+    caption?: string | null
+    isPrimary?: boolean
+    createdAt?: Date | string
+  }
+
+  export type ListingImageCreateOrConnectWithoutListingInput = {
+    where: ListingImageWhereUniqueInput
+    create: XOR<ListingImageCreateWithoutListingInput, ListingImageUncheckedCreateWithoutListingInput>
+  }
+
+  export type ListingImageCreateManyListingInputEnvelope = {
+    data: ListingImageCreateManyListingInput | ListingImageCreateManyListingInput[]
+    skipDuplicates?: boolean
+  }
+
   export type ReviewCreateWithoutListingInput = {
     rating: number
     comment?: string | null
@@ -23516,193 +29908,6 @@ export namespace Prisma {
   export type ReviewCreateManyListingInputEnvelope = {
     data: ReviewCreateManyListingInput | ReviewCreateManyListingInput[]
     skipDuplicates?: boolean
-  }
-
-  export type RestaurantUpsertWithoutListingsInput = {
-    update: XOR<RestaurantUpdateWithoutListingsInput, RestaurantUncheckedUpdateWithoutListingsInput>
-    create: XOR<RestaurantCreateWithoutListingsInput, RestaurantUncheckedCreateWithoutListingsInput>
-    where?: RestaurantWhereInput
-  }
-
-  export type RestaurantUpdateToOneWithWhereWithoutListingsInput = {
-    where?: RestaurantWhereInput
-    data: XOR<RestaurantUpdateWithoutListingsInput, RestaurantUncheckedUpdateWithoutListingsInput>
-  }
-
-  export type RestaurantUpdateWithoutListingsInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    address?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    state?: StringFieldUpdateOperationsInput | string
-    country?: StringFieldUpdateOperationsInput | string
-    zipCode?: StringFieldUpdateOperationsInput | string
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
-    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
-    rating?: NullableFloatFieldUpdateOperationsInput | number | null
-    isActive?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    host?: UserUpdateOneRequiredWithoutHostedRestaurantNestedInput
-    users?: UserUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUpdateManyWithoutRestaurantNestedInput
-  }
-
-  export type RestaurantUncheckedUpdateWithoutListingsInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    address?: StringFieldUpdateOperationsInput | string
-    city?: StringFieldUpdateOperationsInput | string
-    state?: StringFieldUpdateOperationsInput | string
-    country?: StringFieldUpdateOperationsInput | string
-    zipCode?: StringFieldUpdateOperationsInput | string
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
-    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
-    rating?: NullableFloatFieldUpdateOperationsInput | number | null
-    isActive?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    hostId?: IntFieldUpdateOperationsInput | number
-    users?: UserUncheckedUpdateManyWithoutRestaurantNestedInput
-    images?: RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput
-    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutRestaurantNestedInput
-  }
-
-  export type UserUpsertWithoutListingsInput = {
-    update: XOR<UserUpdateWithoutListingsInput, UserUncheckedUpdateWithoutListingsInput>
-    create: XOR<UserCreateWithoutListingsInput, UserUncheckedCreateWithoutListingsInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutListingsInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutListingsInput, UserUncheckedUpdateWithoutListingsInput>
-  }
-
-  export type UserUpdateWithoutListingsInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
-    bio?: NullableStringFieldUpdateOperationsInput | string | null
-    address?: NullableStringFieldUpdateOperationsInput | string | null
-    city?: NullableStringFieldUpdateOperationsInput | string | null
-    state?: NullableStringFieldUpdateOperationsInput | string | null
-    country?: NullableStringFieldUpdateOperationsInput | string | null
-    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
-    bookings?: BookingUpdateManyWithoutGuestNestedInput
-    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
-    notifications?: NotificationUpdateManyWithoutUserNestedInput
-    earnings?: EarningUpdateManyWithoutHostNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutListingsInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    email?: StringFieldUpdateOperationsInput | string
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
-    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
-    bio?: NullableStringFieldUpdateOperationsInput | string | null
-    address?: NullableStringFieldUpdateOperationsInput | string | null
-    city?: NullableStringFieldUpdateOperationsInput | string | null
-    state?: NullableStringFieldUpdateOperationsInput | string | null
-    country?: NullableStringFieldUpdateOperationsInput | string | null
-    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
-    bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
-    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
-    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
-    earnings?: EarningUncheckedUpdateManyWithoutHostNestedInput
-  }
-
-  export type BookingUpsertWithWhereUniqueWithoutListingInput = {
-    where: BookingWhereUniqueInput
-    update: XOR<BookingUpdateWithoutListingInput, BookingUncheckedUpdateWithoutListingInput>
-    create: XOR<BookingCreateWithoutListingInput, BookingUncheckedCreateWithoutListingInput>
-  }
-
-  export type BookingUpdateWithWhereUniqueWithoutListingInput = {
-    where: BookingWhereUniqueInput
-    data: XOR<BookingUpdateWithoutListingInput, BookingUncheckedUpdateWithoutListingInput>
-  }
-
-  export type BookingUpdateManyWithWhereWithoutListingInput = {
-    where: BookingScalarWhereInput
-    data: XOR<BookingUpdateManyMutationInput, BookingUncheckedUpdateManyWithoutListingInput>
-  }
-
-  export type ListingImageUpsertWithWhereUniqueWithoutListingInput = {
-    where: ListingImageWhereUniqueInput
-    update: XOR<ListingImageUpdateWithoutListingInput, ListingImageUncheckedUpdateWithoutListingInput>
-    create: XOR<ListingImageCreateWithoutListingInput, ListingImageUncheckedCreateWithoutListingInput>
-  }
-
-  export type ListingImageUpdateWithWhereUniqueWithoutListingInput = {
-    where: ListingImageWhereUniqueInput
-    data: XOR<ListingImageUpdateWithoutListingInput, ListingImageUncheckedUpdateWithoutListingInput>
-  }
-
-  export type ListingImageUpdateManyWithWhereWithoutListingInput = {
-    where: ListingImageScalarWhereInput
-    data: XOR<ListingImageUpdateManyMutationInput, ListingImageUncheckedUpdateManyWithoutListingInput>
-  }
-
-  export type ListingImageScalarWhereInput = {
-    AND?: ListingImageScalarWhereInput | ListingImageScalarWhereInput[]
-    OR?: ListingImageScalarWhereInput[]
-    NOT?: ListingImageScalarWhereInput | ListingImageScalarWhereInput[]
-    id?: IntFilter<"ListingImage"> | number
-    url?: StringFilter<"ListingImage"> | string
-    caption?: StringNullableFilter<"ListingImage"> | string | null
-    isPrimary?: BoolFilter<"ListingImage"> | boolean
-    createdAt?: DateTimeFilter<"ListingImage"> | Date | string
-    listingId?: IntFilter<"ListingImage"> | number
-  }
-
-  export type ListingAmenityUpsertWithWhereUniqueWithoutListingInput = {
-    where: ListingAmenityWhereUniqueInput
-    update: XOR<ListingAmenityUpdateWithoutListingInput, ListingAmenityUncheckedUpdateWithoutListingInput>
-    create: XOR<ListingAmenityCreateWithoutListingInput, ListingAmenityUncheckedCreateWithoutListingInput>
-  }
-
-  export type ListingAmenityUpdateWithWhereUniqueWithoutListingInput = {
-    where: ListingAmenityWhereUniqueInput
-    data: XOR<ListingAmenityUpdateWithoutListingInput, ListingAmenityUncheckedUpdateWithoutListingInput>
-  }
-
-  export type ListingAmenityUpdateManyWithWhereWithoutListingInput = {
-    where: ListingAmenityScalarWhereInput
-    data: XOR<ListingAmenityUpdateManyMutationInput, ListingAmenityUncheckedUpdateManyWithoutListingInput>
-  }
-
-  export type ListingAmenityScalarWhereInput = {
-    AND?: ListingAmenityScalarWhereInput | ListingAmenityScalarWhereInput[]
-    OR?: ListingAmenityScalarWhereInput[]
-    NOT?: ListingAmenityScalarWhereInput | ListingAmenityScalarWhereInput[]
-    id?: IntFilter<"ListingAmenity"> | number
-    listingId?: IntFilter<"ListingAmenity"> | number
-    amenityId?: IntFilter<"ListingAmenity"> | number
   }
 
   export type AvailabilityUpsertWithWhereUniqueWithoutListingInput = {
@@ -23734,6 +29939,201 @@ export namespace Prisma {
     listingId?: IntFilter<"Availability"> | number
   }
 
+  export type BookingUpsertWithWhereUniqueWithoutListingInput = {
+    where: BookingWhereUniqueInput
+    update: XOR<BookingUpdateWithoutListingInput, BookingUncheckedUpdateWithoutListingInput>
+    create: XOR<BookingCreateWithoutListingInput, BookingUncheckedCreateWithoutListingInput>
+  }
+
+  export type BookingUpdateWithWhereUniqueWithoutListingInput = {
+    where: BookingWhereUniqueInput
+    data: XOR<BookingUpdateWithoutListingInput, BookingUncheckedUpdateWithoutListingInput>
+  }
+
+  export type BookingUpdateManyWithWhereWithoutListingInput = {
+    where: BookingScalarWhereInput
+    data: XOR<BookingUpdateManyMutationInput, BookingUncheckedUpdateManyWithoutListingInput>
+  }
+
+  export type UserUpsertWithoutListingsInput = {
+    update: XOR<UserUpdateWithoutListingsInput, UserUncheckedUpdateWithoutListingsInput>
+    create: XOR<UserCreateWithoutListingsInput, UserUncheckedCreateWithoutListingsInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutListingsInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutListingsInput, UserUncheckedUpdateWithoutListingsInput>
+  }
+
+  export type UserUpdateWithoutListingsInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    state?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    bookings?: BookingUpdateManyWithoutGuestNestedInput
+    earnings?: EarningUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUpdateOneWithoutUserNestedInput
+    messagesReceived?: MessageUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
+    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutListingsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    state?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
+    earnings?: EarningUncheckedUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUncheckedUpdateOneWithoutUserNestedInput
+    messagesReceived?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUncheckedUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
+  }
+
+  export type RestaurantUpsertWithoutListingsInput = {
+    update: XOR<RestaurantUpdateWithoutListingsInput, RestaurantUncheckedUpdateWithoutListingsInput>
+    create: XOR<RestaurantCreateWithoutListingsInput, RestaurantUncheckedCreateWithoutListingsInput>
+    where?: RestaurantWhereInput
+  }
+
+  export type RestaurantUpdateToOneWithWhereWithoutListingsInput = {
+    where?: RestaurantWhereInput
+    data: XOR<RestaurantUpdateWithoutListingsInput, RestaurantUncheckedUpdateWithoutListingsInput>
+  }
+
+  export type RestaurantUpdateWithoutListingsInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    state?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    zipCode?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    restaurantType?: NullableStringFieldUpdateOperationsInput | string | null
+    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    operatingHours?: OperatingHoursUpdateManyWithoutRestaurantNestedInput
+    host?: UserUpdateOneRequiredWithoutHostedRestaurantNestedInput
+    images?: RestaurantImageUpdateManyWithoutRestaurantNestedInput
+    users?: UserUpdateManyWithoutRestaurantNestedInput
+  }
+
+  export type RestaurantUncheckedUpdateWithoutListingsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    state?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    zipCode?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    restaurantType?: NullableStringFieldUpdateOperationsInput | string | null
+    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    hostId?: IntFieldUpdateOperationsInput | number
+    operatingHours?: OperatingHoursUncheckedUpdateManyWithoutRestaurantNestedInput
+    images?: RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput
+    users?: UserUncheckedUpdateManyWithoutRestaurantNestedInput
+  }
+
+  export type ListingAmenityUpsertWithWhereUniqueWithoutListingInput = {
+    where: ListingAmenityWhereUniqueInput
+    update: XOR<ListingAmenityUpdateWithoutListingInput, ListingAmenityUncheckedUpdateWithoutListingInput>
+    create: XOR<ListingAmenityCreateWithoutListingInput, ListingAmenityUncheckedCreateWithoutListingInput>
+  }
+
+  export type ListingAmenityUpdateWithWhereUniqueWithoutListingInput = {
+    where: ListingAmenityWhereUniqueInput
+    data: XOR<ListingAmenityUpdateWithoutListingInput, ListingAmenityUncheckedUpdateWithoutListingInput>
+  }
+
+  export type ListingAmenityUpdateManyWithWhereWithoutListingInput = {
+    where: ListingAmenityScalarWhereInput
+    data: XOR<ListingAmenityUpdateManyMutationInput, ListingAmenityUncheckedUpdateManyWithoutListingInput>
+  }
+
+  export type ListingAmenityScalarWhereInput = {
+    AND?: ListingAmenityScalarWhereInput | ListingAmenityScalarWhereInput[]
+    OR?: ListingAmenityScalarWhereInput[]
+    NOT?: ListingAmenityScalarWhereInput | ListingAmenityScalarWhereInput[]
+    id?: IntFilter<"ListingAmenity"> | number
+    listingId?: IntFilter<"ListingAmenity"> | number
+    amenityId?: IntFilter<"ListingAmenity"> | number
+  }
+
+  export type ListingImageUpsertWithWhereUniqueWithoutListingInput = {
+    where: ListingImageWhereUniqueInput
+    update: XOR<ListingImageUpdateWithoutListingInput, ListingImageUncheckedUpdateWithoutListingInput>
+    create: XOR<ListingImageCreateWithoutListingInput, ListingImageUncheckedCreateWithoutListingInput>
+  }
+
+  export type ListingImageUpdateWithWhereUniqueWithoutListingInput = {
+    where: ListingImageWhereUniqueInput
+    data: XOR<ListingImageUpdateWithoutListingInput, ListingImageUncheckedUpdateWithoutListingInput>
+  }
+
+  export type ListingImageUpdateManyWithWhereWithoutListingInput = {
+    where: ListingImageScalarWhereInput
+    data: XOR<ListingImageUpdateManyMutationInput, ListingImageUncheckedUpdateManyWithoutListingInput>
+  }
+
+  export type ListingImageScalarWhereInput = {
+    AND?: ListingImageScalarWhereInput | ListingImageScalarWhereInput[]
+    OR?: ListingImageScalarWhereInput[]
+    NOT?: ListingImageScalarWhereInput | ListingImageScalarWhereInput[]
+    id?: IntFilter<"ListingImage"> | number
+    url?: StringFilter<"ListingImage"> | string
+    caption?: StringNullableFilter<"ListingImage"> | string | null
+    isPrimary?: BoolFilter<"ListingImage"> | boolean
+    createdAt?: DateTimeFilter<"ListingImage"> | Date | string
+    listingId?: IntFilter<"ListingImage"> | number
+  }
+
   export type ReviewUpsertWithWhereUniqueWithoutListingInput = {
     where: ReviewWhereUniqueInput
     update: XOR<ReviewUpdateWithoutListingInput, ReviewUncheckedUpdateWithoutListingInput>
@@ -23760,11 +30160,11 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurant: RestaurantCreateNestedOneWithoutListingsInput
-    host: UserCreateNestedOneWithoutListingsInput
-    bookings?: BookingCreateNestedManyWithoutListingInput
-    amenities?: ListingAmenityCreateNestedManyWithoutListingInput
     availability?: AvailabilityCreateNestedManyWithoutListingInput
+    bookings?: BookingCreateNestedManyWithoutListingInput
+    host: UserCreateNestedOneWithoutListingsInput
+    restaurant?: RestaurantCreateNestedOneWithoutListingsInput
+    amenities?: ListingAmenityCreateNestedManyWithoutListingInput
     reviews?: ReviewCreateNestedManyWithoutListingInput
   }
 
@@ -23779,11 +30179,11 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurantId: number
     hostId: number
+    restaurantId?: number | null
+    availability?: AvailabilityUncheckedCreateNestedManyWithoutListingInput
     bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
     amenities?: ListingAmenityUncheckedCreateNestedManyWithoutListingInput
-    availability?: AvailabilityUncheckedCreateNestedManyWithoutListingInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutListingInput
   }
 
@@ -23813,11 +30213,11 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurant?: RestaurantUpdateOneRequiredWithoutListingsNestedInput
-    host?: UserUpdateOneRequiredWithoutListingsNestedInput
-    bookings?: BookingUpdateManyWithoutListingNestedInput
-    amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
     availability?: AvailabilityUpdateManyWithoutListingNestedInput
+    bookings?: BookingUpdateManyWithoutListingNestedInput
+    host?: UserUpdateOneRequiredWithoutListingsNestedInput
+    restaurant?: RestaurantUpdateOneWithoutListingsNestedInput
+    amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
     reviews?: ReviewUpdateManyWithoutListingNestedInput
   }
 
@@ -23832,11 +30232,11 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: IntFieldUpdateOperationsInput | number
     hostId?: IntFieldUpdateOperationsInput | number
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    availability?: AvailabilityUncheckedUpdateManyWithoutListingNestedInput
     bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
     amenities?: ListingAmenityUncheckedUpdateManyWithoutListingNestedInput
-    availability?: AvailabilityUncheckedUpdateManyWithoutListingNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutListingNestedInput
   }
 
@@ -23875,48 +30275,6 @@ export namespace Prisma {
     data: XOR<ListingAmenityUpdateManyMutationInput, ListingAmenityUncheckedUpdateManyWithoutAmenityInput>
   }
 
-  export type ListingCreateWithoutAmenitiesInput = {
-    title: string
-    description?: string | null
-    type: string
-    capacity?: number | null
-    pricePerHour?: number | null
-    pricePerDay?: number | null
-    isActive?: boolean
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    restaurant: RestaurantCreateNestedOneWithoutListingsInput
-    host: UserCreateNestedOneWithoutListingsInput
-    bookings?: BookingCreateNestedManyWithoutListingInput
-    images?: ListingImageCreateNestedManyWithoutListingInput
-    availability?: AvailabilityCreateNestedManyWithoutListingInput
-    reviews?: ReviewCreateNestedManyWithoutListingInput
-  }
-
-  export type ListingUncheckedCreateWithoutAmenitiesInput = {
-    id?: number
-    title: string
-    description?: string | null
-    type: string
-    capacity?: number | null
-    pricePerHour?: number | null
-    pricePerDay?: number | null
-    isActive?: boolean
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    restaurantId: number
-    hostId: number
-    bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
-    images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
-    availability?: AvailabilityUncheckedCreateNestedManyWithoutListingInput
-    reviews?: ReviewUncheckedCreateNestedManyWithoutListingInput
-  }
-
-  export type ListingCreateOrConnectWithoutAmenitiesInput = {
-    where: ListingWhereUniqueInput
-    create: XOR<ListingCreateWithoutAmenitiesInput, ListingUncheckedCreateWithoutAmenitiesInput>
-  }
-
   export type AmenityCreateWithoutListingsInput = {
     name: string
     icon?: string | null
@@ -23937,52 +30295,46 @@ export namespace Prisma {
     create: XOR<AmenityCreateWithoutListingsInput, AmenityUncheckedCreateWithoutListingsInput>
   }
 
-  export type ListingUpsertWithoutAmenitiesInput = {
-    update: XOR<ListingUpdateWithoutAmenitiesInput, ListingUncheckedUpdateWithoutAmenitiesInput>
+  export type ListingCreateWithoutAmenitiesInput = {
+    title: string
+    description?: string | null
+    type: string
+    capacity?: number | null
+    pricePerHour?: number | null
+    pricePerDay?: number | null
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    availability?: AvailabilityCreateNestedManyWithoutListingInput
+    bookings?: BookingCreateNestedManyWithoutListingInput
+    host: UserCreateNestedOneWithoutListingsInput
+    restaurant?: RestaurantCreateNestedOneWithoutListingsInput
+    images?: ListingImageCreateNestedManyWithoutListingInput
+    reviews?: ReviewCreateNestedManyWithoutListingInput
+  }
+
+  export type ListingUncheckedCreateWithoutAmenitiesInput = {
+    id?: number
+    title: string
+    description?: string | null
+    type: string
+    capacity?: number | null
+    pricePerHour?: number | null
+    pricePerDay?: number | null
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    hostId: number
+    restaurantId?: number | null
+    availability?: AvailabilityUncheckedCreateNestedManyWithoutListingInput
+    bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
+    images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
+    reviews?: ReviewUncheckedCreateNestedManyWithoutListingInput
+  }
+
+  export type ListingCreateOrConnectWithoutAmenitiesInput = {
+    where: ListingWhereUniqueInput
     create: XOR<ListingCreateWithoutAmenitiesInput, ListingUncheckedCreateWithoutAmenitiesInput>
-    where?: ListingWhereInput
-  }
-
-  export type ListingUpdateToOneWithWhereWithoutAmenitiesInput = {
-    where?: ListingWhereInput
-    data: XOR<ListingUpdateWithoutAmenitiesInput, ListingUncheckedUpdateWithoutAmenitiesInput>
-  }
-
-  export type ListingUpdateWithoutAmenitiesInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    type?: StringFieldUpdateOperationsInput | string
-    capacity?: NullableIntFieldUpdateOperationsInput | number | null
-    pricePerHour?: NullableFloatFieldUpdateOperationsInput | number | null
-    pricePerDay?: NullableFloatFieldUpdateOperationsInput | number | null
-    isActive?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurant?: RestaurantUpdateOneRequiredWithoutListingsNestedInput
-    host?: UserUpdateOneRequiredWithoutListingsNestedInput
-    bookings?: BookingUpdateManyWithoutListingNestedInput
-    images?: ListingImageUpdateManyWithoutListingNestedInput
-    availability?: AvailabilityUpdateManyWithoutListingNestedInput
-    reviews?: ReviewUpdateManyWithoutListingNestedInput
-  }
-
-  export type ListingUncheckedUpdateWithoutAmenitiesInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    type?: StringFieldUpdateOperationsInput | string
-    capacity?: NullableIntFieldUpdateOperationsInput | number | null
-    pricePerHour?: NullableFloatFieldUpdateOperationsInput | number | null
-    pricePerDay?: NullableFloatFieldUpdateOperationsInput | number | null
-    isActive?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: IntFieldUpdateOperationsInput | number
-    hostId?: IntFieldUpdateOperationsInput | number
-    bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
-    images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
-    availability?: AvailabilityUncheckedUpdateManyWithoutListingNestedInput
-    reviews?: ReviewUncheckedUpdateManyWithoutListingNestedInput
   }
 
   export type AmenityUpsertWithoutListingsInput = {
@@ -24011,6 +30363,54 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type ListingUpsertWithoutAmenitiesInput = {
+    update: XOR<ListingUpdateWithoutAmenitiesInput, ListingUncheckedUpdateWithoutAmenitiesInput>
+    create: XOR<ListingCreateWithoutAmenitiesInput, ListingUncheckedCreateWithoutAmenitiesInput>
+    where?: ListingWhereInput
+  }
+
+  export type ListingUpdateToOneWithWhereWithoutAmenitiesInput = {
+    where?: ListingWhereInput
+    data: XOR<ListingUpdateWithoutAmenitiesInput, ListingUncheckedUpdateWithoutAmenitiesInput>
+  }
+
+  export type ListingUpdateWithoutAmenitiesInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: StringFieldUpdateOperationsInput | string
+    capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    pricePerHour?: NullableFloatFieldUpdateOperationsInput | number | null
+    pricePerDay?: NullableFloatFieldUpdateOperationsInput | number | null
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    availability?: AvailabilityUpdateManyWithoutListingNestedInput
+    bookings?: BookingUpdateManyWithoutListingNestedInput
+    host?: UserUpdateOneRequiredWithoutListingsNestedInput
+    restaurant?: RestaurantUpdateOneWithoutListingsNestedInput
+    images?: ListingImageUpdateManyWithoutListingNestedInput
+    reviews?: ReviewUpdateManyWithoutListingNestedInput
+  }
+
+  export type ListingUncheckedUpdateWithoutAmenitiesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: StringFieldUpdateOperationsInput | string
+    capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    pricePerHour?: NullableFloatFieldUpdateOperationsInput | number | null
+    pricePerDay?: NullableFloatFieldUpdateOperationsInput | number | null
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    hostId?: IntFieldUpdateOperationsInput | number
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    availability?: AvailabilityUncheckedUpdateManyWithoutListingNestedInput
+    bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
+    images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
+    reviews?: ReviewUncheckedUpdateManyWithoutListingNestedInput
+  }
+
   export type ListingCreateWithoutAvailabilityInput = {
     title: string
     description?: string | null
@@ -24021,11 +30421,11 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurant: RestaurantCreateNestedOneWithoutListingsInput
-    host: UserCreateNestedOneWithoutListingsInput
     bookings?: BookingCreateNestedManyWithoutListingInput
-    images?: ListingImageCreateNestedManyWithoutListingInput
+    host: UserCreateNestedOneWithoutListingsInput
+    restaurant?: RestaurantCreateNestedOneWithoutListingsInput
     amenities?: ListingAmenityCreateNestedManyWithoutListingInput
+    images?: ListingImageCreateNestedManyWithoutListingInput
     reviews?: ReviewCreateNestedManyWithoutListingInput
   }
 
@@ -24040,11 +30440,11 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurantId: number
     hostId: number
+    restaurantId?: number | null
     bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
-    images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
     amenities?: ListingAmenityUncheckedCreateNestedManyWithoutListingInput
+    images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutListingInput
   }
 
@@ -24074,11 +30474,11 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurant?: RestaurantUpdateOneRequiredWithoutListingsNestedInput
-    host?: UserUpdateOneRequiredWithoutListingsNestedInput
     bookings?: BookingUpdateManyWithoutListingNestedInput
-    images?: ListingImageUpdateManyWithoutListingNestedInput
+    host?: UserUpdateOneRequiredWithoutListingsNestedInput
+    restaurant?: RestaurantUpdateOneWithoutListingsNestedInput
     amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
+    images?: ListingImageUpdateManyWithoutListingNestedInput
     reviews?: ReviewUpdateManyWithoutListingNestedInput
   }
 
@@ -24093,12 +30493,74 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: IntFieldUpdateOperationsInput | number
     hostId?: IntFieldUpdateOperationsInput | number
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
     bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
-    images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
     amenities?: ListingAmenityUncheckedUpdateManyWithoutListingNestedInput
+    images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutListingNestedInput
+  }
+
+  export type UserCreateWithoutBookingsInput = {
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    earnings?: EarningCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsCreateNestedOneWithoutUserInput
+    listings?: ListingCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageCreateNestedManyWithoutSenderInput
+    notifications?: NotificationCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    reviews?: ReviewCreateNestedManyWithoutAuthorInput
+    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
+  }
+
+  export type UserUncheckedCreateWithoutBookingsInput = {
+    id?: number
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    restaurantId?: number | null
+    earnings?: EarningUncheckedCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsUncheckedCreateNestedOneWithoutUserInput
+    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodUncheckedCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
+  }
+
+  export type UserCreateOrConnectWithoutBookingsInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutBookingsInput, UserUncheckedCreateWithoutBookingsInput>
   }
 
   export type ListingCreateWithoutBookingsInput = {
@@ -24111,11 +30573,11 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurant: RestaurantCreateNestedOneWithoutListingsInput
-    host: UserCreateNestedOneWithoutListingsInput
-    images?: ListingImageCreateNestedManyWithoutListingInput
-    amenities?: ListingAmenityCreateNestedManyWithoutListingInput
     availability?: AvailabilityCreateNestedManyWithoutListingInput
+    host: UserCreateNestedOneWithoutListingsInput
+    restaurant?: RestaurantCreateNestedOneWithoutListingsInput
+    amenities?: ListingAmenityCreateNestedManyWithoutListingInput
+    images?: ListingImageCreateNestedManyWithoutListingInput
     reviews?: ReviewCreateNestedManyWithoutListingInput
   }
 
@@ -24130,93 +30592,17 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurantId: number
     hostId: number
-    images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
-    amenities?: ListingAmenityUncheckedCreateNestedManyWithoutListingInput
+    restaurantId?: number | null
     availability?: AvailabilityUncheckedCreateNestedManyWithoutListingInput
+    amenities?: ListingAmenityUncheckedCreateNestedManyWithoutListingInput
+    images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutListingInput
   }
 
   export type ListingCreateOrConnectWithoutBookingsInput = {
     where: ListingWhereUniqueInput
     create: XOR<ListingCreateWithoutBookingsInput, ListingUncheckedCreateWithoutBookingsInput>
-  }
-
-  export type UserCreateWithoutBookingsInput = {
-    email: string
-    phone?: string | null
-    password: string
-    name: string
-    role?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    profileImage?: string | null
-    bio?: string | null
-    address?: string | null
-    city?: string | null
-    state?: string | null
-    country?: string | null
-    zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
-    listings?: ListingCreateNestedManyWithoutHostInput
-    reviews?: ReviewCreateNestedManyWithoutAuthorInput
-    notifications?: NotificationCreateNestedManyWithoutUserInput
-    earnings?: EarningCreateNestedManyWithoutHostInput
-  }
-
-  export type UserUncheckedCreateWithoutBookingsInput = {
-    id?: number
-    email: string
-    phone?: string | null
-    password: string
-    name: string
-    role?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
-    profileImage?: string | null
-    bio?: string | null
-    address?: string | null
-    city?: string | null
-    state?: string | null
-    country?: string | null
-    zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
-    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
-    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
-    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
-    earnings?: EarningUncheckedCreateNestedManyWithoutHostInput
-  }
-
-  export type UserCreateOrConnectWithoutBookingsInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutBookingsInput, UserUncheckedCreateWithoutBookingsInput>
-  }
-
-  export type ReviewCreateWithoutBookingInput = {
-    rating: number
-    comment?: string | null
-    createdAt?: Date | string
-    listing: ListingCreateNestedOneWithoutReviewsInput
-    author: UserCreateNestedOneWithoutReviewsInput
-  }
-
-  export type ReviewUncheckedCreateWithoutBookingInput = {
-    id?: number
-    rating: number
-    comment?: string | null
-    createdAt?: Date | string
-    listingId: number
-    authorId: number
-  }
-
-  export type ReviewCreateOrConnectWithoutBookingInput = {
-    where: ReviewWhereUniqueInput
-    create: XOR<ReviewCreateWithoutBookingInput, ReviewUncheckedCreateWithoutBookingInput>
   }
 
   export type EarningCreateWithoutBookingInput = {
@@ -24243,52 +30629,26 @@ export namespace Prisma {
     create: XOR<EarningCreateWithoutBookingInput, EarningUncheckedCreateWithoutBookingInput>
   }
 
-  export type ListingUpsertWithoutBookingsInput = {
-    update: XOR<ListingUpdateWithoutBookingsInput, ListingUncheckedUpdateWithoutBookingsInput>
-    create: XOR<ListingCreateWithoutBookingsInput, ListingUncheckedCreateWithoutBookingsInput>
-    where?: ListingWhereInput
+  export type ReviewCreateWithoutBookingInput = {
+    rating: number
+    comment?: string | null
+    createdAt?: Date | string
+    author: UserCreateNestedOneWithoutReviewsInput
+    listing: ListingCreateNestedOneWithoutReviewsInput
   }
 
-  export type ListingUpdateToOneWithWhereWithoutBookingsInput = {
-    where?: ListingWhereInput
-    data: XOR<ListingUpdateWithoutBookingsInput, ListingUncheckedUpdateWithoutBookingsInput>
+  export type ReviewUncheckedCreateWithoutBookingInput = {
+    id?: number
+    rating: number
+    comment?: string | null
+    createdAt?: Date | string
+    listingId: number
+    authorId: number
   }
 
-  export type ListingUpdateWithoutBookingsInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    type?: StringFieldUpdateOperationsInput | string
-    capacity?: NullableIntFieldUpdateOperationsInput | number | null
-    pricePerHour?: NullableFloatFieldUpdateOperationsInput | number | null
-    pricePerDay?: NullableFloatFieldUpdateOperationsInput | number | null
-    isActive?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurant?: RestaurantUpdateOneRequiredWithoutListingsNestedInput
-    host?: UserUpdateOneRequiredWithoutListingsNestedInput
-    images?: ListingImageUpdateManyWithoutListingNestedInput
-    amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
-    availability?: AvailabilityUpdateManyWithoutListingNestedInput
-    reviews?: ReviewUpdateManyWithoutListingNestedInput
-  }
-
-  export type ListingUncheckedUpdateWithoutBookingsInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    type?: StringFieldUpdateOperationsInput | string
-    capacity?: NullableIntFieldUpdateOperationsInput | number | null
-    pricePerHour?: NullableFloatFieldUpdateOperationsInput | number | null
-    pricePerDay?: NullableFloatFieldUpdateOperationsInput | number | null
-    isActive?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: IntFieldUpdateOperationsInput | number
-    hostId?: IntFieldUpdateOperationsInput | number
-    images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
-    amenities?: ListingAmenityUncheckedUpdateManyWithoutListingNestedInput
-    availability?: AvailabilityUncheckedUpdateManyWithoutListingNestedInput
-    reviews?: ReviewUncheckedUpdateManyWithoutListingNestedInput
+  export type ReviewCreateOrConnectWithoutBookingInput = {
+    where: ReviewWhereUniqueInput
+    create: XOR<ReviewCreateWithoutBookingInput, ReviewUncheckedCreateWithoutBookingInput>
   }
 
   export type UserUpsertWithoutBookingsInput = {
@@ -24310,7 +30670,6 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -24318,12 +30677,17 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
-    listings?: ListingUpdateManyWithoutHostNestedInput
-    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
-    notifications?: NotificationUpdateManyWithoutUserNestedInput
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
     earnings?: EarningUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUpdateOneWithoutUserNestedInput
+    listings?: ListingUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
+    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
   }
 
   export type UserUncheckedUpdateWithoutBookingsInput = {
@@ -24335,8 +30699,6 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -24344,39 +30706,65 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
-    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
-    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
-    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
     earnings?: EarningUncheckedUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUncheckedUpdateOneWithoutUserNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUncheckedUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
   }
 
-  export type ReviewUpsertWithoutBookingInput = {
-    update: XOR<ReviewUpdateWithoutBookingInput, ReviewUncheckedUpdateWithoutBookingInput>
-    create: XOR<ReviewCreateWithoutBookingInput, ReviewUncheckedCreateWithoutBookingInput>
-    where?: ReviewWhereInput
+  export type ListingUpsertWithoutBookingsInput = {
+    update: XOR<ListingUpdateWithoutBookingsInput, ListingUncheckedUpdateWithoutBookingsInput>
+    create: XOR<ListingCreateWithoutBookingsInput, ListingUncheckedCreateWithoutBookingsInput>
+    where?: ListingWhereInput
   }
 
-  export type ReviewUpdateToOneWithWhereWithoutBookingInput = {
-    where?: ReviewWhereInput
-    data: XOR<ReviewUpdateWithoutBookingInput, ReviewUncheckedUpdateWithoutBookingInput>
+  export type ListingUpdateToOneWithWhereWithoutBookingsInput = {
+    where?: ListingWhereInput
+    data: XOR<ListingUpdateWithoutBookingsInput, ListingUncheckedUpdateWithoutBookingsInput>
   }
 
-  export type ReviewUpdateWithoutBookingInput = {
-    rating?: IntFieldUpdateOperationsInput | number
-    comment?: NullableStringFieldUpdateOperationsInput | string | null
+  export type ListingUpdateWithoutBookingsInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: StringFieldUpdateOperationsInput | string
+    capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    pricePerHour?: NullableFloatFieldUpdateOperationsInput | number | null
+    pricePerDay?: NullableFloatFieldUpdateOperationsInput | number | null
+    isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    listing?: ListingUpdateOneRequiredWithoutReviewsNestedInput
-    author?: UserUpdateOneRequiredWithoutReviewsNestedInput
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    availability?: AvailabilityUpdateManyWithoutListingNestedInput
+    host?: UserUpdateOneRequiredWithoutListingsNestedInput
+    restaurant?: RestaurantUpdateOneWithoutListingsNestedInput
+    amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
+    images?: ListingImageUpdateManyWithoutListingNestedInput
+    reviews?: ReviewUpdateManyWithoutListingNestedInput
   }
 
-  export type ReviewUncheckedUpdateWithoutBookingInput = {
+  export type ListingUncheckedUpdateWithoutBookingsInput = {
     id?: IntFieldUpdateOperationsInput | number
-    rating?: IntFieldUpdateOperationsInput | number
-    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: StringFieldUpdateOperationsInput | string
+    capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    pricePerHour?: NullableFloatFieldUpdateOperationsInput | number | null
+    pricePerDay?: NullableFloatFieldUpdateOperationsInput | number | null
+    isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    listingId?: IntFieldUpdateOperationsInput | number
-    authorId?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    hostId?: IntFieldUpdateOperationsInput | number
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    availability?: AvailabilityUncheckedUpdateManyWithoutListingNestedInput
+    amenities?: ListingAmenityUncheckedUpdateManyWithoutListingNestedInput
+    images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
+    reviews?: ReviewUncheckedUpdateManyWithoutListingNestedInput
   }
 
   export type EarningUpsertWithoutBookingInput = {
@@ -24409,46 +30797,32 @@ export namespace Prisma {
     hostId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type ListingCreateWithoutReviewsInput = {
-    title: string
-    description?: string | null
-    type: string
-    capacity?: number | null
-    pricePerHour?: number | null
-    pricePerDay?: number | null
-    isActive?: boolean
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    restaurant: RestaurantCreateNestedOneWithoutListingsInput
-    host: UserCreateNestedOneWithoutListingsInput
-    bookings?: BookingCreateNestedManyWithoutListingInput
-    images?: ListingImageCreateNestedManyWithoutListingInput
-    amenities?: ListingAmenityCreateNestedManyWithoutListingInput
-    availability?: AvailabilityCreateNestedManyWithoutListingInput
+  export type ReviewUpsertWithoutBookingInput = {
+    update: XOR<ReviewUpdateWithoutBookingInput, ReviewUncheckedUpdateWithoutBookingInput>
+    create: XOR<ReviewCreateWithoutBookingInput, ReviewUncheckedCreateWithoutBookingInput>
+    where?: ReviewWhereInput
   }
 
-  export type ListingUncheckedCreateWithoutReviewsInput = {
-    id?: number
-    title: string
-    description?: string | null
-    type: string
-    capacity?: number | null
-    pricePerHour?: number | null
-    pricePerDay?: number | null
-    isActive?: boolean
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    restaurantId: number
-    hostId: number
-    bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
-    images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
-    amenities?: ListingAmenityUncheckedCreateNestedManyWithoutListingInput
-    availability?: AvailabilityUncheckedCreateNestedManyWithoutListingInput
+  export type ReviewUpdateToOneWithWhereWithoutBookingInput = {
+    where?: ReviewWhereInput
+    data: XOR<ReviewUpdateWithoutBookingInput, ReviewUncheckedUpdateWithoutBookingInput>
   }
 
-  export type ListingCreateOrConnectWithoutReviewsInput = {
-    where: ListingWhereUniqueInput
-    create: XOR<ListingCreateWithoutReviewsInput, ListingUncheckedCreateWithoutReviewsInput>
+  export type ReviewUpdateWithoutBookingInput = {
+    rating?: IntFieldUpdateOperationsInput | number
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    author?: UserUpdateOneRequiredWithoutReviewsNestedInput
+    listing?: ListingUpdateOneRequiredWithoutReviewsNestedInput
+  }
+
+  export type ReviewUncheckedUpdateWithoutBookingInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    rating?: IntFieldUpdateOperationsInput | number
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    listingId?: IntFieldUpdateOperationsInput | number
+    authorId?: IntFieldUpdateOperationsInput | number
   }
 
   export type UserCreateWithoutReviewsInput = {
@@ -24459,7 +30833,6 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -24467,12 +30840,17 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
-    listings?: ListingCreateNestedManyWithoutHostInput
+    isRestaurantHost?: boolean
     bookings?: BookingCreateNestedManyWithoutGuestInput
-    notifications?: NotificationCreateNestedManyWithoutUserInput
     earnings?: EarningCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsCreateNestedOneWithoutUserInput
+    listings?: ListingCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageCreateNestedManyWithoutSenderInput
+    notifications?: NotificationCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
   }
 
   export type UserUncheckedCreateWithoutReviewsInput = {
@@ -24484,8 +30862,6 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -24493,11 +30869,17 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
-    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
+    isRestaurantHost?: boolean
+    restaurantId?: number | null
     bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
-    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
     earnings?: EarningUncheckedCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsUncheckedCreateNestedOneWithoutUserInput
+    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodUncheckedCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
   }
 
   export type UserCreateOrConnectWithoutReviewsInput = {
@@ -24508,14 +30890,14 @@ export namespace Prisma {
   export type BookingCreateWithoutReviewInput = {
     startTime: Date | string
     endTime: Date | string
-    totalPrice: number
+    totalPrice?: number | null
     status?: string
     guestCount?: number | null
     specialRequests?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    listing: ListingCreateNestedOneWithoutBookingsInput
     guest: UserCreateNestedOneWithoutBookingsInput
+    listing: ListingCreateNestedOneWithoutBookingsInput
     earning?: EarningCreateNestedOneWithoutBookingInput
   }
 
@@ -24523,7 +30905,7 @@ export namespace Prisma {
     id?: number
     startTime: Date | string
     endTime: Date | string
-    totalPrice: number
+    totalPrice?: number | null
     status?: string
     guestCount?: number | null
     specialRequests?: string | null
@@ -24537,6 +30919,156 @@ export namespace Prisma {
   export type BookingCreateOrConnectWithoutReviewInput = {
     where: BookingWhereUniqueInput
     create: XOR<BookingCreateWithoutReviewInput, BookingUncheckedCreateWithoutReviewInput>
+  }
+
+  export type ListingCreateWithoutReviewsInput = {
+    title: string
+    description?: string | null
+    type: string
+    capacity?: number | null
+    pricePerHour?: number | null
+    pricePerDay?: number | null
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    availability?: AvailabilityCreateNestedManyWithoutListingInput
+    bookings?: BookingCreateNestedManyWithoutListingInput
+    host: UserCreateNestedOneWithoutListingsInput
+    restaurant?: RestaurantCreateNestedOneWithoutListingsInput
+    amenities?: ListingAmenityCreateNestedManyWithoutListingInput
+    images?: ListingImageCreateNestedManyWithoutListingInput
+  }
+
+  export type ListingUncheckedCreateWithoutReviewsInput = {
+    id?: number
+    title: string
+    description?: string | null
+    type: string
+    capacity?: number | null
+    pricePerHour?: number | null
+    pricePerDay?: number | null
+    isActive?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    hostId: number
+    restaurantId?: number | null
+    availability?: AvailabilityUncheckedCreateNestedManyWithoutListingInput
+    bookings?: BookingUncheckedCreateNestedManyWithoutListingInput
+    amenities?: ListingAmenityUncheckedCreateNestedManyWithoutListingInput
+    images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
+  }
+
+  export type ListingCreateOrConnectWithoutReviewsInput = {
+    where: ListingWhereUniqueInput
+    create: XOR<ListingCreateWithoutReviewsInput, ListingUncheckedCreateWithoutReviewsInput>
+  }
+
+  export type UserUpsertWithoutReviewsInput = {
+    update: XOR<UserUpdateWithoutReviewsInput, UserUncheckedUpdateWithoutReviewsInput>
+    create: XOR<UserCreateWithoutReviewsInput, UserUncheckedCreateWithoutReviewsInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutReviewsInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutReviewsInput, UserUncheckedUpdateWithoutReviewsInput>
+  }
+
+  export type UserUpdateWithoutReviewsInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    state?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    bookings?: BookingUpdateManyWithoutGuestNestedInput
+    earnings?: EarningUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUpdateOneWithoutUserNestedInput
+    listings?: ListingUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutReviewsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    state?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
+    earnings?: EarningUncheckedUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUncheckedUpdateOneWithoutUserNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUncheckedUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+  }
+
+  export type BookingUpsertWithoutReviewInput = {
+    update: XOR<BookingUpdateWithoutReviewInput, BookingUncheckedUpdateWithoutReviewInput>
+    create: XOR<BookingCreateWithoutReviewInput, BookingUncheckedCreateWithoutReviewInput>
+    where?: BookingWhereInput
+  }
+
+  export type BookingUpdateToOneWithWhereWithoutReviewInput = {
+    where?: BookingWhereInput
+    data: XOR<BookingUpdateWithoutReviewInput, BookingUncheckedUpdateWithoutReviewInput>
+  }
+
+  export type BookingUpdateWithoutReviewInput = {
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalPrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    status?: StringFieldUpdateOperationsInput | string
+    guestCount?: NullableIntFieldUpdateOperationsInput | number | null
+    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    guest?: UserUpdateOneRequiredWithoutBookingsNestedInput
+    listing?: ListingUpdateOneRequiredWithoutBookingsNestedInput
+    earning?: EarningUpdateOneWithoutBookingNestedInput
+  }
+
+  export type BookingUncheckedUpdateWithoutReviewInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalPrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    status?: StringFieldUpdateOperationsInput | string
+    guestCount?: NullableIntFieldUpdateOperationsInput | number | null
+    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    listingId?: IntFieldUpdateOperationsInput | number
+    guestId?: IntFieldUpdateOperationsInput | number
+    earning?: EarningUncheckedUpdateOneWithoutBookingNestedInput
   }
 
   export type ListingUpsertWithoutReviewsInput = {
@@ -24560,12 +31092,12 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurant?: RestaurantUpdateOneRequiredWithoutListingsNestedInput
-    host?: UserUpdateOneRequiredWithoutListingsNestedInput
-    bookings?: BookingUpdateManyWithoutListingNestedInput
-    images?: ListingImageUpdateManyWithoutListingNestedInput
-    amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
     availability?: AvailabilityUpdateManyWithoutListingNestedInput
+    bookings?: BookingUpdateManyWithoutListingNestedInput
+    host?: UserUpdateOneRequiredWithoutListingsNestedInput
+    restaurant?: RestaurantUpdateOneWithoutListingsNestedInput
+    amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
+    images?: ListingImageUpdateManyWithoutListingNestedInput
   }
 
   export type ListingUncheckedUpdateWithoutReviewsInput = {
@@ -24579,179 +31111,25 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: IntFieldUpdateOperationsInput | number
     hostId?: IntFieldUpdateOperationsInput | number
-    bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
-    images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
-    amenities?: ListingAmenityUncheckedUpdateManyWithoutListingNestedInput
-    availability?: AvailabilityUncheckedUpdateManyWithoutListingNestedInput
-  }
-
-  export type UserUpsertWithoutReviewsInput = {
-    update: XOR<UserUpdateWithoutReviewsInput, UserUncheckedUpdateWithoutReviewsInput>
-    create: XOR<UserCreateWithoutReviewsInput, UserUncheckedCreateWithoutReviewsInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutReviewsInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutReviewsInput, UserUncheckedUpdateWithoutReviewsInput>
-  }
-
-  export type UserUpdateWithoutReviewsInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
-    bio?: NullableStringFieldUpdateOperationsInput | string | null
-    address?: NullableStringFieldUpdateOperationsInput | string | null
-    city?: NullableStringFieldUpdateOperationsInput | string | null
-    state?: NullableStringFieldUpdateOperationsInput | string | null
-    country?: NullableStringFieldUpdateOperationsInput | string | null
-    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
-    listings?: ListingUpdateManyWithoutHostNestedInput
-    bookings?: BookingUpdateManyWithoutGuestNestedInput
-    notifications?: NotificationUpdateManyWithoutUserNestedInput
-    earnings?: EarningUpdateManyWithoutHostNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutReviewsInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    email?: StringFieldUpdateOperationsInput | string
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
     restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
-    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
-    bio?: NullableStringFieldUpdateOperationsInput | string | null
-    address?: NullableStringFieldUpdateOperationsInput | string | null
-    city?: NullableStringFieldUpdateOperationsInput | string | null
-    state?: NullableStringFieldUpdateOperationsInput | string | null
-    country?: NullableStringFieldUpdateOperationsInput | string | null
-    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
-    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
-    bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
-    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
-    earnings?: EarningUncheckedUpdateManyWithoutHostNestedInput
-  }
-
-  export type BookingUpsertWithoutReviewInput = {
-    update: XOR<BookingUpdateWithoutReviewInput, BookingUncheckedUpdateWithoutReviewInput>
-    create: XOR<BookingCreateWithoutReviewInput, BookingUncheckedCreateWithoutReviewInput>
-    where?: BookingWhereInput
-  }
-
-  export type BookingUpdateToOneWithWhereWithoutReviewInput = {
-    where?: BookingWhereInput
-    data: XOR<BookingUpdateWithoutReviewInput, BookingUncheckedUpdateWithoutReviewInput>
-  }
-
-  export type BookingUpdateWithoutReviewInput = {
-    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalPrice?: FloatFieldUpdateOperationsInput | number
-    status?: StringFieldUpdateOperationsInput | string
-    guestCount?: NullableIntFieldUpdateOperationsInput | number | null
-    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    listing?: ListingUpdateOneRequiredWithoutBookingsNestedInput
-    guest?: UserUpdateOneRequiredWithoutBookingsNestedInput
-    earning?: EarningUpdateOneWithoutBookingNestedInput
-  }
-
-  export type BookingUncheckedUpdateWithoutReviewInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalPrice?: FloatFieldUpdateOperationsInput | number
-    status?: StringFieldUpdateOperationsInput | string
-    guestCount?: NullableIntFieldUpdateOperationsInput | number | null
-    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    listingId?: IntFieldUpdateOperationsInput | number
-    guestId?: IntFieldUpdateOperationsInput | number
-    earning?: EarningUncheckedUpdateOneWithoutBookingNestedInput
-  }
-
-  export type UserCreateWithoutEarningsInput = {
-    email: string
-    phone?: string | null
-    password: string
-    name: string
-    role?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    profileImage?: string | null
-    bio?: string | null
-    address?: string | null
-    city?: string | null
-    state?: string | null
-    country?: string | null
-    zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
-    listings?: ListingCreateNestedManyWithoutHostInput
-    bookings?: BookingCreateNestedManyWithoutGuestInput
-    reviews?: ReviewCreateNestedManyWithoutAuthorInput
-    notifications?: NotificationCreateNestedManyWithoutUserInput
-  }
-
-  export type UserUncheckedCreateWithoutEarningsInput = {
-    id?: number
-    email: string
-    phone?: string | null
-    password: string
-    name: string
-    role?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
-    profileImage?: string | null
-    bio?: string | null
-    address?: string | null
-    city?: string | null
-    state?: string | null
-    country?: string | null
-    zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
-    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
-    bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
-    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
-    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
-  }
-
-  export type UserCreateOrConnectWithoutEarningsInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutEarningsInput, UserUncheckedCreateWithoutEarningsInput>
+    availability?: AvailabilityUncheckedUpdateManyWithoutListingNestedInput
+    bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
+    amenities?: ListingAmenityUncheckedUpdateManyWithoutListingNestedInput
+    images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
   }
 
   export type BookingCreateWithoutEarningInput = {
     startTime: Date | string
     endTime: Date | string
-    totalPrice: number
+    totalPrice?: number | null
     status?: string
     guestCount?: number | null
     specialRequests?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    listing: ListingCreateNestedOneWithoutBookingsInput
     guest: UserCreateNestedOneWithoutBookingsInput
+    listing: ListingCreateNestedOneWithoutBookingsInput
     review?: ReviewCreateNestedOneWithoutBookingInput
   }
 
@@ -24759,7 +31137,7 @@ export namespace Prisma {
     id?: number
     startTime: Date | string
     endTime: Date | string
-    totalPrice: number
+    totalPrice?: number | null
     status?: string
     guestCount?: number | null
     specialRequests?: string | null
@@ -24773,6 +31151,108 @@ export namespace Prisma {
   export type BookingCreateOrConnectWithoutEarningInput = {
     where: BookingWhereUniqueInput
     create: XOR<BookingCreateWithoutEarningInput, BookingUncheckedCreateWithoutEarningInput>
+  }
+
+  export type UserCreateWithoutEarningsInput = {
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    bookings?: BookingCreateNestedManyWithoutGuestInput
+    hostSettings?: HostSettingsCreateNestedOneWithoutUserInput
+    listings?: ListingCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageCreateNestedManyWithoutSenderInput
+    notifications?: NotificationCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    reviews?: ReviewCreateNestedManyWithoutAuthorInput
+    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
+  }
+
+  export type UserUncheckedCreateWithoutEarningsInput = {
+    id?: number
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    restaurantId?: number | null
+    bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
+    hostSettings?: HostSettingsUncheckedCreateNestedOneWithoutUserInput
+    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodUncheckedCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
+  }
+
+  export type UserCreateOrConnectWithoutEarningsInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutEarningsInput, UserUncheckedCreateWithoutEarningsInput>
+  }
+
+  export type BookingUpsertWithoutEarningInput = {
+    update: XOR<BookingUpdateWithoutEarningInput, BookingUncheckedUpdateWithoutEarningInput>
+    create: XOR<BookingCreateWithoutEarningInput, BookingUncheckedCreateWithoutEarningInput>
+    where?: BookingWhereInput
+  }
+
+  export type BookingUpdateToOneWithWhereWithoutEarningInput = {
+    where?: BookingWhereInput
+    data: XOR<BookingUpdateWithoutEarningInput, BookingUncheckedUpdateWithoutEarningInput>
+  }
+
+  export type BookingUpdateWithoutEarningInput = {
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalPrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    status?: StringFieldUpdateOperationsInput | string
+    guestCount?: NullableIntFieldUpdateOperationsInput | number | null
+    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    guest?: UserUpdateOneRequiredWithoutBookingsNestedInput
+    listing?: ListingUpdateOneRequiredWithoutBookingsNestedInput
+    review?: ReviewUpdateOneWithoutBookingNestedInput
+  }
+
+  export type BookingUncheckedUpdateWithoutEarningInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalPrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    status?: StringFieldUpdateOperationsInput | string
+    guestCount?: NullableIntFieldUpdateOperationsInput | number | null
+    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    listingId?: IntFieldUpdateOperationsInput | number
+    guestId?: IntFieldUpdateOperationsInput | number
+    review?: ReviewUncheckedUpdateOneWithoutBookingNestedInput
   }
 
   export type UserUpsertWithoutEarningsInput = {
@@ -24794,7 +31274,6 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -24802,12 +31281,17 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
-    listings?: ListingUpdateManyWithoutHostNestedInput
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
     bookings?: BookingUpdateManyWithoutGuestNestedInput
-    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
+    hostSettings?: HostSettingsUpdateOneWithoutUserNestedInput
+    listings?: ListingUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUpdateManyWithoutSenderNestedInput
     notifications?: NotificationUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
+    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
   }
 
   export type UserUncheckedUpdateWithoutEarningsInput = {
@@ -24819,8 +31303,6 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -24828,51 +31310,17 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
-    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
     bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
-    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
+    hostSettings?: HostSettingsUncheckedUpdateOneWithoutUserNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUncheckedUpdateManyWithoutSenderNestedInput
     notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
-  }
-
-  export type BookingUpsertWithoutEarningInput = {
-    update: XOR<BookingUpdateWithoutEarningInput, BookingUncheckedUpdateWithoutEarningInput>
-    create: XOR<BookingCreateWithoutEarningInput, BookingUncheckedCreateWithoutEarningInput>
-    where?: BookingWhereInput
-  }
-
-  export type BookingUpdateToOneWithWhereWithoutEarningInput = {
-    where?: BookingWhereInput
-    data: XOR<BookingUpdateWithoutEarningInput, BookingUncheckedUpdateWithoutEarningInput>
-  }
-
-  export type BookingUpdateWithoutEarningInput = {
-    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalPrice?: FloatFieldUpdateOperationsInput | number
-    status?: StringFieldUpdateOperationsInput | string
-    guestCount?: NullableIntFieldUpdateOperationsInput | number | null
-    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    listing?: ListingUpdateOneRequiredWithoutBookingsNestedInput
-    guest?: UserUpdateOneRequiredWithoutBookingsNestedInput
-    review?: ReviewUpdateOneWithoutBookingNestedInput
-  }
-
-  export type BookingUncheckedUpdateWithoutEarningInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalPrice?: FloatFieldUpdateOperationsInput | number
-    status?: StringFieldUpdateOperationsInput | string
-    guestCount?: NullableIntFieldUpdateOperationsInput | number | null
-    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    listingId?: IntFieldUpdateOperationsInput | number
-    guestId?: IntFieldUpdateOperationsInput | number
-    review?: ReviewUncheckedUpdateOneWithoutBookingNestedInput
+    paymentMethods?: PaymentMethodUncheckedUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
   }
 
   export type UserCreateWithoutNotificationsInput = {
@@ -24883,7 +31331,6 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -24891,12 +31338,17 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
-    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
-    listings?: ListingCreateNestedManyWithoutHostInput
+    isRestaurantHost?: boolean
     bookings?: BookingCreateNestedManyWithoutGuestInput
-    reviews?: ReviewCreateNestedManyWithoutAuthorInput
     earnings?: EarningCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsCreateNestedOneWithoutUserInput
+    listings?: ListingCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageCreateNestedManyWithoutSenderInput
+    paymentMethods?: PaymentMethodCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    reviews?: ReviewCreateNestedManyWithoutAuthorInput
+    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
   }
 
   export type UserUncheckedCreateWithoutNotificationsInput = {
@@ -24908,8 +31360,6 @@ export namespace Prisma {
     role?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    restaurantId?: number | null
     profileImage?: string | null
     bio?: string | null
     address?: string | null
@@ -24917,11 +31367,17 @@ export namespace Prisma {
     state?: string | null
     country?: string | null
     zipCode?: string | null
-    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
-    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
+    isRestaurantHost?: boolean
+    restaurantId?: number | null
     bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
-    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
     earnings?: EarningUncheckedCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsUncheckedCreateNestedOneWithoutUserInput
+    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    paymentMethods?: PaymentMethodUncheckedCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
   }
 
   export type UserCreateOrConnectWithoutNotificationsInput = {
@@ -24948,7 +31404,6 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -24956,12 +31411,17 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
-    listings?: ListingUpdateManyWithoutHostNestedInput
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
     bookings?: BookingUpdateManyWithoutGuestNestedInput
-    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
     earnings?: EarningUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUpdateOneWithoutUserNestedInput
+    listings?: ListingUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUpdateManyWithoutSenderNestedInput
+    paymentMethods?: PaymentMethodUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
+    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
   }
 
   export type UserUncheckedUpdateWithoutNotificationsInput = {
@@ -24973,8 +31433,6 @@ export namespace Prisma {
     role?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
     profileImage?: NullableStringFieldUpdateOperationsInput | string | null
     bio?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
@@ -24982,11 +31440,17 @@ export namespace Prisma {
     state?: NullableStringFieldUpdateOperationsInput | string | null
     country?: NullableStringFieldUpdateOperationsInput | string | null
     zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
-    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
     bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
-    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
     earnings?: EarningUncheckedUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUncheckedUpdateOneWithoutUserNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    paymentMethods?: PaymentMethodUncheckedUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
   }
 
   export type RestaurantCreateWithoutImagesInput = {
@@ -25000,16 +31464,16 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    restaurantType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    host: UserCreateNestedOneWithoutHostedRestaurantInput
-    users?: UserCreateNestedManyWithoutRestaurantInput
     listings?: ListingCreateNestedManyWithoutRestaurantInput
     operatingHours?: OperatingHoursCreateNestedManyWithoutRestaurantInput
+    host: UserCreateNestedOneWithoutHostedRestaurantInput
+    users?: UserCreateNestedManyWithoutRestaurantInput
   }
 
   export type RestaurantUncheckedCreateWithoutImagesInput = {
@@ -25024,16 +31488,16 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    restaurantType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     hostId: number
-    users?: UserUncheckedCreateNestedManyWithoutRestaurantInput
     listings?: ListingUncheckedCreateNestedManyWithoutRestaurantInput
     operatingHours?: OperatingHoursUncheckedCreateNestedManyWithoutRestaurantInput
+    users?: UserUncheckedCreateNestedManyWithoutRestaurantInput
   }
 
   export type RestaurantCreateOrConnectWithoutImagesInput = {
@@ -25063,16 +31527,16 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    restaurantType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    host?: UserUpdateOneRequiredWithoutHostedRestaurantNestedInput
-    users?: UserUpdateManyWithoutRestaurantNestedInput
     listings?: ListingUpdateManyWithoutRestaurantNestedInput
     operatingHours?: OperatingHoursUpdateManyWithoutRestaurantNestedInput
+    host?: UserUpdateOneRequiredWithoutHostedRestaurantNestedInput
+    users?: UserUpdateManyWithoutRestaurantNestedInput
   }
 
   export type RestaurantUncheckedUpdateWithoutImagesInput = {
@@ -25087,16 +31551,16 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    restaurantType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     hostId?: IntFieldUpdateOperationsInput | number
-    users?: UserUncheckedUpdateManyWithoutRestaurantNestedInput
     listings?: ListingUncheckedUpdateManyWithoutRestaurantNestedInput
     operatingHours?: OperatingHoursUncheckedUpdateManyWithoutRestaurantNestedInput
+    users?: UserUncheckedUpdateManyWithoutRestaurantNestedInput
   }
 
   export type RestaurantCreateWithoutOperatingHoursInput = {
@@ -25110,16 +31574,16 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    restaurantType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    host: UserCreateNestedOneWithoutHostedRestaurantInput
-    users?: UserCreateNestedManyWithoutRestaurantInput
     listings?: ListingCreateNestedManyWithoutRestaurantInput
+    host: UserCreateNestedOneWithoutHostedRestaurantInput
     images?: RestaurantImageCreateNestedManyWithoutRestaurantInput
+    users?: UserCreateNestedManyWithoutRestaurantInput
   }
 
   export type RestaurantUncheckedCreateWithoutOperatingHoursInput = {
@@ -25134,16 +31598,16 @@ export namespace Prisma {
     phone?: string | null
     email?: string | null
     website?: string | null
-    cuisine?: string | null
+    restaurantType?: string | null
     priceRange?: string | null
     rating?: number | null
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     hostId: number
-    users?: UserUncheckedCreateNestedManyWithoutRestaurantInput
     listings?: ListingUncheckedCreateNestedManyWithoutRestaurantInput
     images?: RestaurantImageUncheckedCreateNestedManyWithoutRestaurantInput
+    users?: UserUncheckedCreateNestedManyWithoutRestaurantInput
   }
 
   export type RestaurantCreateOrConnectWithoutOperatingHoursInput = {
@@ -25173,16 +31637,16 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    restaurantType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    host?: UserUpdateOneRequiredWithoutHostedRestaurantNestedInput
-    users?: UserUpdateManyWithoutRestaurantNestedInput
     listings?: ListingUpdateManyWithoutRestaurantNestedInput
+    host?: UserUpdateOneRequiredWithoutHostedRestaurantNestedInput
     images?: RestaurantImageUpdateManyWithoutRestaurantNestedInput
+    users?: UserUpdateManyWithoutRestaurantNestedInput
   }
 
   export type RestaurantUncheckedUpdateWithoutOperatingHoursInput = {
@@ -25197,16 +31661,638 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
-    cuisine?: NullableStringFieldUpdateOperationsInput | string | null
+    restaurantType?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     hostId?: IntFieldUpdateOperationsInput | number
-    users?: UserUncheckedUpdateManyWithoutRestaurantNestedInput
     listings?: ListingUncheckedUpdateManyWithoutRestaurantNestedInput
     images?: RestaurantImageUncheckedUpdateManyWithoutRestaurantNestedInput
+    users?: UserUncheckedUpdateManyWithoutRestaurantNestedInput
+  }
+
+  export type UserCreateWithoutHostSettingsInput = {
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    bookings?: BookingCreateNestedManyWithoutGuestInput
+    earnings?: EarningCreateNestedManyWithoutHostInput
+    listings?: ListingCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageCreateNestedManyWithoutSenderInput
+    notifications?: NotificationCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    reviews?: ReviewCreateNestedManyWithoutAuthorInput
+    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
+  }
+
+  export type UserUncheckedCreateWithoutHostSettingsInput = {
+    id?: number
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    restaurantId?: number | null
+    bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
+    earnings?: EarningUncheckedCreateNestedManyWithoutHostInput
+    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodUncheckedCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
+  }
+
+  export type UserCreateOrConnectWithoutHostSettingsInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutHostSettingsInput, UserUncheckedCreateWithoutHostSettingsInput>
+  }
+
+  export type UserUpsertWithoutHostSettingsInput = {
+    update: XOR<UserUpdateWithoutHostSettingsInput, UserUncheckedUpdateWithoutHostSettingsInput>
+    create: XOR<UserCreateWithoutHostSettingsInput, UserUncheckedCreateWithoutHostSettingsInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutHostSettingsInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutHostSettingsInput, UserUncheckedUpdateWithoutHostSettingsInput>
+  }
+
+  export type UserUpdateWithoutHostSettingsInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    state?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    bookings?: BookingUpdateManyWithoutGuestNestedInput
+    earnings?: EarningUpdateManyWithoutHostNestedInput
+    listings?: ListingUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
+    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutHostSettingsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    state?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
+    earnings?: EarningUncheckedUpdateManyWithoutHostNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUncheckedUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
+  }
+
+  export type UserCreateWithoutPaymentMethodsInput = {
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    bookings?: BookingCreateNestedManyWithoutGuestInput
+    earnings?: EarningCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsCreateNestedOneWithoutUserInput
+    listings?: ListingCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageCreateNestedManyWithoutSenderInput
+    notifications?: NotificationCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    reviews?: ReviewCreateNestedManyWithoutAuthorInput
+    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
+  }
+
+  export type UserUncheckedCreateWithoutPaymentMethodsInput = {
+    id?: number
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    restaurantId?: number | null
+    bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
+    earnings?: EarningUncheckedCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsUncheckedCreateNestedOneWithoutUserInput
+    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    messagesSent?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
+  }
+
+  export type UserCreateOrConnectWithoutPaymentMethodsInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutPaymentMethodsInput, UserUncheckedCreateWithoutPaymentMethodsInput>
+  }
+
+  export type UserUpsertWithoutPaymentMethodsInput = {
+    update: XOR<UserUpdateWithoutPaymentMethodsInput, UserUncheckedUpdateWithoutPaymentMethodsInput>
+    create: XOR<UserCreateWithoutPaymentMethodsInput, UserUncheckedCreateWithoutPaymentMethodsInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutPaymentMethodsInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutPaymentMethodsInput, UserUncheckedUpdateWithoutPaymentMethodsInput>
+  }
+
+  export type UserUpdateWithoutPaymentMethodsInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    state?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    bookings?: BookingUpdateManyWithoutGuestNestedInput
+    earnings?: EarningUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUpdateOneWithoutUserNestedInput
+    listings?: ListingUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
+    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutPaymentMethodsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    state?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
+    earnings?: EarningUncheckedUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUncheckedUpdateOneWithoutUserNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
+  }
+
+  export type MessageCreateWithoutConversationInput = {
+    content: string
+    timestamp?: Date | string
+    receiver: UserCreateNestedOneWithoutMessagesReceivedInput
+    sender: UserCreateNestedOneWithoutMessagesSentInput
+  }
+
+  export type MessageUncheckedCreateWithoutConversationInput = {
+    id?: number
+    senderId: number
+    receiverId: number
+    content: string
+    timestamp?: Date | string
+  }
+
+  export type MessageCreateOrConnectWithoutConversationInput = {
+    where: MessageWhereUniqueInput
+    create: XOR<MessageCreateWithoutConversationInput, MessageUncheckedCreateWithoutConversationInput>
+  }
+
+  export type MessageCreateManyConversationInputEnvelope = {
+    data: MessageCreateManyConversationInput | MessageCreateManyConversationInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type MessageUpsertWithWhereUniqueWithoutConversationInput = {
+    where: MessageWhereUniqueInput
+    update: XOR<MessageUpdateWithoutConversationInput, MessageUncheckedUpdateWithoutConversationInput>
+    create: XOR<MessageCreateWithoutConversationInput, MessageUncheckedCreateWithoutConversationInput>
+  }
+
+  export type MessageUpdateWithWhereUniqueWithoutConversationInput = {
+    where: MessageWhereUniqueInput
+    data: XOR<MessageUpdateWithoutConversationInput, MessageUncheckedUpdateWithoutConversationInput>
+  }
+
+  export type MessageUpdateManyWithWhereWithoutConversationInput = {
+    where: MessageScalarWhereInput
+    data: XOR<MessageUpdateManyMutationInput, MessageUncheckedUpdateManyWithoutConversationInput>
+  }
+
+  export type ConversationCreateWithoutMessagesInput = {
+    bookingId: number
+    createdAt?: Date | string
+  }
+
+  export type ConversationUncheckedCreateWithoutMessagesInput = {
+    id?: number
+    bookingId: number
+    createdAt?: Date | string
+  }
+
+  export type ConversationCreateOrConnectWithoutMessagesInput = {
+    where: ConversationWhereUniqueInput
+    create: XOR<ConversationCreateWithoutMessagesInput, ConversationUncheckedCreateWithoutMessagesInput>
+  }
+
+  export type UserCreateWithoutMessagesReceivedInput = {
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    bookings?: BookingCreateNestedManyWithoutGuestInput
+    earnings?: EarningCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsCreateNestedOneWithoutUserInput
+    listings?: ListingCreateNestedManyWithoutHostInput
+    messagesSent?: MessageCreateNestedManyWithoutSenderInput
+    notifications?: NotificationCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    reviews?: ReviewCreateNestedManyWithoutAuthorInput
+    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
+  }
+
+  export type UserUncheckedCreateWithoutMessagesReceivedInput = {
+    id?: number
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    restaurantId?: number | null
+    bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
+    earnings?: EarningUncheckedCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsUncheckedCreateNestedOneWithoutUserInput
+    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
+    messagesSent?: MessageUncheckedCreateNestedManyWithoutSenderInput
+    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodUncheckedCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
+  }
+
+  export type UserCreateOrConnectWithoutMessagesReceivedInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutMessagesReceivedInput, UserUncheckedCreateWithoutMessagesReceivedInput>
+  }
+
+  export type UserCreateWithoutMessagesSentInput = {
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    bookings?: BookingCreateNestedManyWithoutGuestInput
+    earnings?: EarningCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsCreateNestedOneWithoutUserInput
+    listings?: ListingCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageCreateNestedManyWithoutReceiverInput
+    notifications?: NotificationCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantCreateNestedOneWithoutHostInput
+    reviews?: ReviewCreateNestedManyWithoutAuthorInput
+    restaurant?: RestaurantCreateNestedOneWithoutUsersInput
+  }
+
+  export type UserUncheckedCreateWithoutMessagesSentInput = {
+    id?: number
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
+    restaurantId?: number | null
+    bookings?: BookingUncheckedCreateNestedManyWithoutGuestInput
+    earnings?: EarningUncheckedCreateNestedManyWithoutHostInput
+    hostSettings?: HostSettingsUncheckedCreateNestedOneWithoutUserInput
+    listings?: ListingUncheckedCreateNestedManyWithoutHostInput
+    messagesReceived?: MessageUncheckedCreateNestedManyWithoutReceiverInput
+    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
+    paymentMethods?: PaymentMethodUncheckedCreateNestedManyWithoutUserInput
+    hostedRestaurant?: RestaurantUncheckedCreateNestedOneWithoutHostInput
+    reviews?: ReviewUncheckedCreateNestedManyWithoutAuthorInput
+  }
+
+  export type UserCreateOrConnectWithoutMessagesSentInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutMessagesSentInput, UserUncheckedCreateWithoutMessagesSentInput>
+  }
+
+  export type ConversationUpsertWithoutMessagesInput = {
+    update: XOR<ConversationUpdateWithoutMessagesInput, ConversationUncheckedUpdateWithoutMessagesInput>
+    create: XOR<ConversationCreateWithoutMessagesInput, ConversationUncheckedCreateWithoutMessagesInput>
+    where?: ConversationWhereInput
+  }
+
+  export type ConversationUpdateToOneWithWhereWithoutMessagesInput = {
+    where?: ConversationWhereInput
+    data: XOR<ConversationUpdateWithoutMessagesInput, ConversationUncheckedUpdateWithoutMessagesInput>
+  }
+
+  export type ConversationUpdateWithoutMessagesInput = {
+    bookingId?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ConversationUncheckedUpdateWithoutMessagesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    bookingId?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserUpsertWithoutMessagesReceivedInput = {
+    update: XOR<UserUpdateWithoutMessagesReceivedInput, UserUncheckedUpdateWithoutMessagesReceivedInput>
+    create: XOR<UserCreateWithoutMessagesReceivedInput, UserUncheckedCreateWithoutMessagesReceivedInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutMessagesReceivedInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutMessagesReceivedInput, UserUncheckedUpdateWithoutMessagesReceivedInput>
+  }
+
+  export type UserUpdateWithoutMessagesReceivedInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    state?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    bookings?: BookingUpdateManyWithoutGuestNestedInput
+    earnings?: EarningUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUpdateOneWithoutUserNestedInput
+    listings?: ListingUpdateManyWithoutHostNestedInput
+    messagesSent?: MessageUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
+    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutMessagesReceivedInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    state?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
+    earnings?: EarningUncheckedUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUncheckedUpdateOneWithoutUserNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
+    messagesSent?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUncheckedUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
+  }
+
+  export type UserUpsertWithoutMessagesSentInput = {
+    update: XOR<UserUpdateWithoutMessagesSentInput, UserUncheckedUpdateWithoutMessagesSentInput>
+    create: XOR<UserCreateWithoutMessagesSentInput, UserUncheckedCreateWithoutMessagesSentInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutMessagesSentInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutMessagesSentInput, UserUncheckedUpdateWithoutMessagesSentInput>
+  }
+
+  export type UserUpdateWithoutMessagesSentInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    state?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    bookings?: BookingUpdateManyWithoutGuestNestedInput
+    earnings?: EarningUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUpdateOneWithoutUserNestedInput
+    listings?: ListingUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUpdateManyWithoutReceiverNestedInput
+    notifications?: NotificationUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
+    restaurant?: RestaurantUpdateOneWithoutUsersNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutMessagesSentInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    state?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
+    earnings?: EarningUncheckedUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUncheckedUpdateOneWithoutUserNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUncheckedUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
+  }
+
+  export type BookingCreateManyGuestInput = {
+    id?: number
+    startTime: Date | string
+    endTime: Date | string
+    totalPrice?: number | null
+    status?: string
+    guestCount?: number | null
+    specialRequests?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    listingId: number
+  }
+
+  export type EarningCreateManyHostInput = {
+    id?: number
+    amount: number
+    type: string
+    status?: string
+    description?: string | null
+    createdAt?: Date | string
+    bookingId?: number | null
   }
 
   export type ListingCreateManyHostInput = {
@@ -25220,29 +32306,23 @@ export namespace Prisma {
     isActive?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    restaurantId: number
+    restaurantId?: number | null
   }
 
-  export type BookingCreateManyGuestInput = {
+  export type MessageCreateManyReceiverInput = {
     id?: number
-    startTime: Date | string
-    endTime: Date | string
-    totalPrice: number
-    status?: string
-    guestCount?: number | null
-    specialRequests?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    listingId: number
+    conversationId: number
+    senderId: number
+    content: string
+    timestamp?: Date | string
   }
 
-  export type ReviewCreateManyAuthorInput = {
+  export type MessageCreateManySenderInput = {
     id?: number
-    rating: number
-    comment?: string | null
-    createdAt?: Date | string
-    listingId: number
-    bookingId: number
+    conversationId: number
+    receiverId: number
+    content: string
+    timestamp?: Date | string
   }
 
   export type NotificationCreateManyUserInput = {
@@ -25254,159 +32334,63 @@ export namespace Prisma {
     createdAt?: Date | string
   }
 
-  export type EarningCreateManyHostInput = {
+  export type PaymentMethodCreateManyUserInput = {
     id?: number
-    amount: number
     type: string
-    status?: string
-    description?: string | null
+    details: string
+    isPrimary?: boolean
     createdAt?: Date | string
-    bookingId?: number | null
   }
 
-  export type ListingUpdateWithoutHostInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    type?: StringFieldUpdateOperationsInput | string
-    capacity?: NullableIntFieldUpdateOperationsInput | number | null
-    pricePerHour?: NullableFloatFieldUpdateOperationsInput | number | null
-    pricePerDay?: NullableFloatFieldUpdateOperationsInput | number | null
-    isActive?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurant?: RestaurantUpdateOneRequiredWithoutListingsNestedInput
-    bookings?: BookingUpdateManyWithoutListingNestedInput
-    images?: ListingImageUpdateManyWithoutListingNestedInput
-    amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
-    availability?: AvailabilityUpdateManyWithoutListingNestedInput
-    reviews?: ReviewUpdateManyWithoutListingNestedInput
-  }
-
-  export type ListingUncheckedUpdateWithoutHostInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    type?: StringFieldUpdateOperationsInput | string
-    capacity?: NullableIntFieldUpdateOperationsInput | number | null
-    pricePerHour?: NullableFloatFieldUpdateOperationsInput | number | null
-    pricePerDay?: NullableFloatFieldUpdateOperationsInput | number | null
-    isActive?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: IntFieldUpdateOperationsInput | number
-    bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
-    images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
-    amenities?: ListingAmenityUncheckedUpdateManyWithoutListingNestedInput
-    availability?: AvailabilityUncheckedUpdateManyWithoutListingNestedInput
-    reviews?: ReviewUncheckedUpdateManyWithoutListingNestedInput
-  }
-
-  export type ListingUncheckedUpdateManyWithoutHostInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    type?: StringFieldUpdateOperationsInput | string
-    capacity?: NullableIntFieldUpdateOperationsInput | number | null
-    pricePerHour?: NullableFloatFieldUpdateOperationsInput | number | null
-    pricePerDay?: NullableFloatFieldUpdateOperationsInput | number | null
-    isActive?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    restaurantId?: IntFieldUpdateOperationsInput | number
+  export type ReviewCreateManyAuthorInput = {
+    id?: number
+    rating: number
+    comment?: string | null
+    createdAt?: Date | string
+    listingId: number
+    bookingId: number
   }
 
   export type BookingUpdateWithoutGuestInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalPrice?: FloatFieldUpdateOperationsInput | number
+    totalPrice?: NullableFloatFieldUpdateOperationsInput | number | null
     status?: StringFieldUpdateOperationsInput | string
     guestCount?: NullableIntFieldUpdateOperationsInput | number | null
     specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     listing?: ListingUpdateOneRequiredWithoutBookingsNestedInput
-    review?: ReviewUpdateOneWithoutBookingNestedInput
     earning?: EarningUpdateOneWithoutBookingNestedInput
+    review?: ReviewUpdateOneWithoutBookingNestedInput
   }
 
   export type BookingUncheckedUpdateWithoutGuestInput = {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalPrice?: FloatFieldUpdateOperationsInput | number
+    totalPrice?: NullableFloatFieldUpdateOperationsInput | number | null
     status?: StringFieldUpdateOperationsInput | string
     guestCount?: NullableIntFieldUpdateOperationsInput | number | null
     specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     listingId?: IntFieldUpdateOperationsInput | number
-    review?: ReviewUncheckedUpdateOneWithoutBookingNestedInput
     earning?: EarningUncheckedUpdateOneWithoutBookingNestedInput
+    review?: ReviewUncheckedUpdateOneWithoutBookingNestedInput
   }
 
   export type BookingUncheckedUpdateManyWithoutGuestInput = {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalPrice?: FloatFieldUpdateOperationsInput | number
+    totalPrice?: NullableFloatFieldUpdateOperationsInput | number | null
     status?: StringFieldUpdateOperationsInput | string
     guestCount?: NullableIntFieldUpdateOperationsInput | number | null
     specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     listingId?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type ReviewUpdateWithoutAuthorInput = {
-    rating?: IntFieldUpdateOperationsInput | number
-    comment?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    listing?: ListingUpdateOneRequiredWithoutReviewsNestedInput
-    booking?: BookingUpdateOneRequiredWithoutReviewNestedInput
-  }
-
-  export type ReviewUncheckedUpdateWithoutAuthorInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    rating?: IntFieldUpdateOperationsInput | number
-    comment?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    listingId?: IntFieldUpdateOperationsInput | number
-    bookingId?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type ReviewUncheckedUpdateManyWithoutAuthorInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    rating?: IntFieldUpdateOperationsInput | number
-    comment?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    listingId?: IntFieldUpdateOperationsInput | number
-    bookingId?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type NotificationUpdateWithoutUserInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    message?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    isRead?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type NotificationUncheckedUpdateWithoutUserInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    message?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    isRead?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type NotificationUncheckedUpdateManyWithoutUserInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    message?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    isRead?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EarningUpdateWithoutHostInput = {
@@ -25438,23 +32422,176 @@ export namespace Prisma {
     bookingId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
-  export type UserCreateManyRestaurantInput = {
-    id?: number
-    email: string
-    phone?: string | null
-    password: string
-    name: string
-    role?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    isRestaurantHost?: boolean
-    profileImage?: string | null
-    bio?: string | null
-    address?: string | null
-    city?: string | null
-    state?: string | null
-    country?: string | null
-    zipCode?: string | null
+  export type ListingUpdateWithoutHostInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: StringFieldUpdateOperationsInput | string
+    capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    pricePerHour?: NullableFloatFieldUpdateOperationsInput | number | null
+    pricePerDay?: NullableFloatFieldUpdateOperationsInput | number | null
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    availability?: AvailabilityUpdateManyWithoutListingNestedInput
+    bookings?: BookingUpdateManyWithoutListingNestedInput
+    restaurant?: RestaurantUpdateOneWithoutListingsNestedInput
+    amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
+    images?: ListingImageUpdateManyWithoutListingNestedInput
+    reviews?: ReviewUpdateManyWithoutListingNestedInput
+  }
+
+  export type ListingUncheckedUpdateWithoutHostInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: StringFieldUpdateOperationsInput | string
+    capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    pricePerHour?: NullableFloatFieldUpdateOperationsInput | number | null
+    pricePerDay?: NullableFloatFieldUpdateOperationsInput | number | null
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+    availability?: AvailabilityUncheckedUpdateManyWithoutListingNestedInput
+    bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
+    amenities?: ListingAmenityUncheckedUpdateManyWithoutListingNestedInput
+    images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
+    reviews?: ReviewUncheckedUpdateManyWithoutListingNestedInput
+  }
+
+  export type ListingUncheckedUpdateManyWithoutHostInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: StringFieldUpdateOperationsInput | string
+    capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    pricePerHour?: NullableFloatFieldUpdateOperationsInput | number | null
+    pricePerDay?: NullableFloatFieldUpdateOperationsInput | number | null
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    restaurantId?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type MessageUpdateWithoutReceiverInput = {
+    content?: StringFieldUpdateOperationsInput | string
+    timestamp?: DateTimeFieldUpdateOperationsInput | Date | string
+    conversation?: ConversationUpdateOneRequiredWithoutMessagesNestedInput
+    sender?: UserUpdateOneRequiredWithoutMessagesSentNestedInput
+  }
+
+  export type MessageUncheckedUpdateWithoutReceiverInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    conversationId?: IntFieldUpdateOperationsInput | number
+    senderId?: IntFieldUpdateOperationsInput | number
+    content?: StringFieldUpdateOperationsInput | string
+    timestamp?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MessageUncheckedUpdateManyWithoutReceiverInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    conversationId?: IntFieldUpdateOperationsInput | number
+    senderId?: IntFieldUpdateOperationsInput | number
+    content?: StringFieldUpdateOperationsInput | string
+    timestamp?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MessageUpdateWithoutSenderInput = {
+    content?: StringFieldUpdateOperationsInput | string
+    timestamp?: DateTimeFieldUpdateOperationsInput | Date | string
+    conversation?: ConversationUpdateOneRequiredWithoutMessagesNestedInput
+    receiver?: UserUpdateOneRequiredWithoutMessagesReceivedNestedInput
+  }
+
+  export type MessageUncheckedUpdateWithoutSenderInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    conversationId?: IntFieldUpdateOperationsInput | number
+    receiverId?: IntFieldUpdateOperationsInput | number
+    content?: StringFieldUpdateOperationsInput | string
+    timestamp?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MessageUncheckedUpdateManyWithoutSenderInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    conversationId?: IntFieldUpdateOperationsInput | number
+    receiverId?: IntFieldUpdateOperationsInput | number
+    content?: StringFieldUpdateOperationsInput | string
+    timestamp?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NotificationUpdateWithoutUserInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    isRead?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NotificationUncheckedUpdateWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    isRead?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NotificationUncheckedUpdateManyWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    isRead?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PaymentMethodUpdateWithoutUserInput = {
+    type?: StringFieldUpdateOperationsInput | string
+    details?: StringFieldUpdateOperationsInput | string
+    isPrimary?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PaymentMethodUncheckedUpdateWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    details?: StringFieldUpdateOperationsInput | string
+    isPrimary?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PaymentMethodUncheckedUpdateManyWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    details?: StringFieldUpdateOperationsInput | string
+    isPrimary?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ReviewUpdateWithoutAuthorInput = {
+    rating?: IntFieldUpdateOperationsInput | number
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    booking?: BookingUpdateOneRequiredWithoutReviewNestedInput
+    listing?: ListingUpdateOneRequiredWithoutReviewsNestedInput
+  }
+
+  export type ReviewUncheckedUpdateWithoutAuthorInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    rating?: IntFieldUpdateOperationsInput | number
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    listingId?: IntFieldUpdateOperationsInput | number
+    bookingId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ReviewUncheckedUpdateManyWithoutAuthorInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    rating?: IntFieldUpdateOperationsInput | number
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    listingId?: IntFieldUpdateOperationsInput | number
+    bookingId?: IntFieldUpdateOperationsInput | number
   }
 
   export type ListingCreateManyRestaurantInput = {
@@ -25471,14 +32608,6 @@ export namespace Prisma {
     hostId: number
   }
 
-  export type RestaurantImageCreateManyRestaurantInput = {
-    id?: number
-    url: string
-    caption?: string | null
-    isPrimary?: boolean
-    createdAt?: Date | string
-  }
-
   export type OperatingHoursCreateManyRestaurantInput = {
     id?: number
     dayOfWeek: number
@@ -25487,72 +32616,31 @@ export namespace Prisma {
     isClosed?: boolean
   }
 
-  export type UserUpdateWithoutRestaurantInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
-    bio?: NullableStringFieldUpdateOperationsInput | string | null
-    address?: NullableStringFieldUpdateOperationsInput | string | null
-    city?: NullableStringFieldUpdateOperationsInput | string | null
-    state?: NullableStringFieldUpdateOperationsInput | string | null
-    country?: NullableStringFieldUpdateOperationsInput | string | null
-    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
-    listings?: ListingUpdateManyWithoutHostNestedInput
-    bookings?: BookingUpdateManyWithoutGuestNestedInput
-    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
-    notifications?: NotificationUpdateManyWithoutUserNestedInput
-    earnings?: EarningUpdateManyWithoutHostNestedInput
+  export type RestaurantImageCreateManyRestaurantInput = {
+    id?: number
+    url: string
+    caption?: string | null
+    isPrimary?: boolean
+    createdAt?: Date | string
   }
 
-  export type UserUncheckedUpdateWithoutRestaurantInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    email?: StringFieldUpdateOperationsInput | string
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
-    bio?: NullableStringFieldUpdateOperationsInput | string | null
-    address?: NullableStringFieldUpdateOperationsInput | string | null
-    city?: NullableStringFieldUpdateOperationsInput | string | null
-    state?: NullableStringFieldUpdateOperationsInput | string | null
-    country?: NullableStringFieldUpdateOperationsInput | string | null
-    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
-    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
-    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
-    bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
-    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
-    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
-    earnings?: EarningUncheckedUpdateManyWithoutHostNestedInput
-  }
-
-  export type UserUncheckedUpdateManyWithoutRestaurantInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    email?: StringFieldUpdateOperationsInput | string
-    phone?: NullableStringFieldUpdateOperationsInput | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    role?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
-    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
-    bio?: NullableStringFieldUpdateOperationsInput | string | null
-    address?: NullableStringFieldUpdateOperationsInput | string | null
-    city?: NullableStringFieldUpdateOperationsInput | string | null
-    state?: NullableStringFieldUpdateOperationsInput | string | null
-    country?: NullableStringFieldUpdateOperationsInput | string | null
-    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+  export type UserCreateManyRestaurantInput = {
+    id?: number
+    email: string
+    phone?: string | null
+    password: string
+    name: string
+    role?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    profileImage?: string | null
+    bio?: string | null
+    address?: string | null
+    city?: string | null
+    state?: string | null
+    country?: string | null
+    zipCode?: string | null
+    isRestaurantHost?: boolean
   }
 
   export type ListingUpdateWithoutRestaurantInput = {
@@ -25565,11 +32653,11 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    host?: UserUpdateOneRequiredWithoutListingsNestedInput
-    bookings?: BookingUpdateManyWithoutListingNestedInput
-    images?: ListingImageUpdateManyWithoutListingNestedInput
-    amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
     availability?: AvailabilityUpdateManyWithoutListingNestedInput
+    bookings?: BookingUpdateManyWithoutListingNestedInput
+    host?: UserUpdateOneRequiredWithoutListingsNestedInput
+    amenities?: ListingAmenityUpdateManyWithoutListingNestedInput
+    images?: ListingImageUpdateManyWithoutListingNestedInput
     reviews?: ReviewUpdateManyWithoutListingNestedInput
   }
 
@@ -25585,10 +32673,10 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     hostId?: IntFieldUpdateOperationsInput | number
-    bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
-    images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
-    amenities?: ListingAmenityUncheckedUpdateManyWithoutListingNestedInput
     availability?: AvailabilityUncheckedUpdateManyWithoutListingNestedInput
+    bookings?: BookingUncheckedUpdateManyWithoutListingNestedInput
+    amenities?: ListingAmenityUncheckedUpdateManyWithoutListingNestedInput
+    images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutListingNestedInput
   }
 
@@ -25604,29 +32692,6 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     hostId?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type RestaurantImageUpdateWithoutRestaurantInput = {
-    url?: StringFieldUpdateOperationsInput | string
-    caption?: NullableStringFieldUpdateOperationsInput | string | null
-    isPrimary?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type RestaurantImageUncheckedUpdateWithoutRestaurantInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    url?: StringFieldUpdateOperationsInput | string
-    caption?: NullableStringFieldUpdateOperationsInput | string | null
-    isPrimary?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type RestaurantImageUncheckedUpdateManyWithoutRestaurantInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    url?: StringFieldUpdateOperationsInput | string
-    caption?: NullableStringFieldUpdateOperationsInput | string | null
-    isPrimary?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type OperatingHoursUpdateWithoutRestaurantInput = {
@@ -25652,30 +32717,103 @@ export namespace Prisma {
     isClosed?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type BookingCreateManyListingInput = {
-    id?: number
-    startTime: Date | string
-    endTime: Date | string
-    totalPrice: number
-    status?: string
-    guestCount?: number | null
-    specialRequests?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    guestId: number
+  export type RestaurantImageUpdateWithoutRestaurantInput = {
+    url?: StringFieldUpdateOperationsInput | string
+    caption?: NullableStringFieldUpdateOperationsInput | string | null
+    isPrimary?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type ListingImageCreateManyListingInput = {
-    id?: number
-    url: string
-    caption?: string | null
-    isPrimary?: boolean
-    createdAt?: Date | string
+  export type RestaurantImageUncheckedUpdateWithoutRestaurantInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    url?: StringFieldUpdateOperationsInput | string
+    caption?: NullableStringFieldUpdateOperationsInput | string | null
+    isPrimary?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type ListingAmenityCreateManyListingInput = {
-    id?: number
-    amenityId: number
+  export type RestaurantImageUncheckedUpdateManyWithoutRestaurantInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    url?: StringFieldUpdateOperationsInput | string
+    caption?: NullableStringFieldUpdateOperationsInput | string | null
+    isPrimary?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserUpdateWithoutRestaurantInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    state?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    bookings?: BookingUpdateManyWithoutGuestNestedInput
+    earnings?: EarningUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUpdateOneWithoutUserNestedInput
+    listings?: ListingUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUpdateManyWithoutAuthorNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutRestaurantInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    state?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
+    bookings?: BookingUncheckedUpdateManyWithoutGuestNestedInput
+    earnings?: EarningUncheckedUpdateManyWithoutHostNestedInput
+    hostSettings?: HostSettingsUncheckedUpdateOneWithoutUserNestedInput
+    listings?: ListingUncheckedUpdateManyWithoutHostNestedInput
+    messagesReceived?: MessageUncheckedUpdateManyWithoutReceiverNestedInput
+    messagesSent?: MessageUncheckedUpdateManyWithoutSenderNestedInput
+    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
+    paymentMethods?: PaymentMethodUncheckedUpdateManyWithoutUserNestedInput
+    hostedRestaurant?: RestaurantUncheckedUpdateOneWithoutHostNestedInput
+    reviews?: ReviewUncheckedUpdateManyWithoutAuthorNestedInput
+  }
+
+  export type UserUncheckedUpdateManyWithoutRestaurantInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    role?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    state?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    zipCode?: NullableStringFieldUpdateOperationsInput | string | null
+    isRestaurantHost?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type AvailabilityCreateManyListingInput = {
@@ -25687,6 +32825,32 @@ export namespace Prisma {
     createdAt?: Date | string
   }
 
+  export type BookingCreateManyListingInput = {
+    id?: number
+    startTime: Date | string
+    endTime: Date | string
+    totalPrice?: number | null
+    status?: string
+    guestCount?: number | null
+    specialRequests?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    guestId: number
+  }
+
+  export type ListingAmenityCreateManyListingInput = {
+    id?: number
+    amenityId: number
+  }
+
+  export type ListingImageCreateManyListingInput = {
+    id?: number
+    url: string
+    caption?: string | null
+    isPrimary?: boolean
+    createdAt?: Date | string
+  }
+
   export type ReviewCreateManyListingInput = {
     id?: number
     rating: number
@@ -25694,85 +32858,6 @@ export namespace Prisma {
     createdAt?: Date | string
     authorId: number
     bookingId: number
-  }
-
-  export type BookingUpdateWithoutListingInput = {
-    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalPrice?: FloatFieldUpdateOperationsInput | number
-    status?: StringFieldUpdateOperationsInput | string
-    guestCount?: NullableIntFieldUpdateOperationsInput | number | null
-    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    guest?: UserUpdateOneRequiredWithoutBookingsNestedInput
-    review?: ReviewUpdateOneWithoutBookingNestedInput
-    earning?: EarningUpdateOneWithoutBookingNestedInput
-  }
-
-  export type BookingUncheckedUpdateWithoutListingInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalPrice?: FloatFieldUpdateOperationsInput | number
-    status?: StringFieldUpdateOperationsInput | string
-    guestCount?: NullableIntFieldUpdateOperationsInput | number | null
-    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    guestId?: IntFieldUpdateOperationsInput | number
-    review?: ReviewUncheckedUpdateOneWithoutBookingNestedInput
-    earning?: EarningUncheckedUpdateOneWithoutBookingNestedInput
-  }
-
-  export type BookingUncheckedUpdateManyWithoutListingInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalPrice?: FloatFieldUpdateOperationsInput | number
-    status?: StringFieldUpdateOperationsInput | string
-    guestCount?: NullableIntFieldUpdateOperationsInput | number | null
-    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    guestId?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type ListingImageUpdateWithoutListingInput = {
-    url?: StringFieldUpdateOperationsInput | string
-    caption?: NullableStringFieldUpdateOperationsInput | string | null
-    isPrimary?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ListingImageUncheckedUpdateWithoutListingInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    url?: StringFieldUpdateOperationsInput | string
-    caption?: NullableStringFieldUpdateOperationsInput | string | null
-    isPrimary?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ListingImageUncheckedUpdateManyWithoutListingInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    url?: StringFieldUpdateOperationsInput | string
-    caption?: NullableStringFieldUpdateOperationsInput | string | null
-    isPrimary?: BoolFieldUpdateOperationsInput | boolean
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ListingAmenityUpdateWithoutListingInput = {
-    amenity?: AmenityUpdateOneRequiredWithoutListingsNestedInput
-  }
-
-  export type ListingAmenityUncheckedUpdateWithoutListingInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    amenityId?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type ListingAmenityUncheckedUpdateManyWithoutListingInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    amenityId?: IntFieldUpdateOperationsInput | number
   }
 
   export type AvailabilityUpdateWithoutListingInput = {
@@ -25798,6 +32883,85 @@ export namespace Prisma {
     startTime?: StringFieldUpdateOperationsInput | string
     endTime?: StringFieldUpdateOperationsInput | string
     isAvailable?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BookingUpdateWithoutListingInput = {
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalPrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    status?: StringFieldUpdateOperationsInput | string
+    guestCount?: NullableIntFieldUpdateOperationsInput | number | null
+    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    guest?: UserUpdateOneRequiredWithoutBookingsNestedInput
+    earning?: EarningUpdateOneWithoutBookingNestedInput
+    review?: ReviewUpdateOneWithoutBookingNestedInput
+  }
+
+  export type BookingUncheckedUpdateWithoutListingInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalPrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    status?: StringFieldUpdateOperationsInput | string
+    guestCount?: NullableIntFieldUpdateOperationsInput | number | null
+    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    guestId?: IntFieldUpdateOperationsInput | number
+    earning?: EarningUncheckedUpdateOneWithoutBookingNestedInput
+    review?: ReviewUncheckedUpdateOneWithoutBookingNestedInput
+  }
+
+  export type BookingUncheckedUpdateManyWithoutListingInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalPrice?: NullableFloatFieldUpdateOperationsInput | number | null
+    status?: StringFieldUpdateOperationsInput | string
+    guestCount?: NullableIntFieldUpdateOperationsInput | number | null
+    specialRequests?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    guestId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ListingAmenityUpdateWithoutListingInput = {
+    amenity?: AmenityUpdateOneRequiredWithoutListingsNestedInput
+  }
+
+  export type ListingAmenityUncheckedUpdateWithoutListingInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    amenityId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ListingAmenityUncheckedUpdateManyWithoutListingInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    amenityId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ListingImageUpdateWithoutListingInput = {
+    url?: StringFieldUpdateOperationsInput | string
+    caption?: NullableStringFieldUpdateOperationsInput | string | null
+    isPrimary?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ListingImageUncheckedUpdateWithoutListingInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    url?: StringFieldUpdateOperationsInput | string
+    caption?: NullableStringFieldUpdateOperationsInput | string | null
+    isPrimary?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ListingImageUncheckedUpdateManyWithoutListingInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    url?: StringFieldUpdateOperationsInput | string
+    caption?: NullableStringFieldUpdateOperationsInput | string | null
+    isPrimary?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -25844,6 +33008,37 @@ export namespace Prisma {
   export type ListingAmenityUncheckedUpdateManyWithoutAmenityInput = {
     id?: IntFieldUpdateOperationsInput | number
     listingId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type MessageCreateManyConversationInput = {
+    id?: number
+    senderId: number
+    receiverId: number
+    content: string
+    timestamp?: Date | string
+  }
+
+  export type MessageUpdateWithoutConversationInput = {
+    content?: StringFieldUpdateOperationsInput | string
+    timestamp?: DateTimeFieldUpdateOperationsInput | Date | string
+    receiver?: UserUpdateOneRequiredWithoutMessagesReceivedNestedInput
+    sender?: UserUpdateOneRequiredWithoutMessagesSentNestedInput
+  }
+
+  export type MessageUncheckedUpdateWithoutConversationInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    senderId?: IntFieldUpdateOperationsInput | number
+    receiverId?: IntFieldUpdateOperationsInput | number
+    content?: StringFieldUpdateOperationsInput | string
+    timestamp?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MessageUncheckedUpdateManyWithoutConversationInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    senderId?: IntFieldUpdateOperationsInput | number
+    receiverId?: IntFieldUpdateOperationsInput | number
+    content?: StringFieldUpdateOperationsInput | string
+    timestamp?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 

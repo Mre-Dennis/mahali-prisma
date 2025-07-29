@@ -129,15 +129,15 @@ exports.Prisma.UserScalarFieldEnum = {
   role: 'role',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  isRestaurantHost: 'isRestaurantHost',
-  restaurantId: 'restaurantId',
   profileImage: 'profileImage',
   bio: 'bio',
   address: 'address',
   city: 'city',
   state: 'state',
   country: 'country',
-  zipCode: 'zipCode'
+  zipCode: 'zipCode',
+  isRestaurantHost: 'isRestaurantHost',
+  restaurantId: 'restaurantId'
 };
 
 exports.Prisma.RestaurantScalarFieldEnum = {
@@ -152,7 +152,7 @@ exports.Prisma.RestaurantScalarFieldEnum = {
   phone: 'phone',
   email: 'email',
   website: 'website',
-  cuisine: 'cuisine',
+  restaurantType: 'restaurantType',
   priceRange: 'priceRange',
   rating: 'rating',
   isActive: 'isActive',
@@ -172,8 +172,8 @@ exports.Prisma.ListingScalarFieldEnum = {
   isActive: 'isActive',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  restaurantId: 'restaurantId',
-  hostId: 'hostId'
+  hostId: 'hostId',
+  restaurantId: 'restaurantId'
 };
 
 exports.Prisma.ListingImageScalarFieldEnum = {
@@ -272,6 +272,45 @@ exports.Prisma.OperatingHoursScalarFieldEnum = {
   restaurantId: 'restaurantId'
 };
 
+exports.Prisma.HostSettingsScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  emailBookings: 'emailBookings',
+  emailMessages: 'emailMessages',
+  emailPayouts: 'emailPayouts',
+  pushBookings: 'pushBookings',
+  pushMessages: 'pushMessages',
+  pushPayouts: 'pushPayouts',
+  companyName: 'companyName',
+  kraPin: 'kraPin',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.PaymentMethodScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  type: 'type',
+  details: 'details',
+  isPrimary: 'isPrimary',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.ConversationScalarFieldEnum = {
+  id: 'id',
+  bookingId: 'bookingId',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.MessageScalarFieldEnum = {
+  id: 'id',
+  conversationId: 'conversationId',
+  senderId: 'senderId',
+  receiverId: 'receiverId',
+  content: 'content',
+  timestamp: 'timestamp'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -301,7 +340,11 @@ exports.Prisma.ModelName = {
   Earning: 'Earning',
   Notification: 'Notification',
   RestaurantImage: 'RestaurantImage',
-  OperatingHours: 'OperatingHours'
+  OperatingHours: 'OperatingHours',
+  HostSettings: 'HostSettings',
+  PaymentMethod: 'PaymentMethod',
+  Conversation: 'Conversation',
+  Message: 'Message'
 };
 
 /**
